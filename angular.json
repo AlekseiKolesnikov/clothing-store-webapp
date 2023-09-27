@@ -27,7 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/icons8-telegram-app-480.png"
             ],
             "styles": [
               "src/styles.scss"
