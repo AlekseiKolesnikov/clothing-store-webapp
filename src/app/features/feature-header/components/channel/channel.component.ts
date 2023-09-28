@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {ChannelIcon} from "../../modules/module-channel/channel-icon";
 import {ChannelLink} from "../../modules/module-channel/channel-link";
 
@@ -9,6 +9,8 @@ import {ChannelLink} from "../../modules/module-channel/channel-link";
   encapsulation: ViewEncapsulation.None
 })
 export class ChannelComponent implements OnInit {
+  @Output() buttonClick = new EventEmitter
+
   channelIcon: ChannelIcon
   channelLink: ChannelLink
   constructor() {
@@ -17,6 +19,15 @@ export class ChannelComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.channelLink)
+  }
+
+  click(): void {
+    this.channelLink.getChannelLink()
+    this.buttonClick.emit()
+  }
+  touch(event: Event) {
+    this.channelLink.getChannelLink()
+    event.preventDefault()
+    this.buttonClick.emit()
   }
 }

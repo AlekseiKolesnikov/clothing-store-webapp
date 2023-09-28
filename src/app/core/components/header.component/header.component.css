@@ -1,0 +1,12 @@
+.channel-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.channel-icon-wrapper {
+  height: 100%;
+  width: 144px;
+}
+
+/*# sourceMappingURL=header.component.css.map */

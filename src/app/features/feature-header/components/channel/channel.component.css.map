@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"channel.component.css"}
+{"version":3,"sourceRoot":"","sources":["../../../../styles/squeeze-animation.pattern.scss","channel.component.scss"],"names":[],"mappings":"AAII;EADF;IAEI;;;AAIJ;EACE;;;ACRJ;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA","file":"channel.component.css"}

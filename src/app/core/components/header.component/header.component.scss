@@ -1,0 +1,10 @@
+@import "../../../styles/center-flex.pattern";
+
+.profile-icon-wrapper {
+}
+
+.channel-icon-wrapper {
+  @extend %center-flex;
+  height: 100%;
+  width: 144px;
+}

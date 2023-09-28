@@ -1,0 +1,25 @@
+@import "../../../../styles/squeeze-animation.pattern";
+
+.text {
+  font-family: 'Manrope', sans-serif;
+  color: var(--tg-theme-text-color);
+  width: 95px;
+}
+
+.image {
+  width: 30px;
+  height: 30px;
+  margin-left: 4px;
+}
+
+.channel-icon {
+  height: 100%;
+  width: 144px;
+  background-color: var(--tg-theme-bg-color);
+  border-radius: 12em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  @extend %squeeze-animation;
+}
