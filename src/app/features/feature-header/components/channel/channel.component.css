@@ -10,18 +10,18 @@
 .text {
   font-family: "Manrope", sans-serif;
   color: var(--tg-theme-text-color);
-  width: 95px;
+  width: 73%;
 }
 
 .image {
-  width: 30px;
-  height: 30px;
-  margin-left: 4px;
+  width: 20%;
+  height: 80%;
+  margin-left: 2%;
 }
 
 .channel-icon {
   height: 100%;
-  width: 144px;
+  width: 100%;
   background-color: var(--tg-theme-bg-color);
   border-radius: 12em;
   display: flex;

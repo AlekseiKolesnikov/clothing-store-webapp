@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Output, ViewEncapsulation} from '@angular/core';
 import {ChannelIcon} from "../../modules/module-channel/channel-icon";
 import {ChannelLink} from "../../modules/module-channel/channel-link";
 
@@ -8,7 +8,7 @@ import {ChannelLink} from "../../modules/module-channel/channel-link";
   styleUrls: ['./channel.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ChannelComponent implements OnInit {
+export class ChannelComponent {
   @Output() buttonClick = new EventEmitter
 
   channelIcon: ChannelIcon
@@ -16,9 +16,6 @@ export class ChannelComponent implements OnInit {
   constructor() {
     this.channelIcon = new ChannelIcon()
     this.channelLink = new ChannelLink()
-  }
-
-  ngOnInit() {
   }
 
   click(): void {

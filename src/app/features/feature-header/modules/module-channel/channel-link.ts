@@ -1,17 +1,13 @@
 interface Link {
-  getChannelLink(): string,
-  setChannelLink(image: string): void
+  getChannelLink(): string
 }
 export class ChannelLink implements Link {
-  private channelUrl: string = 'https://t.me/sneakerheadru'
-  constructor() { }
+  constructor(
+    private channelUrl: string = 'https://t.me/sneakerheadru'
+  ) { }
 
   getChannelLink(): string {
     // @ts-ignore
     return Telegram.WebApp.openTelegramLink(this.channelUrl)
-  }
-
-  setChannelLink(url: string): void {
-    this.channelUrl = url
   }
 }
