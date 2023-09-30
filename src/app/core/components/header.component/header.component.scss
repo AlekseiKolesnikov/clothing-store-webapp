@@ -1,10 +1,26 @@
 @import "../../../styles/center-flex.pattern";
+@import "../../../styles/squeeze-animation.pattern";
 
 .profile-icon-wrapper {
+  @extend %center-flex;
+  height: 100%;
+  width: 110px;
 }
 
 .channel-icon-wrapper {
   @extend %center-flex;
   height: 100%;
-  width: 40%;
+  width: 140px;
+}
+
+.header-icons-gen {
+  height: 100%;
+  width: 100%;
+  background-color: var(--tg-theme-bg-color);
+  border-radius: 12em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  @extend %squeeze-animation;
 }

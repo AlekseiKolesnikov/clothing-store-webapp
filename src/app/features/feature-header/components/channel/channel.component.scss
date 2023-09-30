@@ -13,13 +13,4 @@
 }
 
 .channel-icon {
-  height: 100%;
-  width: 100%;
-  background-color: var(--tg-theme-bg-color);
-  border-radius: 12em;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  @extend %squeeze-animation;
 }

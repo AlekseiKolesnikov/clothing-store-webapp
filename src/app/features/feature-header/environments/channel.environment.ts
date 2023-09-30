@@ -1,10 +1,10 @@
-interface Icon {
-  getChannelIcon(): string
+export interface IChannelEnvironment {
+  channelIcon: string,
+  channelLink: string
 }
 
-export class ChannelIcon implements Icon {
-  constructor(
-    private icon: string = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIge" +
+export const channelEnvironment: IChannelEnvironment = {
+  channelIcon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIge" +
     "T0iMHB4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCI+CjxwYXRoIGZpbGw9IiMyOWI2ZjYiIGQ9Ik0yNCA0QTIwIDIw" +
     "IDAgMSAwIDI0IDQ0QTIwIDIwIDAgMSAwIDI0IDRaIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTMzLjk1LDE1bC0zLjc0NiwxOS4xMjZjMCw" +
     "wLTAuMTYxLDAuODc0LTEuMjQ1LDAuODc0Yy0wLjU3NiwwLTAuODczLTAuMjc0LTAuODczLTAuMjc0bC04LjExNC02LjczMyBsLTMuOTctMi4wMDFsLTU" +
@@ -14,10 +14,6 @@ export class ChannelIcon implements Icon {
     "MC4wNjksMC4wMDItMC4xNDMtMC4wMDktMC4yMTktMC4wNDMgbDAuOTY0LTUuOTY1TDIzLDMwLjUwNXoiPjwvcGF0aD48cGF0aCBmaWxsPSIjY2ZkOG" +
     "RjIiBkPSJNMjkuODk3LDE4LjE5NmMtMC4xNjktMC4yMi0wLjQ4MS0wLjI2LTAuNzAxLTAuMDkzTDE2LDI2YzAsMCwyLjEwNiw1Ljg5MiwyLjQyNyw2" +
     "LjkxMiBjMC4zMjIsMS4wMjEsMC41OCwxLjA0NSwwLjU4LDEuMDQ1bDAuOTY0LTUuOTY1bDkuODMyLTkuMDk2QzMwLjAyMywxOC43MjksMzAuMDY0LD" +
-    "E4LjQxNiwyOS44OTcsMTguMTk2eiI+PC9wYXRoPgo8L3N2Zz4="
-  ) {}
-
-  getChannelIcon(): string {
-    return this.icon
-  }
+    "E4LjQxNiwyOS44OTcsMTguMTk2eiI+PC9wYXRoPgo8L3N2Zz4=",
+  channelLink:"https://t.me/sneakerheadru"
 }

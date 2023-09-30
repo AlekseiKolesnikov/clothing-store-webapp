@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Output, ViewEncapsulation} from '@angular/core';
-import {ChannelIcon} from "../../modules/module-channel/channel-icon";
-import {ChannelLink} from "../../modules/module-channel/channel-link";
+import {channelEnvironment} from "../../environments/channel.environment";
 
 @Component({
   selector: 'app-channel',
@@ -10,20 +9,17 @@ import {ChannelLink} from "../../modules/module-channel/channel-link";
 })
 export class ChannelComponent {
   @Output() buttonClick = new EventEmitter
-
-  channelIcon: ChannelIcon
-  channelLink: ChannelLink
-  constructor() {
-    this.channelIcon = new ChannelIcon()
-    this.channelLink = new ChannelLink()
-  }
+  readonly environment = channelEnvironment
+  constructor() {}
 
   click(): void {
-    this.channelLink.getChannelLink()
+    // @ts-ignore
+    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelLink)
     this.buttonClick.emit()
   }
   touch(event: Event) {
-    this.channelLink.getChannelLink()
+    // @ts-ignore
+    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelLink)
     event.preventDefault()
     this.buttonClick.emit()
   }
