@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output, ViewEncapsulation} from '@angular/core';
-import {channelEnvironment} from "../../environments/channel.environment";
+import {environment} from "../../../../../environments/environment.development";
 
 @Component({
   selector: 'app-channel',
@@ -9,8 +9,9 @@ import {channelEnvironment} from "../../environments/channel.environment";
 })
 export class ChannelComponent {
   @Output() buttonClick = new EventEmitter
-  readonly environment = channelEnvironment
-  constructor() {}
+  readonly channelEnvironment = environment
+  constructor() {
+  }
 
   click(): void {
     // @ts-ignore
@@ -23,4 +24,6 @@ export class ChannelComponent {
     event.preventDefault()
     this.buttonClick.emit()
   }
+
+  protected readonly environment = environment;
 }
