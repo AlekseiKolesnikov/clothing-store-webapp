@@ -3,9 +3,8 @@ import {EventEmitter, Injectable, Output} from "@angular/core";
 @Injectable({
   providedIn: 'root'
 })
-export class ClickEmitter {
+export class BaseComponent {
   @Output() buttonClick = new EventEmitter
-  constructor() {}
 
   click(event: Event): void {
     this.buttonClick.emit()

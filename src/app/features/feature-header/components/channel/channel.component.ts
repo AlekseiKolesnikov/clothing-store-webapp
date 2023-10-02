@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {environment} from "../../../../../environments/environment.development";
-import {ClickEmitter} from "../../../../shared/models/clickEmitter";
+import {BaseComponent} from "../../../../shared/models/base-component.service";
 
 @Component({
   selector: 'app-channel',
@@ -8,7 +8,7 @@ import {ClickEmitter} from "../../../../shared/models/clickEmitter";
   styleUrls: ['./channel.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ChannelComponent extends ClickEmitter {
+export class ChannelComponent extends BaseComponent {
   readonly channelEnvironment = environment
   constructor() {
     super();

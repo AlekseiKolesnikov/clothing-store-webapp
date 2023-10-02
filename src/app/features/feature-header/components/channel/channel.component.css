@@ -1,6 +1,7 @@
 .channel-icon {
   background-color: var(--tg-theme-bg-color);
   padding-right: 5%;
+  padding-bottom: 2%;
   gap: 1%;
 }
 
