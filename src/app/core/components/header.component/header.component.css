@@ -1,0 +1,37 @@
+.channel-icon-wrapper, .profile-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .header-icons-gen:hover {
+    cursor: pointer;
+  }
+}
+.header-icons-gen:active {
+  transform: scale(0.95, 0.95);
+}
+
+.profile-icon-wrapper {
+  height: 100%;
+  width: 110px;
+}
+
+.channel-icon-wrapper {
+  height: 100%;
+  width: 140px;
+}
+
+.header-icons-gen {
+  height: 100%;
+  width: 100%;
+  background-color: var(--tg-theme-bg-color);
+  border-radius: 12em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=header.component.css.map */

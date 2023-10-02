@@ -1,0 +1,13 @@
+$mouse-device: '(hover:hover) and (pointer: fine)';
+
+%squeeze-animation {
+  &:hover {
+    @media #{$mouse-device} {
+      cursor: pointer;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95, 0.95);
+  }
+}

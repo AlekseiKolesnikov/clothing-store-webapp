@@ -1,0 +1,13 @@
+.text {
+  font-family: "Manrope", sans-serif;
+  color: var(--tg-theme-text-color);
+  width: 73%;
+}
+
+.image {
+  width: 20%;
+  height: 80%;
+  margin-left: 2%;
+}
+
+/*# sourceMappingURL=channel.component.css.map */
