@@ -4,23 +4,23 @@
 .profile-icon-wrapper {
   @extend %center-flex;
   height: 100%;
-  width: 110px;
+  width: fit-content;
 }
 
 .channel-icon-wrapper {
   @extend %center-flex;
-  height: 100%;
-  width: 140px;
+  height: 36px;
+  width: fit-content;
 }
 
 .header-icons-gen {
-  height: 100%;
-  width: 100%;
-  background-color: var(--tg-theme-bg-color);
+  height: fit-content;
+  width: fit-content;
   border-radius: 12em;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: flex-start;
   flex-direction: row;
+  padding: 2%;
   @extend %squeeze-animation;
 }

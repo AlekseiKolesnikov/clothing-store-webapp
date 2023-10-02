@@ -1,9 +1,9 @@
 <button
   class="channel-icon header-icons-gen"
-  (click)="click()"
-  (touchend)="touch($event)"
+  (click)="click($event)"
+  (touchend)="click($event)"
 >
-  <div class="image">
+  <div class="channel-image">
     <img
       src="{{channelEnvironment.channelIcon}}"
       alt="telegram-icon"
@@ -11,9 +11,9 @@
       height="30"
     >
   </div>
-  <div class="text">
-    <p style="font-weight: 600; font-size: 14px; line-height: 12px">@sneakerhead</p>
-    <p style="font-weight: 200; font-size: 10px">наш Telegram-канал</p>
+  <div class="channel-icon-text">
+    <p class="channel-name">@sneakerhead</p>
+    <p class="channel-description">наш Telegram-канал</p>
   </div>
 </button>
 
