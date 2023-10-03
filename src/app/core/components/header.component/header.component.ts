@@ -9,8 +9,4 @@ import {Component, ViewEncapsulation} from '@angular/core';
 export class HeaderComponent {
   constructor() {
   }
-
-  channelIconOnClick(){
-
-  }
 }

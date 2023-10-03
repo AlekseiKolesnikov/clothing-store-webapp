@@ -8,10 +8,12 @@ import {ChannelComponent} from "./features/feature-header/components/channel/cha
 import {HeaderComponent} from "./core/components/header.component/header.component";
 import {ProfileComponent} from "./features/feature-header/components/profile/profile.component";
 import {ProfilePageComponent} from "./features/feature-header/pages/profile-page.component";
+import {MainPageComponent} from "./core/page/main-page.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainPageComponent,
     HeaderComponent,
     ProfileComponent,
     ChannelComponent,
