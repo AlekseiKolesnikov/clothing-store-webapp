@@ -1,1 +1,94 @@
-<div>hjfdsbfjhds</div>
+<div class="profile-wrapper">
+  <div class="personal-information-box">
+    <div class="personal-image">
+      {{profileEnvironment.profileIcon}}
+    </div>
+    <div class="personal-name">
+      {{profileEnvironment.profileName}}
+    </div>
+  </div>
+  <div class="personal-status-box _size-color">
+    <div class="status">
+      <h2>
+        Статус: <span>{{profileEnvironment.profileStatus}}</span>
+      </h2>
+    </div>
+    <div class="points-description">
+      Ты получишь <span>+50 баллов</span> за каждый заказ
+    </div>
+    <div class="status-rules">
+      <p>У тебя нет завершенных заказов в Sneaker Shop.</p>
+      <br>
+      <p>Закажи и получи еще 3 товара, чтобы получить статус "Модник".</p>
+    </div>
+    <div class="status-sheet">
+      <table>
+        <tr>
+          <th class="first-column">Статус</th>
+          <th class="second-column">Баллов за заказ</th>
+          <th class="third-column">Заказов</th>
+        </tr>
+        <tr>
+          <td class="first-column">Новичок</td>
+          <td class="second-column"><span>+50</span></td>
+          <td class="third-column">0</td>
+        </tr>
+        <tr>
+          <td class="first-column">Модник</td>
+          <td class="second-column"><span>+150</span></td>
+          <td class="third-column">3</td>
+        </tr>
+        <tr>
+          <td class="first-column">Професионал</td>
+          <td class="second-column"><span>+250</span></td>
+          <td class="third-column">10</td>
+        </tr>
+        <tr>
+          <td class="first-column">Шопоголик</td>
+          <td class="second-column"><span>+350</span></td>
+          <td class="third-column">20</td>
+        </tr>
+        <tr>
+          <td class="first-column">Фэшн Киллер</td>
+          <td class="second-column"><span>+500</span></td>
+          <td class="third-column">30</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="personal-phone-number-box _size-color">
+    <div class="phone-number">
+      <h2 class="phone">Телефон</h2>
+      <p class="phone-description">Если привяжешь свой телефон, мы сможем перенести твои старые заказы в приложение</p>
+    </div>
+    <button
+      class="button-phone-number"
+      (click)="click($event)"
+      (touchend)="click($event)"
+    >
+      Привязать телефон
+    </button>
+  </div>
+  <div class="delivery-information-box _size-color">
+    <div class="delivery-inf">
+      <h2 class="delivery-inf-label">Данные доставки</h2>
+      <p class="delivery-inf-description">
+        Чтобы не вводить каждый раз после заказа.
+        Но если нужно будет заказать какой-то заказ в другое место — не проблема.
+      </p>
+    </div>
+    <div class="delivery-inf-full-name">
+      <div>ФИО получателя</div>
+      <div class="delivery-inf-no-data">Не указано</div>
+    </div>
+    <div class="delivery-inf-phone-number">
+      <div>Телефон</div>
+      <div class="delivery-inf-no-data">Не указано</div>
+    </div>
+    <button
+    class="button-delivery-inf"
+    (click)="click($event)"
+    (touchend)="click($event)"
+    >Редактировать</button>
+  </div>
+</div>
