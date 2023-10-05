@@ -9,6 +9,7 @@ import {HeaderComponent} from "./core/components/header.component/header.compone
 import {ProfileComponent} from "./features/feature-header/components/profile/profile.component";
 import {ProfilePageComponent} from "./features/feature-header/pages/profile-page.component";
 import {MainPageComponent} from "./core/page/main-page.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,11 +20,12 @@ import {MainPageComponent} from "./core/page/main-page.component";
     ChannelComponent,
     ProfilePageComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgOptimizedImage
-  ],
+      imports: [
+            BrowserModule,
+            AppRoutingModule,
+            NgOptimizedImage,
+            FormsModule
+      ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -10,4 +10,7 @@ export class BaseComponent {
     this.buttonClick.emit()
     event.preventDefault()
   }
+
+  submit() {
+  }
 }

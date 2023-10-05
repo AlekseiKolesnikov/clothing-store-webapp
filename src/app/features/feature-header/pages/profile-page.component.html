@@ -1,16 +1,16 @@
 <div class="profile-wrapper">
   <div class="personal-information-box">
     <div class="personal-image">
-      {{profileEnvironment.profileIcon}}
+      {{profileEnvironment.profileData.image}}
     </div>
     <div class="personal-name">
-      {{profileEnvironment.profileName}}
+      {{profileEnvironment.profileData.name}}
     </div>
   </div>
   <div class="personal-status-box _size-color">
     <div class="status">
       <h2>
-        Статус: <span>{{profileEnvironment.profileStatus}}</span>
+        Статус: <span>{{profileEnvironment.profileData.status}}</span>
       </h2>
     </div>
     <div class="points-description">
@@ -63,11 +63,32 @@
     </div>
     <button
       class="button-phone-number"
-      (click)="click($event)"
-      (touchend)="click($event)"
+      (click)="bindPhoneNumber($event)"
+      (touchend)="bindPhoneNumber($event)"
+      *ngIf="!phoneNumberInputFieldIsShown"
     >
       Привязать телефон
     </button>
+      <form
+        (ngSubmit)="submit()"
+        class="input-phone-number-box"
+        *ngIf="phoneNumberInputFieldIsShown && !phoneNumberIsShown"
+      >
+        <input
+          [(ngModel)]="profileEnvironment.profileData.personalPhoneNumber"
+          type="tel" class="input-phone-number"
+          name="phone-number" placeholder="+7"
+        >
+        <button type="submit" class="submit-phone-number">Подтвердить</button>
+        <button type="button" class="cancel-phone-number">Отменить</button>
+      </form>
+    <div
+      *ngIf="phoneNumberIsShown"
+      class="input-phone-number-box"
+    >
+      <div class="final-phone-number">{{profileEnvironment.profileData.personalPhoneNumber}}</div>
+      <button class="cancel-phone-number" (click)="phoneNumberIsShown = !phoneNumberIsShown">Изменить</button>
+    </div>
   </div>
   <div class="delivery-information-box _size-color">
     <div class="delivery-inf">
@@ -87,8 +108,8 @@
     </div>
     <button
     class="button-delivery-inf"
-    (click)="click($event)"
-    (touchend)="click($event)"
+    (click)="bindDeliveryInf($event)"
+    (touchend)="bindDeliveryInf($event)"
     >Редактировать</button>
   </div>
 </div>

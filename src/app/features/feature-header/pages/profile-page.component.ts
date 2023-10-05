@@ -1,7 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {environment} from "../../../../environments/environment";
+import {environment} from "../../../../environments/environment.development";
 import {BaseComponent} from "../../../shared/models/base-component.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile-page',
@@ -10,15 +9,28 @@ import {Router} from "@angular/router";
   encapsulation: ViewEncapsulation.None
 })
 export class ProfilePageComponent extends BaseComponent {
+  phoneNumberInputFieldIsShown: boolean = false
+  phoneNumberIsShown: boolean = false
+  deliveryInfIsShown: boolean = false
+
+
   readonly profileEnvironment = environment
 
-  constructor(
-    private router: Router
-  ) {
+  constructor() {
     super();
   }
 
-  override click(event: Event) {
+  bindPhoneNumber(event: Event) {
     super.click(event);
+    this.phoneNumberInputFieldIsShown = true
+  }
+
+  bindDeliveryInf(event: Event) {
+    super.click(event);
+  }
+
+  override submit() {
+    super.submit();
+    this.phoneNumberIsShown = true
   }
 }

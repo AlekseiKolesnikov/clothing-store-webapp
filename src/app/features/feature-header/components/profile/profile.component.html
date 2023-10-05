@@ -4,17 +4,17 @@
   (touchend)="click($event)"
 >
   <div class="profileImg">
-    <p class="profile-emoji">{{profileEnvironment.profileIcon}}</p>
+    <p class="profile-emoji">{{profileEnvironment.profileData.image}}</p>
   </div>
   <div class="profile-name-status">
     <div class="profile-main-text">
       <div class="profile-name">
-        {{profileEnvironment.profileName}}
+        {{profileEnvironment.profileData.name}}
       </div>
       <div class="profile-name-arrow">
-        <span class="material-symbols-outlined">{{profileEnvironment.profileArrow}}</span>
+        <span class="material-symbols-outlined">chevron_right</span>
       </div>
     </div>
-    <div class="profile-status">{{profileEnvironment.profileStatus}}</div>
+    <div class="profile-status">{{profileEnvironment.profileData.status}}</div>
   </div>
 </button>

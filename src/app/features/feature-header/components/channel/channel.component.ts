@@ -17,6 +17,6 @@ export class ChannelComponent extends BaseComponent {
   override click(event: Event) {
     super.click(event);
     // @ts-ignore
-    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelLink)
+    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelIconData.link)
   }
 }

@@ -5,11 +5,13 @@
 }
 
 @media (hover:hover) and (pointer: fine) {
-  .button-phone-number:hover, .button-delivery-inf:hover {
+  .button-phone-number:hover, .button-delivery-inf:hover, .personal-phone-number-box .input-phone-number-box .submit-phone-number:hover,
+  .personal-phone-number-box .input-phone-number-box .cancel-phone-number:hover {
     cursor: pointer;
   }
 }
-.button-phone-number:active, .button-delivery-inf:active {
+.button-phone-number:active, .button-delivery-inf:active, .personal-phone-number-box .input-phone-number-box .submit-phone-number:active,
+.personal-phone-number-box .input-phone-number-box .cancel-phone-number:active {
   transform: scale(0.95, 0.95);
 }
 
@@ -121,6 +123,49 @@
 }
 .personal-phone-number-box .phone-number .phone-description {
   font-weight: 400;
+}
+.personal-phone-number-box .input-phone-number-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+  width: 100%;
+}
+.personal-phone-number-box .input-phone-number-box .input-phone-number {
+  height: 100%;
+  width: 55%;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tg-theme-text-color);
+  background: var(--tg-theme-bg-color);
+  border: var(--tg-theme-text-color) solid 2px;
+  border-radius: 1em;
+  padding-left: 2%;
+}
+.personal-phone-number-box .input-phone-number-box .final-phone-number {
+  height: fit-content;
+  width: 55%;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--tg-theme-text-color);
+  padding-left: 2%;
+}
+.personal-phone-number-box .input-phone-number-box .submit-phone-number,
+.personal-phone-number-box .input-phone-number-box .cancel-phone-number {
+  height: 90%;
+  width: fit-content;
+  font-weight: 600;
+  color: var(--tg-theme-text-color);
+  padding: 1%;
+  border-radius: 1em;
+}
+.personal-phone-number-box .input-phone-number-box .submit-phone-number {
+  background: var(--tg-theme-button-color);
+}
+.personal-phone-number-box .input-phone-number-box .cancel-phone-number {
+  background: var(--tg-theme-bg-color);
+  border: var(--tg-theme-text-color) solid 2px;
 }
 
 .button-phone-number, .button-delivery-inf {

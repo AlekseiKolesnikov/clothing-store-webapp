@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {environment} from "../../../../../environments/environment";
+import {environment} from "../../../../../environments/environment.development";
 import {BaseComponent} from "../../../../shared/models/base-component.service";
 import {Router} from "@angular/router";
 

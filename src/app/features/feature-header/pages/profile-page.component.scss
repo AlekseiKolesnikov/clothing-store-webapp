@@ -129,6 +129,55 @@
       font-weight: 400;
     }
   }
+
+  .input-phone-number-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 35px;
+    width: 100%;
+    .input-phone-number {
+      height: 100%;
+      width: 55%;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--tg-theme-text-color);
+      background: var(--tg-theme-bg-color);
+      border: var(--tg-theme-text-color) solid 2px;
+      border-radius: 1em;
+      padding-left: 2%;
+    }
+
+    .final-phone-number {
+      height: fit-content;
+      width: 55%;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--tg-theme-text-color);
+      padding-left: 2%;
+    }
+
+    .submit-phone-number,
+    .cancel-phone-number {
+      @extend %squeeze-animation;
+      height: 90%;
+      width: fit-content;
+      font-weight: 600;
+      color: var(--tg-theme-text-color);
+      padding: 1%;
+      border-radius: 1em;
+    }
+
+    .submit-phone-number {
+      background: var(--tg-theme-button-color);
+    }
+
+    .cancel-phone-number {
+      background: var(--tg-theme-bg-color);
+      border: var(--tg-theme-text-color) solid 2px;
+    }
+  }
 }
 
 .button-phone-number, .button-delivery-inf {
@@ -141,7 +190,7 @@
   color: var(--tg-theme-text-color);
   font-weight: 600;
   font-size: 14px;
-  @extend %squeeze-animation
+  @extend %squeeze-animation;
 }
 
 .delivery-information-box {
