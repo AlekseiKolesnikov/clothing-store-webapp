@@ -11,22 +11,15 @@ import {BaseComponent} from "../../../shared/models/base-component.service";
 export class ProfilePageComponent extends BaseComponent {
   phoneNumberInputFieldIsShown: boolean = false
   phoneNumberIsShown: boolean = false
-  deliveryInfIsShown: boolean = false
-
 
   readonly profileEnvironment = environment
 
-  constructor() {
-    super();
-  }
 
-  bindPhoneNumber(event: Event) {
-    super.click(event);
+  bindPhoneNumber() {
     this.phoneNumberInputFieldIsShown = true
   }
 
-  bindDeliveryInf(event: Event) {
-    super.click(event);
+  bindDeliveryInf() {
   }
 
   override submit() {

@@ -3,7 +3,7 @@ import {EventEmitter, Injectable, Output} from "@angular/core";
 @Injectable({
   providedIn: 'root'
 })
-export class BaseComponent {
+export abstract class BaseComponent {
   @Output() buttonClick = new EventEmitter
 
   click(event: Event): void {
@@ -11,6 +11,5 @@ export class BaseComponent {
     event.preventDefault()
   }
 
-  submit() {
-  }
+  submit() {}
 }

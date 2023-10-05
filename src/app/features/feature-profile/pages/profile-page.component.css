@@ -5,12 +5,12 @@
 }
 
 @media (hover:hover) and (pointer: fine) {
-  .button-phone-number:hover, .button-delivery-inf:hover, .personal-phone-number-box .input-phone-number-box .submit-phone-number:hover,
+  .personal-phone-number-box .input-phone-number-box .submit-phone-number:hover,
   .personal-phone-number-box .input-phone-number-box .cancel-phone-number:hover {
     cursor: pointer;
   }
 }
-.button-phone-number:active, .button-delivery-inf:active, .personal-phone-number-box .input-phone-number-box .submit-phone-number:active,
+.personal-phone-number-box .input-phone-number-box .submit-phone-number:active,
 .personal-phone-number-box .input-phone-number-box .cancel-phone-number:active {
   transform: scale(0.95, 0.95);
 }
@@ -166,18 +166,6 @@
 .personal-phone-number-box .input-phone-number-box .cancel-phone-number {
   background: var(--tg-theme-bg-color);
   border: var(--tg-theme-text-color) solid 2px;
-}
-
-.button-phone-number, .button-delivery-inf {
-  width: 100%;
-  height: 50px;
-  background: var(--tg-theme-bg-color);
-  border: var(--tg-theme-text-color) solid 2px;
-  border-radius: 1em;
-  font-family: "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
-  font-weight: 600;
-  font-size: 14px;
 }
 
 .delivery-information-box .delivery-inf {

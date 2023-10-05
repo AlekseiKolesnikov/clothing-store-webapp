@@ -1,0 +1,30 @@
+@media (hover:hover) and (pointer: fine) {
+  .clear:hover, .btn-color:hover {
+    cursor: pointer;
+  }
+}
+.clear:active, .btn-color:active {
+  transform: scale(0.95, 0.95);
+}
+
+.clear, .btn-color {
+  width: 100%;
+  height: 50px;
+  border-radius: 1em;
+  font-family: "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.clear {
+  background: var(--tg-theme-bg-color);
+  border: var(--tg-theme-text-color) solid 2px;
+}
+
+.btn-color {
+  background: var(--tg-theme-button-color);
+  border: var(--tg-theme-button-color) solid 2px;
+}
+
+/*# sourceMappingURL=full-screen-button.component.css.map */

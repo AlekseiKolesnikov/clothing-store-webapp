@@ -1,4 +1,5 @@
 <div class="profile-wrapper">
+
   <div class="personal-information-box">
     <div class="personal-image">
       {{profileEnvironment.profileData.image}}
@@ -7,6 +8,7 @@
       {{profileEnvironment.profileData.name}}
     </div>
   </div>
+
   <div class="personal-status-box _size-color">
     <div class="status">
       <h2>
@@ -56,19 +58,18 @@
       </table>
     </div>
   </div>
+
   <div class="personal-phone-number-box _size-color">
     <div class="phone-number">
       <h2 class="phone">Телефон</h2>
       <p class="phone-description">Если привяжешь свой телефон, мы сможем перенести твои старые заказы в приложение</p>
     </div>
-    <button
-      class="button-phone-number"
-      (click)="bindPhoneNumber($event)"
-      (touchend)="bindPhoneNumber($event)"
+    <app-full-screen-button
+      buttonClassName="clear"
+      (buttonClick)="bindPhoneNumber()"
       *ngIf="!phoneNumberInputFieldIsShown"
-    >
-      Привязать телефон
-    </button>
+      buttonText="Привязать телефон"
+    />
       <form
         (ngSubmit)="submit()"
         class="input-phone-number-box"
@@ -90,6 +91,7 @@
       <button class="cancel-phone-number" (click)="phoneNumberIsShown = !phoneNumberIsShown">Изменить</button>
     </div>
   </div>
+
   <div class="delivery-information-box _size-color">
     <div class="delivery-inf">
       <h2 class="delivery-inf-label">Данные доставки</h2>
@@ -106,10 +108,10 @@
       <div>Телефон</div>
       <div class="delivery-inf-no-data">Не указано</div>
     </div>
-    <button
-    class="button-delivery-inf"
-    (click)="bindDeliveryInf($event)"
-    (touchend)="bindDeliveryInf($event)"
-    >Редактировать</button>
+    <app-full-screen-button
+      buttonClassName="clear"
+      (buttonClick)="bindDeliveryInf()"
+      buttonText="Редактировать"
+    />
   </div>
 </div>

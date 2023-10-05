@@ -1,0 +1,7 @@
+<button
+  [className]="buttonClassName === 'clear' ? 'clear' : 'btn-color'"
+  (click)="click($event)"
+  (touchend)="click($event)"
+>
+  {{buttonText}}
+</button>
