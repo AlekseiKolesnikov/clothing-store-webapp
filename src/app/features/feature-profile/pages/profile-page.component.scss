@@ -1,11 +1,18 @@
 @import "../../../styles/gradient.pattern";
+@import "../../../styles/center-flex.pattern";
 @import "../../../styles/squeeze-animation.pattern";
+@import "../../../styles/space-between-row-flex";
+@import "../../../styles/start-center-align-column-flex";
+
+._size-color {
+  width: 100%;
+  background: var(--tg-theme-bg-color);
+  border-radius: 1.5em;
+  padding: 4%;
+}
 
 .profile-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
+  @extend %start-column-flex;
   height: 100vh;
   width: 100vw;
   font-family: 'Mulish', sans-serif;
@@ -15,24 +22,19 @@
 }
 
 .personal-information-box {
+  @extend %start-column-flex;
   width: 100%;
   height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   margin-top: 4%;
 }
 
 .personal-image {
+  @extend %center-flex;
   width: 90px;
   height: 90px;
   font-size: 46px;
   background: var(--tg-theme-bg-color);
   border-radius: 100em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .personal-name {
@@ -45,15 +47,7 @@
   margin-top: 4%;
 }
 
-._size-color {
-  width: 100%;
-  background: var(--tg-theme-bg-color);
-  border-radius: 1.5em;
-  padding: 4%;
-}
-
 .personal-status-box {
-  width: 100%;
   height: fit-content;
   margin-top: 6%;
   display: flex;
@@ -65,10 +59,10 @@
   .status {
     font-weight: 800;
     line-height: 32px;
+  }
 
-    span {
-      color: dodgerblue;
-    }
+  .status-label {
+    color: dodgerblue;
   }
 
   .points-description {
@@ -88,32 +82,6 @@
   .status-sheet {
     width: 100%;
     height: fit-content;
-
-    table {
-      width: 100%;
-      height: fit-content;
-
-      td, th {
-        padding: 1%;
-      }
-
-      span {
-        width: fit-content;
-        @extend %gradient-pattern
-      }
-
-      .first-column {
-        text-align: left;
-      }
-
-      .second-column {
-        text-align: right;
-      }
-
-      .third-column {
-        text-align: right;
-      }
-    }
   }
 }
 
@@ -131,17 +99,13 @@
   }
 
   .input-phone-number-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    @extend %space-between-row-flex;
     height: 35px;
     width: 100%;
     .input-phone-number {
       height: 100%;
       width: 55%;
       font-size: 12px;
-      font-weight: 600;
       color: var(--tg-theme-text-color);
       background: var(--tg-theme-bg-color);
       border: var(--tg-theme-text-color) solid 2px;
@@ -153,7 +117,6 @@
       height: fit-content;
       width: 55%;
       font-size: 18px;
-      font-weight: 600;
       color: var(--tg-theme-text-color);
       padding-left: 2%;
     }
@@ -163,7 +126,6 @@
       @extend %squeeze-animation;
       height: 90%;
       width: fit-content;
-      font-weight: 600;
       color: var(--tg-theme-text-color);
       padding: 1%;
       border-radius: 1em;
@@ -184,7 +146,7 @@
   .delivery-inf {
     margin-bottom: 4%;
     .delivery-inf-label {
-      font-weight:800;
+      font-weight: 800;
       margin-bottom: 3%;
     }
 
@@ -194,10 +156,7 @@
   }
 
   .delivery-inf-full-name, .delivery-inf-phone-number {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    @extend %space-between-row-flex;
     font-weight: 400;
     margin-bottom: 3%;
 

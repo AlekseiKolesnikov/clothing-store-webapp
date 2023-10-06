@@ -1,0 +1,41 @@
+.points-span {
+  background: linear-gradient(253deg, #462eff, #a100c2, #ff29c6, #ff2929, #ffc23d);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.first-row-span, .points-span {
+  width: fit-content;
+}
+
+.first-column {
+  width: 33%;
+  text-align: left;
+  padding: 1%;
+}
+
+.second-column, .third-column {
+  text-align: right;
+  padding: 1%;
+}
+
+.second-column {
+  width: 40%;
+}
+
+.third-column {
+  width: 20%;
+}
+
+.first-row {
+  color: var(--tg-theme-hint-color);
+}
+
+/*# sourceMappingURL=table-row.component.css.map */

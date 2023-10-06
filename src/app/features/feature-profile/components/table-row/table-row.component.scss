@@ -1,0 +1,38 @@
+@import "../../../../styles/gradient.pattern";
+@import "../../../../styles/space-between-row-flex";
+
+.table-row {
+  @extend %space-between-row-flex;
+
+}
+
+.first-row-span, .points-span {
+  width: fit-content;
+}
+
+.points-span {
+  @extend %gradient-pattern
+}
+
+.first-column {
+  width: 33%;
+  text-align: left;
+  padding: 1%;
+}
+
+.second-column, .third-column {
+  text-align: right;
+  padding: 1%;
+}
+
+.second-column {
+  width: 40%;
+}
+
+.third-column {
+  width: 20%;
+}
+
+.first-row {
+  color: var(--tg-theme-hint-color);
+}

@@ -11,11 +11,13 @@ import {ProfilePageComponent} from "./features/feature-profile/pages/profile-pag
 import {MainPageComponent} from "./core/page/main-page.component";
 import {FormsModule} from "@angular/forms";
 import {FullScreenButtonComponent} from "./shared/components/ui/wide-button/full-screen-button.component";
+import {TableRowComponent} from "./features/feature-profile/components/table-row/table-row.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     FullScreenButtonComponent,
+    TableRowComponent,
     MainPageComponent,
     HeaderComponent,
     ProfileComponent,

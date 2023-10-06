@@ -1,7 +1,13 @@
-.personal-status-box .status-sheet table span, .personal-status-box .points-description span {
+.personal-status-box .points-description span {
   background: linear-gradient(253deg, #462eff, #a100c2, #ff29c6, #ff2929, #ffc23d);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.personal-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (hover:hover) and (pointer: fine) {
@@ -15,11 +21,28 @@
   transform: scale(0.95, 0.95);
 }
 
-.profile-wrapper {
+.delivery-information-box .delivery-inf-full-name, .delivery-information-box .delivery-inf-phone-number, .personal-phone-number-box .input-phone-number-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.personal-information-box, .profile-wrapper {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+}
+
+._size-color {
+  width: 100%;
+  background: var(--tg-theme-bg-color);
+  border-radius: 1.5em;
+  padding: 4%;
+}
+
+.profile-wrapper {
   height: 100vh;
   width: 100vw;
   font-family: "Mulish", sans-serif;
@@ -31,10 +54,6 @@
 .personal-information-box {
   width: 100%;
   height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   margin-top: 4%;
 }
 
@@ -44,9 +63,6 @@
   font-size: 46px;
   background: var(--tg-theme-bg-color);
   border-radius: 100em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .personal-name {
@@ -59,15 +75,7 @@
   margin-top: 4%;
 }
 
-._size-color {
-  width: 100%;
-  background: var(--tg-theme-bg-color);
-  border-radius: 1.5em;
-  padding: 4%;
-}
-
 .personal-status-box {
-  width: 100%;
   height: fit-content;
   margin-top: 6%;
   display: flex;
@@ -80,7 +88,7 @@
   font-weight: 800;
   line-height: 32px;
 }
-.personal-status-box .status span {
+.personal-status-box .status-label {
   color: dodgerblue;
 }
 .personal-status-box .status-rules {
@@ -94,25 +102,6 @@
   width: 100%;
   height: fit-content;
 }
-.personal-status-box .status-sheet table {
-  width: 100%;
-  height: fit-content;
-}
-.personal-status-box .status-sheet table td, .personal-status-box .status-sheet table th {
-  padding: 1%;
-}
-.personal-status-box .status-sheet table span {
-  width: fit-content;
-}
-.personal-status-box .status-sheet table .first-column {
-  text-align: left;
-}
-.personal-status-box .status-sheet table .second-column {
-  text-align: right;
-}
-.personal-status-box .status-sheet table .third-column {
-  text-align: right;
-}
 
 .personal-phone-number-box .phone-number {
   margin-bottom: 3%;
@@ -125,10 +114,6 @@
   font-weight: 400;
 }
 .personal-phone-number-box .input-phone-number-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   height: 35px;
   width: 100%;
 }
@@ -136,7 +121,6 @@
   height: 100%;
   width: 55%;
   font-size: 12px;
-  font-weight: 600;
   color: var(--tg-theme-text-color);
   background: var(--tg-theme-bg-color);
   border: var(--tg-theme-text-color) solid 2px;
@@ -147,7 +131,6 @@
   height: fit-content;
   width: 55%;
   font-size: 18px;
-  font-weight: 600;
   color: var(--tg-theme-text-color);
   padding-left: 2%;
 }
@@ -155,7 +138,6 @@
 .personal-phone-number-box .input-phone-number-box .cancel-phone-number {
   height: 90%;
   width: fit-content;
-  font-weight: 600;
   color: var(--tg-theme-text-color);
   padding: 1%;
   border-radius: 1em;
@@ -179,10 +161,6 @@
   font-weight: 400;
 }
 .delivery-information-box .delivery-inf-full-name, .delivery-information-box .delivery-inf-phone-number {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   font-weight: 400;
   margin-bottom: 3%;
 }

@@ -10,11 +10,9 @@
   </div>
 
   <div class="personal-status-box _size-color">
-    <div class="status">
-      <h2>
-        Статус: <span>{{profileEnvironment.profileData.status}}</span>
-      </h2>
-    </div>
+    <h2 class="status">
+        Статус: <span class="status-label">{{profileEnvironment.profileData.status}}</span>
+    </h2>
     <div class="points-description">
       Ты получишь <span>+50 баллов</span> за каждый заказ
     </div>
@@ -24,38 +22,13 @@
       <p>Закажи и получи еще 3 товара, чтобы получить статус "Модник".</p>
     </div>
     <div class="status-sheet">
-      <table>
-        <tr>
-          <th class="first-column">Статус</th>
-          <th class="second-column">Баллов за заказ</th>
-          <th class="third-column">Заказов</th>
-        </tr>
-        <tr>
-          <td class="first-column">Новичок</td>
-          <td class="second-column"><span>+50</span></td>
-          <td class="third-column">0</td>
-        </tr>
-        <tr>
-          <td class="first-column">Модник</td>
-          <td class="second-column"><span>+150</span></td>
-          <td class="third-column">3</td>
-        </tr>
-        <tr>
-          <td class="first-column">Професионал</td>
-          <td class="second-column"><span>+250</span></td>
-          <td class="third-column">10</td>
-        </tr>
-        <tr>
-          <td class="first-column">Шопоголик</td>
-          <td class="second-column"><span>+350</span></td>
-          <td class="third-column">20</td>
-        </tr>
-        <tr>
-          <td class="first-column">Фэшн Киллер</td>
-          <td class="second-column"><span>+500</span></td>
-          <td class="third-column">30</td>
-        </tr>
-      </table>
+      <app-table-row
+        *ngFor="let row of statusTableData; index as i"
+        [index]="i"
+        status="{{row.status}}"
+        pointsForOrder="{{row.pointsForOrder}}"
+        orders="{{row.orders}}"
+      />
     </div>
   </div>
 
@@ -70,19 +43,19 @@
       *ngIf="!phoneNumberInputFieldIsShown"
       buttonText="Привязать телефон"
     />
-      <form
-        (ngSubmit)="submit()"
-        class="input-phone-number-box"
-        *ngIf="phoneNumberInputFieldIsShown && !phoneNumberIsShown"
+    <form
+      (ngSubmit)="submit()"
+      class="input-phone-number-box"
+      *ngIf="phoneNumberInputFieldIsShown && !phoneNumberIsShown"
+    >
+      <input
+        [(ngModel)]="profileEnvironment.profileData.personalPhoneNumber"
+        type="tel" class="input-phone-number"
+        name="phone-number" placeholder="+7"
       >
-        <input
-          [(ngModel)]="profileEnvironment.profileData.personalPhoneNumber"
-          type="tel" class="input-phone-number"
-          name="phone-number" placeholder="+7"
-        >
-        <button type="submit" class="submit-phone-number">Подтвердить</button>
-        <button type="button" class="cancel-phone-number">Отменить</button>
-      </form>
+      <button type="submit" class="submit-phone-number">Подтвердить</button>
+      <button type="button" class="cancel-phone-number">Отменить</button>
+    </form>
     <div
       *ngIf="phoneNumberIsShown"
       class="input-phone-number-box"
