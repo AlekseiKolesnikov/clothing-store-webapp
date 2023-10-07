@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Output, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {environment} from "../../../../../environments/environment.development";
+import {BaseComponent} from "../../../../shared/models/base-component.service";
 
 @Component({
   selector: 'app-channel',
@@ -7,23 +8,15 @@ import {environment} from "../../../../../environments/environment.development";
   styleUrls: ['./channel.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ChannelComponent {
-  @Output() buttonClick = new EventEmitter
+export class ChannelComponent extends BaseComponent {
   readonly channelEnvironment = environment
   constructor() {
+    super();
   }
 
-  click(): void {
+  override click(event: Event) {
+    super.click(event);
     // @ts-ignore
-    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelLink)
-    this.buttonClick.emit()
+    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelIconData.link)
   }
-  touch(event: Event) {
-    // @ts-ignore
-    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelLink)
-    event.preventDefault()
-    this.buttonClick.emit()
-  }
-
-  protected readonly environment = environment;
 }

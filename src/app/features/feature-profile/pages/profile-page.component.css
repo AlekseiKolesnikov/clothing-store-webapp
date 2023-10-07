@@ -1,0 +1,174 @@
+.personal-status-box .points-description span {
+  background: linear-gradient(253deg, #462eff, #a100c2, #ff29c6, #ff2929, #ffc23d);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.personal-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .personal-phone-number-box .input-phone-number-box .submit-phone-number:hover,
+  .personal-phone-number-box .input-phone-number-box .cancel-phone-number:hover {
+    cursor: pointer;
+  }
+}
+.personal-phone-number-box .input-phone-number-box .submit-phone-number:active,
+.personal-phone-number-box .input-phone-number-box .cancel-phone-number:active {
+  transform: scale(0.95, 0.95);
+}
+
+.delivery-information-box .delivery-inf-full-name, .delivery-information-box .delivery-inf-phone-number, .personal-phone-number-box .input-phone-number-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.personal-information-box, .profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+._size-color {
+  width: 100%;
+  background: var(--tg-theme-bg-color);
+  border-radius: 1.5em;
+  padding: 4%;
+}
+
+.profile-wrapper {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  font-weight: 600;
+  gap: 2%;
+}
+
+.personal-information-box {
+  width: 100%;
+  height: fit-content;
+  margin-top: 4%;
+}
+
+.personal-image {
+  width: 90px;
+  height: 90px;
+  font-size: 46px;
+  background: var(--tg-theme-bg-color);
+  border-radius: 100em;
+}
+
+.personal-name {
+  width: fit-content;
+  height: fit-content;
+  font-size: 25px;
+  font-weight: 800;
+  font-family: "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  margin-top: 4%;
+}
+
+.personal-status-box {
+  height: fit-content;
+  margin-top: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 14px;
+}
+.personal-status-box .status {
+  font-weight: 800;
+  line-height: 32px;
+}
+.personal-status-box .status-label {
+  color: dodgerblue;
+}
+.personal-status-box .status-rules {
+  width: 100%;
+  height: fit-content;
+  background: var(--tg-theme-secondary-bg-color);
+  padding: 5%;
+  border-radius: 1.5em;
+}
+.personal-status-box .status-sheet {
+  width: 100%;
+  height: fit-content;
+}
+
+.personal-phone-number-box .phone-number {
+  margin-bottom: 3%;
+}
+.personal-phone-number-box .phone-number .phone {
+  font-weight: 800;
+  margin-bottom: 3%;
+}
+.personal-phone-number-box .phone-number .phone-description {
+  font-weight: 400;
+}
+.personal-phone-number-box .input-phone-number-box {
+  height: 35px;
+  width: 100%;
+}
+.personal-phone-number-box .input-phone-number-box .input-phone-number {
+  height: 100%;
+  width: 55%;
+  font-size: 12px;
+  color: var(--tg-theme-text-color);
+  background: var(--tg-theme-bg-color);
+  border: var(--tg-theme-text-color) solid 2px;
+  border-radius: 1em;
+  padding-left: 2%;
+}
+.personal-phone-number-box .input-phone-number-box .final-phone-number {
+  height: fit-content;
+  width: 55%;
+  font-size: 18px;
+  color: var(--tg-theme-text-color);
+  padding-left: 2%;
+}
+.personal-phone-number-box .input-phone-number-box .submit-phone-number,
+.personal-phone-number-box .input-phone-number-box .cancel-phone-number {
+  height: 90%;
+  width: fit-content;
+  color: var(--tg-theme-text-color);
+  padding: 1%;
+  border-radius: 1em;
+}
+.personal-phone-number-box .input-phone-number-box .submit-phone-number {
+  background: var(--tg-theme-button-color);
+}
+.personal-phone-number-box .input-phone-number-box .cancel-phone-number {
+  background: var(--tg-theme-bg-color);
+  border: var(--tg-theme-text-color) solid 2px;
+}
+
+.delivery-information-box .delivery-inf {
+  margin-bottom: 4%;
+}
+.delivery-information-box .delivery-inf .delivery-inf-label {
+  font-weight: 800;
+  margin-bottom: 3%;
+}
+.delivery-information-box .delivery-inf .delivery-inf-description {
+  font-weight: 400;
+}
+.delivery-information-box .delivery-inf-full-name, .delivery-information-box .delivery-inf-phone-number {
+  font-weight: 400;
+  margin-bottom: 3%;
+}
+.delivery-information-box .delivery-inf-full-name div, .delivery-information-box .delivery-inf-phone-number div {
+  width: fit-content;
+}
+.delivery-information-box .delivery-inf-full-name .delivery-inf-no-data, .delivery-information-box .delivery-inf-phone-number .delivery-inf-no-data {
+  color: var(--tg-theme-hint-color);
+}
+
+/*# sourceMappingURL=profile-page.component.css.map */

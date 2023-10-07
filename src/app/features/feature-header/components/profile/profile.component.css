@@ -1,3 +1,71 @@
+.profile-icon {
+  align-items: start;
+  height: fit-content;
+  width: fit-content;
+  background: none;
+  font-family: "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  gap: 4%;
+}
 
+.profileImg {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background-color: var(--tg-theme-bg-color);
+  padding: 5px;
+  border-radius: 100em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2%;
+}
+
+.profile-emoji {
+  width: 30px;
+  height: 30px;
+}
+
+.profile-main-text {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.profile-name-arrow {
+  width: 24px;
+  height: 24px;
+}
+
+.material-symbols-outlined {
+  width: fit-content;
+  height: fit-content;
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
+}
+
+.profile-name-status {
+  width: fit-content;
+  height: fit-content;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.profile-status {
+  height: 30%;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 10px;
+  padding-right: 3%;
+  padding-left: 3%;
+  color: var(--tg-theme-bg-color);
+  background-color: var(--tg-theme-text-color);
+  border-radius: 0.5em;
+}
 
 /*# sourceMappingURL=profile.component.css.map */
