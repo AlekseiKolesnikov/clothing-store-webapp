@@ -85,89 +85,33 @@
   }
 }
 
-.personal-phone-number-box {
-  .phone-number {
-    margin-bottom: 3%;
+.delivery-inf-full-name,
+.delivery-inf-phone-number {
+  @extend %space-between-row-flex;
+  font-weight: 400;
+  margin-bottom: 3%;
 
-    .phone {
-      font-weight:800;
-      margin-bottom: 3%;
-    }
-    .phone-description {
-      font-weight: 400;
-    }
+  div {
+    width: fit-content;
   }
 
-  .input-phone-number-box {
-    @extend %space-between-row-flex;
-    height: 35px;
-    width: 100%;
-    .input-phone-number {
-      height: 100%;
-      width: 55%;
-      font-size: 12px;
-      color: var(--tg-theme-text-color);
-      background: var(--tg-theme-bg-color);
-      border: var(--tg-theme-text-color) solid 2px;
-      border-radius: 1em;
-      padding-left: 2%;
-    }
-
-    .final-phone-number {
-      height: fit-content;
-      width: 55%;
-      font-size: 18px;
-      color: var(--tg-theme-text-color);
-      padding-left: 2%;
-    }
-
-    .submit-phone-number,
-    .cancel-phone-number {
-      @extend %squeeze-animation;
-      height: 90%;
-      width: fit-content;
-      color: var(--tg-theme-text-color);
-      padding: 1%;
-      border-radius: 1em;
-    }
-
-    .submit-phone-number {
-      background: var(--tg-theme-button-color);
-    }
-
-    .cancel-phone-number {
-      background: var(--tg-theme-bg-color);
-      border: var(--tg-theme-text-color) solid 2px;
-    }
+  .delivery-inf-no-data {
+    color: var(--tg-theme-hint-color);
   }
 }
 
-.delivery-information-box {
-  .delivery-inf {
-    margin-bottom: 4%;
-    .delivery-inf-label {
-      font-weight: 800;
-      margin-bottom: 3%;
-    }
-
-    .delivery-inf-description {
-      font-weight: 400;
-    }
-  }
-
-  .delivery-inf-full-name, .delivery-inf-phone-number {
-    @extend %space-between-row-flex;
-    font-weight: 400;
-    margin-bottom: 3%;
-
-    div {
-      width: fit-content;
-    }
-
-    .delivery-inf-no-data {
-      color: var(--tg-theme-hint-color);
-    }
-  }
+.phone-description,
+.delivery-inf-description {
+  font-weight: 400;
 }
 
+.phone-number,
+.delivery-inf {
+  margin-bottom: 4%;
+}
 
+.phone,
+.delivery-inf-label {
+  font-weight: 800;
+  margin-bottom: 3%;
+}

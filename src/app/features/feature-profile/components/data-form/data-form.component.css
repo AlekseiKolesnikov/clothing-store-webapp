@@ -1,0 +1,56 @@
+.input-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .input-box .submit-button:hover,
+  .input-box .cancel-button:hover {
+    cursor: pointer;
+  }
+}
+.input-box .submit-button:active,
+.input-box .cancel-button:active {
+  transform: scale(0.95, 0.95);
+}
+
+.input-box {
+  height: 35px;
+  width: 100%;
+}
+.input-box .input-field {
+  height: 100%;
+  width: 55%;
+  font-size: 12px;
+  color: var(--tg-theme-text-color);
+  background: var(--tg-theme-bg-color);
+  border: var(--tg-theme-text-color) solid 2px;
+  border-radius: 1em;
+  padding-left: 2%;
+}
+.input-box .final-data {
+  height: fit-content;
+  width: 55%;
+  font-size: 18px;
+  color: var(--tg-theme-text-color);
+  padding-left: 2%;
+}
+.input-box .submit-button,
+.input-box .cancel-button {
+  height: 90%;
+  width: fit-content;
+  color: var(--tg-theme-text-color);
+  padding: 1%;
+  border-radius: 1em;
+}
+.input-box .submit-button {
+  background: var(--tg-theme-button-color);
+}
+.input-box .cancel-button {
+  background: var(--tg-theme-bg-color);
+  border: var(--tg-theme-text-color) solid 2px;
+}
+
+/*# sourceMappingURL=data-form.component.css.map */

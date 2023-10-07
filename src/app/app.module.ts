@@ -12,12 +12,14 @@ import {MainPageComponent} from "./core/page/main-page.component";
 import {FormsModule} from "@angular/forms";
 import {FullScreenButtonComponent} from "./shared/components/ui/wide-button/full-screen-button.component";
 import {TableRowComponent} from "./features/feature-profile/components/table-row/table-row.component";
+import {DataFormComponent} from "./features/feature-profile/components/data-form/data-form.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     FullScreenButtonComponent,
     TableRowComponent,
+    DataFormComponent,
     MainPageComponent,
     HeaderComponent,
     ProfileComponent,

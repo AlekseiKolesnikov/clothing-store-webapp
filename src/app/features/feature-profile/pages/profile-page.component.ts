@@ -11,21 +11,15 @@ import {StatusTableData} from "../data/status-table.data";
 })
 export class ProfilePageComponent extends BaseComponent {
   phoneNumberInputFieldIsShown: boolean = false
-  phoneNumberIsShown: boolean = false
 
   readonly statusTableData = StatusTableData
-  readonly profileEnvironment = environment
+  protected readonly profileEnvironment = environment
 
 
   bindPhoneNumber() {
-    this.phoneNumberInputFieldIsShown = true
+    this.phoneNumberInputFieldIsShown = !this.phoneNumberInputFieldIsShown
   }
 
   bindDeliveryInf() {
-  }
-
-  override submit() {
-    super.submit();
-    this.phoneNumberIsShown = true
   }
 }

@@ -1,0 +1,42 @@
+<form
+  (ngSubmit)="submit()"
+  class="input-box"
+  *ngIf="inputFieldIsShown && !phoneNumberIsShown"
+>
+  <input
+    [(ngModel)]="profileEnvironment.profileData.personalPhoneNumber"
+    type="{{buttonType}}"
+    class="input-field"
+    name="input-field"
+    placeholder="{{buttonPlaceholder}}"
+  >
+  <button
+    type="submit"
+    class="submit-button">
+    {{submitButtonText}}
+  </button>
+  <button
+    type="button"
+    class="cancel-button"
+    (click)="click($event)"
+  >
+    {{cancelButtonText}}
+  </button>
+</form>
+
+<div
+  class="input-box"
+  *ngIf="phoneNumberIsShown"
+>
+  <div
+    class="final-data"
+  >{{profileEnvironment.profileData.personalPhoneNumber}}
+  </div>
+  <button
+    type="button" class="cancel-button"
+    (click)="phoneNumberIsShown = !phoneNumberIsShown"
+    *ngIf="phoneNumberIsShown"
+  >{{changeButtonText}}
+  </button>
+</div>
+

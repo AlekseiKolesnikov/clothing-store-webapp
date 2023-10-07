@@ -20,6 +20,7 @@ export const environment = {
     status: "Новичок",
     personalPhoneNumber: "",
     recipientFullName: "",
-    recipientPhoneNumber: ""
+    recipientPhoneNumber: "",
+    inputFieldIsShown: false
   }
 };

@@ -15,8 +15,4 @@ export class FullScreenButtonComponent {
     this.buttonClick.emit()
     event.preventDefault()
   }
-
-  submit( ) {
-
-  }
 }
