@@ -1,0 +1,28 @@
+@import "../../../../styles/top-center-column-flex.pattern";
+@import "../../../../styles/center-flex.pattern";
+
+.personal-information-box {
+  @extend %top-center-column-flex;
+  width: 100%;
+  height: fit-content;
+  margin-top: 4%;
+}
+
+.personal-image {
+  @extend %center-flex;
+  width: 90px;
+  height: 90px;
+  font-size: 46px;
+  background: var(--tg-theme-bg-color);
+  border-radius: 100em;
+}
+
+.personal-name {
+  width: fit-content;
+  height: fit-content;
+  font-size: 25px;
+  font-weight: 800;
+  font-family: 'Mulish', sans-serif;
+  color: var(--tg-theme-text-color);
+  margin-top: 4%;
+}

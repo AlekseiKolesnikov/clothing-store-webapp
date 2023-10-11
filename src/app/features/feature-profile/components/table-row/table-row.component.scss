@@ -1,9 +1,8 @@
 @import "../../../../styles/gradient.pattern";
-@import "../../../../styles/space-between-row-flex";
+@import "../../../../styles/space-between-row-flex.pattern";
 
 .table-row {
   @extend %space-between-row-flex;
-
 }
 
 .first-row-span, .points-span {

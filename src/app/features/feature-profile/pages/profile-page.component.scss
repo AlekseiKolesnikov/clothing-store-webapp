@@ -1,117 +1,21 @@
-@import "../../../styles/gradient.pattern";
-@import "../../../styles/center-flex.pattern";
-@import "../../../styles/squeeze-animation.pattern";
-@import "../../../styles/space-between-row-flex";
-@import "../../../styles/start-center-align-column-flex";
-
-._size-color {
-  width: 100%;
-  background: var(--tg-theme-bg-color);
-  border-radius: 1.5em;
-  padding: 4%;
-}
+@import "../../../styles/top-center-column-flex.pattern";
 
 .profile-wrapper {
-  @extend %start-column-flex;
+  @extend %top-center-column-flex;
   height: 100vh;
   width: 100vw;
   font-family: 'Mulish', sans-serif;
   color: var(--tg-theme-text-color);
+  font-size: 16px;
   font-weight: 600;
   gap: 2%;
+  overflow-y: scroll;
 }
 
-.personal-information-box {
-  @extend %start-column-flex;
+.__profile-blocks {
+  height: fit-content;
   width: 100%;
-  height: fit-content;
-  margin-top: 4%;
-}
-
-.personal-image {
-  @extend %center-flex;
-  width: 90px;
-  height: 90px;
-  font-size: 46px;
   background: var(--tg-theme-bg-color);
-  border-radius: 100em;
-}
-
-.personal-name {
-  width: fit-content;
-  height: fit-content;
-  font-size: 25px;
-  font-weight: 800;
-  font-family: 'Mulish', sans-serif;
-  color: var(--tg-theme-text-color);
-  margin-top: 4%;
-}
-
-.personal-status-box {
-  height: fit-content;
-  margin-top: 6%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 14px;
-
-  .status {
-    font-weight: 800;
-    line-height: 32px;
-  }
-
-  .status-label {
-    color: dodgerblue;
-  }
-
-  .points-description {
-    span {
-      @extend %gradient-pattern;
-    }
-  }
-
-  .status-rules {
-    width: 100%;
-    height: fit-content;
-    background: var(--tg-theme-secondary-bg-color);
-    padding: 5%;
-    border-radius: 1.5em;
-  }
-
-  .status-sheet {
-    width: 100%;
-    height: fit-content;
-  }
-}
-
-.delivery-inf-full-name,
-.delivery-inf-phone-number {
-  @extend %space-between-row-flex;
-  font-weight: 400;
-  margin-bottom: 3%;
-
-  div {
-    width: fit-content;
-  }
-
-  .delivery-inf-no-data {
-    color: var(--tg-theme-hint-color);
-  }
-}
-
-.phone-description,
-.delivery-inf-description {
-  font-weight: 400;
-}
-
-.phone-number,
-.delivery-inf {
-  margin-bottom: 4%;
-}
-
-.phone,
-.delivery-inf-label {
-  font-weight: 800;
-  margin-bottom: 3%;
+  border-radius: 1.5em;
+  padding: 4%;
 }

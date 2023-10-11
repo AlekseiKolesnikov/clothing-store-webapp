@@ -19,8 +19,6 @@ export const environment = {
     name: "Aleksei",
     status: "Новичок",
     personalPhoneNumber: "",
-    recipientFullName: "",
-    recipientPhoneNumber: "",
-    inputFieldIsShown: false
+    personalFullName: ""
   }
 };

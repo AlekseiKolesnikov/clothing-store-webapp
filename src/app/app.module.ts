@@ -10,29 +10,44 @@ import {ProfileComponent} from "./features/feature-header/components/profile/pro
 import {ProfilePageComponent} from "./features/feature-profile/pages/profile-page.component";
 import {MainPageComponent} from "./core/page/main-page.component";
 import {FormsModule} from "@angular/forms";
-import {FullScreenButtonComponent} from "./shared/components/ui/wide-button/full-screen-button.component";
+import {ButtonComponent} from "./shared/components/ui/button/button.component";
 import {TableRowComponent} from "./features/feature-profile/components/table-row/table-row.component";
-import {DataFormComponent} from "./features/feature-profile/components/data-form/data-form.component";
+import {DataFormComponent} from "./shared/components/ui/data-form/data-form.component";
+import {
+      ProfileDeliveryInfComponent
+} from "./features/feature-profile/components/profile-delivery-inf/profile-delivery-inf.component";
+import {
+      ProfileIconNameComponent
+} from "./features/feature-profile/components/profile-icon-name/profile-icon-name.component";
+import {ProfileStatusComponent} from "./features/feature-profile/components/profile-satus/profile-status.component";
+import {
+      ProfileInputFieldComponent
+} from "./features/feature-profile/components/profile-input-field/profile-input-field.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FullScreenButtonComponent,
-    TableRowComponent,
-    DataFormComponent,
-    MainPageComponent,
-    HeaderComponent,
-    ProfileComponent,
-    ChannelComponent,
-    ProfilePageComponent
-  ],
+      declarations: [
+            AppComponent,
+            ButtonComponent,
+            TableRowComponent,
+            DataFormComponent,
+            ProfileDeliveryInfComponent,
+            ProfileIconNameComponent,
+            ProfileStatusComponent,
+            ProfileInputFieldComponent,
+            MainPageComponent,
+            HeaderComponent,
+            ProfileComponent,
+            ChannelComponent,
+            ProfilePageComponent
+      ],
       imports: [
             BrowserModule,
             AppRoutingModule,
             NgOptimizedImage,
             FormsModule
       ],
-  providers: [],
-  bootstrap: [AppComponent]
+      providers: [],
+      bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
