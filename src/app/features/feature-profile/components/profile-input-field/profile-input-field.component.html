@@ -34,8 +34,8 @@
         *ngIf="inputFiledIsShown"
 >
         <div class="data-result-box">
-                {{inputName === 'name' ? environment.profileData.personalFullName :
-                environment.profileData.personalPhoneNumber}}
+                {{(inputName === 'name' ? environment.profileData.personalFullName :
+                environment.profileData.personalPhoneNumber) | truncate : 25}}
         </div>
         <app-button
                 buttonClassName="color"

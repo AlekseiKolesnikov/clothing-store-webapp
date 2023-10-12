@@ -23,6 +23,7 @@ import {ProfileStatusComponent} from "./features/feature-profile/components/prof
 import {
       ProfileInputFieldComponent
 } from "./features/feature-profile/components/profile-input-field/profile-input-field.component";
+import {TruncatePipe} from "./shared/pipes/truncate.pipe";
 
 @NgModule({
       declarations: [
@@ -34,6 +35,7 @@ import {
             ProfileIconNameComponent,
             ProfileStatusComponent,
             ProfileInputFieldComponent,
+            TruncatePipe,
             MainPageComponent,
             HeaderComponent,
             ProfileComponent,
