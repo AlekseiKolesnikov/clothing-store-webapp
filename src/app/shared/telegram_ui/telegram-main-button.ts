@@ -11,7 +11,7 @@ export class TelegramMainButton {
       ) {
       }
 
-      activateButton(text: string) {
+      activateMainButton(text: string) {
             // @ts-ignore
             Telegram.WebApp.MainButton.show();
             // @ts-ignore
