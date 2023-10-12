@@ -1,0 +1,7 @@
+@import "../../../styles/center-flex.pattern";
+
+.search-bar-wrapper {
+  @extend %center-flex;
+  width: 100%;
+  height: 36px;
+}

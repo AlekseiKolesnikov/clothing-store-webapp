@@ -1,17 +1,16 @@
 <form
-        class="input-box"
+  class="input-box"
 >
-        <input
-
-                [value]="inputName === 'name' ?
+  <input
+    (input)="submit($event)"
+    [maxLength]="inputTextLength"
+    [value]="inputName === 'name' ?
                 environment.profileData.personalFullName :
                 environment.profileData.personalPhoneNumber"
-                (input)="submit($event)"
-                [maxLength]="inputTextLength"
-                class="input-field"
-                name="{{inputName}}"
-                placeholder="{{buttonPlaceholder}}"
-                type="{{inputType}}"
-        >
+    class="input-field"
+    name="{{inputName}}"
+    placeholder="{{buttonPlaceholder}}"
+    type="{{inputType}}"
+  >
 </form>
 

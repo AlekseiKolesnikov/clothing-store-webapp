@@ -6,6 +6,7 @@
   height: 100%;
   width: 94%;
   margin: 0 3%;
+  gap: 1.2%;
   overflow-y: scroll;
 }
 
@@ -18,4 +19,9 @@
   width: 100%;
   height: fit-content;
   margin-top: 1%;
+}
+
+.search-bar-component {
+  width: 100%;
+  height: fit-content;
 }
