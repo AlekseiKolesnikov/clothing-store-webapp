@@ -1,22 +1,19 @@
 import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'app-full-screen-button',
-  templateUrl: './full-screen-button.component.html',
-  styleUrls: ['./full-screen-button.component.scss'],
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class FullScreenButtonComponent {
+export class ButtonComponent {
+  @Output() buttonClick = new EventEmitter
   @Input() buttonClassName: string
   @Input() buttonText: string
-  @Output() buttonClick = new EventEmitter
+  @Input() buttonType: string
 
   click(event: Event): void {
     this.buttonClick.emit()
     event.preventDefault()
-  }
-
-  submit( ) {
-
   }
 }

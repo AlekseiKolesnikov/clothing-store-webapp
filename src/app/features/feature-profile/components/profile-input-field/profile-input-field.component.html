@@ -1,0 +1,47 @@
+<div
+        class="profile-input-field-box"
+        *ngIf="!inputFiledIsShown"
+>
+        <div class="app-data-form-box">
+                <app-data-form
+                        buttonPlaceholder="{{buttonPlaceholder}}"
+                        inputName="{{inputName}}"
+                        [inputTextLength]="inputTextLength"
+                        inputType="{{inputType}}"
+                />
+        </div>
+      <div class="app-buttons-box">
+              <app-button
+                      buttonClassName="color"
+                      buttonText="Подтвердить"
+                      buttonType="submit"
+                      class="input-field-button"
+                      (buttonClick)="switchFormDataState()"
+              />
+              <app-button
+                      buttonClassName="clear"
+                      buttonText="Отменить"
+                      buttonType="button"
+                      class="input-field-button"
+                      (buttonClick)="switchInputState(inputName)"
+              />
+      </div>
+
+</div>
+
+<div
+        class="profile-input-field-box"
+        *ngIf="inputFiledIsShown"
+>
+        <div class="data-result-box">
+                {{(inputName === 'name' ? environment.profileData.personalFullName :
+                environment.profileData.personalPhoneNumber) | truncate : 25}}
+        </div>
+        <app-button
+                buttonClassName="color"
+                buttonText="Изменить"
+                buttonType="button"
+                class="input-field-button"
+                (buttonClick)="switchFormDataState()"
+        />
+</div>

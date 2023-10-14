@@ -13,10 +13,13 @@ body {
   height: 100%;
   line-height: 1;
   font-size: 16px;
+  display: block;
   background: var(--tg-theme-secondary-bg-color);
-  display: flex;
-  align-content: center;
-  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow: hidden;
 }
 
 nav,
@@ -71,6 +74,6 @@ input::-ms-clear {
 }
 
 .root {
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: 100%;
+  min-width: 100%;
 }

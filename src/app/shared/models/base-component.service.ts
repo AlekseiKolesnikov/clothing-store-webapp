@@ -1,15 +1,16 @@
-import {EventEmitter, Injectable, Output} from "@angular/core";
+import {Injectable} from "@angular/core";
+import {NgForm} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
 })
 export abstract class BaseComponent {
-  @Output() buttonClick = new EventEmitter
-
   click(event: Event): void {
-    this.buttonClick.emit()
     event.preventDefault()
   }
 
-  submit() {}
+  submit(event: any) {
+
+
+  }
 }

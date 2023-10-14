@@ -1,0 +1,39 @@
+@import "../../../../styles/space-between-row-flex.pattern";
+@import "../../../../styles/squeeze-animation.pattern";
+
+.profile-input-field-box {
+      @extend %space-between-row-flex;
+      width: 100%;
+      height: 100%;
+
+      app-data-form,
+      app-button {
+            width: fit-content;
+            height: 100%;
+      }
+}
+
+.input-field-button {
+      @extend %squeeze-animation;
+      height: 100%;
+      width: fit-content;
+}
+
+.app-data-form-box {
+      width: 45%;
+      height: 100%;
+}
+
+.app-buttons-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 52%;
+      height: 100%;
+}
+
+.data-result-box {
+      width: 70%;
+      height: 100%;
+}
