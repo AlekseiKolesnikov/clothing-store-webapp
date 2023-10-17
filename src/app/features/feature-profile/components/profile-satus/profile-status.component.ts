@@ -1,14 +1,19 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {environment} from "../../../../../environments/environment.development";
 import {StatusTableData} from "../../data/status-table.data";
+import {LocalStorageService} from "../../../../local-storage.service";
 
 @Component({
-  selector: 'app-profile-status',
-  templateUrl: './profile-status.component.html',
-  styleUrls: ['./profile-status.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-profile-status',
+    templateUrl: './profile-status.component.html',
+    styleUrls: ['./profile-status.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class ProfileStatusComponent {
-  protected readonly environment = environment;
-  protected readonly statusTableData = StatusTableData;
+    protected readonly statusTableData = StatusTableData;
+    protected readonly profileData = this.localStorageService.getItem('profileData')
+
+    constructor(
+        private localStorageService: LocalStorageService
+    ) {
+    }
 }

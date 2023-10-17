@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, isDevMode} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -27,6 +27,8 @@ import {TruncatePipe} from "./shared/pipes/truncate.pipe";
 import {SearchBarWidgetComponent} from "./features/feature-search-bar/components/search-bar-widget/search-bar-widget.component";
 import {SearchBarPageComponent} from "./features/feature-search-bar/pages/search-bar-page.component";
 import {SearchBarComponent} from "./core/components/search-bar/search-bar.component";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import {LocalStorageService} from "./local-storage.service";
 
 @NgModule({
   declarations: [
@@ -52,9 +54,15 @@ import {SearchBarComponent} from "./core/components/search-bar/search-bar.compon
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

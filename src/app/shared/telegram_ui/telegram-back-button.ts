@@ -13,6 +13,10 @@ export class TelegramBackButton {
     private router: Router,
     private location: Location
   ) {
+    // @ts-ignore
+    Telegram.WebApp.BackButton.onClick(() => {
+      this.location.back()
+    })
   }
 
   useDirection() {
@@ -26,11 +30,7 @@ export class TelegramBackButton {
           // @ts-ignore
           Telegram.WebApp.MainButton.hide();
           // @ts-ignore
-          Telegram.WebApp.BackButton.show()
-          // @ts-ignore
-          Telegram.WebApp.BackButton.onClick(() => {
-            this.location.back()
-          })
+          Telegram.WebApp.BackButton.show();
         }
       })
   }

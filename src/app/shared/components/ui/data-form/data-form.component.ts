@@ -1,6 +1,6 @@
-import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {environment} from "../../../../../environments/environment.development";
+import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../models/base-component.service";
+import {LocalStorageService} from "../../../../local-storage.service";
 
 @Component({
   selector: 'app-data-form',
@@ -13,16 +13,23 @@ export class DataFormComponent extends BaseComponent {
   @Input() inputType: string
   @Input() buttonPlaceholder: string
   @Input() inputName: string
+  @Output() newItemEvent = new EventEmitter<string>()
+
+  protected readonly profileData = this.localStorageService.getItem('profileData')
+
+  constructor(
+    protected readonly localStorageService: LocalStorageService
+  ) {
+    super();
+  }
 
   override submit(event: any) {
     super.submit(event);
     if (this.inputName === 'number') {
-      environment.profileData.personalPhoneNumber = event.target.value
+      this.localStorageService.setItem('personalPhoneNumber', event.target.value)
     }
     if (this.inputName === 'name') {
-      environment.profileData.personalFullName = event.target.value
+      this.localStorageService.setItem('personalFullName', event.target.value)
     }
   }
-
-  protected readonly environment = environment;
 }

@@ -4,9 +4,6 @@
   <input
     (input)="submit($event)"
     [maxLength]="inputTextLength"
-    [value]="inputName === 'name' ?
-                environment.profileData.personalFullName :
-                environment.profileData.personalPhoneNumber"
     class="input-field"
     name="{{inputName}}"
     placeholder="{{buttonPlaceholder}}"

@@ -17,5 +17,9 @@ export class SearchBarWidgetComponent extends BaseComponent {
   override click(event: Event) {
     super.click(event);
     this.router.navigate(['search-bar-page'])
+    // @ts-ignore
+    Telegram.WebApp.CloudStorage.getItem('channelIconData', (value) => {
+      console.log(value)
+    });
   }
 }

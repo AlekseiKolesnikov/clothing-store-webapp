@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {environment} from "../../../../../environments/environment.development";
 import {BaseComponent} from "../../../../shared/models/base-component.service";
 import {Router} from "@angular/router";
+import {LocalStorageService} from "../../../../local-storage.service";
 
 @Component({
   selector: 'app-profile',
@@ -10,9 +10,11 @@ import {Router} from "@angular/router";
   encapsulation: ViewEncapsulation.None
 })
 export class ProfileComponent extends BaseComponent {
-  readonly profileEnvironment = environment
+  protected readonly profileData = this.localStorageService.getItem('profileData')
+
   constructor(
-     private router: Router
+    private router: Router,
+    protected readonly localStorageService: LocalStorageService
   ) {
     super();
   }
