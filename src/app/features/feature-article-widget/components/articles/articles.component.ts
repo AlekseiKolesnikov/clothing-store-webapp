@@ -1,5 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {LocalStorageService} from "../../../../local-storage.service";
+import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-articles',
@@ -8,8 +9,8 @@ import {LocalStorageService} from "../../../../local-storage.service";
   encapsulation: ViewEncapsulation.None
 })
 export class ArticlesComponent {
-  protected readonly articlesWidgetsData = this.localStorageService.getItem('articleWidgetData');
-  frameState: boolean = false
+  protected readonly articlesWidgetsData = this.localStorageService.getItem(localStorageKeys.articleWidgetsKey);
+  protected frameState: boolean = false
   constructor(
     private localStorageService: LocalStorageService
   ) {

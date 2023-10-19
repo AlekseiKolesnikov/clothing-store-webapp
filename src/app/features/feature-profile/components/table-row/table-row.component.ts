@@ -12,10 +12,10 @@ export class TableRowComponent implements OnInit {
   @Input() orders: string
   @Input() index: number
 
-  firstColumnClass: string
-  secondColumnClass: string
-  thirdColumnClass: string
-  spanColumnStile: string
+  protected firstColumnClass: string
+  protected secondColumnClass: string
+  protected thirdColumnClass: string
+  protected spanColumnStile: string
 
   ngOnInit() {
     if (this.index === 0) {

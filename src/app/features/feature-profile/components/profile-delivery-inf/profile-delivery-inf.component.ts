@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {InputFieldStateService} from "../../service/input-field-state.service";
 import {InputResultStateService} from "../../service/input-result-state.service";
 import {LocalStorageService} from "../../../../local-storage.service";
+import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-profile-delivery-inf',
@@ -27,11 +28,11 @@ export class ProfileDeliveryInfComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.localStorageService.getItem('personalFullName').length > 0) {
+    if (this.localStorageService.getItem(localStorageKeys.personalFullName).length > 0) {
       this.inputResultStateService.setNameInputResultState(true)
       this.inputFieldStateService.setNameInputState(true)
     }
-    if (this.localStorageService.getItem('personalPhoneNumber').length > 0) {
+    if (this.localStorageService.getItem(localStorageKeys.personalPhoneNumber).length > 0) {
       this.inputResultStateService.setPhoneInputResultState(true)
       this.inputFieldStateService.setPhoneInputState(true)
     }

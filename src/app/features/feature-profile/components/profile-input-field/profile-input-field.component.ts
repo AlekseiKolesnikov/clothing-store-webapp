@@ -2,6 +2,7 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {InputFieldStateService} from "../../service/input-field-state.service";
 import {LocalStorageService} from "../../../../local-storage.service";
 import {InputResultStateService} from "../../service/input-result-state.service";
+import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
 
 @Component({
     selector: 'app-profile-input-field',
@@ -15,10 +16,10 @@ export class ProfileInputFieldComponent {
     @Input() buttonPlaceholder: string
     @Input() inputName: string
 
-    phoneResultState: boolean
-    nameResultState: boolean
-    protected personalFullName: string = this.localStorageService.getItem('personalFullName')
-    protected personalPhoneNumber: string = this.localStorageService.getItem('personalPhoneNumber')
+    protected phoneResultState: boolean
+    protected nameResultState: boolean
+    protected personalFullName: string = this.localStorageService.getItem(localStorageKeys.personalFullName)
+    protected personalPhoneNumber: string = this.localStorageService.getItem(localStorageKeys.personalPhoneNumber)
 
     constructor(
         private inputButtonStateService: InputFieldStateService,
@@ -43,8 +44,8 @@ export class ProfileInputFieldComponent {
     }
 
     switchFormDataState() {
-        this.personalFullName = this.localStorageService.getItem('personalFullName')
-        this.personalPhoneNumber = this.localStorageService.getItem('personalPhoneNumber')
+        this.personalFullName = this.localStorageService.getItem(localStorageKeys.personalFullName)
+        this.personalPhoneNumber = this.localStorageService.getItem(localStorageKeys.personalPhoneNumber)
 
         this.inputName === 'name' ?
             this.inputResultStateService.setNameInputResultState(this.nameResultState = !this.nameResultState) :

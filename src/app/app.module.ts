@@ -10,9 +10,9 @@ import {ProfileComponent} from "./features/feature-header/components/profile/pro
 import {ProfilePageComponent} from "./features/feature-profile/pages/profile-page.component";
 import {MainPageComponent} from "./core/page/main-page.component";
 import {FormsModule} from "@angular/forms";
-import {ButtonComponent} from "./shared/components/ui/button/button.component";
+import {ButtonComponent} from "./shared/components/button/button.component";
 import {TableRowComponent} from "./features/feature-profile/components/table-row/table-row.component";
-import {DataFormComponent} from "./shared/components/ui/data-form/data-form.component";
+import {DataFormComponent} from "./shared/components/data-form/data-form.component";
 import {
   ProfileDeliveryInfComponent
 } from "./features/feature-profile/components/profile-delivery-inf/profile-delivery-inf.component";
@@ -58,13 +58,7 @@ import {ArticlesComponent} from "./features/feature-article-widget/components/ar
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+    FormsModule
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

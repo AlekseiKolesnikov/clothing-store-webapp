@@ -5,8 +5,8 @@
     (input)="submit($event)"
     [maxLength]="inputTextLength"
     [value]="inputName === 'name' ?
-               localStorageService.getItem('personalFullName') :
-                localStorageService.getItem('personalPhoneNumber')"
+               localStorageService.getItem(localStorageKeys.personalFullName) :
+                localStorageService.getItem(localStorageKeys.personalPhoneNumber)"
     class="input-field"
     name="{{inputName}}"
     placeholder="{{buttonPlaceholder}}"
