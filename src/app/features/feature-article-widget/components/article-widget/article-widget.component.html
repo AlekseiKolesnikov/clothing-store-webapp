@@ -1,0 +1,10 @@
+<button
+  (click)="click($event)"
+  (touchend)="click($event)"
+  class="article-widget"
+>
+  <span class="frame-image-box">
+    <img *ngIf="!frameIsShown" alt="frame" class="article-widget-frame" src="assets/article_icons/frame.svg">
+    <img alt="{{widgetName}}" class="article-widget-image" src="{{widgetImage}}">
+  </span>
+</button>

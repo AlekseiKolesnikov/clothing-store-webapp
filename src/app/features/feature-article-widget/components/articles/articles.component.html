@@ -1,0 +1,10 @@
+<div class="articles-box">
+  <app-article-widget
+    *ngFor="let item of articlesWidgetsData"
+    class="article-widget-box"
+    frameIsShown="{{frameState}}"
+    widgetImage="{{item.image}}"
+    widgetLink="{{item.link}}"
+    widgetName="{{item.name}}"
+  />
+</div>

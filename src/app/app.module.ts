@@ -29,6 +29,8 @@ import {SearchBarPageComponent} from "./features/feature-search-bar/pages/search
 import {SearchBarComponent} from "./core/components/search-bar/search-bar.component";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import {LocalStorageService} from "./local-storage.service";
+import {ArticleWidgetComponent} from "./features/feature-article-widget/components/article-widget/article-widget.component";
+import {ArticlesComponent} from "./features/feature-article-widget/components/articles/articles.component";
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import {LocalStorageService} from "./local-storage.service";
     HeaderComponent,
     ProfileComponent,
     ChannelComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    ArticleWidgetComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
