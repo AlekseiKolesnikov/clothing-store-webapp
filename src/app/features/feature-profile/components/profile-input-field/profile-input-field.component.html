@@ -1,6 +1,6 @@
 <div
         class="profile-input-field-box"
-        *ngIf="!inputFiledIsShown"
+        *ngIf="inputName === 'name' ? !nameResultState : !phoneResultState"
 >
         <div class="app-data-form-box">
                 <app-data-form
@@ -31,11 +31,11 @@
 
 <div
         class="profile-input-field-box"
-        *ngIf="inputFiledIsShown"
+        *ngIf="inputName === 'name' ? nameResultState : phoneResultState"
 >
         <div class="data-result-box">
-                {{(inputName === 'name' ? environment.profileData.personalFullName :
-                environment.profileData.personalPhoneNumber) | truncate : 25}}
+                {{(inputName === 'name' ? personalFullName :
+                personalPhoneNumber) | truncate : 30}}
         </div>
         <app-button
                 buttonClassName="color"

@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Router} from "@angular/router";
 import {TelegramBackButton} from "./shared/telegram_ui/telegram-back-button";
+import {InitializeMainData} from "./initialize-main-data";
+import {appRoutes} from "./shared/data/app-routes";
 
 @Component({
   selector: 'app-root',
@@ -10,15 +12,18 @@ import {TelegramBackButton} from "./shared/telegram_ui/telegram-back-button";
 })
 export class AppComponent implements OnInit {
   title = 'clothing-store';
+
   constructor(
     private router: Router,
-    private telegramBackButton: TelegramBackButton
+    private telegramBackButton: TelegramBackButton,
+    private initializeMainData: InitializeMainData
   ) {
     this.telegramBackButton.useDirection()
+    this.initializeMainData.initialize()
   }
 
   ngOnInit() {
-    this.router.navigate(['main-page'])
+    this.router.navigate([appRoutes.mainPage])
   }
 }
 

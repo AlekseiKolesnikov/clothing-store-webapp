@@ -1,6 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {environment} from "../../../../../environments/environment.development";
 import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {LocalStorageService} from "../../../../local-storage.service";
+import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-channel',
@@ -9,14 +10,17 @@ import {BaseComponent} from "../../../../shared/models/base-component.service";
   encapsulation: ViewEncapsulation.None
 })
 export class ChannelComponent extends BaseComponent {
-  readonly channelEnvironment = environment
-  constructor() {
+  protected readonly channelIconData = this.localStorageService.getItem(localStorageKeys.channelIconKey)
+
+  constructor(
+    protected readonly localStorageService: LocalStorageService
+  ) {
     super();
   }
 
   override click(event: Event) {
     super.click(event);
     // @ts-ignore
-    Telegram.WebApp.openTelegramLink(this.channelEnvironment.channelIconData.link)
+    Telegram.WebApp.openTelegramLink(this.channelIconData.link)
   }
 }

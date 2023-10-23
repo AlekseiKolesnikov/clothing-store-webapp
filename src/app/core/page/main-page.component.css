@@ -4,9 +4,10 @@
   justify-content: flex-start;
   flex-direction: column;
   height: 100%;
-  width: 94%;
-  margin: 0 3%;
+  width: 100%;
+  gap: 1.2%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .header-component {
@@ -14,9 +15,23 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
+  width: 94%;
   height: fit-content;
   margin-top: 1%;
+}
+
+.search-bar-component {
+  width: 94%;
+  height: fit-content;
+}
+
+.articles-component {
+  width: 94%;
+  scroll-padding-left: 6%;
+  height: fit-content;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 /*# sourceMappingURL=main-page.component.css.map */

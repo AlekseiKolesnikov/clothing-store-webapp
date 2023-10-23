@@ -1,0 +1,36 @@
+.channel-icon-wrapper, .profile-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .header-icons-gen:hover {
+    cursor: pointer;
+  }
+}
+.header-icons-gen:active {
+  transform: scale(0.98, 0.98);
+}
+
+.profile-icon-wrapper {
+  height: 100%;
+  width: fit-content;
+}
+
+.channel-icon-wrapper {
+  height: 36px;
+  width: fit-content;
+}
+
+.header-icons-gen {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 12em;
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=header.component.css.map */

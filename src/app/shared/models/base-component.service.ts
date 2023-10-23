@@ -9,8 +9,7 @@ export abstract class BaseComponent {
     event.preventDefault()
   }
 
-  submit(event: any) {
-
-
+  submit(event: Event) {
+    event.preventDefault()
   }
 }
