@@ -26,12 +26,15 @@
 }
 
 .articles-component {
-  width: 94%;
+  position: relative;
+  width: 100%;
+  padding-left: 3%;
   scroll-padding-left: 6%;
   height: fit-content;
   scroll-snap-type: x mandatory;
   overflow-y: hidden;
   overflow-x: scroll;
+  touch-action: none;
 }
 
 .order-balance-component {

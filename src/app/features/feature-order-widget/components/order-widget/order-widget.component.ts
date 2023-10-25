@@ -22,4 +22,8 @@ export class OrderWidgetComponent extends BaseComponent {
     super.click(event);
     this.router.navigate([appRoutes.orderWidgetPage])
   }
+
+  override touch(event: Event) {
+    super.touch(event);
+  }
 }

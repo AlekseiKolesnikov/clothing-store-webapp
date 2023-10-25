@@ -13,11 +13,11 @@ export class FullScreenWidgetOrderPageComponent extends BaseComponent {
   @Input() text: string
   @Input() arrow: string
 
-  constructor(
-  ) {
-    super();
-  }
   override click(event: Event) {
     super.click(event);
+  }
+
+  override touch(event: Event) {
+    super.touch(event);
   }
 }

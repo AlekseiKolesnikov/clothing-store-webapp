@@ -17,4 +17,8 @@ export class SquareWidgetOrderPageComponent extends BaseComponent {
   override click(event: Event) {
     super.click(event);
   }
+
+  override touch(event: Event) {
+    super.touch(event);
+  }
 }

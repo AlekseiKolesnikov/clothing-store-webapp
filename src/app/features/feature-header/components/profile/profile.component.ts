@@ -25,4 +25,8 @@ export class ProfileComponent extends BaseComponent {
     super.click(event);
     this.router.navigate([appRoutes.profilePage])
   }
+
+  override touch(event: Event) {
+    super.touch(event);
+  }
 }
