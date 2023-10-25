@@ -53,9 +53,10 @@
 .order-page-full-screen-widget-text p {
   width: 12em;
 }
-.order-page-full-screen-widget-text img {
+.order-page-full-screen-widget-text svg {
   width: 22px;
   height: 22px;
+  color: var(--tg-theme-text-color);
 }
 
 /*# sourceMappingURL=full-screen-widget-order-page.component.css.map */
