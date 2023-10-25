@@ -1,0 +1,37 @@
+@import "../../../styles/center-flex.pattern";
+@import "../../../styles/squeeze-animation.pattern";
+
+.score-widget-component {
+  grid-area: score;
+  background: var(--tg-theme-bg-color);
+}
+
+.friends-widget-component {
+  grid-area: friends;
+  background: var(--tg-theme-bg-color);
+}
+
+.order-widget-component {
+  @extend %center-flex;
+  grid-area: order;
+  background: rgb(0, 124, 255);;
+}
+
+.__widgets-common-style {
+  @extend %squeeze-animation;
+  border-radius: 2em;
+}
+
+.order-balance-widgets-box {
+  height: 220px;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "score order"
+    "friends order";
+  gap: 0.6em;
+  grid-template-rows: 45.5% 1fr;
+  grid-template-columns: 48% 1fr;
+  z-index: 0;
+}
+

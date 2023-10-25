@@ -16,7 +16,8 @@ export class ArticleWidgetComponent extends BaseComponent {
   override click(event: Event) {
     super.click(event);
     this.frameIsShown = true
+
     // @ts-ignore
-    Telegram.WebApp.openLink(this.widgetLink)
+    Telegram.WebApp.openLink(this.widgetLink, {try_instant_view: true})
   }
 }

@@ -5,11 +5,10 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  gap: 1.2%;
+  gap: 1.5%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
 
 .header-component {
   display: flex;
@@ -33,4 +32,9 @@
   scroll-snap-type: x mandatory;
   overflow-y: hidden;
   overflow-x: scroll;
+}
+
+.order-balance-component {
+  width: 94%;
+  height: fit-content;
 }

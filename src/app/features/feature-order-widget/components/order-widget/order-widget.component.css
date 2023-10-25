@@ -1,0 +1,40 @@
+.order-widget-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.order-widget-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-widget-box {
+  height: 78%;
+  width: 78%;
+}
+
+.order-widget-text {
+  width: fit-content;
+  height: fit-content;
+  font-family: "Mulish", sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  color: white;
+}
+
+.order-widget-icon {
+  width: 4em;
+  height: 4em;
+  background: white;
+  border-radius: 50%;
+}
+
+.order-widget-icon-arrow {
+  width: 32px;
+  height: 32px;
+}
+
+/*# sourceMappingURL=order-widget.component.css.map */

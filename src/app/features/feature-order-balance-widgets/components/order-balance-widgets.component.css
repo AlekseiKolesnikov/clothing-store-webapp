@@ -1,0 +1,55 @@
+.order-widget-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .__widgets-common-style:hover {
+    cursor: pointer;
+  }
+}
+.__widgets-common-style:active {
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+.score-widget-component {
+  grid-area: score;
+  background: var(--tg-theme-bg-color);
+}
+
+.friends-widget-component {
+  grid-area: friends;
+  background: var(--tg-theme-bg-color);
+}
+
+.order-widget-component {
+  grid-area: order;
+  background: rgb(0, 124, 255);
+}
+
+.__widgets-common-style {
+  border-radius: 2em;
+}
+
+.order-balance-widgets-box {
+  height: 220px;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "score order" "friends order";
+  gap: 0.6em;
+  grid-template-rows: 45.5% 1fr;
+  grid-template-columns: 48% 1fr;
+  z-index: 0;
+}
+
+/*# sourceMappingURL=order-balance-widgets.component.css.map */

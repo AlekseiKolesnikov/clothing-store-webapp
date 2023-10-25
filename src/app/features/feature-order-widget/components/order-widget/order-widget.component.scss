@@ -1,0 +1,30 @@
+@import "../../../../styles/space-between-start-column-flex.pattern";
+@import "../../../../styles/center-flex.pattern";
+
+.order-widget-box {
+  @extend %space-between-start-column;
+  height: 78%;
+  width: 78%;
+}
+
+.order-widget-text {
+  width: fit-content;
+  height: fit-content;
+  font-family: 'Mulish', sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  color: white;
+}
+
+.order-widget-icon {
+  @extend %center-flex;
+  width: 4em;
+  height: 4em;
+  background: white;
+  border-radius: 50%;
+}
+
+.order-widget-icon-arrow {
+  width: 32px;
+  height: 32px;
+}

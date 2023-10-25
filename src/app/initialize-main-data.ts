@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {LocalStorageService} from "./local-storage.service";
 import {channelIconData} from "./features/feature-header/data/channel-icon-data";
 import {profileData} from "./features/feature-header/data/profile-data";
-import {articlesWidgetsData} from "./features/feature-article-widget/data/articles-widgets-data";
+import {articlesWidgetsData} from "./features/feature-article-widgets/data/articles-widgets-data";
 import {localStorageKeys} from "./shared/data/local-storage-keys";
 
 @Injectable({

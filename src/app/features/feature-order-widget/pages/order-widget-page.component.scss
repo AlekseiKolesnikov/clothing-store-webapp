@@ -1,0 +1,55 @@
+@import "../../../styles/space-between-start-column-flex.pattern";
+@import "../../../styles/top-center-column-flex.pattern";
+@import "../../../styles/space-between-row-flex.pattern";
+
+.order-widget-page-wrapper {
+  @extend %top-center-column-flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--tg-theme-bg-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.order-widget-page-box {
+  @extend %space-between-start-column;
+  width: 94%;
+  background: var(--tg-theme-bg-color);
+}
+
+.order-widget-page-text {
+  width: fit-content;
+  height: fit-content;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: var(--tg-theme-text-color);
+  margin-top: 2%;
+}
+
+.order-widget-page-order-catalog-box {
+  @extend %space-between-row-flex;
+  width: 100%;
+  height: fit-content;
+  margin-top: 5%;
+
+  app-square-widget-order-page {
+    width: 48%;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.order-widget-page-order-calculate-box {
+  @extend %space-between-start-column;
+  width: 100%;
+  height: fit-content;
+  margin-top: 3%;
+  gap: 8%;
+
+  app-full-screen-widget-order-page {
+    width: 100%;
+    height: 48%;
+  }
+}
+
+
