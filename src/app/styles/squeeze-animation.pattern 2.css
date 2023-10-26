@@ -1,0 +1,10 @@
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+
+/*# sourceMappingURL=squeeze-animation.pattern%202.css.map */
