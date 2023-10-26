@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+* {
+  transition: color, background .4s ease-in-out;
+}
+
 html,
 body {
   user-select: none;
@@ -21,6 +25,7 @@ body {
 
 body {
   overflow: hidden;
+  z-index: 0;
 }
 
 nav,

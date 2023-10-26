@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"friends-widget.component.css"}
+{"version":3,"sourceRoot":"","sources":["friends-widget.component.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA","file":"friends-widget.component.css"}

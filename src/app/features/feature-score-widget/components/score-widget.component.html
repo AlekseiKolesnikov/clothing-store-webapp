@@ -1,3 +1,16 @@
-<div class="score-widget-box">
-
+<div
+  class="score-card-background"
+  (click)="click($event)"
+  (touchend)="touch($event)"
+>
+  <div class="score-card-inner">
+    <div class="score-card-header">
+      <div class="score-card-header-tittle">Баллы</div>
+      <img src="assets/gradient-right-arrow.svg" alt="gradient-right-arrow">
+    </div>
+    <div class="score-card-footer">
+      <div class="score-card-footer-icon">₽</div>
+      <div class="score-card-footer-points">{{pointsAmount.points}}</div>
+    </div>
+  </div>
 </div>

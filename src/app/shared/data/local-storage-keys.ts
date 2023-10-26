@@ -3,5 +3,6 @@ export const localStorageKeys = {
   profileKey: 'profile',
   articleWidgetsKey: 'articleWidgets',
   personalFullName: 'personalFullName',
-  personalPhoneNumber: 'personalPhoneNumber'
+  personalPhoneNumber: 'personalPhoneNumber',
+  scoreWidgetKey: 'scoreWidget'
 }
