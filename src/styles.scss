@@ -1,3 +1,5 @@
+@import "app/styles/variables";
+
 *,
 *::before,
 *::after {
@@ -9,17 +11,19 @@
 
 html,
 body {
+  user-select: none;
   width: 100%;
   height: 100%;
   line-height: 1;
   font-size: 16px;
   display: block;
-  background: var(--tg-theme-secondary-bg-color);
+  background: $dark-tg-background;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
   overflow: hidden;
+  z-index: 0;
 }
 
 nav,

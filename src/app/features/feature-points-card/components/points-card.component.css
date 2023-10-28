@@ -1,0 +1,138 @@
+@media (hover:hover) and (pointer: fine) {
+  .points-card-inner:hover {
+    cursor: pointer;
+  }
+}
+.points-card-inner:active {
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+.points-card-footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points-card-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.points-card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.points-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.points-card-background {
+  border: none;
+  outline: none;
+  text-align: unset;
+  background: rgba(0, 0, 0, 0);
+  transition: transform 0.15s linear;
+}
+
+.points-card-inner {
+  position: absolute;
+  font-family: "Mulish", sans-serif;
+  font-weight: 900;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: var(--tg-theme-bg-color);
+  border-radius: 2em;
+  padding: 10%;
+}
+
+.points-card-header {
+  width: 100%;
+  height: fit-content;
+}
+.points-card-header img {
+  width: 23px;
+  height: 23px;
+}
+
+.points-card-header-tittle {
+  background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-clip: text;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+
+.points-card-footer {
+  width: fit-content;
+  height: fit-content;
+  gap: 12%;
+}
+
+.points-card-footer-icon {
+  background-image: radial-gradient(496% 571.1% at -112% 78%, rgb(235, 156, 0) 0px, rgb(255, 71, 105) 27.08%, rgb(61, 80, 255) 66.38%, rgb(0, 179, 255) 100%);
+  border-radius: 99999px;
+  font-size: 20px;
+  color: white;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.points-card-footer-points {
+  width: fit-content;
+  height: fit-content;
+  background: radial-gradient(196.55% 274.1% at -81.9% 40%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  font-size: 30px;
+}
+
+.points-card-background::after {
+  transition: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  filter: blur(21px);
+  border-radius: 9999999px;
+  z-index: 0;
+  background: radial-gradient(84.29% 136.58% at 6.86% 83.96%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%) repeat;
+  animation: actions-gradient-animation 5s linear infinite alternate-reverse;
+}
+
+@keyframes actions-gradient-animation {
+  0% {
+    transform: scaleX(1) rotate(0deg) translateX(0);
+  }
+  50% {
+    transform: scaleX(0.9) rotate(25deg) translateX(-5%);
+  }
+  to {
+    transform: scaleX(0.9) rotate(-15deg) translateX(5%);
+  }
+}
+
+/*# sourceMappingURL=points-card.component.css.map */

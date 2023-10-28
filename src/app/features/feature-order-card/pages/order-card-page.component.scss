@@ -1,0 +1,54 @@
+@import "../../../styles/flex.patterns";
+@import "../../../styles/variables";
+
+.order-widget-page-wrapper {
+  @extend %center-column-top-flex;
+  width: 100vw;
+  height: 100vh;
+  background: $light-tg-background;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.order-widget-page-box {
+  @extend %space-between-column-top-flex;
+  width: 94%;
+  background: $light-tg-background;
+}
+
+.order-widget-page-text {
+  width: fit-content;
+  height: fit-content;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: $text-tg-color;
+  margin-top: 2%;
+}
+
+.order-widget-page-order-catalog-box {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  margin-top: 5%;
+
+  app-square-widget-order-page {
+    width: 48%;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.order-widget-page-order-calculate-box {
+  @extend %space-between-column-top-flex;
+  width: 100%;
+  height: fit-content;
+  margin-top: 3%;
+  gap: 8%;
+
+  app-full-screen-widget-order-page {
+    width: 100%;
+    height: 48%;
+  }
+}
+
+

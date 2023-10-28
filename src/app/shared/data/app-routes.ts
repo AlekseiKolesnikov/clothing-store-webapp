@@ -1,5 +1,6 @@
 export const appRoutes = {
-  mainPage: 'main-page',
-  profilePage: 'profile-page',
-  searchPage: 'search-bar-page'
+  mainPage: 'main_page',
+  profilePage: 'profile_page',
+  searchPage: 'search_bar_page',
+  orderWidgetPage: 'order_widget_page'
 }

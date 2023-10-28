@@ -23,4 +23,8 @@ export class ChannelComponent extends BaseComponent {
     // @ts-ignore
     Telegram.WebApp.openTelegramLink(this.channelIconData.link)
   }
+
+  override touch(event: Event) {
+    super.touch(event);
+  }
 }

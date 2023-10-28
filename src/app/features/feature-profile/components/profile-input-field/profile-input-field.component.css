@@ -1,4 +1,4 @@
-.profile-input-field-box {
+.app-buttons-box, .profile-input-field-box {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,9 +11,18 @@
   }
 }
 .input-field-button:active {
-  transform: scale(0.98, 0.98);
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
 }
 
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
 .profile-input-field-box {
   width: 100%;
   height: 100%;
@@ -35,10 +44,6 @@
 }
 
 .app-buttons-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   width: 52%;
   height: 100%;
 }

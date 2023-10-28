@@ -7,6 +7,12 @@ import {NgForm} from "@angular/forms";
 export abstract class BaseComponent {
   click(event: Event): void {
     event.preventDefault()
+    event.stopPropagation()
+  }
+
+  touch(event: Event): void {
+    event.preventDefault()
+    event.stopPropagation()
   }
 
   submit(event: Event) {

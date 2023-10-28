@@ -3,18 +3,24 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+}
+
+.header-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
   height: 100%;
   width: 100%;
-  gap: 1.2%;
+  gap: 1.5%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .header-component {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
   width: 94%;
   height: fit-content;
   margin-top: 1%;
@@ -26,12 +32,20 @@
 }
 
 .articles-component {
-  width: 94%;
+  position: relative;
+  width: 100%;
+  padding-left: 3%;
   scroll-padding-left: 6%;
   height: fit-content;
   scroll-snap-type: x mandatory;
   overflow-y: hidden;
   overflow-x: scroll;
+  touch-action: none;
+}
+
+.order-balance-component {
+  width: 94%;
+  height: fit-content;
 }
 
 /*# sourceMappingURL=main-page.component.css.map */

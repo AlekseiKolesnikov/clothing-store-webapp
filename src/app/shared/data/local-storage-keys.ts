@@ -1,7 +1,8 @@
 export const localStorageKeys = {
   channelIconKey: 'channelIcon',
   profileKey: 'profile',
-  articleWidgetsKey: 'articleWidgets',
+  articleCardsKey: 'articleWidgets',
   personalFullName: 'personalFullName',
-  personalPhoneNumber: 'personalPhoneNumber'
+  personalPhoneNumber: 'personalPhoneNumber',
+  scoreWidgetKey: 'scoreWidget'
 }

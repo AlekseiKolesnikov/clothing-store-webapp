@@ -1,13 +1,16 @@
+.__channel-common-styles {
+  width: fit-content;
+}
+
 .channel-icon {
   background-color: var(--tg-theme-bg-color);
   padding-right: 5%;
-  padding-bottom: 2%;
   gap: 1%;
 }
 
 .channel-icon-text {
   font-family: "Mulish", sans-serif;
-  width: fit-content;
+  padding-bottom: 1%;
 }
 
 .channel-name {
@@ -18,14 +21,9 @@
 }
 
 .channel-description {
-  width: fit-content;
   font-weight: 500;
   font-size: 9px;
   color: var(--tg-theme-hint-color);
-}
-
-.channel-image {
-  width: fit-content;
 }
 
 /*# sourceMappingURL=channel.component.css.map */

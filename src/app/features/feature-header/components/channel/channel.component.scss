@@ -1,32 +1,29 @@
-@import "../../../../styles/squeeze-animation.pattern";
+@import "../../../../styles/variables";
+
+.__channel-common-styles {
+  width: fit-content;
+}
 
 .channel-icon {
-  background-color: var(--tg-theme-bg-color);
+  background-color: $light-tg-background;
   padding-right: 5%;
-  padding-bottom: 2%;
   gap: 1%;
 }
 
 .channel-icon-text {
   font-family: 'Mulish', sans-serif;
-  width: fit-content;
+  padding-bottom: 1%;
 }
 
 .channel-name {
   font-weight: 800;
   font-size: 14px;
   line-height: 12px;
-  color: var(--tg-theme-text-color);
+  color: $text-tg-color;
 }
 
 .channel-description {
-  width: fit-content;
   font-weight: 500;
   font-size: 9px;
-  color: var(--tg-theme-hint-color);
+  color: $hint-tg-color;
 }
-
-.channel-image {
-  width: fit-content;
-}
-

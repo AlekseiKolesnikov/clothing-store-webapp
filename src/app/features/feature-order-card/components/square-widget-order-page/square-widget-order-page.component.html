@@ -1,0 +1,14 @@
+<div
+  class="order-page-square-widget-wrapper"
+  [style.background-color]="boxColor"
+  (click)="click($event)"
+  (touchend)="touch($event)"
+>
+  <div class="order-page-square-widget-box">
+    <img src="{{iconLink}}" alt="{{iconLinkText}}">
+    <div class="order-page-square-widget-text">
+      <p>{{text}}</p>
+      <img src="{{arrow}}" alt="arrow">
+    </div>
+  </div>
+</div>
