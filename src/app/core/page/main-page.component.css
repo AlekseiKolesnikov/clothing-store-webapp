@@ -3,6 +3,16 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+}
+
+.header-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
   height: 100%;
   width: 100%;
   gap: 1.5%;
@@ -11,10 +21,6 @@
 }
 
 .header-component {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
   width: 94%;
   height: fit-content;
   margin-top: 1%;

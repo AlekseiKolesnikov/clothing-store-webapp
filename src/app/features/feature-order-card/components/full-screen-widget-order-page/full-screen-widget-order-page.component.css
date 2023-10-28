@@ -1,0 +1,62 @@
+.order-page-full-screen-widget-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-page-full-screen-widget-text, .order-page-full-screen-widget-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .order-page-full-screen-widget-wrapper:hover {
+    cursor: pointer;
+  }
+}
+.order-page-full-screen-widget-wrapper:active {
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+.order-page-full-screen-widget-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.8em;
+  background: var(--tg-theme-secondary-bg-color);
+}
+
+.order-page-full-screen-widget-box {
+  width: 90%;
+  height: 80%;
+  padding: 2% 0;
+}
+
+.order-page-full-screen-widget-text {
+  width: 80%;
+  height: fit-content;
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--tg-theme-text-color);
+}
+.order-page-full-screen-widget-text p {
+  width: 12em;
+}
+.order-page-full-screen-widget-text svg {
+  width: 22px;
+  height: 22px;
+  color: var(--tg-theme-text-color);
+}
+
+/*# sourceMappingURL=full-screen-widget-order-page.component.css.map */

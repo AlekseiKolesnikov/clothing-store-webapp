@@ -1,11 +1,12 @@
-@import "../../../styles/top-center-column-flex.pattern";
+@import "../../../styles/flex.patterns";
+@import "../../../styles/variables";
 
 .profile-wrapper {
-  @extend %top-center-column-flex;
+  @extend %center-column-top-flex;
   height: 100vh;
   width: 100vw;
   font-family: 'Mulish', sans-serif;
-  color: var(--tg-theme-text-color);
+  color: $text-tg-color;
   font-size: 16px;
   font-weight: 600;
   gap: 2%;
@@ -19,7 +20,7 @@
 .__profile-blocks {
   height: fit-content;
   width: 100%;
-  background: var(--tg-theme-bg-color);
+  background: $light-tg-background;
   border-radius: 1.5em;
   padding: 4%;
 }

@@ -1,27 +1,24 @@
+@import "../../styles/flex.patterns";
+@import "../../styles/variables";
+
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
+  @extend %center-column-top-flex;
   height: 100%;
   width: 100%;
-  gap: 1.5%;
+  gap: $wrapper-margin;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .header-component {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 94%;
+  @extend %space-between-row-center-flex;
+  width: $main-blocks-width;
   height: fit-content;
   margin-top: 1%;
 }
 
 .search-bar-component {
-  width: 94%;
+  width: $main-blocks-width;
   height: fit-content;
 }
 
@@ -38,6 +35,6 @@
 }
 
 .order-balance-component {
-  width: 94%;
+  width: $main-blocks-width;
   height: fit-content;
 }

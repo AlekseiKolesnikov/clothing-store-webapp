@@ -1,3 +1,5 @@
+@import "app/styles/variables";
+
 *,
 *::before,
 *::after {
@@ -5,10 +7,6 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
-}
-
-* {
-  transition: color, background .4s ease-in-out;
 }
 
 html,
@@ -19,7 +17,7 @@ body {
   line-height: 1;
   font-size: 16px;
   display: block;
-  background: var(--tg-theme-secondary-bg-color);
+  background: $dark-tg-background;
   -webkit-font-smoothing: antialiased;
 }
 

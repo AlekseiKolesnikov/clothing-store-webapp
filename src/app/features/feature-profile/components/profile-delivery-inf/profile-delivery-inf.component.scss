@@ -1,15 +1,12 @@
-@import "../../../../styles/space-between-row-flex.pattern";
+@import "../../../../styles/flex.patterns";
 
 .personal-delivery-inf-box {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
+  @extend %start-column-center-flex;
       gap: 14px;
 }
 
 .__delivery-inf-input-field {
-      @extend %space-between-row-flex;
+      @extend %space-between-row-center-flex;
       height: 100%;
       width: 100%;
       font-weight: 400;

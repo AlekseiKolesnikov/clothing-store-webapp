@@ -1,4 +1,5 @@
-@import "../../../../styles/gradient.pattern";
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
 
 .__common_size {
   width: 100%;
@@ -6,11 +7,8 @@
 }
 
 .personal-status-box {
+  @extend %start-column-center-flex;
   margin-top: 6%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   gap: 14px;
 
   h2 {
@@ -25,12 +23,14 @@
 
 .points-description {
   span {
-    @extend %gradient-pattern;
+    background: $gradient-color;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
 .status-rules {
-  background: var(--tg-theme-secondary-bg-color);
+  background: $dark-tg-background;
   padding: 5%;
   border-radius: 1.5em;
 }

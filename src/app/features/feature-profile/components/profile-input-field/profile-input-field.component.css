@@ -1,4 +1,4 @@
-.profile-input-field-box {
+.app-buttons-box, .profile-input-field-box {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,10 +44,6 @@
 }
 
 .app-buttons-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   width: 52%;
   height: 100%;
 }

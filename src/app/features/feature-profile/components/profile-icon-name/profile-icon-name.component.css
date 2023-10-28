@@ -1,14 +1,14 @@
+.personal-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .personal-information-box {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-}
-
-.personal-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .personal-information-box {

@@ -1,9 +1,3 @@
-.points-span {
-  background: linear-gradient(253deg, #462eff, #a100c2, #ff29c6, #ff2929, #ffc23d);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .table-row {
   display: flex;
   flex-direction: row;
@@ -13,6 +7,12 @@
 
 .first-row-span, .points-span {
   width: fit-content;
+}
+
+.points-span {
+  background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .first-column {

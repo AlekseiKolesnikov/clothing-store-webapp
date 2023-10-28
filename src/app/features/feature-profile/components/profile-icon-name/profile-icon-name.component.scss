@@ -1,8 +1,8 @@
-@import "../../../../styles/top-center-column-flex.pattern";
-@import "../../../../styles/center-flex.pattern";
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
 
 .personal-information-box {
-  @extend %top-center-column-flex;
+  @extend %center-column-top-flex;
   width: 100%;
   height: fit-content;
   margin-top: 4%;
@@ -13,7 +13,7 @@
   width: 90px;
   height: 90px;
   font-size: 46px;
-  background: var(--tg-theme-bg-color);
+  background: $light-tg-background;
   border-radius: 100em;
 }
 
@@ -23,6 +23,6 @@
   font-size: 25px;
   font-weight: 800;
   font-family: 'Mulish', sans-serif;
-  color: var(--tg-theme-text-color);
+  color: $text-tg-color;
   margin-top: 4%;
 }

@@ -1,8 +1,8 @@
-@import "../../../../styles/gradient.pattern";
-@import "../../../../styles/space-between-row-flex.pattern";
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
 
 .table-row {
-  @extend %space-between-row-flex;
+  @extend %space-between-row-center-flex;
 }
 
 .first-row-span, .points-span {
@@ -10,7 +10,9 @@
 }
 
 .points-span {
-  @extend %gradient-pattern
+  background: $gradient-color;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .first-column {
@@ -33,5 +35,5 @@
 }
 
 .first-row {
-  color: var(--tg-theme-hint-color);
+  color: $hint-tg-color;
 }

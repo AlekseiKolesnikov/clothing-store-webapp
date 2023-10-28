@@ -1,7 +1,8 @@
-.points-description span {
-  background: linear-gradient(253deg, #462eff, #a100c2, #ff29c6, #ff2929, #ffc23d);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.personal-status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .__common_size {
@@ -11,10 +12,6 @@
 
 .personal-status-box {
   margin-top: 6%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   gap: 14px;
 }
 .personal-status-box h2 {
@@ -23,6 +20,12 @@
 }
 .personal-status-box h2 span {
   color: dodgerblue;
+}
+
+.points-description span {
+  background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .status-rules {

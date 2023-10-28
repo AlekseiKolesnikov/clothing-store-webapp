@@ -1,0 +1,31 @@
+.article-card-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articles-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.articles-box {
+  width: 100%;
+  height: 100%;
+  gap: 3%;
+  overflow-y: auto;
+}
+
+.articles-box::-webkit-scrollbar {
+  display: none;
+}
+
+.article-card-box {
+  width: fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=articles.component.css.map */

@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-* {
-  transition: color, background 0.4s ease-in-out;
-}
-
 html,
 body {
   user-select: none;
