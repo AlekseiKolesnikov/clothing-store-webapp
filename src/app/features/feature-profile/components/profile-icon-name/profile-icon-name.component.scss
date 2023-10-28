@@ -1,0 +1,28 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+
+.personal-information-box {
+  @extend %center-column-top-flex;
+  width: 100%;
+  height: fit-content;
+  margin-top: 4%;
+}
+
+.personal-image {
+  @extend %center-flex;
+  width: 90px;
+  height: 90px;
+  font-size: 46px;
+  background: $light-tg-background;
+  border-radius: 100em;
+}
+
+.personal-name {
+  width: fit-content;
+  height: fit-content;
+  font-size: 25px;
+  font-weight: 800;
+  font-family: 'Mulish', sans-serif;
+  color: $text-tg-color;
+  margin-top: 4%;
+}

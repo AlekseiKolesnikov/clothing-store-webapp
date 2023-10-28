@@ -1,0 +1,38 @@
+<div class="order-widget-page-wrapper">
+  <div class="order-widget-page-box">
+    <div class="order-widget-page-text">
+      Как хочешь заказать?
+    </div>
+    <div class="order-widget-page-order-catalog-box">
+      <app-square-widget-order-page
+        [iconLink]="orderWidgetData.blackTelegramIcon"
+        [arrow]="orderWidgetData.shortArrowIcon"
+        iconLinkText="Телеграм иконка"
+        text="Заказать через чат"
+        [boxColor]="orderWidgetData.pinkColor"
+      />
+      <app-square-widget-order-page
+        [iconLink]="orderWidgetData.sneakerIcon"
+        [arrow]="orderWidgetData.shortArrowIcon"
+        iconLinkText="Иконка кроссовок"
+        text="Выбрать из каталога"
+        [boxColor]="orderWidgetData.yellowColor"
+      />
+    </div>
+    <div class="order-widget-page-order-calculate-box">
+      <app-full-screen-widget-order-page
+        [iconLink]="orderWidgetData.supportMessageIcon"
+        [arrow]="orderWidgetData.shortArrowIcon"
+        iconLinkText="Иконка сердца"
+        text="Посоветоваться с консультантом"
+      />
+      <app-full-screen-widget-order-page
+        [iconLink]="orderWidgetData.calculatorIcon"
+        [arrow]="orderWidgetData.shortArrowIcon"
+        iconLinkText="Иконка иероглифов"
+        text="Рассчитать стоимость товара из Sneaker Shop"
+      />
+    </div>
+  </div>
+</div>
+

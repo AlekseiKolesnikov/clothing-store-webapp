@@ -1,0 +1,41 @@
+.table-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.first-row-span, .points-span {
+  width: fit-content;
+}
+
+.points-span {
+  background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.first-column {
+  width: 33%;
+  text-align: left;
+  padding: 1%;
+}
+
+.second-column, .third-column {
+  text-align: right;
+  padding: 1%;
+}
+
+.second-column {
+  width: 40%;
+}
+
+.third-column {
+  width: 20%;
+}
+
+.first-row {
+  color: var(--tg-theme-hint-color);
+}
+
+/*# sourceMappingURL=table-row.component.css.map */

@@ -1,0 +1,24 @@
+@import "../../../styles/squeeze-animation.pattern";
+@import "../../../styles/variables";
+
+.clear, .color {
+  @extend %squeeze-animation;
+  width: fit-content;
+  height: 100%;
+  border-radius: 0.8em;
+  font-family: 'Mulish', sans-serif;
+  color: $text-tg-color;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5.5% 4%;
+}
+
+.clear {
+  background: $light-tg-background;
+  border:  $text-tg-color solid 2px;
+}
+
+.color {
+  background: $button-tg-color;
+  border: $button-tg-color solid 2px;
+}

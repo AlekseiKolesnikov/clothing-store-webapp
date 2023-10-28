@@ -1,0 +1,25 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/squeeze-animation.pattern";
+
+.__article-common-styles {
+  width: fit-content;
+  height: fit-content;
+}
+
+.article-card {
+  @extend %center-flex;
+  @extend %squeeze-animation;
+  position: relative;
+  background-color: #0000;
+}
+
+.frame-image-box {
+  @extend %center-flex;
+  width: 105px;
+  height: 105px;
+}
+
+.article-card-image {
+  position: absolute;
+}
+
