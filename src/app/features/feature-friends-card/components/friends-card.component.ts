@@ -11,6 +11,8 @@ export class FriendsCardComponent extends BaseComponent {
 
   override click(event: Event) {
     super.click(event);
+    // @ts-ignore
+    Telegram.WebApp.HapticFeedback.notificationOccurred("success")
   }
 
   override touch(event: Event) {

@@ -1,7 +1,7 @@
 @import "../../../../styles/flex.patterns";
 
 .order-card-box {
-  @extend %space-between-column-top-flex;
+  @extend %space-between-column-start-flex;
   height: 82%;
   width: 78%;
 }

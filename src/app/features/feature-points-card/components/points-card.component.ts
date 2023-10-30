@@ -3,6 +3,7 @@ import {BaseComponent} from "../../../shared/models/base-component.service";
 import {LocalStorageService} from "../../../local-storage.service";
 import {Router} from "@angular/router";
 import {localStorageKeys} from "../../../shared/data/local-storage-keys";
+import {appRoutes} from "../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-points-card',
@@ -21,6 +22,9 @@ export class PointsCardComponent extends BaseComponent {
   }
   override click(event: Event) {
     super.click(event);
+    this.router.navigate([appRoutes.pointsCardPage])
+    // @ts-ignore
+    Telegram.WebApp.HapticFeedback.notificationOccurred("success")
   }
 
   override touch(event: Event) {

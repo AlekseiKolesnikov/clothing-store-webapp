@@ -6,35 +6,42 @@
   height: 100%;
   width: 100%;
   gap: $wrapper-margin;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 3%;
   overflow-y: scroll;
   overflow-x: hidden;
+  z-index: $wrapper-z-index;
 }
 
 .header-component {
   @extend %space-between-row-center-flex;
-  width: $main-blocks-width;
+  width: 100%;
   height: fit-content;
   margin-top: 1%;
+  z-index: $high-z-index;
 }
 
 .search-bar-component {
-  width: $main-blocks-width;
+  width: 100%;
   height: fit-content;
+  z-index: $high-z-index;
 }
 
 .articles-component {
   position: relative;
-  width: 100%;
-  padding-left: 3%;
+  width: 100vw;
   scroll-padding-left: 6%;
   height: fit-content;
   scroll-snap-type: x mandatory;
   overflow-y: hidden;
   overflow-x: scroll;
   touch-action: none;
+  z-index: $high-z-index;
 }
 
 .order-balance-component {
-  width: $main-blocks-width;
+  width: 100%;
   height: fit-content;
+  z-index: $middle-z-index;
 }

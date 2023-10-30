@@ -12,6 +12,7 @@ import {
 import {
   FullScreenWidgetOrderPageComponent
 } from "../../features/feature-order-card/components/full-screen-widget-order-page/full-screen-widget-order-page.component";
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -29,8 +30,9 @@ import {
     FriendsCardComponent,
     OrderCardComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        RouterLink
+    ]
 })
 export class ActionCardsModule { }

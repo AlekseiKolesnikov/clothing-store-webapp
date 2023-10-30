@@ -20,7 +20,9 @@ export class OrderCardComponent extends BaseComponent {
   }
   override click(event: Event) {
     super.click(event);
-    this.router.navigate([appRoutes.orderWidgetPage])
+    this.router.navigate([appRoutes.orderCardPage])
+    // @ts-ignore
+    Telegram.WebApp.HapticFeedback.notificationOccurred("success")
   }
 
   override touch(event: Event) {
