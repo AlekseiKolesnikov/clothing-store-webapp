@@ -12,7 +12,8 @@
 
 .order-widget-page-box {
   @extend %space-between-column-start-flex;
-  width: 94%;
+  width: 100%;
+  padding: 0 $wrapper-padding;
   background: $light-tg-background;
 }
 
