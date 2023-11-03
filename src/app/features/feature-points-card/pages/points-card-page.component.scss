@@ -1,0 +1,131 @@
+@import "../../../styles/variables";
+@import "../../../styles/flex.patterns";
+
+.points-card-page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: $dark-tg-background;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  color: $text-tg-color;
+}
+
+.points-card-page-points-inf-box {
+  @extend %space-between-column-center-flex;
+  width: 100%;
+  height: fit-content;
+  padding: 3%;
+  background: $light-tg-background;
+  border-radius: 0 0 2em 2em;
+}
+
+.points-card-page-gradient-box {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  background: radial-gradient(84.29% 136.58% at 6.86% 83.96%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%) repeat;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding: 5%;
+  border-radius: 2em;
+}
+
+.points-card-page-points-box {
+  @extend %space-between-column-start-flex;
+  width: fit-content;
+  height: fit-content;
+  font-weight: 900;
+  color: white;
+
+  .points-card-page-points {
+    font-size: 70px;
+  }
+
+  .points-card-page-points-text {
+    font-size: 26px;
+  }
+}
+
+.points-card-page-currency {
+  @extend %center-flex;
+  height: 70px;
+  width: 70px;
+  font-weight: 900;
+  font-size: 60px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+}
+
+.points-card-page-info-box {
+  @extend %space-between-column-center-flex;
+  width: 100%;
+  height: fit-content;
+  margin-top: 4%;
+  line-height: 1.3;
+
+  .points-card-page-info-box-description {
+    width: 100%;
+    height: fit-content;
+    font-size: 15.5px;
+    padding: 3% 0;
+    border-bottom: $hint-tg-color solid 0.8px;
+
+    span {
+      background: $gradient-color;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    a {
+      background: $blue-color;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    a:hover {
+      cursor: pointer;
+    }
+  }
+
+  .points-card-page-info-box-calculation {
+    width: 100%;
+    height: fit-content;
+    padding: 3% 0;
+  }
+}
+
+.points-card-page-points-history-box {
+  @extend %space-between-column-start-flex;
+  width: 100%;
+  height: fit-content;
+  border-radius: 2em;
+  padding: 5%;
+  background: $light-tg-background;
+  margin-top: 3%;
+  gap: 5px;
+
+  .points-card-page-points-history-label {
+    font-size: 22px;
+    color: $text-tg-color;
+  }
+
+  .points-card-page-points-history {
+    font-size: 14px;
+    color: $hint-tg-color;
+  }
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

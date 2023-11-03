@@ -16,7 +16,5 @@
 .header-icons-gen {
   @extend %squeeze-animation;
   @extend %start-row-bottom-flex;
-  height: fit-content;
-  width: fit-content;
   border-radius: 12em;
 }
