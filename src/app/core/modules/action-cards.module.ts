@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FriendsCardComponent} from "../../features/feature-friends-card/components/friends-card.component";
+import {FriendsCardComponent} from "../../features/feature-friends-card/components/friends-card/friends-card.component";
 import {FriendsCardPageComponent} from "../../features/feature-friends-card/pages/friends-card-page.component";
 import {OrderCardComponent} from "../../features/feature-order-card/components/order-card/order-card.component";
 import {OrderCardPageComponent} from "../../features/feature-order-card/pages/order-card-page.component";
@@ -12,17 +12,25 @@ import {
 import {
   FullScreenWidgetOrderPageComponent
 } from "../../features/feature-order-card/components/full-screen-widget-order-page/full-screen-widget-order-page.component";
+import {
+  FriendsPageEmojiComponent
+} from "../../features/feature-friends-card/components/friends-page-emoji/friends-page-emoji.component";
+import {
+  FriendsCardPageTableComponent
+} from "../../features/feature-friends-card/components/friends-card-page-table/friends-card-page-table.component";
 
 @NgModule({
   declarations: [
     FriendsCardComponent,
     FriendsCardPageComponent,
+    FriendsCardPageTableComponent,
     OrderCardComponent,
     OrderCardPageComponent,
     PointsCardComponent,
     PointsCardPageComponent,
     SquareWidgetOrderPageComponent,
-    FullScreenWidgetOrderPageComponent
+    FullScreenWidgetOrderPageComponent,
+    FriendsPageEmojiComponent
   ],
   exports: [
     PointsCardComponent,

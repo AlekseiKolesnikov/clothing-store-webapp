@@ -1,5 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {BaseComponent} from "../../../shared/models/base-component.service";
+import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {Router} from "@angular/router";
+import {appRoutes} from "../../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-friends-card',
@@ -9,8 +11,15 @@ import {BaseComponent} from "../../../shared/models/base-component.service";
 })
 export class FriendsCardComponent extends BaseComponent {
 
+  constructor(
+    private readonly router: Router
+  ) {
+    super();
+  }
+
   override click(event: Event) {
     super.click(event);
+    this.router.navigate([appRoutes.friendsCardPage])
   }
 
   override touch(event: Event) {

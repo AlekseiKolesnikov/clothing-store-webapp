@@ -4,6 +4,7 @@ import {ProfilePageComponent} from "./features/feature-profile/pages/profile-pag
 import {MainPageComponent} from "./core/page/main-page.component";
 import {SearchBarPageComponent} from "./features/feature-search-bar/pages/search-bar-page.component";
 import {OrderCardPageComponent} from "./features/feature-order-card/pages/order-card-page.component";
+import {FriendsCardPageComponent} from "./features/feature-friends-card/pages/friends-card-page.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'order_widget_page',
     component: OrderCardPageComponent
+  },
+  {
+    path: 'friends_card_page',
+    component: FriendsCardPageComponent
   }
 ];
 

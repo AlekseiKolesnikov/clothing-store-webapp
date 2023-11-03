@@ -1,0 +1,11 @@
+@import "../../../../styles/flex.patterns";
+
+.emoji-wrapper {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -12,7 +12,7 @@
 
 .points-card-inner {
   @extend %squeeze-animation;
-  @extend %space-between-column-top-flex;
+  @extend %space-between-column-start-flex;
   position: absolute;
   font-family: 'Mulish', sans-serif;
   font-weight: 900;
