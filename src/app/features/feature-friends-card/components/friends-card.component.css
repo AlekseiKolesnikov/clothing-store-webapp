@@ -1,8 +1,56 @@
+.friends-card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .friends-card-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.friends-card-box {
+  font-family: "Mulish", sans-serif;
   width: 100%;
   height: 100%;
   background: var(--tg-theme-bg-color);
   border-radius: 2em;
+  padding: 10%;
+}
+
+.friends-card-header {
+  width: 100%;
+  height: fit-content;
+  color: var(--tg-theme-text-color);
+  font-weight: 900;
+  font-size: 19px;
+}
+.friends-card-header .friends-card-header-label {
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+.friends-card-header svg {
+  width: 18px;
+  height: 18px;
+}
+
+.friends-card-footer {
+  width: 100%;
+  height: fit-content;
+  color: var(--tg-theme-hint-color);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.friends-card-footer .friends-card-footer-text {
+  font-size: 12px;
+}
+.friends-card-footer .friends-card-footer-text span {
+  background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-clip: text;
 }
 
 /*# sourceMappingURL=friends-card.component.css.map */

@@ -1,8 +1,48 @@
 @import "../../../styles/variables";
+@import "../../../styles/flex.patterns";
 
 .friends-card-box {
+  @extend %space-between-column-start-flex;
+  font-family: 'Mulish', sans-serif;
   width: 100%;
   height: 100%;
   background: $light-tg-background;
   border-radius: 2em;
+  padding: 10%;
+}
+
+.friends-card-header {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  color: $text-tg-color;
+  font-weight: 900;
+  font-size: 19px;
+
+  .friends-card-header-label {
+    font-size: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.friends-card-footer {
+  width: 100%;
+  height: fit-content;
+  color: $hint-tg-color;
+  font-weight: 600;
+  line-height: 1.2;
+
+  .friends-card-footer-text {
+    font-size: 12px;
+    span {
+      background: $gradient-color;
+      -webkit-text-fill-color: $empty-color;
+      background-clip: text;
+    }
+  }
 }
