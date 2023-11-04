@@ -1,4 +1,5 @@
 @import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
 @import "../../../../styles/squeeze-animation.pattern";
 
 .__article-common-styles {
@@ -10,7 +11,8 @@
   @extend %center-flex;
   @extend %squeeze-animation;
   position: relative;
-  background-color: #0000;
+  background-color: $empty-color;
+  touch-action: manipulation;
 }
 
 .frame-image-box {

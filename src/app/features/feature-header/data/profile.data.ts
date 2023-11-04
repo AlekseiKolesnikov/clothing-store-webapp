@@ -1,5 +1,5 @@
 export const profileData = {
-  image: "😎",
+  image: "assets/ghost.svg",
   name: "Aleksei",
   status: "Новичок",
   personalPhoneNumber: "",

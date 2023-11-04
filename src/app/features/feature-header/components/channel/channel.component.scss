@@ -1,23 +1,31 @@
 @import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
 
 .__channel-common-styles {
   width: fit-content;
 }
 
 .channel-icon {
+  @extend %center-flex;
+  height: 38px;
+  width: fit-content;
   background-color: $light-tg-background;
-  padding-right: 5%;
+  padding: 2% 5% 2% 1%;
   gap: 1%;
 }
 
 .channel-icon-text {
+  @extend %start-column-bottom-flex;
+  width: 100%;
+  height: 100%;
   font-family: 'Mulish', sans-serif;
   padding-bottom: 1%;
+  gap: 8%;
 }
 
 .channel-name {
   font-weight: 800;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 12px;
   color: $text-tg-color;
 }
