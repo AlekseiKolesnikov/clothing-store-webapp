@@ -1,6 +1,6 @@
 //----TELEGRAM-COLORS------------------------------------------------------
-$dark-tg-background: var(--tg-theme-secondary-bg-color);
-$light-tg-background: var(--tg-theme-bg-color);
+$light-tg-background: var(--tg-theme-secondary-bg-color);
+$dark-tg-background: var(--tg-theme-bg-color);
 $text-tg-color: var(--tg-theme-text-color);
 $hint-tg-color: var(--tg-theme-hint-color);
 $linn-tg-color: var(--tg-theme-link-color);
@@ -21,5 +21,6 @@ $wrapper-padding: 3%;
 $wrapper-z-index: 0;
 $middle-z-index: 1;
 $high-z-index: 2;
-
+$wrapper-margin: 1.5%;
+$bottom-margin-friends: 4%;
 

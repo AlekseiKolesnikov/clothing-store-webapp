@@ -1,0 +1,10 @@
+.emoji-wrapper {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.emoji-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=friends-page-emoji.component.css.map */

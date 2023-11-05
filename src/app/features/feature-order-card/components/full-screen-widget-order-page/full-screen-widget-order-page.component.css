@@ -33,7 +33,7 @@
   width: 100%;
   height: 100%;
   border-radius: 1.8em;
-  background: var(--tg-theme-secondary-bg-color);
+  background: var(--tg-theme-bg-color);
 }
 
 .order-page-full-screen-widget-box {

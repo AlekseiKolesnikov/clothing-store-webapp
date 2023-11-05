@@ -1,3 +1,208 @@
+.friends-card-page-friends-emoji-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.__friends-card-page-common-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.friends-card-page-history-box, .friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block, .friends-card-page-friends-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.friends-card-page-wrapper {
+  width: 100%;
+  height: 100%;
+  background: var(--tg-theme-secondary-bg-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: var(--tg-theme-text-color);
+  font-family: "Mulish", sans-serif;
+}
+
+.friends-card-page-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.__gradient_span {
+  background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-clip: text;
+}
+
+.friends-card-page-friends-text-box {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 4%;
+}
+
+.__friends-card-page-common-style {
+  width: 100%;
+  padding: 0 4%;
+  background: var(--tg-theme-bg-color);
+  text-align: left;
+}
+
+.friends-card-page-friends-inf-box {
+  border-radius: 0 0 2em 2em;
+  margin-bottom: 4%;
+}
+.friends-card-page-friends-inf-box .bold-span {
+  color: white;
+  font-weight: 900;
+}
+.friends-card-page-friends-inf-box h1 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 4%;
+  line-height: 1.1;
+}
+
+.inf-box-first-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.inf-box-second-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.inf-box-second-third-box {
+  width: 100%;
+  height: fit-content;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 4%;
+  border-radius: 2em;
+  background: var(--tg-theme-secondary-bg-color);
+  margin-bottom: 4%;
+}
+
+.friends-card-page-friends-emoji-box {
+  position: relative;
+  width: 340px;
+  height: 310px;
+}
+
+.friends-card-page-invite-inf-box {
+  border-radius: 2em 2em 0 0;
+  padding: 4%;
+}
+.friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block {
+  width: 100%;
+  height: fit-content;
+}
+.friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block h3 {
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 4%;
+}
+.friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block .friends-card-page-link {
+  background: rgb(0, 124, 255);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-clip: text;
+  font-size: 16px;
+  margin-bottom: 4%;
+}
+.friends-card-page-invite-inf-box .friends-card-page-button-box {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 4%;
+}
+.friends-card-page-invite-inf-box .friends-card-page-button {
+  width: 100%;
+  height: 100%;
+  background: var(--tg-theme-bg-color);
+  color: rgb(0, 124, 255);
+  font-size: 16px;
+  border-radius: 1em;
+  border: var(--tg-theme-hint-color) solid 1px;
+}
+
+.friends-card-page-history-box {
+  width: 100%;
+  height: fit-content;
+  font-size: 12px;
+  color: var(--tg-theme-hint-color);
+}
+
+.__emoji_common_styles {
+  aspect-ratio: 1/1;
+  position: absolute;
+  display: block;
+  margin: 0;
+  transition: ease-out;
+  animation: emoji-pop-up 1s 1;
+}
+
+.beard-guy-emoji {
+  top: 25%;
+  left: 5%;
+  z-index: 1;
+}
+
+.celebrating-girl-emoji {
+  top: 68%;
+  left: 63%;
+  z-index: 1;
+}
+
+.curly-guy-emoji {
+  top: 30%;
+  z-index: 2;
+}
+
+.glasses-guy-emoji {
+  top: 4%;
+  left: 28%;
+  z-index: 0;
+}
+
+.kissing-girl-emoji {
+  top: 20%;
+  left: 64%;
+  z-index: 1;
+}
+
+.love-girl-emoji {
+  top: 4%;
+  left: 63%;
+  z-index: 0;
+}
+
+.wow-girl-emoji {
+  top: 64%;
+  left: 14%;
+  z-index: 0;
+}
+
+@keyframes emoji-pop-up {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
 
 /*# sourceMappingURL=friends-card-page.component.css.map */
