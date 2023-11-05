@@ -28,7 +28,7 @@
 .points-card-page-wrapper {
   width: 100vw;
   height: 100vh;
-  background: var(--tg-theme-secondary-bg-color);
+  background: var(--tg-theme-bg-color);
   font-family: "Mulish", sans-serif;
   font-weight: 600;
   color: var(--tg-theme-text-color);
@@ -38,7 +38,7 @@
   width: 100%;
   height: fit-content;
   padding: 3%;
-  background: var(--tg-theme-bg-color);
+  background: var(--tg-theme-secondary-bg-color);
   border-radius: 0 0 2em 2em;
 }
 
@@ -113,7 +113,7 @@
   height: fit-content;
   border-radius: 2em;
   padding: 5%;
-  background: var(--tg-theme-bg-color);
+  background: var(--tg-theme-secondary-bg-color);
   margin-top: 3%;
   gap: 5px;
 }

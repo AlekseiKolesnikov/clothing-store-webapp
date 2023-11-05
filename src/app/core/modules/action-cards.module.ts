@@ -19,6 +19,7 @@ import {
   FriendsCardPageTableComponent
 } from "../../features/feature-friends-card/components/friends-card-page-table/friends-card-page-table.component";
 import {SharedModule} from "../../shared/modules/shared-module/shared.module";
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -38,9 +39,10 @@ import {SharedModule} from "../../shared/modules/shared-module/shared.module";
     FriendsCardComponent,
     OrderCardComponent
   ],
-    imports: [
-        CommonModule,
-        SharedModule
-    ]
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterLink
+  ]
 })
 export class ActionCardsModule { }

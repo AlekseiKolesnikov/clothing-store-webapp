@@ -28,7 +28,8 @@
 }
 
 .order-widget-page-box {
-  width: 94%;
+  width: 100%;
+  padding: 0 3%;
   background: var(--tg-theme-secondary-bg-color);
 }
 
