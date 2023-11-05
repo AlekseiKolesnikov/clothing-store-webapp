@@ -18,6 +18,7 @@ import {
 import {
   FriendsCardPageTableComponent
 } from "../../features/feature-friends-card/components/friends-card-page-table/friends-card-page-table.component";
+import {SharedModule} from "../../shared/modules/shared-module/shared.module";
 
 @NgModule({
   declarations: [
@@ -37,8 +38,9 @@ import {
     FriendsCardComponent,
     OrderCardComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        SharedModule
+    ]
 })
 export class ActionCardsModule { }

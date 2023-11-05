@@ -22,14 +22,14 @@
 .order-widget-page-wrapper {
   width: 100vw;
   height: 100vh;
-  background: var(--tg-theme-bg-color);
+  background: var(--tg-theme-secondary-bg-color);
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .order-widget-page-box {
   width: 94%;
-  background: var(--tg-theme-bg-color);
+  background: var(--tg-theme-secondary-bg-color);
 }
 
 .order-widget-page-text {

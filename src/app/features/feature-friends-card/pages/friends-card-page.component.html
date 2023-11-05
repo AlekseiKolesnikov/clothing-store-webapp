@@ -45,12 +45,14 @@
     <div class="friends-card-page-button-box">
       <button
         class="friends-card-page-button"
-      >Скопировать <span>✅</span></button>
+        copyClipboard="https://t.me/sneakerheadru"
+        (click)="copyClick()"
+      >Скопировать <span *ngIf="checkMarkState">✅</span></button>
     </div>
     <div>
       <app-friends-card-page-table/>
     </div>
-    <div>
+    <div class="friends-card-page-history-box">
       <p>Пока что у тебя нет истории начислений баллов.</p>
     </div>
   </div>

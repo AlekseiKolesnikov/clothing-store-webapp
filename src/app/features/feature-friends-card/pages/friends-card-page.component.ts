@@ -9,6 +9,7 @@ import {FriendEmoji, friendsPageData} from "../data/friends-page.data";
 })
 export class FriendsCardPageComponent implements OnInit {
   protected emojiData: FriendEmoji[] = [];
+  protected checkMarkState:boolean = false
 
   ngOnInit() {
     let index = 0
@@ -21,5 +22,11 @@ export class FriendsCardPageComponent implements OnInit {
         clearInterval(showInterval)
       }
     }, 300)
+  }
+
+  copyClick() {
+    this.checkMarkState = true
+    // @ts-ignore
+    Telegram.WebApp.HapticFeedback.notificationOccurred("success")
   }
 }
