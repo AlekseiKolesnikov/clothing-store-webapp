@@ -55,13 +55,12 @@
 
 .points-card-inner {
   position: absolute;
-  font-family: "Mulish", sans-serif;
-  font-weight: 900;
+  font: 900 20px/1 "Mulish", sans-serif;
   width: 100%;
   height: 100%;
   z-index: 2;
   background-color: var(--tg-theme-bg-color);
-  border-radius: 2em;
+  border-radius: 25px;
   padding: 10%;
 }
 

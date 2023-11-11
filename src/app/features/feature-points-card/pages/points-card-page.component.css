@@ -29,8 +29,7 @@
   width: 100vw;
   height: 100vh;
   background: var(--tg-theme-bg-color);
-  font-family: "Mulish", sans-serif;
-  font-weight: 600;
+  font: 400 16px/1.2 "Mulish", sans-serif;
   color: var(--tg-theme-text-color);
 }
 
@@ -39,7 +38,7 @@
   height: fit-content;
   padding: 3%;
   background: var(--tg-theme-secondary-bg-color);
-  border-radius: 0 0 2em 2em;
+  border-radius: 0 0 25px 25px;
 }
 
 .points-card-page-gradient-box {
@@ -48,7 +47,7 @@
   background: radial-gradient(84.29% 136.58% at 6.86% 83.96%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%) repeat;
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  padding: 5%;
+  padding: 4%;
   border-radius: 2em;
 }
 
@@ -58,11 +57,14 @@
   font-weight: 900;
   color: white;
 }
-.points-card-page-points-box .points-card-page-points {
+.points-card-page-points-box p {
+  line-height: 1;
+}
+.points-card-page-points-box .points-card-page-points p {
   font-size: 70px;
 }
-.points-card-page-points-box .points-card-page-points-text {
-  font-size: 26px;
+.points-card-page-points-box .points-card-page-points-text p {
+  font: 900 26px/1 "Mulish", sans-serif;
 }
 
 .points-card-page-currency {
@@ -111,18 +113,18 @@
 .points-card-page-points-history-box {
   width: 100%;
   height: fit-content;
-  border-radius: 2em;
-  padding: 5%;
+  border-radius: 25px;
+  padding: 4%;
   background: var(--tg-theme-secondary-bg-color);
   margin-top: 3%;
   gap: 5px;
 }
 .points-card-page-points-history-box .points-card-page-points-history-label {
-  font-size: 22px;
+  font: 900 26px/1 "Mulish", sans-serif;
   color: var(--tg-theme-text-color);
 }
 .points-card-page-points-history-box .points-card-page-points-history {
-  font-size: 14px;
+  font: 400 12px/1 "Mulish", sans-serif;
   color: var(--tg-theme-hint-color);
 }
 

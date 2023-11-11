@@ -1,4 +1,5 @@
 @import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
 
 .order-card-box {
   @extend %space-between-column-start-flex;
@@ -9,9 +10,8 @@
 .order-card-text {
   width: fit-content;
   height: fit-content;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 900;
-  font-size: 20px;
+  font: $subheading-text;
+  line-height: 1;
   color: white;
 }
 

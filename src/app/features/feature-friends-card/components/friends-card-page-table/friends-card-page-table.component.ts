@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-friends-card-page-table',
@@ -7,6 +7,6 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class FriendsCardPageTableComponent {
-  constructor() {
-  }
+  @Input() text: string
+  @Input() amount: number
 }

@@ -39,7 +39,7 @@
 }
 
 .action-cards-box {
-  height: 240px;
+  height: 230px;
   width: 100%;
   gap: 0.6em;
   margin-top: 2.3%;
@@ -61,11 +61,11 @@
 }
 
 .friends-card-component {
-  height: 54%;
+  height: 52%;
 }
 
 .points-card-component {
-  height: 46%;
+  height: 48%;
 }
 
 .action-cards-box,
@@ -82,7 +82,7 @@
   width: 100%;
   position: relative;
   cursor: pointer;
-  border-radius: 2em;
+  border-radius: 25px;
   z-index: 2;
 }
 

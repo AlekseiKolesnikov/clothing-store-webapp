@@ -1,0 +1,19 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+
+.table-row-box {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: 100%;
+}
+
+.table-row-text {
+  width: fit-content;
+  height: fit-content;
+}
+
+.table-row-amount {
+  width: fit-content;
+  height: fit-content;
+  color: $hint-tg-color;
+}

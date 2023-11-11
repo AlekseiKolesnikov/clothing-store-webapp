@@ -36,9 +36,7 @@
 .order-widget-page-text {
   width: fit-content;
   height: fit-content;
-  font-family: "Mulish", sans-serif;
-  font-weight: 900;
-  font-size: 28px;
+  font: 900 26px/1 "Mulish", sans-serif;
   color: var(--tg-theme-text-color);
   margin-top: 2%;
 }

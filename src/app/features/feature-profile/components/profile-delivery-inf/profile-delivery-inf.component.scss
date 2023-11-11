@@ -1,8 +1,14 @@
 @import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
 
 .personal-delivery-inf-box {
   @extend %start-column-center-flex;
   gap: 14px;
+
+  h2 {
+    font: $heading-text;
+    margin-bottom: 2%;
+  }
 }
 
 .__delivery-inf-input-field {
@@ -24,12 +30,5 @@
 .delivery-inf-text-box {
   margin-bottom: 4%;
 
-  h2 {
-    font-weight: 800;
-    margin-bottom: 3%;
 
-    p {
-      font-weight: 400;
-    }
-  }
 }

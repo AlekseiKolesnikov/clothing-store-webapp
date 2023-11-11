@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FriendEmoji, friendsPageData} from "../data/friends-page.data";
+import {friendsPageTableData} from "../data/friends-page-table.data";
 
 @Component({
   selector: 'app-friends-card-page',
@@ -29,4 +30,6 @@ export class FriendsCardPageComponent implements OnInit {
     // @ts-ignore
     Telegram.WebApp.HapticFeedback.notificationOccurred("success")
   }
+
+  protected readonly friendsPageTableData = friendsPageTableData;
 }

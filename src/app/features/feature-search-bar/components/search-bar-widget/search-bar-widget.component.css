@@ -31,8 +31,7 @@
 .search-bar-widget-text-box {
   width: fit-content;
   height: fit-content;
-  font-family: "Mulish", sans-serif;
-  font-size: 16px;
+  font: 400 16px/1.2 "Mulish", sans-serif;
 }
 
 /*# sourceMappingURL=search-bar-widget.component.css.map */

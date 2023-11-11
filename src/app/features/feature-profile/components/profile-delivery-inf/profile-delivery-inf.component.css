@@ -15,6 +15,10 @@
 .personal-delivery-inf-box {
   gap: 14px;
 }
+.personal-delivery-inf-box h2 {
+  font: 900 26px/1 "Mulish", sans-serif;
+  margin-bottom: 2%;
+}
 
 .__delivery-inf-input-field {
   height: 100%;
@@ -31,13 +35,6 @@
 
 .delivery-inf-text-box {
   margin-bottom: 4%;
-}
-.delivery-inf-text-box h2 {
-  font-weight: 800;
-  margin-bottom: 3%;
-}
-.delivery-inf-text-box h2 p {
-  font-weight: 400;
 }
 
 /*# sourceMappingURL=profile-delivery-inf.component.css.map */

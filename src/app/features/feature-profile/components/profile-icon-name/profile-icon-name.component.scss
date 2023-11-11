@@ -13,16 +13,14 @@
   width: 90px;
   height: 90px;
   font-size: 46px;
-  background: $dark-tg-background;
+  background: $tg-background;
   border-radius: 100em;
 }
 
 .personal-name {
   width: fit-content;
   height: fit-content;
-  font-size: 25px;
-  font-weight: 800;
-  font-family: 'Mulish', sans-serif;
+  font: $heading-text;
   color: $text-tg-color;
   margin-top: 4%;
 }

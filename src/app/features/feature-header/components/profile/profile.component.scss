@@ -58,18 +58,16 @@
  }
 
 .profile-name {
-  font-weight: 600;
-  font-size: 16px;
+  font: $main-bold-text;
 }
 
 .profile-status {
   @extend %center-flex;
   height: fit-content;
   width: fit-content;
-  font-weight: 700;
-  font-size: 10px;
+  font: $super-small-text;
   padding: 1% 3%;
-  color: $dark-tg-background;
+  color: $tg-background;
   background: $text-tg-color;
   border-radius: 0.5em;
 }

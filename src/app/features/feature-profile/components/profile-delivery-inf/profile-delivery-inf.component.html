@@ -1,50 +1,49 @@
 <div class="personal-delivery-inf-box __profile-blocks">
-        <h2>Данные доставки</h2>
-        <div class="delivery-inf-text-box __common_size">
-                <p>Чтобы не вводить каждый раз после заказа.</p>
-                <br/>
-                <p>Но если нужно будет заказать какой-то заказ в другое место — не проблема.</p>
-        </div>
+  <h2>Данные доставки</h2>
+  <div class="delivery-inf-text-box __common_size">
+    <p>Чтобы не вводить каждый раз после заказа.</p>
+    <p>Но если нужно будет заказать какой-то заказ в другое место — не проблема.</p>
+  </div>
 
-        <div
-                *ngIf="!nameFieldIsShown"
-                class="__delivery-inf-input-field __common_size"
-        >
-                <div class="delivery-inf-input-label">ФИО получателя</div>
-                <app-button
-                        (buttonClick)="switchInputState('name')"
-                        buttonClassName="color"
-                        buttonText="Добавить"
-                        class="profile-delivery-inf-button"
-                />
-        </div>
-        <app-profile-input-field
-                *ngIf="nameFieldIsShown"
-                inputName="name"
-                buttonPlaceholder="ФИО"
-                inputType="text"
-                [inputTextLength]="40"
-                class="__delivery-inf-input-field __common_size"
-        />
+  <div
+    *ngIf="!nameFieldIsShown"
+    class="__delivery-inf-input-field __common_size"
+  >
+    <div class="delivery-inf-input-label">ФИО получателя</div>
+    <app-button
+      (buttonClick)="switchInputState('name')"
+      buttonClassName="color"
+      buttonText="Добавить"
+      class="profile-delivery-inf-button"
+    />
+  </div>
+  <app-profile-input-field
+    *ngIf="nameFieldIsShown"
+    [inputTextLength]="40"
+    buttonPlaceholder="ФИО"
+    class="__delivery-inf-input-field __common_size"
+    inputName="name"
+    inputType="text"
+  />
 
-        <div
-                *ngIf="!numberFieldIsShown"
-                class="__delivery-inf-input-field __common_siz"
-        >
-                <div class="delivery-inf-input-label">Телефон</div>
-                <app-button
-                        (buttonClick)="switchInputState('number')"
-                        buttonClassName="color"
-                        buttonText="Добавить"
-                        class="profile-delivery-inf-button"
-                />
-        </div>
-        <app-profile-input-field
-                *ngIf="numberFieldIsShown"
-                inputName="number"
-                buttonPlaceholder="+7"
-                inputType="tel"
-                [inputTextLength]="12"
-                class="__delivery-inf-input-field __common_size"
-        />
+  <div
+    *ngIf="!numberFieldIsShown"
+    class="__delivery-inf-input-field __common_siz"
+  >
+    <div class="delivery-inf-input-label">Телефон</div>
+    <app-button
+      (buttonClick)="switchInputState('number')"
+      buttonClassName="color"
+      buttonText="Добавить"
+      class="profile-delivery-inf-button"
+    />
+  </div>
+  <app-profile-input-field
+    *ngIf="numberFieldIsShown"
+    [inputTextLength]="12"
+    buttonPlaceholder="+7"
+    class="__delivery-inf-input-field __common_size"
+    inputName="number"
+    inputType="tel"
+  />
 </div>
