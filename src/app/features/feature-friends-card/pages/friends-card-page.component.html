@@ -49,8 +49,13 @@
         (click)="copyClick()"
       >Скопировать <span *ngIf="checkMarkState">✅</span></button>
     </div>
-    <div>
-      <app-friends-card-page-table/>
+    <div class="friends-card-page-table-box">
+      <app-friends-card-page-table
+        *ngFor="let item of friendsPageTableData"
+        [text]="item.text"
+        [amount]="item.amount"
+        class="friends-card-page-table"
+      />
     </div>
     <div class="friends-card-page-history-box">
       <p>Пока что у тебя нет истории начислений баллов.</p>

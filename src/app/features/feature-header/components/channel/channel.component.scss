@@ -9,7 +9,7 @@
   @extend %center-flex;
   height: 38px;
   width: fit-content;
-  background-color: $dark-tg-background;
+  background-color: $tg-background;
   padding: 2% 5% 2% 1%;
   gap: 1%;
 }
@@ -24,8 +24,7 @@
 }
 
 .channel-name {
-  font-weight: 800;
-  font-size: 16px;
+  font: $main-bold-text;
   line-height: 12px;
   color: $text-tg-color;
 }

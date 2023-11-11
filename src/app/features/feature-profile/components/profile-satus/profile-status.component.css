@@ -14,7 +14,7 @@
   gap: 14px;
 }
 .personal-status-box h2 {
-  font-weight: 800;
+  font: 900 26px/1 "Mulish", sans-serif;
   line-height: 32px;
 }
 .personal-status-box h2 span {
@@ -29,7 +29,7 @@
 
 .status-rules {
   background: var(--tg-theme-secondary-bg-color);
-  padding: 5%;
+  padding: 4%;
   border-radius: 1.5em;
 }
 

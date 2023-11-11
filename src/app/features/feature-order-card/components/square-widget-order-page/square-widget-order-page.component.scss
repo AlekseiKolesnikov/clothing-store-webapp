@@ -1,4 +1,5 @@
 @import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
 @import "../../../../styles/squeeze-animation.pattern";
 
 .order-page-square-widget-wrapper {
@@ -6,7 +7,7 @@
   @extend %squeeze-animation;
   width: 100%;
   height: 100%;
-  border-radius: 2em;
+  border-radius: $border-radius;
 }
 
 .order-page-square-widget-box {
@@ -19,9 +20,7 @@
   @extend %space-between-row-bottom-flex;
   width: 100%;
   height: fit-content;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
+  font: $subheading-text;
 
   p {
     width: 6em;

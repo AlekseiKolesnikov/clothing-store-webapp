@@ -64,15 +64,13 @@
 }
 
 .profile-name {
-  font-weight: 600;
-  font-size: 16px;
+  font: 600 16px/1 "Mulish", sans-serif;
 }
 
 .profile-status {
   height: fit-content;
   width: fit-content;
-  font-weight: 700;
-  font-size: 10px;
+  font: 400 10px "Mulish", sans-serif;
   padding: 1% 3%;
   color: var(--tg-theme-bg-color);
   background: var(--tg-theme-text-color);

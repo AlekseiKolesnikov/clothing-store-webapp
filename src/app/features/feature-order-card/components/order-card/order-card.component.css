@@ -19,9 +19,8 @@
 .order-card-text {
   width: fit-content;
   height: fit-content;
-  font-family: "Mulish", sans-serif;
-  font-weight: 900;
-  font-size: 20px;
+  font: 900 20px/1 "Mulish", sans-serif;
+  line-height: 1;
   color: white;
 }
 

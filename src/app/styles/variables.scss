@@ -1,6 +1,6 @@
 //----TELEGRAM-COLORS------------------------------------------------------
-$light-tg-background: var(--tg-theme-secondary-bg-color);
-$dark-tg-background: var(--tg-theme-bg-color);
+$secondary-tg-background: var(--tg-theme-secondary-bg-color);
+$tg-background: var(--tg-theme-bg-color);
 $text-tg-color: var(--tg-theme-text-color);
 $hint-tg-color: var(--tg-theme-hint-color);
 $linn-tg-color: var(--tg-theme-link-color);
@@ -23,4 +23,12 @@ $middle-z-index: 1;
 $high-z-index: 2;
 $wrapper-margin: 1.5%;
 $bottom-margin-friends: 4%;
+$border-radius: 25px;
 
+//--------FONT--------------------------------------------------
+$heading-text: 900 26px/1 'Mulish', sans-serif;
+$subheading-text: 900 20px/1 'Mulish', sans-serif;
+$main-text: 400 16px/1.2 'Mulish', sans-serif;
+$main-bold-text: 600 16px/1 'Mulish', sans-serif;
+$subscript-text: 400 12px/1 'Mulish', sans-serif;
+$super-small-text: 400 10px 'Mulish', sans-serif;

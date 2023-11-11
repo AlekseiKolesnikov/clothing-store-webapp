@@ -28,9 +28,7 @@
 .personal-name {
   width: fit-content;
   height: fit-content;
-  font-size: 25px;
-  font-weight: 800;
-  font-family: "Mulish", sans-serif;
+  font: 900 26px/1 "Mulish", sans-serif;
   color: var(--tg-theme-text-color);
   margin-top: 4%;
 }

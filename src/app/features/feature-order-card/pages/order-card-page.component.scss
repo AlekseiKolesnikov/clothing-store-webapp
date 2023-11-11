@@ -5,7 +5,7 @@
   @extend %center-column-top-flex;
   width: 100vw;
   height: 100vh;
-  background: $light-tg-background;
+  background: $secondary-tg-background;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -14,15 +14,13 @@
   @extend %space-between-column-start-flex;
   width: 100%;
   padding: 0 $wrapper-padding;
-  background: $light-tg-background;
+  background: $secondary-tg-background;
 }
 
 .order-widget-page-text {
   width: fit-content;
   height: fit-content;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 900;
-  font-size: 28px;
+  font: $heading-text;
   color: $text-tg-color;
   margin-top: 2%;
 }

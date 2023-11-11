@@ -11,7 +11,7 @@
   justify-content: space-between;
 }
 
-.friends-card-page-history-box, .friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block, .friends-card-page-friends-text-box {
+.friends-card-page-table-box, .friends-card-page-history-box, .friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block, .friends-card-page-friends-text-box {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -25,7 +25,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   color: var(--tg-theme-text-color);
-  font-family: "Mulish", sans-serif;
+  font: 400 16px/1.2 "Mulish", sans-serif;
 }
 
 .friends-card-page-wrapper::-webkit-scrollbar {
@@ -53,8 +53,9 @@
 }
 
 .friends-card-page-friends-inf-box {
-  border-radius: 0 0 2em 2em;
+  border-radius: 0 0 25px 25px;
   margin-bottom: 4%;
+  font: 400 16px/1.2 "Mulish", sans-serif;
 }
 .friends-card-page-friends-inf-box .bold-span {
   color: white;
@@ -67,26 +68,12 @@
   line-height: 1.1;
 }
 
-.inf-box-first-text {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.3;
-}
-
-.inf-box-second-text {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.3;
-}
-
 .inf-box-second-third-box {
   width: 100%;
   height: fit-content;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.3;
+  font: 400 16px/1.2 "Mulish", sans-serif;
   padding: 4%;
-  border-radius: 2em;
+  border-radius: 25px;
   background: var(--tg-theme-secondary-bg-color);
   margin-bottom: 4%;
 }
@@ -98,7 +85,7 @@
 }
 
 .friends-card-page-invite-inf-box {
-  border-radius: 2em 2em 0 0;
+  border-radius: 25px 25px 0 0;
   padding: 4%;
 }
 .friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block {
@@ -106,8 +93,7 @@
   height: fit-content;
 }
 .friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block h3 {
-  font-weight: 900;
-  font-size: 18px;
+  font: 900 20px/1 "Mulish", sans-serif;
   margin-bottom: 4%;
 }
 .friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block .friends-card-page-link {
@@ -115,7 +101,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(0, 0, 0, 0);
   background-clip: text;
-  font-size: 16px;
+  font: 400 16px/1.2 "Mulish", sans-serif;
   margin-bottom: 4%;
 }
 .friends-card-page-invite-inf-box .friends-card-page-button-box {
@@ -128,7 +114,7 @@
   height: 100%;
   background: var(--tg-theme-bg-color);
   color: rgb(0, 124, 255);
-  font-size: 16px;
+  font: 400 16px/1.2 "Mulish", sans-serif;
   border-radius: 1em;
   border: var(--tg-theme-hint-color) solid 1px;
 }
@@ -138,6 +124,22 @@
   height: fit-content;
   font-size: 12px;
   color: var(--tg-theme-hint-color);
+}
+
+.friends-card-page-table-box {
+  width: 100%;
+  height: fit-content;
+  padding: 5%;
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  background: var(--tg-theme-secondary-bg-color);
+  border-radius: 25px;
+  margin-bottom: 2%;
+  gap: 10px;
+}
+
+.friends-card-page-table {
+  width: 100%;
+  height: 100%;
 }
 
 .__emoji_common_styles {

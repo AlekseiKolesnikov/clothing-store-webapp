@@ -8,10 +8,8 @@
 .profile-wrapper {
   height: 100vh;
   width: 100vw;
-  font-family: "Mulish", sans-serif;
+  font: 400 16px/1.2 "Mulish", sans-serif;
   color: var(--tg-theme-text-color);
-  font-size: 16px;
-  font-weight: 600;
   gap: 2%;
   overflow-y: scroll;
 }

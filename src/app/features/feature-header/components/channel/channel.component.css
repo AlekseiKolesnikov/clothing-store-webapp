@@ -32,8 +32,7 @@
 }
 
 .channel-name {
-  font-weight: 800;
-  font-size: 16px;
+  font: 600 16px/1 "Mulish", sans-serif;
   line-height: 12px;
   color: var(--tg-theme-text-color);
 }
