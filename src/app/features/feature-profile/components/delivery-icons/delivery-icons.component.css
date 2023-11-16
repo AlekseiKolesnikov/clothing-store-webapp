@@ -1,0 +1,72 @@
+.delivery-icon-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .delivery-icon-frame:hover {
+    cursor: pointer;
+  }
+}
+.delivery-icon-frame:active {
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+.delivery-icon-frame {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.gradientFrame {
+  background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+}
+
+.delivery-icon-box {
+  width: auto;
+  height: 52px;
+  padding: 5px;
+  border-radius: 9px;
+  background: var(--tg-theme-secondary-bg-color);
+  border: var(--tg-theme-bg-color) 3px solid;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.delivery-icon {
+  width: 30px;
+  aspect-ratio: 1/1;
+}
+
+.delivery-icon-text {
+  display: inline-block;
+  height: 40px;
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  align-content: start;
+}
+
+.store-icon {
+  width: 90px;
+}
+
+.location-icon {
+  width: 90px;
+}
+
+.carton-box-icon {
+  width: 80px;
+}
+
+/*# sourceMappingURL=delivery-icons.component.css.map */

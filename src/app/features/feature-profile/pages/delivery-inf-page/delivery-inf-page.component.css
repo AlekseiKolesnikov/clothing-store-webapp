@@ -1,0 +1,58 @@
+.delivery-options-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delivery-options-icons-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delivery-inf-page-wrapper {
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+  z-index: 0;
+}
+
+.delivery-inf-page-label {
+  width: 100%;
+  height: fit-content;
+  font: 900 26px/1 "Mulish", sans-serif;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.delivery-options-box {
+  text-align: left;
+  width: 100%;
+  gap: 15px;
+}
+
+.delivery-options-label {
+  font: 900 20px/1 "Mulish", sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+.delivery-options-icons-box {
+  gap: 3%;
+  padding: 0 3%;
+  z-index: 1;
+  position: relative;
+  width: 100vw;
+  scroll-padding-left: 6%;
+  height: 56px;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.delivery-options-icons-box::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=delivery-inf-page.component.css.map */
