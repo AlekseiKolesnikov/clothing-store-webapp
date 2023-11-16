@@ -1,5 +1,6 @@
 import {booleanAttribute, Component, Input, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {TelegramHapticFeedback} from "../../../../shared/telegram_ui/telegram-haptic-feedback";
 
 @Component({
   selector: 'app-article-card',
@@ -13,13 +14,18 @@ export class ArticleCardComponent extends BaseComponent {
   @Input() cardLink: string
   @Input({transform: booleanAttribute}) frameIsShown: boolean
 
+  constructor(
+    private readonly hapticFeedback: TelegramHapticFeedback
+  ) {
+    super();
+  }
+
   override click(event: Event) {
     super.click(event);
     setTimeout(() => {
       this.frameIsShown = true
     }, 500)
-    // @ts-ignore
-    Telegram.WebApp.HapticFeedback.notificationOccurred("success")
+    this.hapticFeedback.hapticFeedBack()
     // @ts-ignore
     Telegram.WebApp.openLink(this.cardLink, {try_instant_view: true})
   }

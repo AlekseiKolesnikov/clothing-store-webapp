@@ -1,0 +1,51 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/squeeze-animation.pattern";
+
+.delivery-icon-frame {
+  @extend %squeeze-animation;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.gradientFrame {
+  background: $gradient-color;
+}
+
+.delivery-icon-box {
+  @extend %space-between-row-center-flex;
+  width: auto;
+  height: 52px;
+  padding: 5px;
+  border-radius: 9px;
+  background: $secondary-tg-background;
+  border: $tg-background 3px solid;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.delivery-icon {
+  width: 30px;
+  aspect-ratio: 1/1;
+}
+
+.delivery-icon-text {
+  display: inline-block;
+  height: 40px;
+  font: $main-text;
+  align-content: start;
+}
+
+.store-icon {
+  width: 90px;
+}
+
+.location-icon {
+  width: 90px;
+}
+
+.carton-box-icon {
+  width: 80px;
+}

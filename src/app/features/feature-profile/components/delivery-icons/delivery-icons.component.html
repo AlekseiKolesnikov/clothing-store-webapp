@@ -1,0 +1,18 @@
+<div
+  #frame
+  class="delivery-icon-frame"
+  (click)="onClick(text, frame)"
+  (touchend)="touch($event)"
+>
+  <div
+    class="delivery-icon-box"
+  >
+    <img [alt]="iconName" [src]="icon" class="delivery-icon"/>
+    <div
+      [class]="className"
+      class="delivery-icon-text"
+    >
+      {{text}}
+    </div>
+  </div>
+</div>

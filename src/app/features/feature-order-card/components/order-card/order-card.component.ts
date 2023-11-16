@@ -3,6 +3,7 @@ import {orderCardData} from "../../data/order-card.data";
 import {BaseComponent} from "../../../../shared/models/base-component.service";
 import {Router} from "@angular/router";
 import {appRoutes} from "../../../../shared/data/app-routes";
+import {TelegramHapticFeedback} from "../../../../shared/telegram_ui/telegram-haptic-feedback";
 
 @Component({
   selector: 'app-order-card',
@@ -14,15 +15,15 @@ export class OrderCardComponent extends BaseComponent {
   protected readonly fullArrowIcon = orderCardData.fullArrowIcon
 
   constructor(
-    private router: Router
+    private router: Router,
+    private readonly hapticFeedback: TelegramHapticFeedback
   ) {
     super();
   }
   override click(event: Event) {
     super.click(event);
     this.router.navigate([appRoutes.orderCardPage])
-    // @ts-ignore
-    Telegram.WebApp.HapticFeedback.notificationOccurred("success")
+    this.hapticFeedback.hapticFeedBack()
   }
 
   override touch(event: Event) {

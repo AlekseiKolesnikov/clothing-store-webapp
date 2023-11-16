@@ -13,8 +13,14 @@ import {
 } from "../../features/feature-profile/components/profile-input-field/profile-input-field.component";
 import {ProfileComponent} from "../../features/feature-header/components/profile/profile.component";
 import {ChannelComponent} from "../../features/feature-header/components/channel/channel.component";
-import {ProfilePageComponent} from "../../features/feature-profile/pages/profile-page.component";
+import {ProfilePageComponent} from "../../features/feature-profile/pages/profile-page/profile-page.component";
 import {SharedModule} from "../../shared/modules/shared-module/shared.module";
+import {
+  DeliveryInfPageComponent
+} from "../../features/feature-profile/pages/delivery-inf-page/delivery-inf-page.component";
+import {
+  DeliveryIconsComponent
+} from "../../features/feature-profile/components/delivery-icons/delivery-icons.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +31,9 @@ import {SharedModule} from "../../shared/modules/shared-module/shared.module";
     ProfileInputFieldComponent,
     ProfileComponent,
     ChannelComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    DeliveryInfPageComponent,
+    DeliveryIconsComponent
   ],
   exports: [
     ProfileComponent,

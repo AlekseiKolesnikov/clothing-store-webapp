@@ -5,45 +5,39 @@
     <p>Но если нужно будет заказать какой-то заказ в другое место — не проблема.</p>
   </div>
 
-  <div
-    *ngIf="!nameFieldIsShown"
-    class="__delivery-inf-input-field __common_size"
-  >
-    <div class="delivery-inf-input-label">ФИО получателя</div>
-    <app-button
-      (buttonClick)="switchInputState('name')"
-      buttonClassName="color"
-      buttonText="Добавить"
-      class="profile-delivery-inf-button"
-    />
-  </div>
-  <app-profile-input-field
-    *ngIf="nameFieldIsShown"
-    [inputTextLength]="40"
-    buttonPlaceholder="ФИО"
-    class="__delivery-inf-input-field __common_size"
-    inputName="name"
-    inputType="text"
-  />
+  <div class="delivery-inf-data-box">
+    <div
+      class="__delivery-inf-field"
+    >
+      <div class="delivery-inf-label">ФИО получателя</div>
+      <div class="delivery-inf-data">{{deliveryInformationData.fullName}}</div>
+    </div>
 
-  <div
-    *ngIf="!numberFieldIsShown"
-    class="__delivery-inf-input-field __common_siz"
-  >
-    <div class="delivery-inf-input-label">Телефон</div>
-    <app-button
-      (buttonClick)="switchInputState('number')"
-      buttonClassName="color"
-      buttonText="Добавить"
-      class="profile-delivery-inf-button"
-    />
+    <div
+      class="__delivery-inf-field"
+    >
+      <div class="delivery-inf-label">Телефон</div>
+      <div class="delivery-inf-data">{{deliveryInformationData.phoneNumber}}</div>
+    </div>
+
+    <div
+      class="__delivery-inf-field"
+    >
+      <div class="delivery-inf-label">Город</div>
+      <div class="delivery-inf-data">{{deliveryInformationData.city}}</div>
+    </div>
+
+    <div
+      class="__delivery-inf-field"
+    >
+      <div class="delivery-inf-label">Адресс</div>
+      <div class="delivery-inf-data">{{deliveryInformationData.address}}</div>
+    </div>
   </div>
-  <app-profile-input-field
-    *ngIf="numberFieldIsShown"
-    [inputTextLength]="12"
-    buttonPlaceholder="+7"
-    class="__delivery-inf-input-field __common_size"
-    inputName="number"
-    inputType="tel"
-  />
+  <div class="delivery-inf-button-box">
+    <button
+      class="delivery-inf-button"
+      (click)="onClick()"
+    >Редактировать</button>
+  </div>
 </div>
