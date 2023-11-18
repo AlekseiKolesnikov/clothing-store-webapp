@@ -6,32 +6,47 @@
   </div>
 
   <div class="delivery-inf-data-box">
-    <div
-      class="__delivery-inf-field"
-    >
-      <div class="delivery-inf-label">ФИО получателя</div>
-      <div class="delivery-inf-data">{{deliveryInformationData.fullName}}</div>
+    <div class="delivery-inf-data-box">
+      <div
+        class="__delivery-inf-field"
+      >
+        <div class="delivery-inf-label">ФИО получателя</div>
+        <div class="delivery-inf-data">{{deliveryInformationData.fullName}}</div>
+      </div>
+
+      <div
+        class="__delivery-inf-field"
+      >
+        <div class="delivery-inf-label">Телефон</div>
+        <div class="delivery-inf-data">{{deliveryInformationData.phoneNumber}}</div>
+      </div>
+
+      <div class="delivery-options-data-box">
+        <app-pickup-store
+          *ngIf="buttonOption === 'Забрать из магазина'"
+          class="app-pickup-store"
+        />
+      </div>
     </div>
 
-    <div
-      class="__delivery-inf-field"
-    >
-      <div class="delivery-inf-label">Телефон</div>
-      <div class="delivery-inf-data">{{deliveryInformationData.phoneNumber}}</div>
-    </div>
 
     <div
-      class="__delivery-inf-field"
+      *ngIf="buttonOption !== 'Забрать из магазина'"
+      class="delivery-inf-data-box"
     >
-      <div class="delivery-inf-label">Город</div>
-      <div class="delivery-inf-data">{{deliveryInformationData.city}}</div>
-    </div>
+      <div
+        class="__delivery-inf-field"
+      >
+        <div class="delivery-inf-label">Город</div>
+        <div class="delivery-inf-data">{{deliveryInformationData.city}}</div>
+      </div>
 
-    <div
-      class="__delivery-inf-field"
-    >
-      <div class="delivery-inf-label">Адресс</div>
-      <div class="delivery-inf-data">{{deliveryInformationData.address}}</div>
+      <div
+        class="__delivery-inf-field"
+      >
+        <div class="delivery-inf-label">Адресс</div>
+        <div class="delivery-inf-data">{{deliveryInformationData.address}}</div>
+      </div>
     </div>
   </div>
   <div class="delivery-inf-button-box">

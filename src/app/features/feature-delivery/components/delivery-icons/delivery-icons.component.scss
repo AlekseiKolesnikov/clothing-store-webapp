@@ -10,8 +10,12 @@
   padding: 1px;
 }
 
-.gradientFrame {
+.gradient-frame {
   background: $gradient-color;
+}
+
+.empty-frame {
+  background: none;
 }
 
 .delivery-icon-box {

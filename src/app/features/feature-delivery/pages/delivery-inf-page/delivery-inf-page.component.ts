@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButton} from "../../../../shared/telegram_ui/telegram-main-button";
 import {deliveryIconData} from "../../data/delivery-icon.data";
+import {DeliveryOptionStateService} from "../../service/delivery-option-state.service";
 
 @Component({
   selector: 'app-d',
@@ -9,9 +10,15 @@ import {deliveryIconData} from "../../data/delivery-icon.data";
   encapsulation: ViewEncapsulation.None
 })
 export class DeliveryInfPageComponent implements OnInit{
+  protected buttonOption: string = "address"
+
   constructor(
-    private readonly telegramMainButton: TelegramMainButton
+    private readonly telegramMainButton: TelegramMainButton,
+    protected readonly deliveryOptionsState: DeliveryOptionStateService
   ) {
+    this.deliveryOptionsState.getState().subscribe(option => {
+      this.buttonOption = option
+    })
   }
 
   ngOnInit() {

@@ -17,10 +17,13 @@ import {ProfilePageComponent} from "../../features/feature-profile/pages/profile
 import {SharedModule} from "../../shared/modules/shared-module/shared.module";
 import {
   DeliveryInfPageComponent
-} from "../../features/feature-profile/pages/delivery-inf-page/delivery-inf-page.component";
+} from "../../features/feature-delivery/pages/delivery-inf-page/delivery-inf-page.component";
 import {
   DeliveryIconsComponent
-} from "../../features/feature-profile/components/delivery-icons/delivery-icons.component";
+} from "../../features/feature-delivery/components/delivery-icons/delivery-icons.component";
+import {DeliverHomeComponent} from "../../features/feature-delivery/components/deliver-home/deliver-home.component";
+import {PickupStoreComponent} from "../../features/feature-delivery/components/pickup-store/pickup-store.component";
+import {DistributionComponent} from "../../features/feature-delivery/components/distribution/distribution.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import {
     ChannelComponent,
     ProfilePageComponent,
     DeliveryInfPageComponent,
-    DeliveryIconsComponent
+    DeliveryIconsComponent,
+    DeliverHomeComponent,
+    PickupStoreComponent,
+    DistributionComponent
   ],
   exports: [
     ProfileComponent,

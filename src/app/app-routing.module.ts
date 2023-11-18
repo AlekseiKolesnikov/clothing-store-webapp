@@ -6,7 +6,7 @@ import {SearchBarPageComponent} from "./features/feature-search-bar/pages/search
 import {OrderCardPageComponent} from "./features/feature-order-card/pages/order-card-page.component";
 import {PointsCardPageComponent} from "./features/feature-points-card/pages/points-card-page.component";
 import {FriendsCardPageComponent} from "./features/feature-friends-card/pages/friends-card-page.component";
-import {DeliveryInfPageComponent} from "./features/feature-profile/pages/delivery-inf-page/delivery-inf-page.component";
+import {DeliveryInfPageComponent} from "./features/feature-delivery/pages/delivery-inf-page/delivery-inf-page.component";
 
 const routes: Routes = [
   {

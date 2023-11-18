@@ -30,8 +30,12 @@
   padding: 1px;
 }
 
-.gradientFrame {
+.gradient-frame {
   background: radial-gradient(266.38% 477.63% at -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
+}
+
+.empty-frame {
+  background: none;
 }
 
 .delivery-icon-box {

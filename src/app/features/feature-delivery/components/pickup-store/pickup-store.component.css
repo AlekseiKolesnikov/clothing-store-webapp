@@ -1,0 +1,65 @@
+.store-location-icon-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.store-location-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.store-location-address-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.store-location-wrapper {
+  width: 295px;
+  height: 110px;
+  background: var(--tg-theme-secondary-bg-color);
+  border-radius: 25px;
+  padding: 12px 8px;
+}
+
+.store-location-icon-box {
+  width: 10%;
+  height: 95%;
+}
+
+.store-location-icon {
+  width: 16px;
+  aspect-ratio: 1/1;
+}
+
+.store-location-address-box {
+  width: 90%;
+  height: 100%;
+}
+
+.store-location-address {
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  align-content: flex-start;
+}
+
+.store-location-hours {
+  font: 400 12px/1 "Mulish", sans-serif;
+  line-height: 1.5;
+  color: var(--tg-theme-hint-color);
+}
+
+.store-location-link-button {
+  vertical-align: top;
+  background: rgb(0, 124, 255);
+  color: white;
+  border-radius: 25px;
+  padding: 5px 6px 6px;
+  font: 400 12px/1 "Mulish", sans-serif;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=pickup-store.component.css.map */

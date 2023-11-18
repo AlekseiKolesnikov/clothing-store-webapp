@@ -10,16 +10,22 @@
       class="delivery-options-icons-box"
     >
       <app-delivery-icons
-        *ngFor="let item of deliveryIconData"
+        *ngFor="let item of deliveryIconData; index as i"
         [icon]="item.icon"
         [iconName]="item.iconName"
         [text]="item.text"
         [className]="item.className"
+        [frameClassName]="item.frameClassName"
+        [elementIndex]="i"
         class="delivery-options-icon"
       />
     </div>
-    <div class="delivery-options-city"></div>
-    <div class="delivery-options-icons-address"></div>
+    <div class="delivery-options-data-box">
+      <app-pickup-store
+        *ngIf="buttonOption === 'Забрать из магазина'"
+        class="app-pickup-store"
+      />
+    </div>
   </div>
   <div class="delivery-personal-data-box">
     <div class="delivery-personal-label"></div>

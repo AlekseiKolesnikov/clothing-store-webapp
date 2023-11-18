@@ -1,0 +1,49 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
+
+.store-location-wrapper {
+  @extend %space-between-row-center-flex;
+  width: 295px;
+  height: 110px;
+  background: $secondary-tg-background;
+  border-radius: $border-radius;
+  padding: 12px 8px;
+}
+
+.store-location-icon-box {
+  @extend %start-center-flex;
+  width: 10%;
+  height: 95%;
+}
+
+.store-location-icon {
+  width: 16px;
+  aspect-ratio: 1/1;
+}
+
+.store-location-address-box {
+  @extend %space-between-column-start-flex;
+  width: 90%;
+  height: 100%;
+}
+
+.store-location-address {
+  font: $main-text;
+  align-content: flex-start;
+}
+
+.store-location-hours {
+  font: $subscript-text;
+  line-height: 1.5;
+  color: $hint-tg-color;
+}
+
+.store-location-link-button {
+  vertical-align: top;
+  background: $blue-color;
+  color: white;
+  border-radius: $border-radius;
+  padding: 5px 6px 6px;
+  font: $subscript-text;
+  cursor: pointer;
+}

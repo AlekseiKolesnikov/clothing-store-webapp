@@ -46,6 +46,18 @@
   display: none;
 }
 
+.delivery-options-data-box {
+  @extend %space-between-column-center-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.app-pickup-store {
+  @extend %center-flex;
+  width: 85%;
+  height: fit-content;
+}
+
 .delivery-options-icon {
 }
 

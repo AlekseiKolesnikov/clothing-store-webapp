@@ -1,6 +1,7 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {DeliveryIconLayoutModel} from "../../models/delivery-icon-layout.model";
+import {FrameIconLayoutModel} from "../../../../shared/models/frame-icon-layout.model";
 import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {DeliveryOptionStateService} from "../../service/delivery-option-state.service";
 
 @Component({
   selector: 'app-delivery-icons',
@@ -13,14 +14,18 @@ export class DeliveryIconsComponent extends BaseComponent {
   @Input() icon: string
   @Input() text: string
   @Input() className: string
+  @Input() frameClassName: string
+  @Input() elementIndex: number
 
   constructor(
-    private deliveryIconLayout: DeliveryIconLayoutModel
+    private frameIconLayoutModel: FrameIconLayoutModel,
+    private deliveryOptionsState: DeliveryOptionStateService
   ) {
     super();
   }
 
-  onClick(deliveryOption: string, element: HTMLElement) {
-    this.deliveryIconLayout.getLayout(element)
+  onClick(deliveryOption: string, elementIndex: number) {
+    this.frameIconLayoutModel.getLayout(elementIndex)
+    this.deliveryOptionsState.setState(deliveryOption)
   }
 }

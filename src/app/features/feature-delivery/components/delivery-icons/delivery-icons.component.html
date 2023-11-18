@@ -1,7 +1,6 @@
 <div
-  #frame
-  class="delivery-icon-frame"
-  (click)="onClick(text, frame)"
+  class="delivery-icon-frame {{frameClassName}}"
+  (click)="onClick(text, elementIndex)"
   (touchend)="touch($event)"
 >
   <div

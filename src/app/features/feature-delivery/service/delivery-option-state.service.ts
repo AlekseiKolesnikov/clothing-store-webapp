@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import {deliveryOptions} from "../data/delivery-information.data";
+import {deliveryOptions} from "../../feature-profile/data/delivery-information.data";
 
 @Injectable({
   providedIn: 'root'

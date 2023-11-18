@@ -4,5 +4,6 @@ export const localStorageKeys = {
   articleCardsKey: 'articleWidgets',
   personalFullName: 'personalFullName',
   personalPhoneNumber: 'personalPhoneNumber',
-  scoreWidgetKey: 'scoreWidget'
+  scoreWidgetKey: 'scoreWidget',
+  frameArrayKey: 'deliveryOptionFrame'
 }

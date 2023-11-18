@@ -13,9 +13,9 @@ export class TelegramMainButton {
 
   activateMainButton(text: string) {
     // @ts-ignore
-    Telegram.WebApp.MainButton.show();
-    // @ts-ignore
     Telegram.WebApp.MainButton.setText(text)
+    // @ts-ignore
+    Telegram.WebApp.MainButton.show();
     // @ts-ignore
     Telegram.WebApp.onEvent("mainButtonClicked", () => {
       this.zone.run(() => {
