@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
-import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
+import {DeliveryOptionStateService, IDeliveryOptions} from "../../services/delivery-option-state.service";
 import {DeliveryIconService} from "../../services/delivery-icon.service";
 
 @Component({
@@ -11,19 +11,16 @@ import {DeliveryIconService} from "../../services/delivery-icon.service";
 })
 export class DeliveryInfPageComponent implements OnInit {
   protected buttonOption: number
-  protected frameState: boolean
-  protected deliveryIconData = this.deliveryIconDataService.getData()
+  protected deliveryIconData: Array<IDeliveryOptions>
 
   constructor(
     private readonly telegramMainButton: TelegramMainButtonModel,
-    private readonly deliveryIconDataService: DeliveryIconService,
+    deliveryIconDataService: DeliveryIconService,
     private readonly deliveryOptionsState: DeliveryOptionStateService
   ) {
+    this.deliveryOptionsState.setupData(deliveryIconDataService.getData())
     this.deliveryOptionsState.getState().subscribe(item => {
-      item.forEach(item => {
-        this.buttonOption = item.option
-        this.frameState = item.isSelected
-      })
+       this.deliveryIconData = item
     })
   }
 

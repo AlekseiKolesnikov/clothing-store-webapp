@@ -13,9 +13,7 @@ export class DeliveryIconsComponent extends BaseComponent {
   @Input() iconName: string
   @Input() icon: string
   @Input() text: string
-  @Input() className: string
-  @Input() frameClassName: boolean
-  @Input() buttonOption: number
+  @Input() isSelected: boolean
   @Input() elementIndex: number
 
   constructor(
@@ -25,9 +23,6 @@ export class DeliveryIconsComponent extends BaseComponent {
   }
 
   onClick(deliveryOption: number) {
-    this.deliveryOptionsState.setState({
-      option: deliveryOption,
-      isSelected: true
-    })
+    this.deliveryOptionsState.setState(deliveryOption)
   }
 }
