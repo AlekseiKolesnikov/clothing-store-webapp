@@ -58,6 +58,16 @@
   height: fit-content;
 }
 
+.app-distribution {
+  @extend %center-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.app-delivery-home {
+
+}
+
 .delivery-options-icon {
 }
 

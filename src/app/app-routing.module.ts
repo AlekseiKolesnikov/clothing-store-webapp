@@ -7,6 +7,9 @@ import {OrderCardPageComponent} from "./features/feature-order-card/pages/order-
 import {PointsCardPageComponent} from "./features/feature-points-card/pages/points-card-page.component";
 import {FriendsCardPageComponent} from "./features/feature-friends-card/pages/friends-card-page.component";
 import {DeliveryInfPageComponent} from "./features/feature-delivery/pages/delivery-inf-page/delivery-inf-page.component";
+import {
+  DistributionPointsPageComponent
+} from "./features/feature-delivery/pages/distribution-points-page/distribution-points-page.component";
 
 const routes: Routes = [
   {
@@ -36,6 +39,10 @@ const routes: Routes = [
   {
     path: 'delivery_inf_page',
     component: DeliveryInfPageComponent
+  },
+  {
+    path: 'distribution_points_page',
+    component: DistributionPointsPageComponent
   }
 ];
 

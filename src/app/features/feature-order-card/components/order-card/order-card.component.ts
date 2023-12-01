@@ -1,9 +1,8 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {orderCardData} from "../../data/order-card.data";
-import {BaseComponent} from "../../../../shared/models/base-component.service";
-import {Router} from "@angular/router";
-import {appRoutes} from "../../../../shared/data/app-routes";
-import {TelegramHapticFeedback} from "../../../../shared/telegram_ui/telegram-haptic-feedback";
+import {BaseComponent} from "../../../../shared/models/base-component.model";
+import {NavigateFeedbackModel} from "../../../../shared/models/telegram-ui/navigate-feedback-model";
+import {AppRoutesService} from "../../../../shared/services/app-routes.service";
+import {OrderPageService} from "../../services/order-page.service";
 
 @Component({
   selector: 'app-order-card',
@@ -12,18 +11,21 @@ import {TelegramHapticFeedback} from "../../../../shared/telegram_ui/telegram-ha
   encapsulation: ViewEncapsulation.None
 })
 export class OrderCardComponent extends BaseComponent {
-  protected readonly fullArrowIcon = orderCardData.fullArrowIcon
+  protected readonly fullArrowIcon = this.orderPageDataService.getData().fullArrowIcon
+  protected orderPageRoute: string
 
   constructor(
-    private router: Router,
-    private readonly hapticFeedback: TelegramHapticFeedback
+    private appRoutesService: AppRoutesService,
+    private readonly feedbackNavigate: NavigateFeedbackModel,
+    private readonly orderPageDataService: OrderPageService
   ) {
     super();
+    this.orderPageRoute = this.appRoutesService.getRoutes().orderCardPage
   }
+
   override click(event: Event) {
     super.click(event);
-    this.router.navigate([appRoutes.orderCardPage])
-    this.hapticFeedback.hapticFeedBack()
+    this.feedbackNavigate.feedbackNavigate(this.orderPageRoute)
   }
 
   override touch(event: Event) {

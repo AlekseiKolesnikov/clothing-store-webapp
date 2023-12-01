@@ -1,4 +1,4 @@
-.app-pickup-store {
+.app-distribution, .app-pickup-store {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,6 +68,11 @@
 
 .app-pickup-store {
   width: 85%;
+  height: fit-content;
+}
+
+.app-distribution {
+  width: 100%;
   height: fit-content;
 }
 

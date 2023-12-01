@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {LocalStorageService} from "../../../../local-storage.service";
-import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
+import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
 
 @Component({
   selector: 'app-channel',
@@ -10,10 +10,11 @@ import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
   encapsulation: ViewEncapsulation.None
 })
 export class ChannelComponent extends BaseComponent {
-  protected readonly channelIconData = this.localStorageService.getItem(localStorageKeys.channelIconKey)
+  protected readonly channelIconData = this.localStorageService.getItem(this.localStorageKeysService.getKey().channelIconKey)
 
   constructor(
-    protected readonly localStorageService: LocalStorageService
+    protected readonly localStorageService: LocalStorageService,
+    private readonly localStorageKeysService: LocalStorageKeysService
   ) {
     super();
   }

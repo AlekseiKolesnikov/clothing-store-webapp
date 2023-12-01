@@ -1,3 +1,29 @@
+.distribution-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.distribution-address-input, .distribution-city-input {
+  border-bottom: 0.5px solid var(--tg-theme-hint-color);
+  padding-bottom: 5px;
+}
+
+.distribution-wrapper {
+  width: 100%;
+  height: fit-content;
+  gap: 15px;
+}
+
+.distribution-city-input {
+  width: 100%;
+  height: fit-content;
+}
+
+.distribution-address-input {
+  width: 100%;
+  height: fit-content;
+}
 
 /*# sourceMappingURL=distribution.component.css.map */

@@ -1,8 +1,8 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {deliveryInformationData} from "../../data/delivery-information.data";
 import {Router} from "@angular/router";
-import {appRoutes} from "../../../../shared/data/app-routes";
-import {DeliveryOptionStateService} from "../../../feature-delivery/service/delivery-option-state.service";
+import {DeliveryOptionStateService} from "../../../feature-delivery/services/delivery-option-state.service";
+import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 
 @Component({
   selector: 'app-profile-delivery-inf',
@@ -11,19 +11,24 @@ import {DeliveryOptionStateService} from "../../../feature-delivery/service/deli
   encapsulation: ViewEncapsulation.None
 })
 export class ProfileDeliveryInfComponent {
-  protected buttonOption: string = ""
+  protected buttonOption: number
   protected readonly deliveryInformationData = deliveryInformationData;
+  protected deliveryInfPageRoute: string
 
   constructor(
     private router: Router,
+    private appRoutesService: AppRoutesService,
     protected readonly deliveryOptionsState: DeliveryOptionStateService
   ) {
-    this.deliveryOptionsState.getState().subscribe(option => {
-      this.buttonOption = option
+    this.deliveryOptionsState.getState().subscribe(item => {
+      item.forEach(item => {
+        this.buttonOption = item.option
+      })
     })
+    this.deliveryInfPageRoute = this.appRoutesService.getRoutes().deliveryInfPage
   }
 
   onClick() {
-    this.router.navigate([appRoutes.deliveryInfPage])
+    this.router.navigate([this.deliveryInfPageRoute])
   }
 }

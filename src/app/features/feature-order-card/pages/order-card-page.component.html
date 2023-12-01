@@ -5,30 +5,30 @@
     </div>
     <div class="order-widget-page-order-catalog-box">
       <app-square-widget-order-page
-        [iconLink]="orderWidgetData.blackTelegramIcon"
-        [arrow]="orderWidgetData.shortArrowIcon"
+        [arrow]="orderPageData.shortArrowIcon"
+        [boxColor]="orderPageData.pinkColor"
+        [iconLink]="orderPageData.blackTelegramIcon"
         iconLinkText="Телеграм иконка"
         text="Заказать через чат"
-        [boxColor]="orderWidgetData.pinkColor"
       />
       <app-square-widget-order-page
-        [iconLink]="orderWidgetData.sneakerIcon"
-        [arrow]="orderWidgetData.shortArrowIcon"
+        [arrow]="orderPageData.shortArrowIcon"
+        [boxColor]="orderPageData.yellowColor"
+        [iconLink]="orderPageData.sneakerIcon"
         iconLinkText="Иконка кроссовок"
         text="Выбрать из каталога"
-        [boxColor]="orderWidgetData.yellowColor"
       />
     </div>
     <div class="order-widget-page-order-calculate-box">
       <app-full-screen-widget-order-page
-        [iconLink]="orderWidgetData.supportMessageIcon"
-        [arrow]="orderWidgetData.shortArrowIcon"
+        [arrow]="orderPageData.shortArrowIcon"
+        [iconLink]="orderPageData.supportMessageIcon"
         iconLinkText="Иконка сердца"
         text="Посоветоваться с консультантом"
       />
       <app-full-screen-widget-order-page
-        [iconLink]="orderWidgetData.calculatorIcon"
-        [arrow]="orderWidgetData.shortArrowIcon"
+        [arrow]="orderPageData.shortArrowIcon"
+        [iconLink]="orderPageData.calculatorIcon"
         iconLinkText="Иконка иероглифов"
         text="Рассчитать стоимость товара из Sneaker Shop"
       />

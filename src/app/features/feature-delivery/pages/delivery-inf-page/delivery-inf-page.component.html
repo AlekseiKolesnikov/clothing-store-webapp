@@ -14,16 +14,24 @@
         [icon]="item.icon"
         [iconName]="item.iconName"
         [text]="item.text"
-        [className]="item.className"
-        [frameClassName]="item.frameClassName"
+        [frameClassName]="frameState"
+        [buttonOption]="buttonOption"
         [elementIndex]="i"
         class="delivery-options-icon"
       />
     </div>
     <div class="delivery-options-data-box">
       <app-pickup-store
-        *ngIf="buttonOption === 'Забрать из магазина'"
+        *ngIf="buttonOption === 0"
         class="app-pickup-store"
+      />
+      <app-distribution
+        *ngIf="buttonOption === 1"
+        class="app-distribution"
+      />
+      <app-deliver-home
+        *ngIf="buttonOption === 2"
+        class="app-delivery-home"
       />
     </div>
   </div>

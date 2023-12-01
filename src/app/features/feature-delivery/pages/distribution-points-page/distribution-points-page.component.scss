@@ -1,0 +1,44 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
+
+.distribution-page-wrapper {
+  @extend %space-between-column-center-flex;
+  width: 100vw;
+  height: 100vh;
+  background: $tg-background;
+}
+
+.distribution-page-searchbar-box {
+  @extend %space-between-column-start-flex;
+  width: 100%;
+  height: fit-content;
+  background: $secondary-tg-background;
+  padding: 5px 10px;
+}
+
+.distribution-page-searchbar-label {
+  width: fit-content;
+  height: fit-content;
+  font: $subscript-text;
+  color: $hint-tg-color;
+}
+
+.distribution-page-searchbar-input {
+  width: 100%;
+  height: 40px;
+  background: $secondary-tg-background;
+  font: $main-text;
+  color: $text-tg-color;
+}
+
+distribution-page-cities-list-box {
+
+}
+
+.distribution-page-city-box {
+
+}
+
+distribution-page-city-name {
+
+}

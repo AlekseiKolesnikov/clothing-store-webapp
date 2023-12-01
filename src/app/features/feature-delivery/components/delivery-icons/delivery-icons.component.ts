@@ -1,7 +1,7 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {FrameIconLayoutModel} from "../../../../shared/models/frame-icon-layout.model";
-import {BaseComponent} from "../../../../shared/models/base-component.service";
-import {DeliveryOptionStateService} from "../../service/delivery-option-state.service";
+import {BaseComponent} from "../../../../shared/models/base-component.model";
+import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
+
 
 @Component({
   selector: 'app-delivery-icons',
@@ -14,18 +14,20 @@ export class DeliveryIconsComponent extends BaseComponent {
   @Input() icon: string
   @Input() text: string
   @Input() className: string
-  @Input() frameClassName: string
+  @Input() frameClassName: boolean
+  @Input() buttonOption: number
   @Input() elementIndex: number
 
   constructor(
-    private frameIconLayoutModel: FrameIconLayoutModel,
     private deliveryOptionsState: DeliveryOptionStateService
   ) {
     super();
   }
 
-  onClick(deliveryOption: string, elementIndex: number) {
-    this.frameIconLayoutModel.getLayout(elementIndex)
-    this.deliveryOptionsState.setState(deliveryOption)
+  onClick(deliveryOption: number) {
+    this.deliveryOptionsState.setState({
+      option: deliveryOption,
+      isSelected: true
+    })
   }
 }

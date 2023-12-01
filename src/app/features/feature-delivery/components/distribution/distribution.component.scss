@@ -1,0 +1,22 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+@import "../../../../styles/patterns";
+
+.distribution-wrapper {
+  @extend %space-between-column-center-flex;
+  width: 100%;
+  height: fit-content;
+  gap: 15px;
+}
+
+.distribution-city-input {
+  @extend %thin-bottom-broder;
+  width: 100%;
+  height: fit-content;
+}
+
+.distribution-address-input {
+  @extend %thin-bottom-broder;
+  width: 100%;
+  height: fit-content;
+}

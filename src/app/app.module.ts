@@ -1,17 +1,19 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {LocalStorageService} from "./local-storage.service";
-import {SharedModule} from './shared/modules/shared-module/shared.module';
-import {MainPageModule} from "./core/modules/main-page.module";
-import {ActionCardsModule} from "./core/modules/action-cards.module";
-import {HeaderModule} from "./core/modules/header.module";
-import {SearchBarModule} from "./core/modules/search-bar.module";
-import {ArticlesModule} from "./core/modules/articles.module";
+import {SharedModule} from './modules/shared.module';
+import {MainPageModule} from "./modules/main-page.module";
+import {ActionCardsModule} from "./modules/action-cards.module";
+import {HeaderModule} from "./modules/header.module";
+import {SearchBarModule} from "./modules/search-bar.module";
+import {ArticlesModule} from "./modules/articles.module";
+import {ProfileModule} from "./modules/profile.module";
+import {DeliveryModule} from "./modules/delivery.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,9 +29,14 @@ import {ArticlesModule} from "./core/modules/articles.module";
     ActionCardsModule,
     ArticlesModule,
     HeaderModule,
-    SearchBarModule
+    SearchBarModule,
+    ProfileModule,
+    DeliveryModule,
+    HttpClientModule
   ],
-  providers: [LocalStorageService],
+  providers: [
+    LocalStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

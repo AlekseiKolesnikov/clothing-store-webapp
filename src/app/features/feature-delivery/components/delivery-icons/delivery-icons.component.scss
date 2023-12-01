@@ -22,7 +22,7 @@
   @extend %space-between-row-center-flex;
   width: auto;
   height: 52px;
-  padding: 5px;
+  padding: 5px 7px;
   border-radius: 9px;
   background: $secondary-tg-background;
   border: $tg-background 3px solid;
@@ -38,18 +38,7 @@
 .delivery-icon-text {
   display: inline-block;
   height: 40px;
+  width: fit-content;
   font: $main-text;
-  align-content: start;
-}
-
-.store-icon {
-  width: 90px;
-}
-
-.location-icon {
-  width: 90px;
-}
-
-.carton-box-icon {
-  width: 80px;
+  white-space: pre;
 }

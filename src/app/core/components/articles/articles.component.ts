@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {LocalStorageService} from "../../../local-storage.service";
-import {localStorageKeys} from "../../../shared/data/local-storage-keys";
+import {ArticlesCardDataService} from "../../../features/feature-article-card/services/articles-card-data.service";
 
 @Component({
   selector: 'app-articles',
@@ -9,10 +8,10 @@ import {localStorageKeys} from "../../../shared/data/local-storage-keys";
   encapsulation: ViewEncapsulation.None
 })
 export class ArticlesComponent {
-  protected readonly articlesCardsData = this.localStorageService.getItem(localStorageKeys.articleCardsKey);
+  protected articlesCardsData = this.articlesCardDataService.getData()
   protected frameState: boolean = false
   constructor(
-    private localStorageService: LocalStorageService
+    private articlesCardDataService: ArticlesCardDataService
   ) {
   }
 }

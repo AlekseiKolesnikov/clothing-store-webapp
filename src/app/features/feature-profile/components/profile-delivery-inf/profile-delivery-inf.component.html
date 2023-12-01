@@ -23,7 +23,7 @@
 
       <div class="delivery-options-data-box">
         <app-pickup-store
-          *ngIf="buttonOption === 'Забрать из магазина'"
+          *ngIf="buttonOption === 0"
           class="app-pickup-store"
         />
       </div>
@@ -31,7 +31,7 @@
 
 
     <div
-      *ngIf="buttonOption !== 'Забрать из магазина'"
+      *ngIf="buttonOption !== 0"
       class="delivery-inf-data-box"
     >
       <div

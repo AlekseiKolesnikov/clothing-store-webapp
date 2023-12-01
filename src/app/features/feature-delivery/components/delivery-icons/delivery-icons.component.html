@@ -1,6 +1,7 @@
 <div
-  class="delivery-icon-frame {{frameClassName}}"
-  (click)="onClick(text, elementIndex)"
+  class="delivery-icon-frame"
+  [class]="buttonOption === elementIndex && frameClassName ? 'gradient-frame' : 'empty-frame'"
+  (click)="onClick(elementIndex)"
   (touchend)="touch($event)"
 >
   <div
@@ -8,10 +9,9 @@
   >
     <img [alt]="iconName" [src]="icon" class="delivery-icon"/>
     <div
-      [class]="className"
       class="delivery-icon-text"
     >
-      {{text}}
+      <p>{{text}}</p>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {deliveryPageData} from "../../data/delivery-page.data";
-import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {BaseComponent} from "../../../../shared/models/base-component.model";
+import {StoreLocationService} from "../../services/store-location.service";
 
 @Component({
   selector: 'app-pickup-store',
@@ -9,15 +9,20 @@ import {BaseComponent} from "../../../../shared/models/base-component.service";
   encapsulation: ViewEncapsulation.None
 })
 export class PickupStoreComponent extends BaseComponent {
+  protected storeLocationData = this.storeLocationDataService.getData()
+
+  constructor(
+    private readonly storeLocationDataService: StoreLocationService
+  ) {
+    super();
+  }
   override click(event: Event) {
     super.click(event);
     // @ts-ignore
-    Telegram.WebApp.openLink(deliveryPageData.storeMapLink)
+    Telegram.WebApp.openLink(this.storeLocationData.storeMapLink)
   }
 
   override touch(event: Event) {
     super.touch(event);
   }
-
-  protected readonly deliveryPageData = deliveryPageData;
 }
