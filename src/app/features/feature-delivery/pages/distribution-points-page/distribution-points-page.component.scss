@@ -2,7 +2,7 @@
 @import "../../../../styles/flex.patterns";
 
 .distribution-page-wrapper {
-  @extend %space-between-column-center-flex;
+  @extend %center-column-top-flex;
   width: 100vw;
   height: 100vh;
   background: $tg-background;
@@ -31,14 +31,31 @@
   color: $text-tg-color;
 }
 
-distribution-page-cities-list-box {
+.distribution-page-cities-list-box {
+  width: 100%;
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
+.distribution-page-cities-list-box::-webkit-scrollbar {
+  display: none;
 }
 
 .distribution-page-city-box {
-
+  @extend %start-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  padding: 18px 10px;
+  font: $main-text;
+  color: $text-tg-color;
+  border-bottom: $thin-border $border-light-grey-color;
+  background-clip: padding-box;
+  cursor: pointer;
 }
 
-distribution-page-city-name {
-
+.distribution-page-city-name {
+  width: fit-content;
+  height: fit-content;
 }

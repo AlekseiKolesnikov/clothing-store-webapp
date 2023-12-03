@@ -12,10 +12,10 @@
     class="distribution-page-cities-list-box"
   >
     <div
-      *ngFor="let city of citiesArray"
+      *ngFor="let city of citiesArray | searchFilter: cityName"
       class="distribution-page-city-box"
     >
-      <div class="distribution-page-city-name">{{city.cityName}}</div>
+      <div class="distribution-page-city-name">{{city}}</div>
     </div>
   </div>
 </div>

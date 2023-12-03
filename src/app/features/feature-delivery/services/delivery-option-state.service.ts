@@ -13,6 +13,11 @@ export class DeliveryOptionStateService {
   private readonly deliveryOptionSubject = new BehaviorSubject<IDeliveryOptions[]>(new Array<IDeliveryOptions>())
   private deliveryOptions: IDeliveryOptions[] = new Array<IDeliveryOptions>()
 
+  constructor(
+    // private deliveryOptionsArray: IDeliveryOptions[]
+  ) {
+  }
+
   getState() {
     return this.deliveryOptionSubject.asObservable()
   }
@@ -28,7 +33,6 @@ export class DeliveryOptionStateService {
     if (!isExist) {
       this.deliveryOptions.push(newState)
     } else {
-      console.log(elementIndex)
       this.deliveryOptions.splice(elementIndex, 1)
       this.deliveryOptions.push(newState)
     }

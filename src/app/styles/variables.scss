@@ -13,6 +13,8 @@ $blue-color: rgb(0, 124, 255);
 $gradient-color: radial-gradient(266.38% 477.63% at
 -77.59% 78.26%, #eb9c00 0, #ff4769 27.08%, #3d50ff 66.38%, #00b3ff 100%);
 $gradient-color-two: linear-gradient(45deg, #fbf413,#ff7429,#bb29ff,#2986ff,#38fcff);
+$border-grey-color: rgba(166, 166, 166, 0.42);
+$border-light-grey-color: rgba(166, 166, 166, 0.26);
 
 //-------SIZES---------------------------------------------------
 $main-blocks-width: 94%;
@@ -25,7 +27,7 @@ $high-z-index: 2;
 $wrapper-margin: 1.5%;
 $bottom-margin-friends: 4%;
 $border-radius: 25px;
-$thin-border: 0.5px solid;
+$thin-border: 0.01px solid;
 
 //--------FONT--------------------------------------------------
 $heading-text: 900 26px/1 'Mulish', sans-serif;

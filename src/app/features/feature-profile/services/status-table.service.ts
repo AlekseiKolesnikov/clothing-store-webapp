@@ -6,8 +6,8 @@ import {Injectable} from "@angular/core";
 export class StatusTableService {
   private readonly statusTableDataArray = [
     {
-      status: "Status",
-      pointsForOrder: "Points for the order",
+      status: "Статус",
+      pointsForOrder: "Баллов за заказ",
       orders: "Заказов"
     },
     {

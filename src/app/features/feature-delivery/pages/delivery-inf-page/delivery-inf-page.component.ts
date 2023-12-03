@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
 import {DeliveryIconService} from "../../services/delivery-icon.service";
@@ -9,7 +9,7 @@ import {DeliveryIconService} from "../../services/delivery-icon.service";
   styleUrls: ['./delivery-inf-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DeliveryInfPageComponent implements OnInit {
+export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected buttonOption: number
   protected frameState: boolean
   protected deliveryIconData = this.deliveryIconDataService.getData()
@@ -28,6 +28,10 @@ export class DeliveryInfPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.telegramMainButton.activateMainButton("Сохранить")
+    this.telegramMainButton.showMainButton("Сохранить")
+  }
+
+  ngOnDestroy() {
+    this.telegramMainButton.hideMainButton()
   }
 }

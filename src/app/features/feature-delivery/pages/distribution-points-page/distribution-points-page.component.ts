@@ -1,6 +1,5 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import {CdekCitiesService, ICdekCity} from "../../services/cdek-cities.service";
-import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
+import {AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
+import {UsCitiesService} from "../../services/us-cities.service";
 
 @Component({
   selector: 'app-distribution-points-page',
@@ -8,20 +7,18 @@ import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/tel
   styleUrls: ['./distribution-points-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DistributionPointsPageComponent implements AfterViewInit, OnInit {
+export class DistributionPointsPageComponent implements AfterViewInit {
   @ViewChild('myInput') myInput: ElementRef
 
   protected cityName: string = ''
-  protected citiesArray: ICdekCity[] = []
+  protected citiesArray: string[] = []
 
   constructor(
-    private readonly cdekCitiesService: CdekCitiesService,
-    private readonly telegramMainButton: TelegramMainButtonModel
+    private readonly usCitiesService: UsCitiesService
   ) {
-  }
-
-  ngOnInit() {
-    this.telegramMainButton.activateMainButton("Сохранить")
+    this.usCitiesService.getCity().subscribe(value => {
+      this.citiesArray = value.data
+    });
   }
 
   ngAfterViewInit() {
@@ -29,8 +26,6 @@ export class DistributionPointsPageComponent implements AfterViewInit, OnInit {
   }
 
   updateList() {
-    this.cdekCitiesService.getCity(this.cityName).subscribe(value => {
-      console.log(value)
-    });
+
   }
 }

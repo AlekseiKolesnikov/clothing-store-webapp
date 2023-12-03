@@ -4,7 +4,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule} from "@angular/forms";
-import {LocalStorageService} from "./local-storage.service";
 import {SharedModule} from './modules/shared.module';
 import {MainPageModule} from "./modules/main-page.module";
 import {ActionCardsModule} from "./modules/action-cards.module";
@@ -35,9 +34,15 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers: [
-    LocalStorageService
+  //   {
+  //   provide: DeliveryOptionStateService,
+  //   useFactory: (currentOption: DeliveryOptionStateService, optionsArray: IDeliveryOptions[]) => {
+  //
+  //   }
+  // }
   ],
   bootstrap: [AppComponent]
-})
+}
+)
 export class AppModule {
 }

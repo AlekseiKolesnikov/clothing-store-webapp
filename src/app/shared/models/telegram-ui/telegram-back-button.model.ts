@@ -29,10 +29,8 @@ export class TelegramBackButtonModel {
         this.currentRoute = (event as NavigationEnd).url;
         if (this.currentRoute === `/${this.mainPageRoute}`) {
           // @ts-ignore
-          Telegram.WebApp.BackButton.hide()
+          Telegram.WebApp.BackButton.hide();
         } else {
-          // @ts-ignore
-          Telegram.WebApp.MainButton.hide();
           // @ts-ignore
           Telegram.WebApp.BackButton.show();
         }
