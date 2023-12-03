@@ -1,10 +1,14 @@
 import {Injectable} from "@angular/core";
 import {IDeliveryOptions} from "./delivery-option-state.service";
+import {LocalStorageService} from "../../../local-storage.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeliveryIconService {
+  constructor(private localStorage: LocalStorageService) {
+  }
+
   private readonly deliveryIconDataArray = [
     {
       icon: "assets/images/delivery-icons/store.svg",
@@ -29,7 +33,16 @@ export class DeliveryIconService {
     }
   ]
 
+  saveSelectedOption(selectedIndex: number) {
+    this.localStorage.setPrimitiveItem("savedDeliveryOption", selectedIndex.toString())
+  }
+
   getData(): Array<IDeliveryOptions> {
+    const savedSelectedOption = this.localStorage.getPrimitiveItem<number>("savedDeliveryOption",
+      (stringValue): number => {
+        return +stringValue
+      })
+    this.deliveryIconDataArray[savedSelectedOption].isSelected = true
     return this.deliveryIconDataArray
   }
 }

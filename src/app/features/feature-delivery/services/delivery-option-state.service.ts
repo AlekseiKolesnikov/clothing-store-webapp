@@ -17,8 +17,8 @@ export class DeliveryOptionStateService {
   private readonly deliveryOptionSubject
   private readonly deliveryOptions: IDeliveryOptions[] = new Array<IDeliveryOptions>()
 
-  constructor(deliveryOptions: DeliveryIconService) {
-    this.deliveryOptions = deliveryOptions.getData()
+  constructor(private deliveryOptionsService: DeliveryIconService) {
+    this.deliveryOptions = deliveryOptionsService.getData()
     this.deliveryOptionSubject = new BehaviorSubject<IDeliveryOptions[]>(this.deliveryOptions)
   }
 
@@ -30,6 +30,7 @@ export class DeliveryOptionStateService {
     this.deliveryOptions.forEach((item, index) => {
       item.isSelected = index === selectedIndex
     })
+    this.deliveryOptionsService.saveSelectedOption(selectedIndex)
     this.deliveryOptionSubject.next(this.deliveryOptions)
   }
 }
