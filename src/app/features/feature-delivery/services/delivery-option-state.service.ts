@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
+import {DeliveryIconService} from "./delivery-icon.service";
 
 export interface IDeliveryOptions {
   icon: string,
@@ -13,13 +14,12 @@ export interface IDeliveryOptions {
   providedIn: 'root'
 })
 export class DeliveryOptionStateService {
-  private readonly deliveryOptionSubject = new BehaviorSubject<IDeliveryOptions[]>(new Array<IDeliveryOptions>())
-  private deliveryOptions: IDeliveryOptions[] = new Array<IDeliveryOptions>()
+  private readonly deliveryOptionSubject
+  private readonly deliveryOptions: IDeliveryOptions[] = new Array<IDeliveryOptions>()
 
-  // TODO метод заменить на конструктор
-  setupData(deliveryOptions: IDeliveryOptions[]) {
-    this.deliveryOptions = deliveryOptions
-    this.deliveryOptionSubject.next(deliveryOptions)
+  constructor(deliveryOptions: DeliveryIconService) {
+    this.deliveryOptions = deliveryOptions.getData()
+    this.deliveryOptionSubject = new BehaviorSubject<IDeliveryOptions[]>(this.deliveryOptions)
   }
 
   getState() {

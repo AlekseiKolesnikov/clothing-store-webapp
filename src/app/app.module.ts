@@ -13,6 +13,8 @@ import {ArticlesModule} from "./modules/articles.module";
 import {ProfileModule} from "./modules/profile.module";
 import {DeliveryModule} from "./modules/delivery.module";
 import {HttpClientModule} from "@angular/common/http";
+import {DeliveryOptionStateService} from "./features/feature-delivery/services/delivery-option-state.service";
+import {DeliveryIconService} from "./features/feature-delivery/services/delivery-icon.service";
 
 @NgModule({
   declarations: [
@@ -32,6 +34,15 @@ import {HttpClientModule} from "@angular/common/http";
     ProfileModule,
     DeliveryModule,
     HttpClientModule
+  ],
+  providers: [
+    {
+      provide: DeliveryOptionStateService,
+      useFactory: (deliveryIconsService: DeliveryIconService) => {
+        return new DeliveryOptionStateService(deliveryIconsService)
+      },
+      deps: [DeliveryIconService]
+    }
   ],
   bootstrap: [AppComponent]
 })
