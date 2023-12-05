@@ -19,6 +19,7 @@
 .distribution-city-input {
   width: 100%;
   height: fit-content;
+  cursor: pointer;
 }
 
 .distribution-address-input {

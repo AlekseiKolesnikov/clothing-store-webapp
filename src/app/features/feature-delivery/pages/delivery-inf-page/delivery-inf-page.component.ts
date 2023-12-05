@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
 import {DeliveryIconService} from "../../services/delivery-icon.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-delivery-inf-page',
@@ -13,13 +14,14 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected buttonOption: number
   protected frameState: boolean
   protected deliveryIconData = this.deliveryIconDataService.getData()
+  protected deliveryOptionsState$: Subscription
 
   constructor(
     private readonly telegramMainButton: TelegramMainButtonModel,
     private readonly deliveryIconDataService: DeliveryIconService,
     private readonly deliveryOptionsState: DeliveryOptionStateService
   ) {
-    this.deliveryOptionsState.getState().subscribe(item => {
+    this.deliveryOptionsState$ = this.deliveryOptionsState.getState().subscribe(item => {
       item.forEach(item => {
         this.buttonOption = item.option
         this.frameState = item.isSelected
@@ -32,6 +34,7 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.deliveryOptionsState$.unsubscribe()
     this.telegramMainButton.hideMainButton()
   }
 }
