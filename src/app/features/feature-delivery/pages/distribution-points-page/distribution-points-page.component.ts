@@ -1,4 +1,12 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, ViewEncapsulation} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  OnDestroy,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import {CitiesHandlerService} from "../../services/cities-handler.service";
 import {ViewportHandlerService} from "../../services/viewport-handler.service";
 
@@ -10,9 +18,12 @@ import {ViewportHandlerService} from "../../services/viewport-handler.service";
 })
 export class DistributionPointsPageComponent implements AfterViewInit, OnDestroy {
   @ViewChild('myInput') myInput: ElementRef
+  @ViewChild('wrapper') pageWrapper: ElementRef
 
   protected cityName: string = ''
   protected citiesArray: string[] = []
+  private initialHeight: number;
+
 
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService,
@@ -25,10 +36,7 @@ export class DistributionPointsPageComponent implements AfterViewInit, OnDestroy
 
   ngAfterViewInit() {
     this.myInput.nativeElement.focus()
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener("scroll", this.viewportHandlerService.handleViewport);
-      window.visualViewport.addEventListener("resize", this.viewportHandlerService.handleViewport);
-    }
+    this.initialHeight = window.innerHeight;
   }
 
   ngOnDestroy() {
@@ -37,5 +45,6 @@ export class DistributionPointsPageComponent implements AfterViewInit, OnDestroy
 
   updateList() {
     this.citiesHandlerService.getAllCities()
+
   }
 }
