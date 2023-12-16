@@ -20,9 +20,11 @@
 }
 
 .distribution-page-wrapper {
+  position: fixed;
   width: 100%;
   height: 100%;
   background: var(--tg-theme-bg-color);
+  overflow: hidden;
 }
 
 .distribution-page-searchbar-box {

@@ -10,6 +10,7 @@ import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 })
 export class DeliveryInputComponent {
   @Input() label: string
+  @Input() data: string
 
   protected distributionPointsPage: string
   constructor(

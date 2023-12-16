@@ -1,14 +1,7 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  HostListener,
-  OnDestroy,
-  ViewChild,
-  ViewEncapsulation
-} from '@angular/core';
+import {Component, ElementRef, OnDestroy, ViewChild, ViewEncapsulation} from '@angular/core';
 import {CitiesHandlerService} from "../../services/cities-handler.service";
-import {ViewportHandlerService} from "../../services/viewport-handler.service";
+import {DeliveryDataService} from "../../services/delivery-data.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-distribution-points-page',
@@ -16,27 +9,31 @@ import {ViewportHandlerService} from "../../services/viewport-handler.service";
   styleUrls: ['./distribution-points-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DistributionPointsPageComponent implements AfterViewInit, OnDestroy {
+export class DistributionPointsPageComponent implements OnDestroy {
   @ViewChild('myInput') myInput: ElementRef
-  @ViewChild('wrapper') pageWrapper: ElementRef
+  @ViewChild('cityBox') cityBox: ElementRef
 
   protected cityName: string = ''
   protected citiesArray: string[] = []
-  private initialHeight: number;
-
 
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService,
-    private readonly viewportHandlerService: ViewportHandlerService
+    private readonly deliveryDataService: DeliveryDataService,
+    private readonly location: Location
   ) {
     this.citiesHandlerService.subscribe().subscribe(data => {
       this.citiesArray = data
     })
   }
 
-  ngAfterViewInit() {
-    this.myInput.nativeElement.focus()
-    this.initialHeight = window.innerHeight;
+  onScroll() {
+    const activeElement = <HTMLElement>document.activeElement
+    activeElement.blur()
+  }
+
+  onClick(city: string) {
+    this.deliveryDataService.setCity(city)
+    this.location.back()
   }
 
   ngOnDestroy() {
@@ -45,6 +42,5 @@ export class DistributionPointsPageComponent implements AfterViewInit, OnDestroy
 
   updateList() {
     this.citiesHandlerService.getAllCities()
-
   }
 }

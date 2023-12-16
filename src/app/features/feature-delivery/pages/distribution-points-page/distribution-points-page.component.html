@@ -10,11 +10,13 @@
     >
   </div>
   <div
+    #cityBox
     class="distribution-page-cities-list-box"
-    id="list-box"
+    (scroll)="onScroll()"
   >
     <div
       *ngFor="let city of citiesArray | searchFilter: cityName"
+      (click)="onClick(city)"
       class="distribution-page-city-box"
     >
       <div class="distribution-page-city-name">{{city}}</div>
