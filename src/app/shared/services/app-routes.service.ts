@@ -12,7 +12,8 @@ export class AppRoutesService {
     pointsCardPage: 'points_card_page',
     friendsCardPage: 'friends_card_page',
     deliveryInfPage: 'delivery_inf_page',
-    distributionPointsPage: 'distribution_points_page'
+    distributionPointsPage: 'distribution_points_page',
+    distributionAddressPage: "distribution_address_page"
   }
 
   getRoutes() {

@@ -2,6 +2,7 @@ import {Component, ElementRef, OnDestroy, ViewChild, ViewEncapsulation} from '@a
 import {CitiesHandlerService} from "../../services/cities-handler.service";
 import {DeliveryDataService} from "../../services/delivery-data.service";
 import {Location} from "@angular/common";
+import {BaseComponent} from "../../../../shared/models/base-component.model";
 
 @Component({
   selector: 'app-distribution-points-page',
@@ -9,9 +10,8 @@ import {Location} from "@angular/common";
   styleUrls: ['./distribution-points-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DistributionPointsPageComponent implements OnDestroy {
+export class DistributionPointsPageComponent extends BaseComponent implements OnDestroy {
   @ViewChild('myInput') myInput: ElementRef
-  @ViewChild('cityBox') cityBox: ElementRef
 
   protected cityName: string = ''
   protected citiesArray: string[] = []
@@ -21,14 +21,10 @@ export class DistributionPointsPageComponent implements OnDestroy {
     private readonly deliveryDataService: DeliveryDataService,
     private readonly location: Location
   ) {
+    super();
     this.citiesHandlerService.subscribe().subscribe(data => {
       this.citiesArray = data
     })
-  }
-
-  onScroll() {
-    const activeElement = <HTMLElement>document.activeElement
-    activeElement.blur()
   }
 
   onClick(city: string) {

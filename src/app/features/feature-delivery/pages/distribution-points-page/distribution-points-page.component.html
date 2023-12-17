@@ -5,14 +5,12 @@
       #myInput
       (input)="updateList()"
       [(ngModel)]="cityName"
-      id="input"
       class="distribution-page-searchbar-input"
     >
   </div>
   <div
-    #cityBox
     class="distribution-page-cities-list-box"
-    (scroll)="onScroll()"
+    (scroll)="scroll()"
   >
     <div
       *ngFor="let city of citiesArray | searchFilter: cityName"

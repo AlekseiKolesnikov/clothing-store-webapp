@@ -13,14 +13,21 @@ export class DeliveryInputComponent {
   @Input() data: string
 
   protected distributionPointsPage: string
+  protected distributionAddressPage: string
   constructor(
     private router: Router,
     private appRoutesService: AppRoutesService
   ) {
     this.distributionPointsPage = this.appRoutesService.getRoutes().distributionPointsPage
+    this.distributionAddressPage = this.appRoutesService.getRoutes().distributionAddressPage
   }
 
   onClick() {
-    this.router.navigate([this.distributionPointsPage])
+    if (this.label === "Город") {
+      this.router.navigate([this.distributionPointsPage])
+    }
+    if (this.label === "Пункт выдачи заказов") {
+      this.router.navigate([this.distributionAddressPage])
+    }
   }
 }

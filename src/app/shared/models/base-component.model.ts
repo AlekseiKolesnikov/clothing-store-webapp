@@ -16,4 +16,9 @@ export abstract class BaseComponent {
   submit(event: Event) {
     event.preventDefault()
   }
+
+  scroll() {
+    const activeElement = <HTMLElement>document.activeElement
+    activeElement.blur()
+  }
 }

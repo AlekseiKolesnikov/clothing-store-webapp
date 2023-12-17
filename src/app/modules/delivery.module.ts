@@ -15,6 +15,9 @@ import {
 import {DeliveryInputComponent} from "../features/feature-delivery/components/delivery-input/delivery-input.component";
 import {FormsModule} from "@angular/forms";
 import {SearchFilterPipe} from "../shared/pipes/search-filter.pipe";
+import {
+  DistributionAddressPageComponent
+} from "../features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
 
 
 
@@ -27,7 +30,8 @@ import {SearchFilterPipe} from "../shared/pipes/search-filter.pipe";
     DistributionComponent,
     DeliveryInputComponent,
     DistributionPointsPageComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    DistributionAddressPageComponent
   ],
   exports: [
     PickupStoreComponent
