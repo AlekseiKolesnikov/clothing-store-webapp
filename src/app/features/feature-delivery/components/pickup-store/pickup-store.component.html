@@ -1,0 +1,16 @@
+<div class="store-location-wrapper">
+  <div class="store-location-icon-box">
+    <img class="store-location-icon" [src]="storeLocationData.locationPinIcon" [alt]="storeLocationData.locationIconName">
+  </div>
+  <div class="store-location-address-box">
+    <div class="store-location-text-box">
+      <p class="store-location-address">{{storeLocationData.storeAddress}}</p>
+      <p class="store-location-hours">{{storeLocationData.storeHours}}</p>
+    </div>
+    <button
+      class="store-location-link-button"
+      (click)="click($event)"
+      (touchend)="touch($event)"
+    >{{storeLocationData.lookMapButtonText}}</button>
+  </div>
+</div>

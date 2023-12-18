@@ -1,0 +1,17 @@
+<div
+  class="delivery-icon-frame"
+  [class]="buttonOption === elementIndex && frameClassName ? 'gradient-frame' : 'empty-frame'"
+  (click)="onClick(elementIndex)"
+  (touchend)="touch($event)"
+>
+  <div
+    class="delivery-icon-box"
+  >
+    <img [alt]="iconName" [src]="icon" class="delivery-icon"/>
+    <div
+      class="delivery-icon-text"
+    >
+      <p>{{text}}</p>
+    </div>
+  </div>
+</div>

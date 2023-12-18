@@ -2,7 +2,7 @@
   <div class="friends-card-page-friends-inf-box __friends-card-page-common-style">
     <div class="friends-card-page-friends-emoji-box">
       <app-friends-page-emoji
-        *ngFor="let item of emojiData"
+        *ngFor="let item of emojisArray"
         [backgroundColor]="item.backgroundColor"
         [class]="item.className"
         [emojiAlt]="item.name"
@@ -51,7 +51,7 @@
     </div>
     <div class="friends-card-page-table-box">
       <app-friends-card-page-table
-        *ngFor="let item of friendsPageTableData"
+        *ngFor="let item of friendsStatisticsData"
         [text]="item.text"
         [amount]="item.amount"
         class="friends-card-page-table"

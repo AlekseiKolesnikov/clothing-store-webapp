@@ -1,0 +1,43 @@
+<div class="wrapper delivery-inf-page-wrapper">
+  <div class="delivery-inf-page-label">
+    <p>Данные доставки</p>
+  </div>
+  <div class="delivery-options-box">
+    <div class="delivery-options-label">
+      <p>Способы получения</p>
+    </div>
+    <div
+      class="delivery-options-icons-box"
+    >
+      <app-delivery-icons
+        *ngFor="let item of deliveryIconData; index as i"
+        [icon]="item.icon"
+        [iconName]="item.iconName"
+        [text]="item.text"
+        [frameClassName]="frameState"
+        [buttonOption]="buttonOption"
+        [elementIndex]="i"
+        class="delivery-options-icon"
+      />
+    </div>
+    <div class="delivery-options-data-box">
+      <app-pickup-store
+        *ngIf="buttonOption === 0"
+        class="app-pickup-store"
+      />
+      <app-distribution
+        *ngIf="buttonOption === 1"
+        class="app-distribution"
+      />
+      <app-deliver-home
+        *ngIf="buttonOption === 2"
+        class="app-delivery-home"
+      />
+    </div>
+  </div>
+  <div class="delivery-personal-data-box">
+    <div class="delivery-personal-label"></div>
+    <div class="delivery-personal-name"></div>
+    <div class="delivery-personal-phone-number"></div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {BaseComponent} from "../../../../shared/models/base-component.model";
 
 @Component({
   selector: 'app-full-screen-widget-order-page',

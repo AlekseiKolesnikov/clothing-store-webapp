@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {FriendEmoji, friendsPageData} from "../data/friends-page.data";
-import {friendsPageTableData} from "../data/friends-page-table.data";
+import {FriendEmoji, FriendsEmojiService} from "../services/friends-emoji.service";
+import {FriendsStatisticsData, FriendsStatisticsService} from "../services/friends-statistics.service";
 
 @Component({
   selector: 'app-friends-card-page',
@@ -9,17 +9,26 @@ import {friendsPageTableData} from "../data/friends-page-table.data";
   encapsulation: ViewEncapsulation.None
 })
 export class FriendsCardPageComponent implements OnInit {
-  protected emojiData: FriendEmoji[] = [];
-  protected checkMarkState:boolean = false
+  protected emojisArray: FriendEmoji[] = [];
+  protected checkMarkState: boolean = false
+  protected friendsEmojiData =this.friendsEmojiService.getData()
+  protected friendsStatisticsData: FriendsStatisticsData[]
+
+  constructor(
+    private readonly friendsEmojiService: FriendsEmojiService,
+    private readonly friendsStatisticsService: FriendsStatisticsService
+  ) {
+    this.friendsStatisticsData = this.friendsStatisticsService.getData()
+  }
 
   ngOnInit() {
     let index = 0
 
     const showInterval = setInterval(() => {
-      this.emojiData.push(friendsPageData[index])
+      this.emojisArray.push(this.friendsEmojiData[index])
       index++
 
-      if (index == friendsPageData.length) {
+      if (index == this.friendsEmojiData.length) {
         clearInterval(showInterval)
       }
     }, 300)
@@ -30,6 +39,4 @@ export class FriendsCardPageComponent implements OnInit {
     // @ts-ignore
     Telegram.WebApp.HapticFeedback.notificationOccurred("success")
   }
-
-  protected readonly friendsPageTableData = friendsPageTableData;
 }

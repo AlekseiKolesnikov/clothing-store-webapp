@@ -1,47 +1,44 @@
 <div
-        class="profile-input-field-box"
-        *ngIf="inputName === 'name' ? !nameResultState : !phoneResultState"
+  *ngIf="inputName === 'name' ? !nameResultState : !phoneResultState"
+  class="profile-input-field-box"
 >
-        <div class="app-data-form-box">
-                <app-data-form
-                        buttonPlaceholder="{{buttonPlaceholder}}"
-                        inputName="{{inputName}}"
-                        [inputTextLength]="inputTextLength"
-                        inputType="{{inputType}}"
-                />
-        </div>
-      <div class="app-buttons-box">
-              <app-button
-                      buttonClassName="color"
-                      buttonText="Подтвердить"
-                      buttonType="submit"
-                      class="input-field-button"
-                      (buttonClick)="switchFormDataState()"
-              />
-              <app-button
-                      buttonClassName="clear"
-                      buttonText="Отменить"
-                      buttonType="button"
-                      class="input-field-button"
-                      (buttonClick)="switchInputState(inputName)"
-              />
-      </div>
+  <div class="app-data-form-box">
+    <app-data-form
+      [inputTextLength]="inputTextLength"
+      buttonPlaceholder="{{buttonPlaceholder}}"
+      inputName="{{inputName}}"
+      inputType="{{inputType}}"
+    />
+  </div>
+  <div class="app-buttons-box">
+    <app-button
+      buttonClassName="color"
+      buttonText="Подтвердить"
+      buttonType="submit"
+      class="input-field-button"
+    />
+    <app-button
+      buttonClassName="clear"
+      buttonText="Отменить"
+      buttonType="button"
+      class="input-field-button"
+    />
+  </div>
 
 </div>
 
 <div
-        class="profile-input-field-box"
-        *ngIf="inputName === 'name' ? nameResultState : phoneResultState"
+  *ngIf="inputName === 'name' ? nameResultState : phoneResultState"
+  class="profile-input-field-box"
 >
-        <div class="data-result-box">
-                {{(inputName === 'name' ? personalFullName :
-                personalPhoneNumber) | truncate : 30}}
-        </div>
-        <app-button
-                buttonClassName="color"
-                buttonText="Изменить"
-                buttonType="button"
-                class="input-field-button"
-                (buttonClick)="switchFormDataState()"
-        />
+  <div class="data-result-box">
+    {{(inputName === 'name' ? personalFullName :
+    personalPhoneNumber) | truncate : 30}}
+  </div>
+  <app-button
+    buttonClassName="color"
+    buttonText="Изменить"
+    buttonType="button"
+    class="input-field-button"
+  />
 </div>

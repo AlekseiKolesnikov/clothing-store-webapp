@@ -1,0 +1,46 @@
+.delivery-input-data-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delivery-input-data-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.delivery-input-data-wrapper {
+  width: 100%;
+  height: fit-content;
+}
+
+.delivery-input-data-box {
+  width: 70%;
+  height: fit-content;
+  gap: 3px;
+}
+
+.delivery-input-data-label {
+  width: fit-content;
+  height: fit-content;
+  font: 400 12px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-hint-color);
+}
+
+.delivery-input-data {
+  width: fit-content;
+  height: fit-content;
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+}
+
+.delivery-input-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--tg-theme-hint-color);
+}
+
+/*# sourceMappingURL=delivery-input.component.css.map */

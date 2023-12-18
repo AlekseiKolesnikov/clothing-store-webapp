@@ -1,0 +1,35 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+
+.delivery-input-data-wrapper {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.delivery-input-data-box {
+  @extend %space-between-column-start-flex;
+  width: 70%;
+  height: fit-content;
+  gap: 3px;
+}
+
+.delivery-input-data-label {
+  width: fit-content;
+  height: fit-content;
+  font: $subscript-text;
+  color: $hint-tg-color;
+}
+
+.delivery-input-data {
+  width: fit-content;
+  height: fit-content;
+  font: $main-text;
+  color: $text-tg-color;
+}
+
+.delivery-input-arrow {
+  width: 20px;
+  height: 20px;
+  color: $hint-tg-color;
+}

@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {orderCardData} from "../data/order-card.data";
+import {OrderPageService} from "../services/order-page.service";
 
 @Component({
   selector: 'app-order-card-page',
@@ -8,5 +8,10 @@ import {orderCardData} from "../data/order-card.data";
   encapsulation: ViewEncapsulation.None
 })
 export class OrderCardPageComponent {
-  protected readonly orderWidgetData = orderCardData
+  protected readonly orderPageData = this.orderPageDataService.getData()
+
+  constructor(
+    private readonly orderPageDataService: OrderPageService
+  ) {
+  }
 }

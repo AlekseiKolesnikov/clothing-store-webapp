@@ -1,8 +1,8 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {InputFieldStateService} from "../../service/input-field-state.service";
-import {InputResultStateService} from "../../service/input-result-state.service";
-import {LocalStorageService} from "../../../../local-storage.service";
-import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
+import {Component, ViewEncapsulation} from '@angular/core';
+import {deliveryInformationData} from "../../data/delivery-information.data";
+import {Router} from "@angular/router";
+import {DeliveryOptionStateService} from "../../../feature-delivery/services/delivery-option-state.service";
+import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 
 @Component({
   selector: 'app-profile-delivery-inf',
@@ -10,40 +10,25 @@ import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
   styleUrls: ['./profile-delivery-inf.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProfileDeliveryInfComponent implements OnInit {
-  numberFieldIsShown: boolean
-  nameFieldIsShown: boolean
+export class ProfileDeliveryInfComponent {
+  protected buttonOption: number
+  protected readonly deliveryInformationData = deliveryInformationData;
+  protected deliveryInfPageRoute: string
 
   constructor(
-    private inputFieldStateService: InputFieldStateService,
-    private inputResultStateService: InputResultStateService,
-    private localStorageService: LocalStorageService
+    private router: Router,
+    private appRoutesService: AppRoutesService,
+    protected readonly deliveryOptionsState: DeliveryOptionStateService
   ) {
-    this.inputFieldStateService.getNameInputState().subscribe(value => {
-      this.nameFieldIsShown = value
+    this.deliveryOptionsState.getState().subscribe(item => {
+      item.forEach(item => {
+        this.buttonOption = item.option
+      })
     })
-    this.inputFieldStateService.getPhoneInputState().subscribe(value => {
-      this.numberFieldIsShown = value
-    })
+    this.deliveryInfPageRoute = this.appRoutesService.getRoutes().deliveryInfPage
   }
 
-  ngOnInit() {
-    if (this.localStorageService.getItem(localStorageKeys.personalFullName).length > 0) {
-      this.inputResultStateService.setNameInputResultState(true)
-      this.inputFieldStateService.setNameInputState(true)
-    }
-    if (this.localStorageService.getItem(localStorageKeys.personalPhoneNumber).length > 0) {
-      this.inputResultStateService.setPhoneInputResultState(true)
-      this.inputFieldStateService.setPhoneInputState(true)
-    }
-  }
-
-  switchInputState(inputFieldType: string): void {
-    if (inputFieldType === 'number') {
-      this.inputFieldStateService.setPhoneInputState(true)
-    }
-    if (inputFieldType === 'name') {
-      this.inputFieldStateService.setNameInputState(true)
-    }
+  onClick() {
+    this.router.navigate([this.deliveryInfPageRoute])
   }
 }

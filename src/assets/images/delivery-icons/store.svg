@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 496 496" xml:space="preserve">
+<rect x="31.2" y="188" style="fill:#E8E8E8;" width="433.6" height="284"/>
+<polygon style="fill:#F15249;" points="448,128 48,128 88,56 408,56 "/>
+<rect x="56" y="200" style="fill:#D6D6D6;" width="384" height="264"/>
+<rect x="56" y="264" style="fill:#E8E8E8;" width="384" height="200"/>
+<rect x="56" y="280" style="fill:#3AC2F2;" width="384" height="184"/>
+<polyline style="fill:#009CC6;" points="56,280 440,280 440,464 "/>
+<g>
+	<rect x="128" y="272" style="fill:#E8E8E8;" width="16" height="200"/>
+	<rect x="320" y="272" style="fill:#E8E8E8;" width="24" height="200"/>
+</g>
+<rect x="344" y="280" style="fill:#50BB75;" width="96" height="192"/>
+<polyline style="fill:#0AA06E;" points="344,472 344,280 440,280 "/>
+<path style="fill:#007093;" d="M232,350.4c0-8.8-5.6-16-13.6-18.4c6.4-2.4,10.4-8.8,10.4-16c0-9.6-7.2-16.8-16.8-16.8
+	s-16.8,7.2-16.8,16.8c0,7.2,4,12.8,10.4,16c-8,2.4-13.6,9.6-13.6,18.4v48.8c0,5.6,0,10.4,8,13.6V472h24v-59.2c8-3.2,8-8,8-13.6
+	L232,350.4L232,350.4z"/>
+<g>
+	<polygon style="fill:#FFC114;" points="48,56 0,128 48,128 88,56 	"/>
+	<polygon style="fill:#FFC114;" points="448,56 408,56 448,128 496,128 	"/>
+	<polygon style="fill:#FFC114;" points="319.2,56 336,128 392,128 366.4,56 	"/>
+	<polygon style="fill:#FFC114;" points="129.6,56 104,128 160,128 176.8,56 	"/>
+	<polygon style="fill:#FFC114;" points="221.6,56 216,128 280,128 274.4,56 	"/>
+</g>
+<path style="fill:#FCA12A;" d="M0,128v81.6c0,14.4,9.6,25.6,24,25.6s24-11.2,24-25.6V128H0z"/>
+<g>
+	<path style="fill:#C93131;" d="M48,128v81.6c0,14.4,13.6,25.6,28,25.6s28-11.2,28-25.6V128H48z"/>
+	<path style="fill:#C93131;" d="M160,128v81.6c0,14.4,12.8,25.6,28,25.6s28-11.2,28-25.6V128H160z"/>
+</g>
+<g>
+	<path style="fill:#FCA12A;" d="M104,128v81.6c0,14.4,12,25.6,28,25.6s28-11.2,28-25.6V128H104z"/>
+	<path style="fill:#FCA12A;" d="M496,128v81.6c0,14.4-9.6,25.6-24,25.6s-24-11.2-24-25.6V128H496z"/>
+</g>
+<g>
+	<path style="fill:#C93131;" d="M448,128v81.6c0,14.4-13.6,25.6-28,25.6s-28-11.2-28-25.6V128H448z"/>
+	<path style="fill:#C93131;" d="M336,128v81.6c0,14.4-12.8,25.6-28,25.6s-28-11.2-28-25.6V128H336z"/>
+</g>
+<g>
+	<path style="fill:#FCA12A;" d="M392,128v81.6c0,14.4-12,25.6-28,25.6s-28-11.2-28-25.6V128H392z"/>
+	<path style="fill:#FCA12A;" d="M216,128v81.6c0,14.4,13.6,25.6,32,25.6s32-11.2,32-25.6V128H216z"/>
+</g>
+<path style="fill:#A8A8A8;" d="M486.4,468c0,6.4-4.8,12-11.2,12H20.8c-6.4,0-11.2-5.6-11.2-12l0,0c0-6.4,4.8-12,11.2-12h454.4
+	C481.6,456,486.4,461.6,486.4,468L486.4,468z"/>
+<polygon style="fill:#D6D6D6;" points="448.8,56 47.2,56 55.2,24 440.8,24 "/>
+<path style="fill:#E8E8E8;" d="M450.4,24c0,5.6-4,8-9.6,8H55.2c-4.8,0-9.6-2.4-9.6-8l0,0c0-5.6,4-8,9.6-8h385.6
+	C445.6,16,450.4,18.4,450.4,24L450.4,24z"/>
+<circle style="fill:#FFC114;" cx="378.4" cy="376" r="15.2"/>
+<path style="fill:#FCA12A;" d="M388.8,364.8c5.6,5.6,5.6,15.2,0,21.6c-5.6,5.6-15.2,5.6-21.6,0"/>
+</svg>

@@ -5,7 +5,14 @@
   justify-content: center;
 }
 
-.__delivery-inf-input-field {
+.delivery-inf-data-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.__delivery-inf-field {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,21 +27,44 @@
   margin-bottom: 2%;
 }
 
-.__delivery-inf-input-field {
-  height: 100%;
+.__delivery-inf-field {
+  height: fit-content;
   width: 100%;
   font-weight: 400;
 }
-.__delivery-inf-input-field .delivery-inf-input-label {
+.__delivery-inf-field .delivery-inf-label {
   width: fit-content;
 }
-.__delivery-inf-input-field .profile-delivery-inf-button {
+.__delivery-inf-field .delivery-inf-data {
   width: fit-content;
-  height: 33px;
+  color: var(--tg-theme-hint-color);
 }
 
 .delivery-inf-text-box {
+  margin-bottom: 3%;
+}
+
+.delivery-inf-data-box {
+  width: 100%;
+  height: fit-content;
+  gap: 10px;
+}
+
+.delivery-inf-button-box {
+  width: 100%;
+  height: 50px;
   margin-bottom: 4%;
+}
+
+.delivery-inf-button {
+  width: 100%;
+  height: 100%;
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-button-text-color);
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  border-radius: 1em;
+  border: var(--tg-theme-hint-color) solid 1px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=profile-delivery-inf.component.css.map */

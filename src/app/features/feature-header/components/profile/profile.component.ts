@@ -1,9 +1,9 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {BaseComponent} from "../../../../shared/models/base-component.service";
+import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {Router} from "@angular/router";
 import {LocalStorageService} from "../../../../local-storage.service";
-import {localStorageKeys} from "../../../../shared/data/local-storage-keys";
-import {appRoutes} from "../../../../shared/data/app-routes";
+import {AppRoutesService} from "../../../../shared/services/app-routes.service";
+import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
 
 @Component({
   selector: 'app-profile',
@@ -12,18 +12,22 @@ import {appRoutes} from "../../../../shared/data/app-routes";
   encapsulation: ViewEncapsulation.None
 })
 export class ProfileComponent extends BaseComponent {
-  protected readonly profileData = this.localStorageService.getItem(localStorageKeys.profileKey)
+  protected readonly profileData = this.localStorageService.getItem(this.localStorageKeysService.getKey().profileKey)
+  protected profilePageRoute: string
 
   constructor(
     private router: Router,
+    private appRoutesService: AppRoutesService,
+    private readonly localStorageKeysService: LocalStorageKeysService,
     protected readonly localStorageService: LocalStorageService
   ) {
     super();
+    this.profilePageRoute = this.appRoutesService.getRoutes().profilePage
   }
 
   override click(event: Event) {
     super.click(event);
-    this.router.navigate([appRoutes.profilePage])
+    this.router.navigate([this.profilePageRoute])
   }
 
   override touch(event: Event) {
