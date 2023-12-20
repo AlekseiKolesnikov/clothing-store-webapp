@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
-import {GoogleMapsApiService} from "../../services/google-maps-api.service";
+import {AddressesApiService} from "../../services/addresses-api.service";
 
 @Component({
   selector: 'app-distribution-address-page',
@@ -11,7 +11,7 @@ export class DistributionAddressPageComponent extends BaseComponent{
   protected address: string
   protected addressesArray: string[] = []
   constructor(
-    private readonly googleMapsApiService: GoogleMapsApiService
+    private readonly googleMapsApiService: AddressesApiService
   ) {
     super();
     this.googleMapsApiService.getAddress().subscribe((data: any) => {

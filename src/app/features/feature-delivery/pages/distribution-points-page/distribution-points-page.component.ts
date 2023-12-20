@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {CitiesHandlerService} from "../../services/cities-handler.service";
 import {DeliveryDataService} from "../../services/delivery-data.service";
 import {Location} from "@angular/common";
@@ -11,8 +11,6 @@ import {BaseComponent} from "../../../../shared/models/base-component.model";
   encapsulation: ViewEncapsulation.None
 })
 export class DistributionPointsPageComponent extends BaseComponent implements OnDestroy {
-  @ViewChild('myInput') myInput: ElementRef
-
   protected cityName: string = ''
   protected citiesArray: string[] = []
 
