@@ -4,7 +4,7 @@ import {LocalStorageService} from "../../../local-storage.service";
 import {LocalStorageKeysService} from "../../services/local-storage-keys.service";
 
 @Component({
-  selector: 'app-data-form',
+  selector: 'app-item-form',
   templateUrl: './data-form.component.html',
   styleUrls: ['./data-form.component.scss'],
   encapsulation: ViewEncapsulation.None

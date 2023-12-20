@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {TableRowComponent} from "../features/feature-profile/components/table-row/table-row.component";
 import {
   ProfileDeliveryInfComponent
@@ -8,13 +8,9 @@ import {
   ProfileIconNameComponent
 } from "../features/feature-profile/components/profile-icon-name/profile-icon-name.component";
 import {ProfileStatusComponent} from "../features/feature-profile/components/profile-satus/profile-status.component";
-import {
-  ProfileInputFieldComponent
-} from "../features/feature-profile/components/profile-input-field/profile-input-field.component";
 import {ProfilePageComponent} from "../features/feature-profile/pages/profile-page/profile-page.component";
 import {DeliveryModule} from "./delivery.module";
 import {SharedModule} from "./shared.module";
-
 
 
 @NgModule({
@@ -23,7 +19,6 @@ import {SharedModule} from "./shared.module";
     ProfileDeliveryInfComponent,
     ProfileIconNameComponent,
     ProfileStatusComponent,
-    ProfileInputFieldComponent,
     ProfilePageComponent
   ],
   imports: [

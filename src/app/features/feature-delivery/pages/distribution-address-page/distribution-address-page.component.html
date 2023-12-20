@@ -1,22 +1,22 @@
 <div class="distribution-page-wrapper">
-  <div class="distribution-page-searchbar-box">
-    <div class="distribution-page-searchbar-label">Город</div>
+  <div class="delivery-data-component-searchbar-box">
+    <div class="delivery-data-component-searchbar-label">Город</div>
     <input
       (input)="updateList()"
       [(ngModel)]="address"
-      class="distribution-page-searchbar-input"
+      class="delivery-data-component-searchbar-input"
     >
   </div>
   <div
-    class="distribution-page-cities-list-box"
+    class="delivery-data-component-cities-list-box"
     (scroll)="scroll()"
   >
     <div
       *ngFor="let address of addressesArray"
       (click)="onClick(address)"
-      class="distribution-page-city-box"
+      class="delivery-data-component-city-box"
     >
-      <div class="distribution-page-city-name">{{address}}</div>
+      <div class="delivery-data-component-city-name">{{address}}</div>
     </div>
   </div>
 </div>

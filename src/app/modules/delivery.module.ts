@@ -1,11 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {
   DeliveryInfPageComponent
 } from "../features/feature-delivery/pages/delivery-inf-page/delivery-inf-page.component";
-import {
-  DeliveryIconsComponent
-} from "../features/feature-delivery/components/delivery-icons/delivery-icons.component";
+import {DeliveryIconsComponent} from "../features/feature-delivery/components/delivery-icons/delivery-icons.component";
 import {DeliverHomeComponent} from "../features/feature-delivery/components/deliver-home/deliver-home.component";
 import {PickupStoreComponent} from "../features/feature-delivery/components/pickup-store/pickup-store.component";
 import {DistributionComponent} from "../features/feature-delivery/components/distribution/distribution.component";
@@ -18,7 +16,9 @@ import {SearchFilterPipe} from "../shared/pipes/search-filter.pipe";
 import {
   DistributionAddressPageComponent
 } from "../features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
-
+import {
+  DeliveryDataSearchComponent
+} from "../features/feature-delivery/components/delivery-data-search/delivery-data-search.component";
 
 
 @NgModule({
@@ -31,7 +31,8 @@ import {
     DeliveryInputComponent,
     DistributionPointsPageComponent,
     SearchFilterPipe,
-    DistributionAddressPageComponent
+    DistributionAddressPageComponent,
+    DeliveryDataSearchComponent
   ],
   exports: [
     PickupStoreComponent

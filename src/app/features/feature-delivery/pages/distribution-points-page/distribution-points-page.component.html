@@ -1,22 +1,7 @@
 <div class="distribution-page-wrapper">
-  <div class="distribution-page-searchbar-box">
-    <div class="distribution-page-searchbar-label">Город</div>
-    <input
-      (input)="updateList()"
-      [(ngModel)]="cityName"
-      class="distribution-page-searchbar-input"
-    >
-  </div>
-  <div
-    class="distribution-page-cities-list-box"
-    (scroll)="scroll()"
-  >
-    <div
-      *ngFor="let city of citiesArray | searchFilter: cityName"
-      (click)="onClick(city)"
-      class="distribution-page-city-box"
-    >
-      <div class="distribution-page-city-name">{{city}}</div>
-    </div>
-  </div>
+  <app-delivery-data-search
+    [ngModelField]="cityName"
+    [dataArray]="citiesArray"
+    searchOption="cities"
+  />
 </div>
