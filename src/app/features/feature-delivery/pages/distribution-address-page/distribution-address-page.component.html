@@ -1,22 +1,7 @@
-<div class="distribution-page-wrapper">
-  <div class="delivery-data-component-searchbar-box">
-    <div class="delivery-data-component-searchbar-label">Город</div>
-    <input
-      (input)="updateList()"
-      [(ngModel)]="address"
-      class="delivery-data-component-searchbar-input"
-    >
-  </div>
-  <div
-    class="delivery-data-component-cities-list-box"
-    (scroll)="scroll()"
-  >
-    <div
-      *ngFor="let address of addressesArray"
-      (click)="onClick(address)"
-      class="delivery-data-component-city-box"
-    >
-      <div class="delivery-data-component-city-name">{{address}}</div>
-    </div>
-  </div>
-</div>
+<app-delivery-data-search
+  [dataArray]="addressesArray"
+  [ngModelField]="address"
+  class="app-delivery-data-search"
+  searchOption="address"
+  inputLabel="Адресс"
+/>

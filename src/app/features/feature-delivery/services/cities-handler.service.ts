@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {UsCitiesApiService} from "./us-cities-api.service";
+import {UsCitiesApiService} from "./api/us-cities-api.service";
 import {BehaviorSubject, Observable, Subscription} from "rxjs";
 
 @Injectable({
@@ -25,7 +25,7 @@ export class CitiesHandlerService {
     this.usCitiesSubject.next(this.citiesArray)
   }
 
-  subscribe(): Observable<string[]> {
+  getSubscription(): Observable<string[]> {
     this.usCitiesSubject.next(this.initialCitiesArray)
     if (this.citiesArray.length === 0) {
       this.usCitiesService$ = this.usCitiesService.getCity().subscribe(value => {

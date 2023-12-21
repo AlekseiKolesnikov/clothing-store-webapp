@@ -1,6 +1,4 @@
-@import "../../../../styles/patterns";
-
 .distribution-page-wrapper {
-  @extend %delivery-data-page-wrapper
+  width: 100vw;
+  height: 100vh;
 }
-

@@ -1,9 +1,6 @@
 .distribution-page-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: var(--tg-theme-bg-color);
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=distribution-points-page.component.css.map */

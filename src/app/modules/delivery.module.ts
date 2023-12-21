@@ -19,6 +19,7 @@ import {
 import {
   DeliveryDataSearchComponent
 } from "../features/feature-delivery/components/delivery-data-search/delivery-data-search.component";
+import {SharedModule} from "./shared.module";
 
 
 @NgModule({
@@ -37,9 +38,10 @@ import {
   exports: [
     PickupStoreComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        SharedModule
+    ]
 })
 export class DeliveryModule { }

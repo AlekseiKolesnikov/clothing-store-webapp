@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"distribution-address-page.component.css"}
+{"version":3,"sourceRoot":"","sources":["distribution-address-page.component.scss","../../../../styles/variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA,YCHc","file":"distribution-address-page.component.css"}

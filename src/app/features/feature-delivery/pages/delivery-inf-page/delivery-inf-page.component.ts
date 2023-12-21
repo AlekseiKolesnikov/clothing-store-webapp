@@ -15,7 +15,6 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected buttonOption: number
   protected frameState: boolean
   protected city: string
-  protected distribution: string
   protected address: string
   protected deliveryIconData = this.deliveryIconDataService.getData()
   protected deliveryOptionsState$: Subscription
@@ -35,9 +34,7 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     })
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
       this.city = data.city
-      console.log(data.city)
       this.address = data.personalAddress
-      this.distribution = data.distributionAddress
     })
   }
 

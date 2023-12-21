@@ -1,20 +1,22 @@
-<div class="delivery-data-component-searchbar-box">
-  <div class="delivery-data-component-searchbar-label">Город</div>
-  <input
-    (input)="onInputChange()"
-    [(ngModel)]="ngModelField"
-    class="delivery-data-component-searchbar-input"
-  >
-</div>
-<div
-  (scroll)="scroll()"
-  class="delivery-data-component-cities-list-box"
->
+<div class="delivery-data-wrapper">
+  <div class="delivery-data-component-searchbar-box">
+    <div class="delivery-data-component-searchbar-label">{{inputLabel}}</div>
+    <input
+      (input)="onInputChange()"
+      [(ngModel)]="ngModelField"
+      class="delivery-data-component-searchbar-input"
+    >
+  </div>
   <div
-    *ngFor="let item of dataArray | searchFilter: ngModelField"
-    (click)="onClick(item)"
-    class="delivery-data-component-city-box"
+    (scroll)="scroll()"
+    class="delivery-data-component-cities-list-box"
   >
-    <div class="delivery-data-component-city-name">{{item}}</div>
+    <div
+      (click)="onClick(item)"
+      *ngFor="let item of dataArray | searchFilter: ngModelField"
+      class="delivery-data-component-city-box"
+    >
+      <div class="delivery-data-component-city-name">{{item}}</div>
+    </div>
   </div>
 </div>

@@ -8,7 +8,7 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 })
 export class DistributionComponent {
   @Input() cityName: string
-  @Input() distribution: string
+  @Input() address: string
   constructor() {
   }
 }
