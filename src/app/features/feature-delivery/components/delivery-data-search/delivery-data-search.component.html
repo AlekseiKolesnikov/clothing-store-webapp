@@ -7,13 +7,24 @@
       class="delivery-data-component-searchbar-input"
     >
   </div>
+
   <div
+    *ngIf="loaderState"
+    class="delivery-data-component-loader-box"
+  >
+    <app-loader-circle
+      class="app-loader-circle"
+    />
+  </div>
+
+  <div
+    *ngIf="!loaderState"
     (scroll)="scroll()"
     class="delivery-data-component-cities-list-box"
   >
     <div
       (click)="onClick(item)"
-      *ngFor="let item of dataArray | searchFilter: ngModelField"
+      *ngFor="let item of dataArray | searchFilter: inputText"
       class="delivery-data-component-city-box"
     >
       <div class="delivery-data-component-city-name">{{item}}</div>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {CitiesHandlerService} from "../../services/cities-handler.service";
 import {DeliveryDataService} from "../../services/delivery-data.service";
@@ -16,7 +16,8 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   @Input() dataArray: string[]
   @Input() searchOption: string
   @Input() inputLabel: string
-  @Output() buttonClick = new EventEmitter
+  protected loaderState: boolean = false
+  protected inputText: string = ''
 
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService,
@@ -28,6 +29,11 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   }
 
   onInputChange() {
+    this.loaderState = true
+    setTimeout(() => {
+      this.inputText = this.ngModelField
+      this.loaderState = false
+    }, 500)
     if (this.searchOption === "cities") {
       this.citiesHandlerService.getAllCities()
     }
@@ -37,7 +43,6 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   }
 
   onClick(pickedItem: string) {
-    this.buttonClick.emit()
     if (this.searchOption === "cities") {
       this.deliveryDataService.setCity(pickedItem)
     }

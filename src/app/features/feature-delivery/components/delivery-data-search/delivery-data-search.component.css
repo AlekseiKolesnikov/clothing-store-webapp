@@ -1,3 +1,9 @@
+.delivery-data-component-loader-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .delivery-data-component-city-box {
   display: flex;
   flex-direction: row;
@@ -41,6 +47,16 @@
   background: var(--tg-theme-secondary-bg-color);
   font: 400 16px/1.2 "Mulish", sans-serif;
   color: var(--tg-theme-text-color);
+}
+
+.delivery-data-component-loader-box {
+  width: 100%;
+  height: calc(100svh - 40px);
+}
+
+.app-loader-circle {
+  width: 32px;
+  height: 32px;
 }
 
 .delivery-data-component-cities-list-box {

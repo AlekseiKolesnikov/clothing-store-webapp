@@ -33,6 +33,17 @@
   color: $text-tg-color;
 }
 
+.delivery-data-component-loader-box {
+  @extend %center-flex;
+  width: 100%;
+  height: calc(100svh - 40px);
+}
+
+.app-loader-circle {
+  width: 32px;
+  height: 32px;
+}
+
 .delivery-data-component-cities-list-box {
   position: relative;
   width: 100%;
