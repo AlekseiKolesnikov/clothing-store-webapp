@@ -1,7 +1,6 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {Router} from "@angular/router";
 import {AppRoutesService} from "../../../../shared/services/app-routes.service";
-import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 
 @Component({
   selector: 'app-delivery-input',
@@ -11,12 +10,12 @@ import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/tel
 })
 export class DeliveryInputComponent {
   @Input() label: string
+  @Input() data: string
 
   protected distributionPointsPage: string
   constructor(
     private router: Router,
-    private appRoutesService: AppRoutesService,
-    private readonly telegramMainButton: TelegramMainButtonModel
+    private appRoutesService: AppRoutesService
   ) {
     this.distributionPointsPage = this.appRoutesService.getRoutes().distributionPointsPage
   }

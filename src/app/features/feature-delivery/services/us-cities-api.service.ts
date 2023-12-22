@@ -9,7 +9,7 @@ export interface IUSCities {
 @Injectable({
   providedIn: 'root'
 })
-export class UsCitiesService {
+export class UsCitiesApiService {
   private readonly usCitiesApi = "https://countriesnow.space/api/v0.1/countries/cities"
   private readonly requestOptions = {
     country: "United States"

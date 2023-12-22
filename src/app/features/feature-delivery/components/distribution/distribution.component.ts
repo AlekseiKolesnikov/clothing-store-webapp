@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-distribution',
@@ -7,6 +7,8 @@ import {Component, ViewEncapsulation} from '@angular/core';
    encapsulation: ViewEncapsulation.None
 })
 export class DistributionComponent {
+  @Input() cityName: string
+  @Input() distribution: string
   constructor() {
   }
 }

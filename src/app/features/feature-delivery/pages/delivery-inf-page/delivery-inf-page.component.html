@@ -28,6 +28,8 @@
       <app-distribution
         *ngIf="buttonOption === 1"
         class="app-distribution"
+        [cityName]="city"
+        [distribution]="distribution"
       />
       <app-deliver-home
         *ngIf="buttonOption === 2"

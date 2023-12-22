@@ -5,14 +5,18 @@
       #myInput
       (input)="updateList()"
       [(ngModel)]="cityName"
+      id="input"
       class="distribution-page-searchbar-input"
     >
   </div>
   <div
+    #cityBox
     class="distribution-page-cities-list-box"
+    (scroll)="onScroll()"
   >
     <div
       *ngFor="let city of citiesArray | searchFilter: cityName"
+      (click)="onClick(city)"
       class="distribution-page-city-box"
     >
       <div class="distribution-page-city-name">{{city}}</div>

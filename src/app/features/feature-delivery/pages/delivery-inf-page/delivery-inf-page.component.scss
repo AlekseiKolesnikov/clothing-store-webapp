@@ -2,6 +2,10 @@
 @import "../../../../styles/flex.patterns";
 
 .delivery-inf-page-wrapper {
+  @extend %center-column-top-flex;
+  width: 100%;
+  height: 100%;
+  padding: 0 3%;
   background: $tg-background;
   color: $text-tg-color;
   z-index: $wrapper-z-index;
