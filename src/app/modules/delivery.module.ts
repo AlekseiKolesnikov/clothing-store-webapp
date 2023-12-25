@@ -20,6 +20,9 @@ import {
   DeliveryDataSearchComponent
 } from "../features/feature-delivery/components/delivery-data-search/delivery-data-search.component";
 import {SharedModule} from "./shared.module";
+import {
+  PersonalDataFieldComponent
+} from "../features/feature-delivery/components/personal-data-field/personal-data-field.component";
 
 
 @NgModule({
@@ -33,7 +36,8 @@ import {SharedModule} from "./shared.module";
     DistributionPointsPageComponent,
     SearchFilterPipe,
     DistributionAddressPageComponent,
-    DeliveryDataSearchComponent
+    DeliveryDataSearchComponent,
+    PersonalDataFieldComponent
   ],
   exports: [
     PickupStoreComponent

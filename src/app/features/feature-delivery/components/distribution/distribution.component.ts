@@ -9,6 +9,8 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 export class DistributionComponent {
   @Input() cityName: string
   @Input() address: string
+  @Input() addressIsEmpty: boolean
+  @Input() cityIsEmpty: boolean
   constructor() {
   }
 }

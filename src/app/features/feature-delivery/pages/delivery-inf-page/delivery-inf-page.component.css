@@ -1,4 +1,5 @@
-.app-distribution, .app-pickup-store {
+.app-personal-full-name,
+.app-personal-phone-number, .app-distribution, .app-pickup-store {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +12,7 @@
   flex-direction: column;
 }
 
-.delivery-options-data-box, .delivery-options-box {
+.personal-data-fields-box, .delivery-options-data-box, .delivery-options-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,7 +82,20 @@
   height: fit-content;
 }
 
+.personal-data-fields-box {
+  width: 100%;
+  height: fit-content;
+  gap: 15px;
+  margin-top: 25px;
+}
+
 .app-distribution {
+  width: 100%;
+  height: fit-content;
+}
+
+.app-personal-full-name,
+.app-personal-phone-number {
   width: 100%;
   height: fit-content;
 }

@@ -4,6 +4,12 @@
   justify-content: center;
 }
 
+%center-flex-star {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 %start-center-flex {
   display: flex;
   align-items: flex-start;
@@ -85,4 +91,11 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+%space-around-column-start-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
 }

@@ -11,6 +11,7 @@ import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 export class DeliveryInputComponent {
   @Input() label: string
   @Input() data: string
+  @Input() dataIsEmpty: boolean
 
   protected distributionPointsPage: string
   protected distributionAddressPage: string
@@ -26,7 +27,7 @@ export class DeliveryInputComponent {
     if (this.label === "Город") {
       this.router.navigate([this.distributionPointsPage])
     }
-    if (this.label === "Пункт выдачи заказов") {
+    if (this.label === "Адресс") {
       this.router.navigate([this.distributionAddressPage])
     }
   }

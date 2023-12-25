@@ -3,10 +3,12 @@
     class="distribution-city-input"
     label="Город"
     [data]="cityName"
+    [dataIsEmpty]="cityIsEmpty"
   />
   <app-delivery-input
     class="distribution-address-input"
     label="Адресс"
     [data]="address"
+    [dataIsEmpty]="addressIsEmpty"
   />
 </div>

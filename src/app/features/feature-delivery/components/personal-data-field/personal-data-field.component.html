@@ -1,0 +1,17 @@
+  <form
+    class="form-box">
+    <input
+      class="form-input"
+      (input)="onInputChange()"
+      [(ngModel)]="ngModuleData"
+      placeholder="{{title}}"
+      name="{{idName}}"
+      id="{{idName}}"
+      type="{{inputType}}">
+    <label
+      for="{{idName}}"
+      class="form-label"
+    >
+      {{title}}
+    </label>
+  </form>
