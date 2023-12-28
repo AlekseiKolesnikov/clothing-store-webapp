@@ -4,6 +4,9 @@ import {DeliveryOptionStateService} from "../../services/delivery-option-state.s
 import {DeliveryIconService} from "../../services/delivery-icon.service";
 import {Subscription} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
+import {DataLocalStoreService} from "../../services/data-local-store.service";
+import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
+import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
 
 @Component({
   selector: 'app-delivery-inf-page',
@@ -26,7 +29,10 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     private readonly telegramMainButton: TelegramMainButtonModel,
     private readonly deliveryIconDataService: DeliveryIconService,
     private readonly deliveryOptionsState: DeliveryOptionStateService,
-    private readonly deliveryDataService: DeliveryDataService
+    private readonly dataLocalStoreService: DataLocalStoreService,
+    private readonly deliveryDataService: DeliveryDataService,
+    private readonly localStorageDataCheckService: LocalStorageDataCheckService,
+    private readonly localStorageKeyService: LocalStorageKeysService
   ) {
     this.deliveryOptionsState$ = this.deliveryOptionsState.getState().subscribe(item => {
       item.forEach(item => {
@@ -35,11 +41,13 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
       })
     })
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
-      this.city = data.city
+      this.city = this.localStorageDataCheckService
+        .checkData(data.city, this.localStorageKeyService.DELIVERY_CITY_KEY)
       if (this.city !== "") {
         this.cityDataState = false
       }
-      this.address = data.personalAddress
+      this.address = this.localStorageDataCheckService
+        .checkData(data.address, this.localStorageKeyService.DELIVERY_ADDRESS_KEY)
       if (this.address !== "") {
         this.addressDataState = false
       }
@@ -48,11 +56,21 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.telegramMainButton.showMainButton("Сохранить")
+    this.dataLocalStoreService.subscribe()
+    window.addEventListener(
+      "message",
+      (event) => {
+        if (event.data === "setData") {
+          this.dataLocalStoreService.storeData()
+        }
+      }
+    )
   }
 
   ngOnDestroy() {
-    this.deliveryOptionsState$.unsubscribe()
-    this.telegramMainButton.hideMainButton()
     this.deliveryData$.unsubscribe()
+    this.deliveryOptionsState$.unsubscribe()
+    this.dataLocalStoreService.unsubscribe()
+    this.telegramMainButton.hideMainButton()
   }
 }

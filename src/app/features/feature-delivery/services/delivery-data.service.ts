@@ -3,7 +3,7 @@ import {BehaviorSubject} from "rxjs";
 
 interface IDeliveryData {
   city: string,
-  personalAddress: string
+  address: string
 }
 
 @Injectable({
@@ -12,9 +12,12 @@ interface IDeliveryData {
 export class DeliveryDataService {
   protected deliveryData: IDeliveryData = {
     city: "",
-    personalAddress: ""
+    address: ""
   }
   private readonly deliveryDataSubject = new BehaviorSubject<IDeliveryData>(this.deliveryData)
+
+  constructor() {
+  }
 
   getDeliveryData() {
     return this.deliveryDataSubject.asObservable()
@@ -26,7 +29,7 @@ export class DeliveryDataService {
   }
 
   setAddress(address: string) {
-    this.deliveryData.personalAddress = address
+    this.deliveryData.address = address
     this.deliveryDataSubject.next(this.deliveryData)
   }
 }

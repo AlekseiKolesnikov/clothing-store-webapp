@@ -16,6 +16,5 @@ export class PersonalDataFieldComponent {
   constructor() {
   }
 
-  onInputChange() {
-  }
+
 }

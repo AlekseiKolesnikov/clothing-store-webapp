@@ -11,7 +11,7 @@ import {LocalStorageKeysService} from "../../../shared/services/local-storage-ke
 })
 export class PointsCardPageComponent {
   protected readonly pointsAmount = this.localStorageService
-    .getItem(this.localStorageKeysService.getKey().pointsCardKey)
+    .getItem(this.localStorageKeysService.POINTS_CARD_KEY)
   protected mainPageRoute: string
 
   constructor(
