@@ -2,7 +2,8 @@
     class="form-box">
     <input
       class="form-input"
-      [(ngModel)]="ngModuleData"
+      (input)="submit($event)"
+      [value]="valueCheck()"
       placeholder="{{title}}"
       name="{{idName}}"
       id="{{idName}}"

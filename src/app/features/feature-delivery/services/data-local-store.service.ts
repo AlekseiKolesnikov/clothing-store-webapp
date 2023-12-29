@@ -30,6 +30,12 @@ export class DataLocalStoreService {
     if (this.localStorageService.getItem(this.addressKey) === null) {
       this.localStorageService.setItem(this.addressKey, this.address)
     }
+    if (this.localStorageService.getItem(this.personalNameKey) === null) {
+
+    }
+    if (this.localStorageService.getItem(this.personalPhoneNumberKey) === null) {
+
+    }
   }
 
   subscribe() {

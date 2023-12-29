@@ -15,12 +15,16 @@ import {LocalStorageKeysService} from "../../../../shared/services/local-storage
 })
 export class ProfileDeliveryInfComponent {
   protected buttonOption: number
-  protected city: string = "Не указан"
-  protected address: string = "Не указан"
-  protected fullName: string = "Не указан"
-  protected phoneNumber: string = "Не указан"
+  protected city: string
+  protected address: string
+  protected fullName: string
+  protected phoneNumber: string
   protected deliveryInfPageRoute: string
   protected deliveryData$: Subscription
+  private readonly nameKey: string = this.localStorageKeyService.PERSONAL_FULL_NAME_KEY
+  private readonly phoneKey: string = this.localStorageKeyService.PERSONAL_PHONE_NUMBER_KEY
+  private readonly addressKey: string = this.localStorageKeyService.DELIVERY_ADDRESS_KEY
+  private readonly cityKey: string = this.localStorageKeyService.DELIVERY_CITY_KEY
 
   constructor(
     private router: Router,
@@ -36,10 +40,22 @@ export class ProfileDeliveryInfComponent {
       })
     })
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
-      this.city = this.localStorageDataCheckService
-        .checkData(data.city, this.localStorageKeyService.DELIVERY_CITY_KEY)
-      this.address = this.localStorageDataCheckService
-        .checkData(data.address, this.localStorageKeyService.DELIVERY_ADDRESS_KEY)
+      this.fullName = this.localStorageDataCheckService.checkData(data.fullName, this.nameKey)
+      if (this.fullName === "") {
+        this.fullName = "Не указан"
+      }
+      this.phoneNumber = this.localStorageDataCheckService.checkData(data.phoneNumber, this.phoneKey)
+      if (this.phoneNumber === "") {
+        this.phoneNumber = "Не указан"
+      }
+      this.city = this.localStorageDataCheckService.checkData(data.city, this.cityKey)
+      if (this.city === "") {
+        this.city = "Не указан"
+      }
+      this.address = this.localStorageDataCheckService.checkData(data.address, this.addressKey)
+      if (this.address === "") {
+        this.address = "Не указан"
+      }
     })
     this.deliveryInfPageRoute = this.appRoutesService.getRoutes().deliveryInfPage
   }

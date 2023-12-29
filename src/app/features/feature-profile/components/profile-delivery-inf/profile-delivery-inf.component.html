@@ -11,15 +11,31 @@
         class="__delivery-inf-field"
       >
         <div class="delivery-inf-label">ФИО получателя</div>
-        <div class="delivery-inf-data">{{fullName}}</div>
+        <div class="delivery-inf-data">{{fullName | truncate: 25}}</div>
       </div>
 
       <div
         class="__delivery-inf-field"
       >
         <div class="delivery-inf-label">Телефон</div>
-        <div class="delivery-inf-data">{{phoneNumber}}</div>
+        <div class="delivery-inf-data">{{phoneNumber | truncate: 25}}</div>
       </div>
+
+      <ng-container *ngIf="buttonOption !== 0">
+        <div
+          class="__delivery-inf-field"
+        >
+          <div class="delivery-inf-label">Город</div>
+          <div class="delivery-inf-data">{{city | truncate: 25}}</div>
+        </div>
+
+        <div
+          class="__delivery-inf-field"
+        >
+          <div class="delivery-inf-label">Адресс</div>
+          <div class="delivery-inf-data">{{address | truncate: 25}}</div>
+        </div>
+      </ng-container>
 
       <div class="delivery-options-data-box">
         <app-pickup-store
@@ -28,31 +44,12 @@
         />
       </div>
     </div>
-
-
-    <div
-      *ngIf="buttonOption !== 0"
-      class="delivery-inf-data-box"
-    >
-      <div
-        class="__delivery-inf-field"
-      >
-        <div class="delivery-inf-label">Город</div>
-        <div class="delivery-inf-data">{{city}}</div>
-      </div>
-
-      <div
-        class="__delivery-inf-field"
-      >
-        <div class="delivery-inf-label">Адресс</div>
-        <div class="delivery-inf-data">{{address}}</div>
-      </div>
-    </div>
   </div>
   <div class="delivery-inf-button-box">
     <button
-      class="delivery-inf-button"
       (click)="onClick()"
-    >Редактировать</button>
+      class="delivery-inf-button"
+    >Редактировать
+    </button>
   </div>
 </div>
