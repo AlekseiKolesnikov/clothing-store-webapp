@@ -15,7 +15,7 @@ export class DistributionAddressPageComponent extends BaseComponent{
   ) {
     super();
     this.addressesHandlerService.getSubscription().subscribe(data => {
-      this.addressesArray = data
+        this.addressesArray = data
     })
   }
 }

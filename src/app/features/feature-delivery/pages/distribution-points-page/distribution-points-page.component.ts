@@ -10,12 +10,11 @@ import {CitiesHandlerService} from "../../services/cities-handler.service";
 export class DistributionPointsPageComponent {
   protected cityName: string = ''
   protected citiesArray: string[] = []
-
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService
   ) {
     this.citiesHandlerService.getSubscription().subscribe(data => {
-      this.citiesArray = data
+        this.citiesArray = data
     })
   }
 }
