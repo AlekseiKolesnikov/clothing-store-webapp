@@ -5,10 +5,12 @@ import {Pipe, PipeTransform} from "@angular/core";
 })
 export class TruncatePipe implements PipeTransform {
   transform(value: string, maxLength: number): string {
-    if (value.length <= maxLength) {
+    if (value !== null && value.length <= maxLength) {
       return value
-    } else {
+    } else if (value !== null) {
       return value.slice(0, maxLength) + '...'
+    } else {
+      return ""
     }
   }
 }

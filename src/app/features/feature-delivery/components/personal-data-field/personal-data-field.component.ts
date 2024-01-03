@@ -3,6 +3,7 @@ import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {LocalStorageService} from "../../../../local-storage.service";
 import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
 import {DeliveryDataService} from "../../services/delivery-data.service";
+import {parsePhoneNumber} from "libphonenumber-js"
 
 @Component({
   selector: 'app-personal-data-field',
@@ -14,6 +15,7 @@ export class PersonalDataFieldComponent extends BaseComponent {
   @Input() title: string
   @Input() inputType: string
   @Input() idName: string
+  @Input() maxLength: number
 
   private readonly nameKey: string = this.localStorageKeyService.PERSONAL_FULL_NAME_KEY
   private readonly numberKey: string = this.localStorageKeyService.PERSONAL_PHONE_NUMBER_KEY
@@ -35,12 +37,10 @@ export class PersonalDataFieldComponent extends BaseComponent {
   override submit(event: any) {
     super.submit(event);
     if (this.idName === "name") {
-      this.localStorageService.setItem(this.nameKey, event.target.value)
       this.deliveryDataService.setName(event.target.value)
     }
-    if (this.idName === "phone") {
-      this.localStorageService.setItem(this.numberKey, event.target.value)
-      this.deliveryDataService.setPhoneNumber(event.target.value)
+    if (this.idName === "phone" && event.target.value.length === 10) {
+      this.deliveryDataService.setPhoneNumber(parsePhoneNumber(event.target.value, 'US').formatNational())
     }
   }
 }

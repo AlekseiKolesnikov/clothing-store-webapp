@@ -8,8 +8,8 @@ import {LocalStorageKeysService} from "../../../shared/services/local-storage-ke
   providedIn: 'root'
 })
 export class DataLocalStoreService {
-  protected city: string = ""
-  protected address: string = ""
+  protected fullName: string = ""
+  protected phoneNumber: string = ""
   protected deliveryData$: Subscription
   protected cityKey: string = this.localStorageKeysService.DELIVERY_CITY_KEY
   protected addressKey: string = this.localStorageKeysService.DELIVERY_ADDRESS_KEY
@@ -23,25 +23,24 @@ export class DataLocalStoreService {
   ) {
   }
 
-  storeData(): void {
-    if (this.localStorageService.getItem(this.cityKey) === null) {
-      this.localStorageService.setItem(this.cityKey, this.city)
+  storeDeliveryData(dataValue: string, dataType: string): void {
+    if (dataType === "cities") {
+      this.localStorageService.setItem(this.cityKey, dataValue)
     }
-    if (this.localStorageService.getItem(this.addressKey) === null) {
-      this.localStorageService.setItem(this.addressKey, this.address)
+    if (dataType === "address") {
+      this.localStorageService.setItem(this.addressKey, dataValue)
     }
-    if (this.localStorageService.getItem(this.personalNameKey) === null) {
+  }
 
-    }
-    if (this.localStorageService.getItem(this.personalPhoneNumberKey) === null) {
-
-    }
+  storePersonalData(): void {
+    this.localStorageService.setItem(this.personalNameKey, this.fullName)
+    this.localStorageService.setItem(this.personalPhoneNumberKey, this.phoneNumber)
   }
 
   subscribe() {
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
-      this.city = data.city
-      this.address = data.address
+      this.fullName = data.fullName
+      this.phoneNumber = data.phoneNumber
     })
   }
 

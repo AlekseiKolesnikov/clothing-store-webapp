@@ -1,9 +1,8 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject} from "rxjs";
+import {TelegramPopupModel} from "../../../shared/models/telegram-ui/telegram-popup.model";
 
 interface IDeliveryData {
-  city: string,
-  address: string,
   fullName: string,
   phoneNumber: string
 }
@@ -13,14 +12,14 @@ interface IDeliveryData {
 })
 export class DeliveryDataService {
   protected deliveryData: IDeliveryData = {
-    city: "",
-    address: "",
     fullName: "",
     phoneNumber: ""
   }
   private readonly deliveryDataSubject = new BehaviorSubject<IDeliveryData>(this.deliveryData)
 
-  constructor() {
+  constructor(
+    private readonly telegramPopup: TelegramPopupModel
+  ) {
   }
 
   getDeliveryData() {
@@ -33,17 +32,11 @@ export class DeliveryDataService {
   }
 
   setPhoneNumber(phoneNumber: string) {
-    this.deliveryData.phoneNumber = phoneNumber
-    this.deliveryDataSubject.next(this.deliveryData)
-  }
-
-  setCity(cityName: string) {
-    this.deliveryData.city = cityName
-    this.deliveryDataSubject.next(this.deliveryData)
-  }
-
-  setAddress(address: string) {
-    this.deliveryData.address = address
-    this.deliveryDataSubject.next(this.deliveryData)
+    if (phoneNumber.length < 10) {
+      this.telegramPopup.showPopup("Номер не валиден")
+    } else {
+      this.deliveryData.phoneNumber = phoneNumber
+      this.deliveryDataSubject.next(this.deliveryData)
+    }
   }
 }

@@ -48,12 +48,14 @@
       idName="name"
       inputType="text"
       title="Полное имя"
+      [maxLength]="100"
     />
     <app-personal-data-field
       class="app-personal-phone-number"
       idName="phone"
       inputType="tel"
       title="Номер телефона"
+      [maxLength]="10"
     />
   </div>
 

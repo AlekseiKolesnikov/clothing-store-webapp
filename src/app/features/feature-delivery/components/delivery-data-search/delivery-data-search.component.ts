@@ -1,9 +1,9 @@
 import {Component, Input, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {CitiesHandlerService} from "../../services/cities-handler.service";
-import {DeliveryDataService} from "../../services/delivery-data.service";
 import {AddressesHandlerService} from "../../services/addresses-handler.service";
 import {Location} from "@angular/common";
+import {DataLocalStoreService} from "../../services/data-local-store.service";
 
 @Component({
   selector: 'app-delivery-data-search',
@@ -22,7 +22,7 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService,
     private readonly addressesHandlerService: AddressesHandlerService,
-    private readonly deliveryDataService: DeliveryDataService,
+    private readonly dataLocalStoreService: DataLocalStoreService,
     private readonly location: Location
   ) {
     super();
@@ -43,12 +43,7 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   }
 
   onClick(pickedItem: string) {
-    if (this.searchOption === "cities") {
-      this.deliveryDataService.setCity(pickedItem)
-    }
-    if (this.searchOption === "address") {
-      this.deliveryDataService.setAddress(pickedItem)
-    }
+    this.dataLocalStoreService.storeDeliveryData(pickedItem, this.searchOption)
     this.location.back()
   }
 

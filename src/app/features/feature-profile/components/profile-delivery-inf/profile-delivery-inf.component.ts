@@ -6,6 +6,7 @@ import {Subscription} from "rxjs";
 import {DeliveryDataService} from "../../../feature-delivery/services/delivery-data.service";
 import {LocalStorageDataCheckService} from "../../../feature-delivery/services/local-storage-data-check.service";
 import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
+import {LocalStorageService} from "../../../../local-storage.service";
 
 @Component({
   selector: 'app-profile-delivery-inf',
@@ -32,6 +33,7 @@ export class ProfileDeliveryInfComponent {
     private readonly deliveryDataService: DeliveryDataService,
     private readonly deliveryOptionsState: DeliveryOptionStateService,
     private readonly localStorageDataCheckService: LocalStorageDataCheckService,
+    private readonly localStorageService: LocalStorageService,
     private readonly localStorageKeyService: LocalStorageKeysService
   ) {
     this.deliveryOptionsState.getState().subscribe(item => {
@@ -48,12 +50,12 @@ export class ProfileDeliveryInfComponent {
       if (this.phoneNumber === "") {
         this.phoneNumber = "Не указан"
       }
-      this.city = this.localStorageDataCheckService.checkData(data.city, this.cityKey)
-      if (this.city === "") {
+      this.city = this.localStorageService.getItem(this.cityKey)
+      if (this.city === "" || this.city === null) {
         this.city = "Не указан"
       }
-      this.address = this.localStorageDataCheckService.checkData(data.address, this.addressKey)
-      if (this.address === "") {
+      this.address = this.localStorageService.getItem(this.addressKey)
+      if (this.address === "" || this.address === null) {
         this.address = "Не указан"
       }
     })
