@@ -14,7 +14,7 @@ export class DistributionPointsPageComponent {
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService
   ) {
-    this.citiesHandlerService.getSubscription().subscribe(data => {
+    this.citiesHandlerService.getCitiesSubject().subscribe(data => {
       this.citiesArray = data
     })
   }

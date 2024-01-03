@@ -1,9 +1,7 @@
 import {Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
-import {CitiesHandlerService} from "../../services/cities-handler.service";
-import {DeliveryDataService} from "../../services/delivery-data.service";
-import {AddressesHandlerService} from "../../services/addresses-handler.service";
 import {Location} from "@angular/common";
+import {ManageDeliveryDataSearchService} from "../../services/manage-delivery-data-search.service";
 
 @Component({
   selector: 'app-delivery-data-search',
@@ -19,40 +17,23 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   @Output() buttonClick = new EventEmitter
 
   constructor(
-    private readonly citiesHandlerService: CitiesHandlerService,
-    private readonly addressesHandlerService: AddressesHandlerService,
-    private readonly deliveryDataService: DeliveryDataService,
+    private readonly manageDeliveryDataSearch: ManageDeliveryDataSearchService,
     private readonly location: Location
   ) {
     super();
   }
 
   onInputChange() {
-    if (this.searchOption === "cities") {
-      this.citiesHandlerService.getAllCities()
-    }
-    if (this.searchOption === "address") {
-      this.addressesHandlerService.getAllAddresses()
-    }
+    this.manageDeliveryDataSearch.setDeliveryDataSubject(this.searchOption)
   }
 
   onClick(pickedItem: string) {
     this.buttonClick.emit()
-    if (this.searchOption === "cities") {
-      this.deliveryDataService.setCity(pickedItem)
-    }
-    if (this.searchOption === "address") {
-      this.deliveryDataService.setAddress(pickedItem)
-    }
+    this.manageDeliveryDataSearch.storeDeliveryData(this.searchOption, pickedItem)
     this.location.back()
   }
 
   ngOnDestroy() {
-    if (this.searchOption === "cities") {
-      this.citiesHandlerService.unsubscribe()
-    }
-    if (this.searchOption === "address") {
-      this.addressesHandlerService.unsubscribe()
-    }
+    this.manageDeliveryDataSearch.unsubscribe(this.searchOption)
   }
 }

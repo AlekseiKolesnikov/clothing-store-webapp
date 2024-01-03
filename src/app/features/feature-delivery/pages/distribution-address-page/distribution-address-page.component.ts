@@ -14,7 +14,7 @@ export class DistributionAddressPageComponent extends BaseComponent{
     private readonly addressesHandlerService: AddressesHandlerService
   ) {
     super();
-    this.addressesHandlerService.getSubscription().subscribe(data => {
+    this.addressesHandlerService.getAddressesSubject().subscribe(data => {
       this.addressesArray = data
     })
   }

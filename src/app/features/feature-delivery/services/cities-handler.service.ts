@@ -21,15 +21,19 @@ export class CitiesHandlerService {
   ) {
   }
 
-  getAllCities(): void {
+  setCitiesSubject(): void {
     this.usCitiesSubject.next(this.citiesArray)
   }
 
-  getSubscription(): Observable<string[]> {
+  getCitiesSubject(): Observable<string[]> {
     this.usCitiesSubject.next(this.initialCitiesArray)
     if (this.citiesArray.length === 0) {
       this.usCitiesService$ = this.usCitiesService.getCity().subscribe(value => {
-        this.citiesArray = value.data
+        if (value.data === null || value.data === undefined) {
+          throw new Error('Данные не были получены. Пожалуйста перезагрузите страницу.')
+        } else {
+          this.citiesArray = value.data
+        }
       });
     }
     return this.usCitiesSubject.asObservable()
