@@ -15,6 +15,8 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   @Input() searchOption: string
   @Input() inputLabel: string
   @Output() buttonClick = new EventEmitter
+  protected loaderState: boolean = false
+  protected inputText: string = ''
 
   constructor(
     private readonly manageDeliveryDataSearch: ManageDeliveryDataSearchService,
@@ -24,6 +26,11 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   }
 
   onInputChange() {
+    this.loaderState = true
+    setTimeout(() => {
+      this.inputText = this.ngModelField
+      this.loaderState = false
+    }, 500)
     this.manageDeliveryDataSearch.setDeliveryDataSubject(this.searchOption)
   }
 

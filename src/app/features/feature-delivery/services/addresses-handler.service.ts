@@ -9,7 +9,7 @@ export class AddressesHandlerService {
   private readonly addressesSubject = new BehaviorSubject<string[]>(new Array<string>())
   protected addressesArray: string[] = []
   protected addressesService$: Subscription
-  private readonly initialAddressesArray: string[] = [
+  protected initialAddressesArray: string[] = [
     "11 Wall Street, New York","1313 Mockingbird Lane", "100 Universal City Plaza, Universal City",
     "123 Sesame Street", "700 Pennsylvania Avenue", "615 8th Avenue, Nashville",
     "1 Infinite Loop, Cupertino", "1601 Willow Road, Menlo Park",
