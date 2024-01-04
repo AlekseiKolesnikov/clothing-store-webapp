@@ -1,11 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {
   DeliveryInfPageComponent
 } from "../features/feature-delivery/pages/delivery-inf-page/delivery-inf-page.component";
-import {
-  DeliveryIconsComponent
-} from "../features/feature-delivery/components/delivery-icons/delivery-icons.component";
+import {DeliveryIconsComponent} from "../features/feature-delivery/components/delivery-icons/delivery-icons.component";
 import {DeliverHomeComponent} from "../features/feature-delivery/components/deliver-home/deliver-home.component";
 import {PickupStoreComponent} from "../features/feature-delivery/components/pickup-store/pickup-store.component";
 import {DistributionComponent} from "../features/feature-delivery/components/distribution/distribution.component";
@@ -15,7 +13,13 @@ import {
 import {DeliveryInputComponent} from "../features/feature-delivery/components/delivery-input/delivery-input.component";
 import {FormsModule} from "@angular/forms";
 import {SearchFilterPipe} from "../shared/pipes/search-filter.pipe";
-
+import {
+  DistributionAddressPageComponent
+} from "../features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
+import {
+  DeliveryDataSearchComponent
+} from "../features/feature-delivery/components/delivery-data-search/delivery-data-search.component";
+import {SharedModule} from "./shared.module";
 
 
 @NgModule({
@@ -27,14 +31,17 @@ import {SearchFilterPipe} from "../shared/pipes/search-filter.pipe";
     DistributionComponent,
     DeliveryInputComponent,
     DistributionPointsPageComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    DistributionAddressPageComponent,
+    DeliveryDataSearchComponent
   ],
   exports: [
     PickupStoreComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        SharedModule
+    ]
 })
 export class DeliveryModule { }

@@ -1,6 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {Router} from "@angular/router";
-import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 
 @Component({
   selector: 'app-delivery-input',
@@ -11,16 +10,14 @@ import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 export class DeliveryInputComponent {
   @Input() label: string
   @Input() data: string
+  @Input() route: string
 
-  protected distributionPointsPage: string
   constructor(
-    private router: Router,
-    private appRoutesService: AppRoutesService
+    private router: Router
   ) {
-    this.distributionPointsPage = this.appRoutesService.getRoutes().distributionPointsPage
   }
 
   onClick() {
-    this.router.navigate([this.distributionPointsPage])
+    this.router.navigate([this.route])
   }
 }

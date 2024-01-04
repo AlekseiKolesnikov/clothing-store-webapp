@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'searchFilter'
 })
 export class SearchFilterPipe implements PipeTransform {
-  transform(citiesList: string[], searchCity: string): string[] {
-    return citiesList.filter(city => city.toLowerCase().includes(searchCity.toLowerCase()))
+  transform(dataList: string[], item: string): string[] {
+    return dataList.filter(data => data.toLowerCase().includes(item.toLowerCase()))
   }
 }

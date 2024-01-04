@@ -3,7 +3,6 @@ import {BehaviorSubject} from "rxjs";
 
 interface IDeliveryData {
   city: string,
-  distributionAddress: string,
   personalAddress: string
 }
 
@@ -13,7 +12,6 @@ interface IDeliveryData {
 export class DeliveryDataService {
   protected deliveryData: IDeliveryData = {
     city: "",
-    distributionAddress: "",
     personalAddress: ""
   }
   private readonly deliveryDataSubject = new BehaviorSubject<IDeliveryData>(this.deliveryData)
@@ -24,11 +22,6 @@ export class DeliveryDataService {
 
   setCity(cityName: string) {
     this.deliveryData.city = cityName
-    this.deliveryDataSubject.next(this.deliveryData)
-  }
-
-  setDistribution(distribution: string) {
-    this.deliveryData.distributionAddress = distribution
     this.deliveryDataSubject.next(this.deliveryData)
   }
 
