@@ -13,8 +13,6 @@ import {DeliveryDataService} from "../../services/delivery-data.service";
 })
 export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected buttonOption: number
-  protected cityDataState: boolean = true
-  protected addressDataState: boolean = true
   protected frameState: boolean
   protected city: string
   protected address: string
@@ -36,13 +34,9 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     })
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
       this.city = data.city
-      if (this.city !== "") {
-        this.cityDataState = false
-      }
+      this.cityFieldIsEmpty()
       this.address = data.personalAddress
-      if (this.address !== "") {
-        this.addressDataState = false
-      }
+      this.addressFieldIsEmpty()
     })
   }
 
@@ -54,5 +48,13 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     this.deliveryOptionsState$.unsubscribe()
     this.telegramMainButton.hideMainButton()
     this.deliveryData$.unsubscribe()
+  }
+
+  protected cityFieldIsEmpty = () => {
+    return this.city === ""
+  }
+
+  protected addressFieldIsEmpty = () => {
+    return this.address === ""
   }
 }

@@ -26,8 +26,7 @@ export class DeliveryInputComponent {
   onClick() {
     if (this.label === "Город") {
       this.router.navigate([this.distributionPointsPage])
-    }
-    if (this.label === "Адресс") {
+    } else {
       this.router.navigate([this.distributionAddressPage])
     }
   }

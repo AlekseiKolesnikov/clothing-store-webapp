@@ -11,7 +11,7 @@ export class PersonalDataFieldComponent {
   @Input() inputType: string
   @Input() idName: string
 
-  protected ngModuleData: string
+  protected inputData: string
 
   constructor() {
   }
