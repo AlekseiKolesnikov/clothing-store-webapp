@@ -1,14 +1,15 @@
 import {Injectable} from "@angular/core";
 import {UsCitiesApiService} from "./api/us-cities-api.service";
-import {BehaviorSubject, Observable, Subscription} from "rxjs";
+import {BehaviorSubject, catchError, Observable, retry, Subscription, throwError} from "rxjs";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CitiesHandlerService {
-  private readonly usCitiesSubject = new BehaviorSubject<string[]>(new Array<string>())
   protected citiesArray: string[] = []
   protected usCitiesService$: Subscription
+  private readonly usCitiesSubject = new BehaviorSubject<string[]>(new Array<string>())
   private readonly initialCitiesArray: string[] = [
     "New York", "Los Angeles", "Chicago", "Houston", "Phoenix",
     "Philadelphia", "San Antonio", "San Diego", "Dallas", "Austin",
@@ -21,6 +22,16 @@ export class CitiesHandlerService {
   ) {
   }
 
+  errorHandler(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      console.error('An error occurred:', error.error);
+    } else {
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    return throwError(() => new Error('Something bad happened; please try again later.'));
+  }
+
   setCitiesSubject(): void {
     this.usCitiesSubject.next(this.citiesArray)
   }
@@ -28,12 +39,11 @@ export class CitiesHandlerService {
   getCitiesSubject(): Observable<string[]> {
     this.usCitiesSubject.next(this.initialCitiesArray)
     if (this.citiesArray.length === 0) {
-      this.usCitiesService$ = this.usCitiesService.getCity().subscribe(value => {
-        if (value.data === null || value.data === undefined) {
-          throw new Error('Данные не были получены. Пожалуйста перезагрузите страницу.')
-        } else {
-          this.citiesArray = value.data
-        }
+      this.usCitiesService$ = this.usCitiesService.getCity().pipe(
+        retry(3),
+        catchError(this.errorHandler)
+      ).subscribe(value => {
+        this.citiesArray = value.data
       });
     }
     return this.usCitiesSubject.asObservable()
