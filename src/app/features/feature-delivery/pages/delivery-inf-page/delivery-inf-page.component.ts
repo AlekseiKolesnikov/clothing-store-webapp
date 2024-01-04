@@ -6,7 +6,7 @@ import {Subscription} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
 import {DataLocalStoreService} from "../../services/data-local-store.service";
 import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
-import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
+import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-delivery-inf-page',
@@ -32,7 +32,6 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     private readonly dataLocalStoreService: DataLocalStoreService,
     private readonly deliveryDataService: DeliveryDataService,
     private readonly localStorageDataCheckService: LocalStorageDataCheckService,
-    private readonly localStorageKeyService: LocalStorageKeysService
   ) {
     this.deliveryOptionsState$ = this.deliveryOptionsState.getState().subscribe(item => {
       item.forEach(item => {
@@ -42,12 +41,12 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     })
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
       this.city = this.localStorageDataCheckService
-        .checkData(data.city, this.localStorageKeyService.DELIVERY_CITY_KEY)
+        .checkDefaultValue(data.city, "", DELIVERY_CITY_KEY)
       if (this.city !== "") {
         this.cityDataState = false
       }
       this.address = this.localStorageDataCheckService
-        .checkData(data.address, this.localStorageKeyService.DELIVERY_ADDRESS_KEY)
+        .checkDefaultValue(data.address, "", DELIVERY_ADDRESS_KEY)
       if (this.address !== "") {
         this.addressDataState = false
       }
