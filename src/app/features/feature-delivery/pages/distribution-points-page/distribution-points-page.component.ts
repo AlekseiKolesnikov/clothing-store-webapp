@@ -1,5 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {CitiesHandlerService} from "../../services/cities-handler.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-distribution-points-page',
@@ -7,14 +8,20 @@ import {CitiesHandlerService} from "../../services/cities-handler.service";
   styleUrls: ['./distribution-points-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DistributionPointsPageComponent {
+export class DistributionPointsPageComponent implements OnDestroy {
   protected cityName: string = ''
   protected citiesArray: string[] = []
+  private readonly citiesHandler$: Subscription
+
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService
   ) {
-    this.citiesHandlerService.getSubscription().subscribe(data => {
+    this.citiesHandler$ = this.citiesHandlerService.getSubscription().subscribe(data => {
         this.citiesArray = data
     })
+  }
+
+  ngOnDestroy() {
+    this.citiesHandler$.unsubscribe()
   }
 }

@@ -29,8 +29,8 @@
         *ngIf="buttonOption === 1"
         [address]="address"
         [cityName]="city"
-        [cityIsEmpty]="cityDataState"
-        [addressIsEmpty]="addressDataState"
+        [cityIsEmpty]="cityFieldIsEmpty()"
+        [addressIsEmpty]="addressFieldIsEmpty()"
         class="app-distribution"
       />
       <app-deliver-home

@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
 import {DeliveryIconService} from "../../services/delivery-icon.service";
-import {Subscription} from "rxjs";
+import {from, mergeMap, Subscription, tap} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
 import {DataLocalStoreService} from "../../services/data-local-store.service";
 import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
@@ -16,8 +16,6 @@ import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../../shared/data/l
 })
 export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected buttonOption: number
-  protected cityDataState: boolean = true
-  protected addressDataState: boolean = true
   protected frameState: boolean
   protected city: string
   protected address: string
@@ -33,23 +31,18 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     private readonly deliveryDataService: DeliveryDataService,
     private readonly localStorageDataCheckService: LocalStorageDataCheckService,
   ) {
-    this.deliveryOptionsState$ = this.deliveryOptionsState.getState().subscribe(item => {
-      item.forEach(item => {
-        this.buttonOption = item.option
-        this.frameState = item.isSelected
+    this.deliveryOptionsState$ = this.deliveryOptionsState.getState().pipe(
+      mergeMap((item) => from(item)),
+      tap(value => {
+        this.buttonOption = value.option
+        this.frameState = value.isSelected
       })
-    })
+    ).subscribe()
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
-      this.city = this.localStorageDataCheckService
-        .checkDefaultValue(data.city, "", DELIVERY_CITY_KEY)
-      if (this.city !== "") {
-        this.cityDataState = false
-      }
-      this.address = this.localStorageDataCheckService
-        .checkDefaultValue(data.address, "", DELIVERY_ADDRESS_KEY)
-      if (this.address !== "") {
-        this.addressDataState = false
-      }
+      this.city = data.city
+      this.cityFieldIsEmpty()
+      this.address = data.personalAddress
+      this.addressFieldIsEmpty()
     })
   }
 
@@ -71,5 +64,13 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     this.deliveryOptionsState$.unsubscribe()
     this.dataLocalStoreService.unsubscribe()
     this.telegramMainButton.hideMainButton()
+  }
+
+  protected cityFieldIsEmpty = () => {
+    return this.city === ""
+  }
+
+  protected addressFieldIsEmpty = () => {
+    return this.address === ""
   }
 }

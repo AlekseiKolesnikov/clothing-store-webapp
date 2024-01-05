@@ -18,6 +18,8 @@ export class PersonalDataFieldComponent extends BaseComponent {
   @Input() inputType: string
   @Input() idName: string
 
+  protected inputData: string
+  
   constructor(
     private readonly localStorageService: LocalStorageService,
     private readonly deliveryDataService: DeliveryDataService

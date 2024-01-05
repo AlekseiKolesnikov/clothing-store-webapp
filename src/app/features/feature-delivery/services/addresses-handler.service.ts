@@ -20,15 +20,20 @@ export class AddressesHandlerService {
     private readonly addressesApiService: AddressesApiService
   ) { }
 
-  getAllAddresses(): void {
+  setAddressesSubject(): void {
     this.addressesSubject.next(this.addressesArray)
   }
 
-  getSubscription(): Observable<string[]> {
+  getAddressesSubject(): Observable<string[]> {
     this.addressesSubject.next(this.initialAddressesArray)
     if (this.addressesArray.length === 0) {
-      this.addressesService$ = this.addressesApiService.getAddress().subscribe(data => {
-        this.addressesArray = data.data.map(value => { return value.street })
+      this.addressesService$ = this.addressesApiService.getAddress().subscribe(value => {
+        const itemValue = value.data.map(value => { return value.street })
+        if (itemValue === null || itemValue === undefined) {
+          throw new Error('Данные не были получены. Пожалуйста перезагрузите страницу.')
+        } else {
+          this.addressesArray = itemValue
+        }
       })
     }
     return this.addressesSubject.asObservable()
