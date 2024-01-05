@@ -12,8 +12,6 @@ export class DistributionComponent {
   @Input() address: string
   @Input() addressIsEmpty: boolean
   @Input() cityIsEmpty: boolean
-  constructor() {
-  }
 
   protected distributionCityPage: string = this.appRoutesService.getRoutes().distributionPointsPage
   protected distributionAddressPage: string = this.appRoutesService.getRoutes().distributionAddressPage

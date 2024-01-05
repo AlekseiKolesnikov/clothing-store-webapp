@@ -17,8 +17,8 @@ export class DistributionAddressPageComponent extends BaseComponent implements O
     private readonly addressesHandlerService: AddressesHandlerService
   ) {
     super();
-    this.addressesHandler$ = this.addressesHandlerService.getSubscription().subscribe(data => {
-        this.addressesArray = data
+    this.addressesHandler$ = this.addressesHandlerService.getAddressesSubject().subscribe(data => {
+      this.addressesArray = data
     })
   }
 

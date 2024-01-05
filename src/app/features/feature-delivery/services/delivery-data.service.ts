@@ -4,7 +4,9 @@ import {TelegramPopupModel} from "../../../shared/models/telegram-ui/telegram-po
 
 interface IDeliveryData {
   fullName: string,
-  phoneNumber: string
+  phoneNumber: string,
+  city: string,
+  address: string
 }
 
 @Injectable({
@@ -13,7 +15,9 @@ interface IDeliveryData {
 export class DeliveryDataService {
   protected deliveryData: IDeliveryData = {
     fullName: "",
-    phoneNumber: ""
+    phoneNumber: "",
+    city: "",
+    address: ""
   }
   private readonly deliveryDataSubject = new BehaviorSubject<IDeliveryData>(this.deliveryData)
 
@@ -28,6 +32,14 @@ export class DeliveryDataService {
 
   setName(fullName: string) {
     this.deliveryData.fullName = fullName
+    this.deliveryDataSubject.next(this.deliveryData)
+  }
+  setCity(city: string) {
+    this.deliveryData.fullName = city
+    this.deliveryDataSubject.next(this.deliveryData)
+  }
+  setAddress(address: string) {
+    this.deliveryData.fullName = address
     this.deliveryDataSubject.next(this.deliveryData)
   }
 

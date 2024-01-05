@@ -16,8 +16,8 @@ export class DistributionPointsPageComponent implements OnDestroy {
   constructor(
     private readonly citiesHandlerService: CitiesHandlerService
   ) {
-    this.citiesHandler$ = this.citiesHandlerService.getSubscription().subscribe(data => {
-        this.citiesArray = data
+    this.citiesHandler$ = this.citiesHandlerService.getCitiesSubject().subscribe(data => {
+      this.citiesArray = data
     })
   }
 

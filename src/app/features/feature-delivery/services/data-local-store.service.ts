@@ -13,8 +13,8 @@ import {
   providedIn: 'root'
 })
 export class DataLocalStoreService {
-  protected fullName: string = ""
-  protected phoneNumber: string = ""
+  protected city: string = ""
+  protected address: string = ""
   protected deliveryData$: Subscription
 
   constructor(
@@ -23,24 +23,25 @@ export class DataLocalStoreService {
   ) {
   }
 
-  storeDeliveryData(dataValue: string, dataType: string): void {
-    if (dataType === "cities") {
-      this.localStorageService.setItem(this.cityKey, dataValue)
+  storeData(): void {
+    if (this.localStorageService.getItem(DELIVERY_CITY_KEY) === null) {
+      this.localStorageService.setItem(DELIVERY_CITY_KEY, this.city)
     }
-    if (dataType === "address") {
-      this.localStorageService.setItem(this.addressKey, dataValue)
+    if (this.localStorageService.getItem(DELIVERY_ADDRESS_KEY) === null) {
+      this.localStorageService.setItem(DELIVERY_ADDRESS_KEY, this.address)
     }
-  }
+    if (this.localStorageService.getItem(PERSONAL_FULL_NAME_KEY) === null) {
 
-  storePersonalData(): void {
-    this.localStorageService.setItem(this.personalNameKey, this.fullName)
-    this.localStorageService.setItem(this.personalPhoneNumberKey, this.phoneNumber)
+    }
+    if (this.localStorageService.getItem(PERSONAL_PHONE_NUMBER_KEY) === null) {
+
+    }
   }
 
   subscribe() {
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
-      this.fullName = data.fullName
-      this.phoneNumber = data.phoneNumber
+      this.city = data.city
+      this.address = data.address
     })
   }
 

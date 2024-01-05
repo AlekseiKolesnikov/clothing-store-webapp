@@ -14,15 +14,14 @@ export interface IDeliveryOptions {
   providedIn: 'root'
 })
 export class DeliveryOptionStateService {
-  private readonly deliveryOptionSubject
+  private readonly deliveryOptionSubject: BehaviorSubject<IDeliveryOptions[]>
   private readonly deliveryOptions: IDeliveryOptions[] = new Array<IDeliveryOptions>()
 
-  constructor(private deliveryOptionsService: DeliveryIconService) {
+  constructor(
+    private deliveryOptionsService: DeliveryIconService
+  ) {
     this.deliveryOptions = deliveryOptionsService.getData()
     this.deliveryOptionSubject = new BehaviorSubject<IDeliveryOptions[]>(this.deliveryOptions)
-  }
-
-  constructor() {
   }
 
   getState() {
@@ -33,7 +32,6 @@ export class DeliveryOptionStateService {
     this.deliveryOptions.forEach((item, index) => {
       item.isSelected = index === selectedIndex
     })
-    this.deliveryOptionsService.saveSelectedOption(selectedIndex)
     this.deliveryOptionSubject.next(this.deliveryOptions)
   }
 }
