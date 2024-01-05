@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {LocalStorageService} from "./local-storage.service";
-import {LocalStorageKeysService} from "./shared/services/local-storage-keys.service";
+import {POINTS_CARD_KEY} from "./shared/data/local-storage-keys";
 import {PointsCardService} from "./features/feature-points-card/services/points-card.service";
 
 @Injectable({
@@ -12,14 +12,12 @@ export class InitializeMainData {
 
   constructor(
     private localStorageService: LocalStorageService,
-    private localStorageKeysService: LocalStorageKeysService,
     private pointsCardDataService: PointsCardService
   ) {
-    this.pointsCardKey = this.localStorageKeysService.POINTS_CARD_KEY
     this.pointsCardData = this.pointsCardDataService.getPoints()
   }
 
   initialize() {
-    this.localStorageService.setItem(this.pointsCardKey, this.pointsCardData)
+    this.localStorageService.setItem(this.pointsCardKey, POINTS_CARD_KEY)
   }
 }

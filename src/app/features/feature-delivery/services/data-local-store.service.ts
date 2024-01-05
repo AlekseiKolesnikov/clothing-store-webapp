@@ -2,7 +2,12 @@ import {Injectable} from "@angular/core";
 import {Subscription} from "rxjs";
 import {DeliveryDataService} from "./delivery-data.service";
 import {LocalStorageService} from "../../../local-storage.service";
-import {LocalStorageKeysService} from "../../../shared/services/local-storage-keys.service";
+import {
+  DELIVERY_ADDRESS_KEY,
+  DELIVERY_CITY_KEY,
+  PERSONAL_FULL_NAME_KEY,
+  PERSONAL_PHONE_NUMBER_KEY
+} from "../../../shared/data/local-storage-keys";
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +16,10 @@ export class DataLocalStoreService {
   protected fullName: string = ""
   protected phoneNumber: string = ""
   protected deliveryData$: Subscription
-  protected cityKey: string = this.localStorageKeysService.DELIVERY_CITY_KEY
-  protected addressKey: string = this.localStorageKeysService.DELIVERY_ADDRESS_KEY
-  protected personalNameKey: string = this.localStorageKeysService.PERSONAL_FULL_NAME_KEY
-  protected personalPhoneNumberKey: string = this.localStorageKeysService.PERSONAL_PHONE_NUMBER_KEY
 
   constructor(
     private readonly deliveryDataService: DeliveryDataService,
-    private readonly localStorageService: LocalStorageService,
-    private readonly localStorageKeysService: LocalStorageKeysService
+    private readonly localStorageService: LocalStorageService
   ) {
   }
 

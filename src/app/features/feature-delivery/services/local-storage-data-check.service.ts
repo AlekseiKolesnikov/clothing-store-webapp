@@ -9,8 +9,8 @@ export class LocalStorageDataCheckService {
     private readonly localStorageService: LocalStorageService
   ) { }
 
-  checkData(data: string, dataKey: string): string {
+  checkDefaultValue(data: string, defaultValue: string, dataKey: string): string {
     const storageItem = this.localStorageService.getItem(dataKey)
-    return storageItem !== null ? storageItem : data
+    return storageItem !== null ? storageItem : (data === "" ? defaultValue : data)
   }
 }

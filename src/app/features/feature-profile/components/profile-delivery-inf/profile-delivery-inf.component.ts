@@ -5,8 +5,12 @@ import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 import {Subscription} from "rxjs";
 import {DeliveryDataService} from "../../../feature-delivery/services/delivery-data.service";
 import {LocalStorageDataCheckService} from "../../../feature-delivery/services/local-storage-data-check.service";
-import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
-import {LocalStorageService} from "../../../../local-storage.service";
+import {
+  DELIVERY_ADDRESS_KEY,
+  DELIVERY_CITY_KEY,
+  PERSONAL_FULL_NAME_KEY,
+  PERSONAL_PHONE_NUMBER_KEY
+} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-profile-delivery-inf',
@@ -22,19 +26,14 @@ export class ProfileDeliveryInfComponent {
   protected phoneNumber: string
   protected deliveryInfPageRoute: string
   protected deliveryData$: Subscription
-  private readonly nameKey: string = this.localStorageKeyService.PERSONAL_FULL_NAME_KEY
-  private readonly phoneKey: string = this.localStorageKeyService.PERSONAL_PHONE_NUMBER_KEY
-  private readonly addressKey: string = this.localStorageKeyService.DELIVERY_ADDRESS_KEY
-  private readonly cityKey: string = this.localStorageKeyService.DELIVERY_CITY_KEY
+  private readonly defaultInputValue: string = "Не указан"
 
   constructor(
     private router: Router,
     private appRoutesService: AppRoutesService,
     private readonly deliveryDataService: DeliveryDataService,
     private readonly deliveryOptionsState: DeliveryOptionStateService,
-    private readonly localStorageDataCheckService: LocalStorageDataCheckService,
-    private readonly localStorageService: LocalStorageService,
-    private readonly localStorageKeyService: LocalStorageKeysService
+    private readonly localStorageDataCheckService: LocalStorageDataCheckService
   ) {
     this.deliveryOptionsState.getState().subscribe(item => {
       item.forEach(item => {
@@ -42,22 +41,14 @@ export class ProfileDeliveryInfComponent {
       })
     })
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
-      this.fullName = this.localStorageDataCheckService.checkData(data.fullName, this.nameKey)
-      if (this.fullName === "") {
-        this.fullName = "Не указан"
-      }
-      this.phoneNumber = this.localStorageDataCheckService.checkData(data.phoneNumber, this.phoneKey)
-      if (this.phoneNumber === "") {
-        this.phoneNumber = "Не указан"
-      }
-      this.city = this.localStorageService.getItem(this.cityKey)
-      if (this.city === "" || this.city === null) {
-        this.city = "Не указан"
-      }
-      this.address = this.localStorageService.getItem(this.addressKey)
-      if (this.address === "" || this.address === null) {
-        this.address = "Не указан"
-      }
+      this.fullName = this.localStorageDataCheckService
+        .checkDefaultValue(data.fullName, this.defaultInputValue, PERSONAL_FULL_NAME_KEY)
+      this.phoneNumber = this.localStorageDataCheckService
+        .checkDefaultValue(data.phoneNumber, this.defaultInputValue, PERSONAL_PHONE_NUMBER_KEY)
+      this.city = this.localStorageDataCheckService
+        .checkDefaultValue(data.city, this.defaultInputValue, DELIVERY_CITY_KEY)
+      this.address = this.localStorageDataCheckService
+        .checkDefaultValue(data.address, this.defaultInputValue, DELIVERY_ADDRESS_KEY)
     })
     this.deliveryInfPageRoute = this.appRoutesService.getRoutes().deliveryInfPage
   }

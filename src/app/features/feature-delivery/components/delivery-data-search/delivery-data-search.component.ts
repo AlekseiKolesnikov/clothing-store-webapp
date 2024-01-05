@@ -1,9 +1,8 @@
-import {Component, Input, OnDestroy, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
-import {CitiesHandlerService} from "../../services/cities-handler.service";
-import {AddressesHandlerService} from "../../services/addresses-handler.service";
 import {Location} from "@angular/common";
-import {DataLocalStoreService} from "../../services/data-local-store.service";
+import {ManageDeliveryDataSearchService} from "../../services/manage-delivery-data-search.service";
+
 
 @Component({
   selector: 'app-delivery-data-search',
@@ -16,13 +15,12 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   @Input() dataArray: string[]
   @Input() searchOption: string
   @Input() inputLabel: string
+  @Output() buttonClick = new EventEmitter
   protected loaderState: boolean = false
   protected inputText: string = ''
 
   constructor(
-    private readonly citiesHandlerService: CitiesHandlerService,
-    private readonly addressesHandlerService: AddressesHandlerService,
-    private readonly dataLocalStoreService: DataLocalStoreService,
+    private readonly manageDeliveryDataSearch: ManageDeliveryDataSearchService,
     private readonly location: Location
   ) {
     super();
@@ -34,25 +32,16 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
       this.inputText = this.ngModelField
       this.loaderState = false
     }, 500)
-    if (this.searchOption === "cities") {
-      this.citiesHandlerService.getAllCities()
-    }
-    if (this.searchOption === "address") {
-      this.addressesHandlerService.getAllAddresses()
-    }
+    this.manageDeliveryDataSearch.setDeliveryDataSubject(this.searchOption)
   }
 
   onClick(pickedItem: string) {
-    this.dataLocalStoreService.storeDeliveryData(pickedItem, this.searchOption)
+    this.buttonClick.emit()
+    this.manageDeliveryDataSearch.storeDeliveryData(this.searchOption, pickedItem)
     this.location.back()
   }
 
   ngOnDestroy() {
-    if (this.searchOption === "cities") {
-      this.citiesHandlerService.unsubscribe()
-    }
-    if (this.searchOption === "address") {
-      this.addressesHandlerService.unsubscribe()
-    }
+    this.manageDeliveryDataSearch.unsubscribe(this.searchOption)
   }
 }
