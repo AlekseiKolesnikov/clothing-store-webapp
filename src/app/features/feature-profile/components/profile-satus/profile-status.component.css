@@ -18,7 +18,7 @@
   line-height: 32px;
 }
 .personal-status-box h2 span {
-  color: dodgerblue;
+  color: var(--tg-theme-accent-text-color);
 }
 
 .points-description span {

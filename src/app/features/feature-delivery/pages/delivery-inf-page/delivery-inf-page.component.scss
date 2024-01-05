@@ -16,7 +16,7 @@
   height: fit-content;
   font: $heading-text;
   text-align: left;
-  margin-bottom: 15px;
+  margin: 7px 0;
 }
 
 .delivery-options-box {
@@ -30,6 +30,8 @@
   font: $subheading-text;
   text-align: left;
   width: 100%;
+  margin: 7px 0;
+  color: $text-tg-color;
 }
 
 .delivery-options-icons-box {

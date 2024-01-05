@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {LocalStorageService} from "../../../../local-storage.service";
-import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
+import {ProfileDataService} from "../../../feature-header/services/profile-data.service";
 
 @Component({
     selector: 'app-profile-icon-name',
@@ -9,11 +8,10 @@ import {LocalStorageKeysService} from "../../../../shared/services/local-storage
     encapsulation: ViewEncapsulation.None
 })
 export class ProfileIconNameComponent {
-    protected readonly profileData = this.localStorageService.getItem(this.localStorageKeysService.getKey().profileKey)
+    protected readonly profileData = this.profileDataService.getData()
 
     constructor(
-        private localStorageService: LocalStorageService,
-        private readonly localStorageKeysService: LocalStorageKeysService
+      private readonly profileDataService: ProfileDataService
     ) {
     }
 }

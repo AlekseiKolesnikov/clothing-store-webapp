@@ -40,7 +40,7 @@
   height: fit-content;
   font: 900 26px/1 "Mulish", sans-serif;
   text-align: left;
-  margin-bottom: 15px;
+  margin: 7px 0;
 }
 
 .delivery-options-box {
@@ -53,6 +53,8 @@
   font: 900 20px/1 "Mulish", sans-serif;
   text-align: left;
   width: 100%;
+  margin: 7px 0;
+  color: var(--tg-theme-text-color);
 }
 
 .delivery-options-icons-box {

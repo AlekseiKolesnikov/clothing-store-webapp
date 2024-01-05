@@ -4,6 +4,9 @@ import {DeliveryOptionStateService} from "../../services/delivery-option-state.s
 import {DeliveryIconService} from "../../services/delivery-icon.service";
 import {from, mergeMap, Subscription, tap} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
+import {DataLocalStoreService} from "../../services/data-local-store.service";
+import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
+import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-delivery-inf-page',
@@ -24,7 +27,9 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     private readonly telegramMainButton: TelegramMainButtonModel,
     private readonly deliveryIconDataService: DeliveryIconService,
     private readonly deliveryOptionsState: DeliveryOptionStateService,
-    private readonly deliveryDataService: DeliveryDataService
+    private readonly dataLocalStoreService: DataLocalStoreService,
+    private readonly deliveryDataService: DeliveryDataService,
+    private readonly localStorageDataCheckService: LocalStorageDataCheckService,
   ) {
     this.deliveryOptionsState$ = this.deliveryOptionsState.getState().pipe(
       mergeMap((item) => from(item)),
@@ -43,12 +48,22 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.telegramMainButton.showMainButton("Сохранить")
+    this.dataLocalStoreService.subscribe()
+    window.addEventListener(
+      "message",
+      (event) => {
+        if (event.data === "setData") {
+          this.dataLocalStoreService.storeData()
+        }
+      }
+    )
   }
 
   ngOnDestroy() {
-    this.deliveryOptionsState$.unsubscribe()
-    this.telegramMainButton.hideMainButton()
     this.deliveryData$.unsubscribe()
+    this.deliveryOptionsState$.unsubscribe()
+    this.dataLocalStoreService.unsubscribe()
+    this.telegramMainButton.hideMainButton()
   }
 
   protected cityFieldIsEmpty = () => {

@@ -1,0 +1,5 @@
+export const DELIVERY_ADDRESS_KEY = "delivery_address"
+export const DELIVERY_CITY_KEY = "delivery_city"
+export const PERSONAL_FULL_NAME_KEY = "personal_full_name"
+export const PERSONAL_PHONE_NUMBER_KEY = "personal_phone_number"
+export const POINTS_CARD_KEY = "points_card"
