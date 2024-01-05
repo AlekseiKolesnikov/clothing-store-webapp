@@ -21,7 +21,6 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected address: string
   protected deliveryIconData = this.deliveryIconDataService.getData()
   protected deliveryOptionsState$: Subscription
-  protected deliveryData$: Subscription
 
   constructor(
     private readonly telegramMainButton: TelegramMainButtonModel,
@@ -53,14 +52,13 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
       "message",
       (event) => {
         if (event.data === "setData") {
-          this.dataLocalStoreService.storeData()
+          this.dataLocalStoreService.storePersonalData()
         }
       }
     )
   }
 
   ngOnDestroy() {
-    this.deliveryData$.unsubscribe()
     this.deliveryOptionsState$.unsubscribe()
     this.dataLocalStoreService.unsubscribe()
     this.telegramMainButton.hideMainButton()

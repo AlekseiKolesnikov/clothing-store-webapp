@@ -3,6 +3,7 @@ import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {Location} from "@angular/common";
 import {ManageDeliveryDataSearchService} from "../../services/manage-delivery-data-search.service";
 
+
 @Component({
   selector: 'app-delivery-data-search',
   templateUrl: './delivery-data-search.component.html',
