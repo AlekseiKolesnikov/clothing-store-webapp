@@ -11,7 +11,10 @@
     >
       <app-delivery-icons
         *ngFor="let item of deliveryIconData; index as i"
-        [buttonOption]="buttonOption"
+        [icon]="item.icon"
+        [iconName]="item.iconName"
+        [text]="item.text"
+        [isSelected]="item.isSelected"
         [elementIndex]="i"
         [frameClassName]="frameState"
         [iconName]="item.iconName"

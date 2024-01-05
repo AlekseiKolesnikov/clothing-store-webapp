@@ -1,6 +1,6 @@
 <div
   class="delivery-icon-frame"
-  [class]="buttonOption === elementIndex && frameClassName ? 'gradient-frame' : 'empty-frame'"
+  [class]="isSelected ? 'gradient-frame' : 'empty-frame'"
   (click)="onClick(elementIndex)"
   (touchend)="touch($event)"
 >

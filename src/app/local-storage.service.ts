@@ -4,8 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class LocalStorageService {
-  constructor() {
+  setPrimitiveItem(key: string, value: string) {
+    localStorage.setItem(key, value)
   }
+
+  getPrimitiveItem<TYPE>(key: string, typeConverter: (stringValue: string) => TYPE): TYPE {
+    const stringValue = localStorage.getItem(key)
+    if (stringValue !== null) {
+      return typeConverter(stringValue)
+    } else {
+      return typeConverter("")
+    }
+  }
+
   setItem(key: string, value: any): void {
     try {
       localStorage.setItem(key, JSON.stringify(value));

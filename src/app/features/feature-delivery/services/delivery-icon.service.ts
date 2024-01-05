@@ -1,34 +1,48 @@
 import {Injectable} from "@angular/core";
+import {IDeliveryOptions} from "./delivery-option-state.service";
+import {LocalStorageService} from "../../../local-storage.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeliveryIconService {
-  private deliveryIconDataArray = [
+  constructor(private localStorage: LocalStorageService) {
+  }
+
+  private readonly deliveryIconDataArray = [
     {
       icon: "assets/images/delivery-icons/store.svg",
       iconName: "store icon",
       text: "Забрать\nиз магазина",
-      index: 0,
-      isSelected: false
+      isSelected: false,
+      option: 0
     },
     {
       icon: "assets/images/delivery-icons/location.svg",
       iconName: "location icon",
       text: "Самовывоз\nиз ПВЗ",
-      index: 1,
-      isSelected: false
+      isSelected: false,
+      option: 1
     },
     {
       icon: "assets/images/delivery-icons/carton-box.svg",
       iconName: "carton box icon",
       text: "Доставка\nкурьером",
-      index: 2,
-      isSelected: false
+      isSelected: false,
+      option: 2
     }
   ]
 
-  getData() {
+  saveSelectedOption(selectedIndex: number) {
+    this.localStorage.setPrimitiveItem("savedDeliveryOption", selectedIndex.toString())
+  }
+
+  getData(): Array<IDeliveryOptions> {
+    const savedSelectedOption = this.localStorage.getPrimitiveItem<number>("savedDeliveryOption",
+      (stringValue): number => {
+        return +stringValue
+      })
+    this.deliveryIconDataArray[savedSelectedOption].isSelected = true
     return this.deliveryIconDataArray
   }
 

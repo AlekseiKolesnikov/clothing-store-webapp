@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
-import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
+import {DeliveryOptionStateService, IDeliveryOptions} from "../../services/delivery-option-state.service";
 import {DeliveryIconService} from "../../services/delivery-icon.service";
 import {from, mergeMap, Subscription, tap} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
@@ -20,6 +20,7 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected city: string
   protected address: string
   protected deliveryIconData = this.deliveryIconDataService.getData()
+  protected deliveryIconData: Array<IDeliveryOptions>
   protected deliveryOptionsState$: Subscription
 
   constructor(
