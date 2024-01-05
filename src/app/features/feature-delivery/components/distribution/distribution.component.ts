@@ -10,6 +10,10 @@ import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 export class DistributionComponent {
   @Input() cityName: string
   @Input() address: string
+  @Input() addressIsEmpty: boolean
+  @Input() cityIsEmpty: boolean
+  constructor() {
+  }
 
   protected distributionCityPage: string = this.appRoutesService.getRoutes().distributionPointsPage
   protected distributionAddressPage: string = this.appRoutesService.getRoutes().distributionAddressPage

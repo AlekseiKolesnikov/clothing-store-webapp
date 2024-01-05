@@ -4,11 +4,13 @@
     label="Город"
     [route]="distributionCityPage"
     [data]="cityName"
+    [dataIsEmpty]="cityIsEmpty"
   />
   <app-delivery-input
     class="distribution-address-input"
     label="Адресс"
     [route]="distributionAddressPage"
     [data]="address"
+    [dataIsEmpty]="addressIsEmpty"
   />
 </div>

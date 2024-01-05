@@ -62,7 +62,22 @@
   height: fit-content;
 }
 
+.personal-data-fields-box {
+  @extend %space-between-column-center-flex;
+  width: 100%;
+  height: fit-content;
+  gap: 15px;
+  margin-top: 25px;
+}
+
 .app-distribution {
+  @extend %center-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.app-personal-full-name,
+.app-personal-phone-number {
   @extend %center-flex;
   width: 100%;
   height: fit-content;

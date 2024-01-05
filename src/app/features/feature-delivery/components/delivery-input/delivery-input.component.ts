@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class DeliveryInputComponent {
   @Input() label: string
   @Input() data: string
+  @Input() dataIsEmpty: boolean
   @Input() route: string
 
   constructor(

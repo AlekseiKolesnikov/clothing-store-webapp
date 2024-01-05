@@ -11,12 +11,12 @@
     >
       <app-delivery-icons
         *ngFor="let item of deliveryIconData; index as i"
-        [icon]="item.icon"
-        [iconName]="item.iconName"
-        [text]="item.text"
-        [frameClassName]="frameState"
         [buttonOption]="buttonOption"
         [elementIndex]="i"
+        [frameClassName]="frameState"
+        [iconName]="item.iconName"
+        [icon]="item.icon"
+        [text]="item.text"
         class="delivery-options-icon"
       />
     </div>
@@ -27,9 +27,11 @@
       />
       <app-distribution
         *ngIf="buttonOption === 1"
-        class="app-distribution"
-        [cityName]="city"
         [address]="address"
+        [cityName]="city"
+        [cityIsEmpty]="cityFieldIsEmpty()"
+        [addressIsEmpty]="addressFieldIsEmpty()"
+        class="app-distribution"
       />
       <app-deliver-home
         *ngIf="buttonOption === 2"
@@ -37,9 +39,19 @@
       />
     </div>
   </div>
-  <div class="delivery-personal-data-box">
-    <div class="delivery-personal-label"></div>
-    <div class="delivery-personal-name"></div>
-    <div class="delivery-personal-phone-number"></div>
+  <div class="personal-data-fields-box">
+    <app-personal-data-field
+      class="app-personal-full-name"
+      idName="name"
+      inputType="text"
+      title="Полное имя"
+    />
+    <app-personal-data-field
+      class="app-personal-phone-number"
+      idName="phone"
+      inputType="tel"
+      title="Номер телефона"
+    />
   </div>
+
 </div>

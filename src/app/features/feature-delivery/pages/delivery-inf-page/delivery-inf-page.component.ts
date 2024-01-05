@@ -35,7 +35,9 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     ).subscribe()
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
       this.city = data.city
+      this.cityFieldIsEmpty()
       this.address = data.personalAddress
+      this.addressFieldIsEmpty()
     })
   }
 
@@ -47,5 +49,13 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     this.deliveryOptionsState$.unsubscribe()
     this.telegramMainButton.hideMainButton()
     this.deliveryData$.unsubscribe()
+  }
+
+  protected cityFieldIsEmpty = () => {
+    return this.city === ""
+  }
+
+  protected addressFieldIsEmpty = () => {
+    return this.address === ""
   }
 }
