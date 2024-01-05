@@ -1,21 +1,9 @@
-<div class="distribution-page-wrapper">
-  <div class="distribution-page-searchbar-box">
-    <div class="distribution-page-searchbar-label">Город</div>
-    <input
-      #myInput
-      (input)="updateList()"
-      [(ngModel)]="cityName"
-      class="distribution-page-searchbar-input"
-    >
-  </div>
-  <div
-    class="distribution-page-cities-list-box"
-  >
-    <div
-      *ngFor="let city of citiesArray"
-      class="distribution-page-city-box"
-    >
-      <div class="distribution-page-city-name">{{city.cityName}}</div>
-    </div>
-  </div>
-</div>
+<app-delivery-data-search
+  [dataArray]="citiesArray"
+  [ngModelField]="cityName"
+  class="app-delivery-data-search"
+  inputLabel="Город"
+  searchOption="cities"
+/>
+
+

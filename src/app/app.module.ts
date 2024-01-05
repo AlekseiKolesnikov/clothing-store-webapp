@@ -45,6 +45,7 @@ import {DeliveryIconService} from "./features/feature-delivery/services/delivery
     }
   ],
   bootstrap: [AppComponent]
-})
+}
+)
 export class AppModule {
 }

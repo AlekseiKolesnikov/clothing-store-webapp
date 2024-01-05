@@ -18,7 +18,11 @@ export class LocalStorageService {
   }
 
   setItem(key: string, value: any): void {
-    localStorage.setItem(key, JSON.stringify(value));
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (err) {
+      console.log('Error')
+    }
   }
 
   getItem(key: string): any {

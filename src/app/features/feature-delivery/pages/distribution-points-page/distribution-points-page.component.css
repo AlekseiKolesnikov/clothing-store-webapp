@@ -1,43 +1,6 @@
 .distribution-page-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.distribution-page-searchbar-box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.distribution-page-wrapper {
   width: 100vw;
   height: 100vh;
-  background: var(--tg-theme-bg-color);
-}
-
-.distribution-page-searchbar-box {
-  width: 100%;
-  height: fit-content;
-  background: var(--tg-theme-secondary-bg-color);
-  padding: 5px 10px;
-}
-
-.distribution-page-searchbar-label {
-  width: fit-content;
-  height: fit-content;
-  font: 400 12px/1 "Mulish", sans-serif;
-  color: var(--tg-theme-hint-color);
-}
-
-.distribution-page-searchbar-input {
-  width: 100%;
-  height: 40px;
-  background: var(--tg-theme-secondary-bg-color);
-  font: 400 16px/1.2 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
 }
 
 /*# sourceMappingURL=distribution-points-page.component.css.map */

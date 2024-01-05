@@ -14,7 +14,7 @@
 
 .delivery-input-data-wrapper {
   width: 100%;
-  height: fit-content;
+  height: 30px;
 }
 
 .delivery-input-data-box {
@@ -26,7 +26,8 @@
 .delivery-input-data-label {
   width: fit-content;
   height: fit-content;
-  font: 400 12px/1 "Mulish", sans-serif;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
   color: var(--tg-theme-hint-color);
 }
 

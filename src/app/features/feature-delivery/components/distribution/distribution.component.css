@@ -5,9 +5,16 @@
   justify-content: space-between;
 }
 
+.distribution-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .distribution-address-input, .distribution-city-input {
-  border-bottom: 0.5px solid var(--tg-theme-hint-color);
-  padding-bottom: 5px;
+  border-bottom: 0.01px solid var(--tg-theme-hint-color);
+  padding-bottom: 8px;
 }
 
 .distribution-wrapper {
@@ -19,6 +26,7 @@
 .distribution-city-input {
   width: 100%;
   height: fit-content;
+  cursor: pointer;
 }
 
 .distribution-address-input {

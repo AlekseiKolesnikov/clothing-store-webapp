@@ -54,7 +54,7 @@
 
 .store-location-link-button {
   vertical-align: top;
-  background: rgb(0, 124, 255);
+  background: var(--tg-theme-button-color);
   color: white;
   border-radius: 25px;
   padding: 5px 6px 6px;

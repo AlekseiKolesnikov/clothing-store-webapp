@@ -16,6 +16,10 @@
         [text]="item.text"
         [isSelected]="item.isSelected"
         [elementIndex]="i"
+        [frameClassName]="frameState"
+        [iconName]="item.iconName"
+        [icon]="item.icon"
+        [text]="item.text"
         class="delivery-options-icon"
       />
     </div>
@@ -26,6 +30,10 @@
       />
       <app-distribution
         *ngIf="buttonOption === 1"
+        [address]="address"
+        [cityName]="city"
+        [cityIsEmpty]="cityFieldIsEmpty()"
+        [addressIsEmpty]="addressFieldIsEmpty()"
         class="app-distribution"
       />
       <app-deliver-home
@@ -34,9 +42,24 @@
       />
     </div>
   </div>
-  <div class="delivery-personal-data-box">
-    <div class="delivery-personal-label"></div>
-    <div class="delivery-personal-name"></div>
-    <div class="delivery-personal-phone-number"></div>
+  <div class="personal-data-fields-box">
+    <div class="delivery-options-label">
+      <p>Данные получателя</p>
+    </div>
+    <app-personal-data-field
+      class="app-personal-full-name"
+      idName="name"
+      inputType="text"
+      title="Полное имя"
+      [maxLength]="100"
+    />
+    <app-personal-data-field
+      class="app-personal-phone-number"
+      idName="phone"
+      inputType="tel"
+      title="Номер телефона"
+      [maxLength]="10"
+    />
   </div>
+
 </div>

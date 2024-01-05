@@ -1,7 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {LocalStorageService} from "../../../../local-storage.service";
-import {LocalStorageKeysService} from "../../../../shared/services/local-storage-keys.service";
 import {StatusTableService} from "../../services/status-table.service";
+import {ProfileDataService} from "../../../feature-header/services/profile-data.service";
 
 @Component({
   selector: 'app-profile-status',
@@ -11,12 +10,11 @@ import {StatusTableService} from "../../services/status-table.service";
 })
 export class ProfileStatusComponent {
   protected statusTableData = this.statusTableDataService.getData()
-  protected readonly profileData = this.localStorageService.getItem(this.localStorageKeysService.getKey().profileKey)
+  protected readonly profileData = this.profileDataService.getData()
 
   constructor(
-    private localStorageService: LocalStorageService,
     private readonly statusTableDataService: StatusTableService,
-    private readonly localStorageKeysService: LocalStorageKeysService
+    private readonly profileDataService: ProfileDataService
   ) {
   }
 }

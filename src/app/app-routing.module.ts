@@ -10,6 +10,9 @@ import {DeliveryInfPageComponent} from "./features/feature-delivery/pages/delive
 import {
   DistributionPointsPageComponent
 } from "./features/feature-delivery/pages/distribution-points-page/distribution-points-page.component";
+import {
+  DistributionAddressPageComponent
+} from "./features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
 
 const routes: Routes = [
   {
@@ -43,6 +46,10 @@ const routes: Routes = [
   {
     path: 'distribution_points_page',
     component: DistributionPointsPageComponent
+  },
+  {
+    path: 'distribution_address_page',
+    component: DistributionAddressPageComponent
   }
 ];
 

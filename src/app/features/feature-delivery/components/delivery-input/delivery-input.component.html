@@ -3,8 +3,11 @@
   (click)="onClick()"
 >
   <div class="delivery-input-data-box">
-    <div class="delivery-input-data-label">{{label}}</div>
-    <div class="delivery-input-data">Москва</div>
+    <label
+      class="delivery-input-data-label"
+      [style.font-size]=" dataIsEmpty ? '16px' : '10px'"
+    >{{label}}</label>
+    <div class="delivery-input-data">{{data | truncate: 30}}</div>
   </div>
 
   <div class="delivery-input-arrow">

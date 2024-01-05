@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import {CdekCitiesService, ICdekCity} from "../../services/cdek-cities.service";
-import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
+import {Component, OnDestroy, ViewEncapsulation} from '@angular/core';
+import {CitiesHandlerService} from "../../services/cities-handler.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-distribution-points-page',
@@ -8,29 +8,20 @@ import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/tel
   styleUrls: ['./distribution-points-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DistributionPointsPageComponent implements AfterViewInit, OnInit {
-  @ViewChild('myInput') myInput: ElementRef
-
+export class DistributionPointsPageComponent implements OnDestroy {
   protected cityName: string = ''
-  protected citiesArray: ICdekCity[] = []
+  protected citiesArray: string[] = []
+  private readonly citiesHandler$: Subscription
 
   constructor(
-    private readonly cdekCitiesService: CdekCitiesService,
-    private readonly telegramMainButton: TelegramMainButtonModel
+    private readonly citiesHandlerService: CitiesHandlerService
   ) {
+    this.citiesHandler$ = this.citiesHandlerService.getSubscription().subscribe(data => {
+        this.citiesArray = data
+    })
   }
 
-  ngOnInit() {
-    this.telegramMainButton.activateMainButton("Сохранить")
-  }
-
-  ngAfterViewInit() {
-    this.myInput.nativeElement.focus()
-  }
-
-  updateList() {
-    this.cdekCitiesService.getCity(this.cityName).subscribe(value => {
-      console.log(value)
-    });
+  ngOnDestroy() {
+    this.citiesHandler$.unsubscribe()
   }
 }

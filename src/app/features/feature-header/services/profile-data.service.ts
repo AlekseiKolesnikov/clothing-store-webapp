@@ -7,7 +7,7 @@ export class ProfileDataService {
   private readonly profileData = {
     image: "assets/images/ui-icons/ghost.svg",
     name: "Aleksei",
-    status: "Beginner"
+    status: "Новичок"
   }
 
   getData() {

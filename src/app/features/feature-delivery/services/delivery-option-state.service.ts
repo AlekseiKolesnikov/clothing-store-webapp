@@ -22,6 +22,9 @@ export class DeliveryOptionStateService {
     this.deliveryOptionSubject = new BehaviorSubject<IDeliveryOptions[]>(this.deliveryOptions)
   }
 
+  constructor() {
+  }
+
   getState() {
     return this.deliveryOptionSubject.asObservable()
   }

@@ -3,7 +3,7 @@ import {BaseComponent} from "../../../shared/models/base-component.model";
 import {LocalStorageService} from "../../../local-storage.service";
 import {NavigateFeedbackModel} from "../../../shared/models/telegram-ui/navigate-feedback-model";
 import {AppRoutesService} from "../../../shared/services/app-routes.service";
-import {LocalStorageKeysService} from "../../../shared/services/local-storage-keys.service";
+import {POINTS_CARD_KEY} from "../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-points-card',
@@ -12,13 +12,11 @@ import {LocalStorageKeysService} from "../../../shared/services/local-storage-ke
   encapsulation: ViewEncapsulation.None
 })
 export class PointsCardComponent extends BaseComponent {
-  protected readonly pointsAmount = this.localStorageService
-    .getItem(this.localStorageKeysService.getKey().pointsCardKey)
+  protected readonly pointsAmount = this.localStorageService.getItem(POINTS_CARD_KEY)
   protected pointsPageRoute: string
 
   constructor(
     private readonly appRoutesService: AppRoutesService,
-    private readonly localStorageKeysService: LocalStorageKeysService,
     private readonly localStorageService: LocalStorageService,
     private readonly hapticFeedback: NavigateFeedbackModel
   ) {

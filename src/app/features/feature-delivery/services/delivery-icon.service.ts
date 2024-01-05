@@ -45,4 +45,8 @@ export class DeliveryIconService {
     this.deliveryIconDataArray[savedSelectedOption].isSelected = true
     return this.deliveryIconDataArray
   }
+
+  setData() {
+
+  }
 }

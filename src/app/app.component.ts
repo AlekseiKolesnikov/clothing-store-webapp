@@ -11,7 +11,7 @@ import {AppRoutesService} from "./shared/services/app-routes.service";
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  protected title = 'clothing-store';
+  title = 'clothing-store';
   protected mainPageRoute: string
 
   constructor(

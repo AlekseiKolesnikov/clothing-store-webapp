@@ -1,0 +1,21 @@
+
+  <form
+    class="form-box">
+    <input
+      class="form-input"
+      (input)="submit($event)"
+      [value]="valueCheck()"
+      (input)="onInputChange()"
+      [(ngModel)]="inputData"
+      placeholder="{{title}}"
+      name="{{idName}}"
+      id="{{idName}}"
+      type="{{inputType}}">
+    <label
+      for="{{idName}}"
+      class="form-label"
+    >
+      {{title}}
+    </label>
+  </form>
+

@@ -1,6 +1,12 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {DeliveryOptionStateService, IDeliveryOptions} from "../../services/delivery-option-state.service";
+import {DeliveryIconService} from "../../services/delivery-icon.service";
+import {from, mergeMap, Subscription, tap} from "rxjs";
+import {DeliveryDataService} from "../../services/delivery-data.service";
+import {DataLocalStoreService} from "../../services/data-local-store.service";
+import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
+import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-delivery-inf-page',
@@ -8,20 +14,62 @@ import {DeliveryOptionStateService, IDeliveryOptions} from "../../services/deliv
   styleUrls: ['./delivery-inf-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DeliveryInfPageComponent implements OnInit {
+export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected buttonOption: number
+  protected frameState: boolean
+  protected city: string
+  protected address: string
+  protected deliveryIconData = this.deliveryIconDataService.getData()
   protected deliveryIconData: Array<IDeliveryOptions>
+  protected deliveryOptionsState$: Subscription
 
   constructor(
     private readonly telegramMainButton: TelegramMainButtonModel,
-    private readonly deliveryOptionsState: DeliveryOptionStateService
+    private readonly deliveryIconDataService: DeliveryIconService,
+    private readonly deliveryOptionsState: DeliveryOptionStateService,
+    private readonly dataLocalStoreService: DataLocalStoreService,
+    private readonly deliveryDataService: DeliveryDataService,
+    private readonly localStorageDataCheckService: LocalStorageDataCheckService,
   ) {
-    this.deliveryOptionsState.getState().subscribe(item => {
-       this.deliveryIconData = item
+    this.deliveryOptionsState$ = this.deliveryOptionsState.getState().pipe(
+      mergeMap((item) => from(item)),
+      tap(value => {
+        this.buttonOption = value.option
+        this.frameState = value.isSelected
+      })
+    ).subscribe()
+    this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
+      this.city = data.city
+      this.cityFieldIsEmpty()
+      this.address = data.personalAddress
+      this.addressFieldIsEmpty()
     })
   }
 
   ngOnInit() {
-    this.telegramMainButton.activateMainButton("Сохранить")
+    this.telegramMainButton.showMainButton("Сохранить")
+    this.dataLocalStoreService.subscribe()
+    window.addEventListener(
+      "message",
+      (event) => {
+        if (event.data === "setData") {
+          this.dataLocalStoreService.storePersonalData()
+        }
+      }
+    )
+  }
+
+  ngOnDestroy() {
+    this.deliveryOptionsState$.unsubscribe()
+    this.dataLocalStoreService.unsubscribe()
+    this.telegramMainButton.hideMainButton()
+  }
+
+  protected cityFieldIsEmpty = () => {
+    return this.city === ""
+  }
+
+  protected addressFieldIsEmpty = () => {
+    return this.address === ""
   }
 }

@@ -17,6 +17,8 @@ body {
   display: block;
   background: var(--tg-theme-secondary-bg-color);
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 body {

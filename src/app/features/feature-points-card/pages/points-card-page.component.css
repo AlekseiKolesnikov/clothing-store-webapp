@@ -97,7 +97,7 @@
   -webkit-text-fill-color: transparent;
 }
 .points-card-page-info-box .points-card-page-info-box-description a {
-  background: rgb(0, 124, 255);
+  background: var(--tg-theme-accent-text-color);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
