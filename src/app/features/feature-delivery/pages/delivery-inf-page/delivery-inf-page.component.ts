@@ -13,7 +13,6 @@ import {DataLocalStoreService} from "../../services/data-local-store.service";
 })
 export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   protected buttonOption: number
-  protected frameState: boolean
   protected city: string
   protected address: string
   protected deliveryIconData: Array<IDeliveryOptions>
@@ -27,10 +26,14 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     private readonly deliveryDataService: DeliveryDataService
   ) {
     this.deliveryOptionsState$ = this.deliveryOptionsState.getState().pipe(
+      tap(data => {
+        this.deliveryIconData = data
+      }),
       mergeMap((item) => from(item)),
       tap(value => {
-        this.buttonOption = value.option
-        this.frameState = value.isSelected
+        if (value.isSelected) {
+          this.buttonOption = value.option
+        }
       })
     ).subscribe()
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {

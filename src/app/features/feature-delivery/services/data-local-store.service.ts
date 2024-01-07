@@ -2,12 +2,7 @@ import {Injectable} from "@angular/core";
 import {Subscription} from "rxjs";
 import {DeliveryDataService} from "./delivery-data.service";
 import {LocalStorageService} from "../../../local-storage.service";
-import {
-  DELIVERY_ADDRESS_KEY,
-  DELIVERY_CITY_KEY,
-  PERSONAL_FULL_NAME_KEY,
-  PERSONAL_PHONE_NUMBER_KEY
-} from "../../../shared/data/local-storage-keys";
+import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../shared/data/local-storage-keys";
 
 @Injectable({
   providedIn: 'root'
@@ -29,12 +24,6 @@ export class DataLocalStoreService {
     }
     if (this.localStorageService.getItem(DELIVERY_ADDRESS_KEY) === null) {
       this.localStorageService.setItem(DELIVERY_ADDRESS_KEY, this.address)
-    }
-    if (this.localStorageService.getItem(PERSONAL_FULL_NAME_KEY) === null) {
-
-    }
-    if (this.localStorageService.getItem(PERSONAL_PHONE_NUMBER_KEY) === null) {
-
     }
   }
 

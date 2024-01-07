@@ -13,8 +13,8 @@ export class DeliveryIconsComponent extends BaseComponent {
   @Input() iconName: string
   @Input() icon: string
   @Input() text: string
-  @Input() isSelected: boolean
   @Input() elementIndex: number
+  @Input() isSelected: boolean
 
   constructor(
     private deliveryOptionsState: DeliveryOptionStateService

@@ -7,7 +7,6 @@ import {PointsCardService} from "./features/feature-points-card/services/points-
   providedIn: 'root'
 })
 export class InitializeMainData {
-  protected pointsCardKey: string
   protected pointsCardData: number
 
   constructor(
@@ -18,6 +17,6 @@ export class InitializeMainData {
   }
 
   initialize() {
-    this.localStorageService.setItem(this.pointsCardKey, POINTS_CARD_KEY)
+    this.localStorageService.setItem(POINTS_CARD_KEY, this.pointsCardData)
   }
 }

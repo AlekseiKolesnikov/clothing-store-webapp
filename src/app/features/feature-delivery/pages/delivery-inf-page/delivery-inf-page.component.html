@@ -14,8 +14,8 @@
         [icon]="item.icon"
         [iconName]="item.iconName"
         [text]="item.text"
-        [isSelected]="item.isSelected"
         [elementIndex]="i"
+        [isSelected]="item.isSelected"
         class="delivery-options-icon"
       />
     </div>
@@ -31,10 +31,6 @@
         [cityIsEmpty]="cityFieldIsEmpty()"
         [addressIsEmpty]="addressFieldIsEmpty()"
         class="app-distribution"
-      />
-      <app-deliver-home
-        *ngIf="buttonOption === 2"
-        class="app-delivery-home"
       />
     </div>
   </div>
