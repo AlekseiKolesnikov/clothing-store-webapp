@@ -4,6 +4,8 @@ import {DeliveryOptionStateService, IDeliveryOptions} from "../../services/deliv
 import {from, mergeMap, Subscription, tap} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
 import {DataLocalStoreService} from "../../services/data-local-store.service";
+import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
+import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../../shared/data/local-storage-keys";
 
 @Component({
   selector: 'app-delivery-inf-page',
@@ -23,7 +25,8 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     private readonly telegramMainButton: TelegramMainButtonModel,
     private readonly deliveryOptionsState: DeliveryOptionStateService,
     private readonly dataLocalStoreService: DataLocalStoreService,
-    private readonly deliveryDataService: DeliveryDataService
+    private readonly deliveryDataService: DeliveryDataService,
+    private readonly localStorageDataCheckService: LocalStorageDataCheckService
   ) {
     this.deliveryOptionsState$ = this.deliveryOptionsState.getState().pipe(
       tap(data => {
@@ -37,9 +40,11 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
       })
     ).subscribe()
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
-      this.city = data.city
+      this.city = this.localStorageDataCheckService
+        .checkDefaultValue(data.city, "", DELIVERY_CITY_KEY)
       this.cityFieldIsEmpty()
-      this.address = data.address
+      this.address = this.localStorageDataCheckService
+        .checkDefaultValue(data.address, "", DELIVERY_ADDRESS_KEY)
       this.addressFieldIsEmpty()
     })
   }
