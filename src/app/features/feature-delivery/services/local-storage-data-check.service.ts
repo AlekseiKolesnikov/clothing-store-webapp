@@ -11,6 +11,6 @@ export class LocalStorageDataCheckService {
 
   checkDefaultValue(data: string, defaultValue: string, dataKey: string): string {
     const storageItem = this.localStorageService.getItem(dataKey)
-    return storageItem !== null ? storageItem : (data === "" ? defaultValue : data)
+    return storageItem !== null ? storageItem : (data === null || data === "" ? defaultValue : data)
   }
 }

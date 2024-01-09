@@ -1,16 +1,16 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {Router} from "@angular/router";
-import {DeliveryOptionStateService} from "../../../feature-delivery/services/delivery-option-state.service";
 import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 import {Subscription} from "rxjs";
 import {DeliveryDataService} from "../../../feature-delivery/services/delivery-data.service";
 import {LocalStorageDataCheckService} from "../../../feature-delivery/services/local-storage-data-check.service";
 import {
   DELIVERY_ADDRESS_KEY,
-  DELIVERY_CITY_KEY,
+  DELIVERY_CITY_KEY, DELIVERY_OPTION,
   PERSONAL_FULL_NAME_KEY,
   PERSONAL_PHONE_NUMBER_KEY
 } from "../../../../shared/data/local-storage-keys";
+import {LocalStorageService} from "../../../../local-storage.service";
 
 @Component({
   selector: 'app-profile-delivery-inf',
@@ -19,7 +19,7 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class ProfileDeliveryInfComponent {
-  protected buttonOption: number
+  protected buttonOption: number = this.localStorageService.getItem(DELIVERY_OPTION)
   protected city: string
   protected address: string
   protected fullName: string
@@ -32,14 +32,9 @@ export class ProfileDeliveryInfComponent {
     private router: Router,
     private appRoutesService: AppRoutesService,
     private readonly deliveryDataService: DeliveryDataService,
-    private readonly deliveryOptionsState: DeliveryOptionStateService,
+    private readonly localStorageService: LocalStorageService,
     private readonly localStorageDataCheckService: LocalStorageDataCheckService
   ) {
-    this.deliveryOptionsState.getState().subscribe(item => {
-      item.forEach(item => {
-        this.buttonOption = item.option
-      })
-    })
     this.deliveryData$ = this.deliveryDataService.getDeliveryData().subscribe(data => {
       this.fullName = this.localStorageDataCheckService
         .checkDefaultValue(data.fullName, this.defaultInputValue, PERSONAL_FULL_NAME_KEY)
