@@ -18,18 +18,11 @@ export class DeliveryIconService {
       option: 0
     },
     {
-      icon: "assets/images/delivery-icons/location.svg",
+      icon: "assets/images/delivery-icons/carton-box.svg",
       iconName: "location icon",
       text: "Самовывоз\nиз ПВЗ",
       isSelected: false,
       option: 1
-    },
-    {
-      icon: "assets/images/delivery-icons/carton-box.svg",
-      iconName: "carton box icon",
-      text: "Доставка\nкурьером",
-      isSelected: false,
-      option: 2
     }
   ]
 
@@ -44,9 +37,5 @@ export class DeliveryIconService {
       })
     this.deliveryIconDataArray[savedSelectedOption].isSelected = true
     return this.deliveryIconDataArray
-  }
-
-  setData() {
-
   }
 }

@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject} from "rxjs";
-import {TelegramPopupModel} from "../../../shared/models/telegram-ui/telegram-popup.model";
+import {LocalStorageService} from "../../../local-storage.service";
+import {PERSONAL_FULL_NAME_KEY, PERSONAL_PHONE_NUMBER_KEY} from "../../../shared/data/local-storage-keys";
 
 interface IDeliveryData {
   fullName: string,
@@ -13,16 +14,24 @@ interface IDeliveryData {
   providedIn: 'root'
 })
 export class DeliveryDataService {
+  private readonly fullNameStorageValue = () => {
+    const fullName = this.localStorageService.getItem(PERSONAL_FULL_NAME_KEY)
+    return fullName !== "" || null ? fullName : ""
+  }
+  private readonly phoneNumberStorageValue = () => {
+    const phoneNumber = this.localStorageService.getItem(PERSONAL_PHONE_NUMBER_KEY)
+    return phoneNumber !== "" || null ? phoneNumber : ""
+  }
   protected deliveryData: IDeliveryData = {
-    fullName: "",
-    phoneNumber: "",
+    fullName: this.fullNameStorageValue(),
+    phoneNumber: this.phoneNumberStorageValue(),
     city: "",
     address: ""
   }
   private readonly deliveryDataSubject = new BehaviorSubject<IDeliveryData>(this.deliveryData)
 
   constructor(
-    private readonly telegramPopup: TelegramPopupModel
+    private readonly localStorageService: LocalStorageService
   ) {
   }
 
@@ -30,25 +39,23 @@ export class DeliveryDataService {
     return this.deliveryDataSubject.asObservable()
   }
 
+  setCity(city: string) {
+    this.deliveryData.city = city
+    this.deliveryDataSubject.next(this.deliveryData)
+  }
+
+  setAddress(address: string) {
+    this.deliveryData.address = address
+    this.deliveryDataSubject.next(this.deliveryData)
+  }
+
   setName(fullName: string) {
     this.deliveryData.fullName = fullName
     this.deliveryDataSubject.next(this.deliveryData)
   }
-  setCity(city: string) {
-    this.deliveryData.fullName = city
-    this.deliveryDataSubject.next(this.deliveryData)
-  }
-  setAddress(address: string) {
-    this.deliveryData.fullName = address
-    this.deliveryDataSubject.next(this.deliveryData)
-  }
 
   setPhoneNumber(phoneNumber: string) {
-    if (phoneNumber.length < 10) {
-      this.telegramPopup.showPopup("Номер не валиден")
-    } else {
-      this.deliveryData.phoneNumber = phoneNumber
-      this.deliveryDataSubject.next(this.deliveryData)
-    }
+    this.deliveryData.phoneNumber = phoneNumber
+    this.deliveryDataSubject.next(this.deliveryData)
   }
 }

@@ -32,6 +32,7 @@ export class DeliveryOptionStateService {
     this.deliveryOptions.forEach((item, index) => {
       item.isSelected = index === selectedIndex
     })
+    this.deliveryOptionsService.saveSelectedOption(selectedIndex)
     this.deliveryOptionSubject.next(this.deliveryOptions)
   }
 }

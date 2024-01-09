@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, Output, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {Location} from "@angular/common";
 import {ManageDeliveryDataSearchService} from "../../services/manage-delivery-data-search.service";
@@ -15,7 +15,6 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   @Input() dataArray: string[]
   @Input() searchOption: string
   @Input() inputLabel: string
-  @Output() buttonClick = new EventEmitter
   protected loaderState: boolean = false
   protected inputText: string = ''
 
@@ -36,7 +35,6 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   }
 
   onClick(pickedItem: string) {
-    this.buttonClick.emit()
     this.manageDeliveryDataSearch.storeDeliveryData(this.searchOption, pickedItem)
     this.location.back()
   }

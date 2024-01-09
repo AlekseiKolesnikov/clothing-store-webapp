@@ -4,7 +4,6 @@ import {
   DeliveryInfPageComponent
 } from "../features/feature-delivery/pages/delivery-inf-page/delivery-inf-page.component";
 import {DeliveryIconsComponent} from "../features/feature-delivery/components/delivery-icons/delivery-icons.component";
-import {DeliverHomeComponent} from "../features/feature-delivery/components/deliver-home/deliver-home.component";
 import {PickupStoreComponent} from "../features/feature-delivery/components/pickup-store/pickup-store.component";
 import {DistributionComponent} from "../features/feature-delivery/components/distribution/distribution.component";
 import {
@@ -29,7 +28,6 @@ import {
   declarations: [
     DeliveryInfPageComponent,
     DeliveryIconsComponent,
-    DeliverHomeComponent,
     PickupStoreComponent,
     DistributionComponent,
     DeliveryInputComponent,

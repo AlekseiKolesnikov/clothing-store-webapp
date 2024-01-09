@@ -5,7 +5,7 @@ import {AppRoutesService} from "../../../../shared/services/app-routes.service";
   selector: 'app-distribution',
   templateUrl: './distribution.component.html',
   styleUrls: ['./distribution.component.scss'],
-   encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class DistributionComponent {
   @Input() cityName: string
@@ -18,5 +18,6 @@ export class DistributionComponent {
 
   constructor(
     private appRoutesService: AppRoutesService
-  ) {}
+  ) {
+  }
 }

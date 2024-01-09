@@ -1,10 +1,7 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {LocalStorageService} from "../../../../local-storage.service";
-import {
-  PERSONAL_FULL_NAME_KEY,
-  PERSONAL_PHONE_NUMBER_KEY
-} from "../../../../shared/data/local-storage-keys";
+import {PERSONAL_FULL_NAME_KEY, PERSONAL_PHONE_NUMBER_KEY} from "../../../../shared/data/local-storage-keys";
 import {DeliveryDataService} from "../../services/delivery-data.service";
 import {parsePhoneNumber} from "libphonenumber-js"
 
@@ -20,8 +17,6 @@ export class PersonalDataFieldComponent extends BaseComponent {
   @Input() idName: string
   @Input() maxLength: number
 
-  protected inputData: string
-  
   constructor(
     private readonly localStorageService: LocalStorageService,
     private readonly deliveryDataService: DeliveryDataService
@@ -40,7 +35,7 @@ export class PersonalDataFieldComponent extends BaseComponent {
     if (this.idName === "name") {
       this.deliveryDataService.setName(event.target.value)
     }
-    if (this.idName === "phone" && event.target.value.length === 10) {
+    if (this.idName === "phone" && event.target.value.length <= 14) {
       this.deliveryDataService.setPhoneNumber(parsePhoneNumber(event.target.value, 'US').formatNational())
     }
   }
