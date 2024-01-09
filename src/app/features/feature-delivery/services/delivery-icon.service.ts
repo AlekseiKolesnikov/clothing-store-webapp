@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {IDeliveryOptions} from "./delivery-option-state.service";
 import {LocalStorageService} from "../../../local-storage.service";
+import {DELIVERY_OPTION} from "../../../shared/data/local-storage-keys";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class DeliveryIconService {
   ]
 
   saveSelectedOption(selectedIndex: number) {
-    this.localStorage.setPrimitiveItem("savedDeliveryOption", selectedIndex.toString())
+    this.localStorage.setPrimitiveItem(DELIVERY_OPTION, selectedIndex.toString())
   }
 
   getData(): Array<IDeliveryOptions> {
