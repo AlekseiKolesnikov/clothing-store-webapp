@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-interface ICategory {
+export interface ICategory {
   id: number;
   name: string;
   image: string;
@@ -10,7 +10,7 @@ interface ICategory {
   updatedAt: string;
 }
 
-interface IProduct {
+export interface IProduct {
   id: number;
   title: string;
   price: number;

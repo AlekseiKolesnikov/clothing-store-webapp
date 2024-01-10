@@ -1,20 +1,29 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductApiService} from "../../services/api/product-api.service";
+import {Component, HostListener, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {ProductsStoreService} from "../../services/api/products-store.service";
+import {PaginationService} from "../../services/pagination.service";
 
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
-  styleUrls: ['./products-list.component.scss']
+  styleUrls: ['./products-list.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsListComponent implements OnInit, OnDestroy {
+  protected productsArray = this.productStoreService.getProducts()
   constructor(
-    private readonly productApiService: ProductApiService
-  ) {
+    private readonly productStoreService: ProductsStoreService,
+    private readonly paginationService: PaginationService
+  ) {}
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.paginationService.onWindowScroll()
   }
 
   ngOnInit() {
-    this.productApiService.getProducts().subscribe(itemList => {
-      console.log(itemList);
-    })
+    this.productStoreService.subscribe()
+  }
+
+  ngOnDestroy() {
+    this.productStoreService.unsubscribe()
   }
 }

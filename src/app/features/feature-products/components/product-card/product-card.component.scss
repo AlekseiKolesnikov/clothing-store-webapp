@@ -1,0 +1,32 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+
+.product-card-wrapper {
+  width: 46vw;
+  height: 120px;
+  background: $tg-background;
+  border-radius: $border-radius;
+}
+
+.product-card-image {
+  height: 65%;
+  width: 100%;
+  background: white;
+  border-radius: $border-radius;
+}
+
+.product-card-inf {
+
+}
+
+.product-card-price {
+
+}
+
+.product-card-name {
+
+}
+
+.product-card-button {
+
+}
