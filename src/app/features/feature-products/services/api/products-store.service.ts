@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {IProduct, ProductApiService} from "./product-api.service";
-import {Subscription} from "rxjs";
+import {from, map, mergeMap, Subscription, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,14 @@ export class ProductsStoreService {
     private readonly productApiService: ProductApiService
   ) {}
 
-  getProducts(): IProduct[] {
+  getProductsArray(): IProduct[] {
     return this.productsArray
   }
 
   subscribe(): void {
-    this.productsApi$ = this.productApiService.getProducts().subscribe(itemList => {
+    this.productsApi$ = this.productApiService.getProducts().pipe(
+      mergeMap((item) => from(item))
+    ).subscribe(itemList => {
       this.productsArray.push(itemList)
     })
   }

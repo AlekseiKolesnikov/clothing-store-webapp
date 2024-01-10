@@ -9,7 +9,7 @@ import {PaginationService} from "../../services/pagination.service";
   encapsulation: ViewEncapsulation.None
 })
 export class ProductsListComponent implements OnInit, OnDestroy {
-  protected productsArray = this.productStoreService.getProducts()
+  protected productsArray = this.productStoreService.getProductsArray()
   constructor(
     private readonly productStoreService: ProductsStoreService,
     private readonly paginationService: PaginationService
