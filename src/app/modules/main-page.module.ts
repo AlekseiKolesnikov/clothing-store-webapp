@@ -11,21 +11,26 @@ import {SearchBarModule} from "./search-bar.module";
 import {HeaderModule} from "./header.module";
 import {ArticlesModule} from "./articles.module";
 import {ActionCardsModule} from "./action-cards.module";
+import {ProductModule} from "./product.module.ts.module";
 
 @NgModule({
-  declarations: [
-    MainPageComponent,
-    HeaderComponent,
-    SearchBarComponent,
-    ArticlesComponent,
-    ActionCardsComponent
-  ],
-  imports: [
-    CommonModule,
-    SearchBarModule,
-    HeaderModule,
-    ArticlesModule,
-    ActionCardsModule,
-  ]
+    declarations: [
+        MainPageComponent,
+        HeaderComponent,
+        SearchBarComponent,
+        ArticlesComponent,
+        ActionCardsComponent
+    ],
+    exports: [
+        ArticlesComponent
+    ],
+    imports: [
+        CommonModule,
+        SearchBarModule,
+        HeaderModule,
+        ArticlesModule,
+        ActionCardsModule,
+        ProductModule,
+    ]
 })
 export class MainPageModule { }
