@@ -15,37 +15,39 @@ import {DeliveryModule} from "./modules/delivery.module";
 import {HttpClientModule} from "@angular/common/http";
 import {DeliveryOptionStateService} from "./features/feature-delivery/services/delivery-option-state.service";
 import {DeliveryIconService} from "./features/feature-delivery/services/delivery-icon.service";
+import {ProductModule} from "./modules/product.module.ts.module";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgOptimizedImage,
-    FormsModule,
-    SharedModule,
-    MainPageModule,
-    ActionCardsModule,
-    ArticlesModule,
-    HeaderModule,
-    SearchBarModule,
-    ProfileModule,
-    DeliveryModule,
-    HttpClientModule
-  ],
-  providers: [
-    {
-      provide: DeliveryOptionStateService,
-      useFactory: (deliveryIconsService: DeliveryIconService) => {
-        return new DeliveryOptionStateService(deliveryIconsService)
-      },
-      deps: [DeliveryIconService]
-    }
-  ],
-  bootstrap: [AppComponent]
-}
+    declarations: [
+      AppComponent
+    ],
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      NgOptimizedImage,
+      FormsModule,
+      SharedModule,
+      MainPageModule,
+      ActionCardsModule,
+      ArticlesModule,
+      HeaderModule,
+      SearchBarModule,
+      ProfileModule,
+      DeliveryModule,
+      HttpClientModule,
+      ProductModule
+    ],
+    providers: [
+      {
+        provide: DeliveryOptionStateService,
+        useFactory: (deliveryIconsService: DeliveryIconService) => {
+          return new DeliveryOptionStateService(deliveryIconsService)
+        },
+        deps: [DeliveryIconService]
+      }
+    ],
+    bootstrap: [AppComponent]
+  }
 )
 export class AppModule {
 }
