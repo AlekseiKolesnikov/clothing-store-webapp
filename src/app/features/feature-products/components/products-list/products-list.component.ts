@@ -1,6 +1,6 @@
-import {Component, HostListener, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ProductsStoreService} from "../../services/api/products-store.service";
-import {PaginationService} from "../../services/pagination.service";
+import {IProduct} from "../../services/api/product-api.service";
 
 @Component({
   selector: 'app-products-list',
@@ -9,13 +9,16 @@ import {PaginationService} from "../../services/pagination.service";
   encapsulation: ViewEncapsulation.None
 })
 export class ProductsListComponent implements OnInit, OnDestroy {
-  protected productsArray = this.productStoreService.getProductsArray()
+  protected productsArray: IProduct[]
   constructor(
     private readonly productStoreService: ProductsStoreService
   ) {}
 
   ngOnInit() {
     this.productStoreService.subscribe()
+    this.productStoreService.getProductsArray().subscribe(data => {
+      this.productsArray = data
+    })
   }
 
   ngOnDestroy() {

@@ -1,31 +1,34 @@
 import {Injectable} from "@angular/core";
 import {IProduct, ProductApiService} from "./product-api.service";
-import {from, map, mergeMap, Subscription, tap} from "rxjs";
+import {BehaviorSubject, from, mergeMap, Subscription} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsStoreService {
-  protected productsArray: IProduct[] = []
-  protected productsApi$: Subscription
+  private readonly productArray: IProduct[] =  new Array<IProduct>()
+  private readonly productsSubject: BehaviorSubject<IProduct[]>
+  private productsApi$: Subscription
   constructor(
     private readonly productApiService: ProductApiService
-  ) {}
+  ) {
+    this.productsSubject = new BehaviorSubject<IProduct[]>(this.productArray)
+  }
 
-  getProductsArray(): IProduct[] {
-    return this.productsArray
+  getProductsArray() {
+    return this.productsSubject.asObservable()
   }
 
   subscribe(): void {
     this.productsApi$ = this.productApiService.getProducts().pipe(
       mergeMap((item) => from(item))
     ).subscribe(itemList => {
-      this.productsArray.push(itemList)
+      this.productArray.push(itemList)
+      this.productsSubject.next(this.productArray)
     })
   }
 
   unsubscribe(): void {
-    this.productsArray = []
     this.productsApi$.unsubscribe()
   }
 }
