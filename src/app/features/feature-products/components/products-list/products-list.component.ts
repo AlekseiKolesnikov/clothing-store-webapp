@@ -11,13 +11,8 @@ import {PaginationService} from "../../services/pagination.service";
 export class ProductsListComponent implements OnInit, OnDestroy {
   protected productsArray = this.productStoreService.getProductsArray()
   constructor(
-    private readonly productStoreService: ProductsStoreService,
-    private readonly paginationService: PaginationService
+    private readonly productStoreService: ProductsStoreService
   ) {}
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    this.paginationService.onWindowScroll()
-  }
 
   ngOnInit() {
     this.productStoreService.subscribe()

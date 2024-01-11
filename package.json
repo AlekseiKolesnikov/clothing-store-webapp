@@ -19,7 +19,6 @@
     "@angular/platform-browser": "^17.0.7",
     "@angular/platform-browser-dynamic": "^17.0.7",
     "@angular/router": "^17.0.7",
-    "@shopify/shopify-api": "^9.0.0",
     "libphonenumber-js": "^1.10.53",
     "ngx-clipboard": "^16.0.0",
     "rxjs": "~7.8.0",

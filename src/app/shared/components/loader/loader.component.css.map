@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../../styles/flex.patterns.scss","loader.component.scss","../../../styles/variables.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;ACAF;EAEE;EACA;EACA,eC4Bc;ED3Bd,YCNc;;;ADShB;EACE;EACA;EACA;EACA,kBCZc;EDad;EACA;EACA;;;AAGF;EACE;IACE,kBCnBY;IDoBZ;;EAEF;IACE,kBCxBY;IDyBZ;;EAEF;IACE;IACA","file":"loader.component.css"}

@@ -15,7 +15,6 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   @Input() dataArray: string[]
   @Input() searchOption: string
   @Input() inputLabel: string
-  protected loaderState: boolean = false
   protected inputText: string = ''
 
   constructor(
@@ -26,11 +25,7 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
   }
 
   onInputChange() {
-    this.loaderState = true
-    setTimeout(() => {
-      this.inputText = this.ngModelField
-      this.loaderState = false
-    }, 500)
+    this.inputText = this.ngModelField
     this.manageDeliveryDataSearch.setDeliveryDataSubject(this.searchOption)
   }
 

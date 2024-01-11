@@ -24,7 +24,7 @@ export interface IProduct {
 })
 export class ProductApiService {
   protected offsetParam = 0
-  protected limitParam = 10
+  protected limitParam = 16
   protected productsApiUrl = `https://api.escuelajs.co/api/v1/products/?offset=${this.offsetParam}&limit=${this.limitParam}&categoryId=1`
   constructor(
     private readonly http: HttpClient

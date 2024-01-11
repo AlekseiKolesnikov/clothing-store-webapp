@@ -12,6 +12,7 @@ import {HeaderModule} from "./header.module";
 import {ArticlesModule} from "./articles.module";
 import {ActionCardsModule} from "./action-cards.module";
 import {ProductModule} from "./product.module.ts.module";
+import {SharedModule} from "./shared.module";
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import {ProductModule} from "./product.module.ts.module";
         ArticlesModule,
         ActionCardsModule,
         ProductModule,
+        SharedModule,
     ]
 })
 export class MainPageModule { }

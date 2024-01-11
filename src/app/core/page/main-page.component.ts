@@ -1,4 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
+import {PaginationService} from "../../features/feature-products/services/pagination.service";
 
 @Component({
   selector: 'app-main-page',
@@ -7,6 +8,16 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class MainPageComponent {
-  constructor() {
+  protected isLoaderVisible: boolean
+  constructor(
+    private readonly paginationService: PaginationService
+  ) {
+  }
+
+  onScroll(event: any) {
+    this.paginationService.getLoaderState().subscribe(result => {
+      this.isLoaderVisible = result
+    })
+    this.paginationService.onWindowScroll(event)
   }
 }

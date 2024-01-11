@@ -1,20 +1,33 @@
 import {Injectable} from "@angular/core";
 import {ProductsStoreService} from "./api/products-store.service";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaginationService {
+  private readonly loaderStateSubject = new BehaviorSubject(false)
   constructor(
     private readonly productStoreService: ProductsStoreService
-  ) { }
+  ) {
+  }
 
-  onWindowScroll() {
-    const pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
-    const max = document.documentElement.scrollHeight;
+  getLoaderState(): Observable<boolean> {
+    return this.loaderStateSubject.asObservable()
+  }
 
-    if (pos === max) {
-      this.paginateProducts();
+  onWindowScroll(event: any) {
+    const height = event.target.offsetHeight
+    const topScroll = event.target.scrollTop
+    const clientHeight = event.target.scrollHeight
+
+    if (height + topScroll === clientHeight) {
+      console.log("end")
+      this.loaderStateSubject.next(true)
+      setTimeout(() => {
+        this.paginateProducts();
+        this.loaderStateSubject.next(false)
+      }, 1000)
     }
   }
 

@@ -1,8 +1,15 @@
-<div class="wrapper">
-  <app-header class="header-component"></app-header>
-  <app-search-bar class="search-bar-component"></app-search-bar>
-  <app-articles class="articles-component"></app-articles>
-  <app-order-balance-widgets class="order-balance-component"></app-order-balance-widgets>
-  <app-products-list class="products-list-component"></app-products-list>
+<div
+  class="wrapper"
+  (scroll)="onScroll($event)"
+>
+  <app-header class="header-component"/>
+  <app-search-bar class="search-bar-component"/>
+  <app-articles class="articles-component"/>
+  <app-order-balance-widgets class="order-balance-component"/>
+  <app-products-list class="products-list-component"/>
+  <app-loader
+    *ngIf="isLoaderVisible"
+    class="app-loader"
+  />
 </div>
 

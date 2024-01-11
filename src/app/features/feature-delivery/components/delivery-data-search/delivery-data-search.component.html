@@ -9,16 +9,6 @@
   </div>
 
   <div
-    *ngIf="loaderState"
-    class="delivery-data-component-loader-box"
-  >
-    <app-loader-circle
-      class="app-loader-circle"
-    />
-  </div>
-
-  <div
-    *ngIf="!loaderState"
     (scroll)="scroll()"
     class="delivery-data-component-cities-list-box"
   >

@@ -8,7 +8,7 @@
   gap: $main-gap;
   padding-left: $wrapper-padding;
   padding-right: $wrapper-padding;
-  padding-bottom: $wrapper-padding;
+  padding-bottom: $wrapper-bottom-padding;
   overflow-y: scroll;
   overflow-x: hidden;
   z-index: $wrapper-z-index;
@@ -52,6 +52,12 @@
 }
 
 .products-list-component {
+  width: 100%;
+  height: fit-content;
+}
+
+.app-loader {
+  @extend %center-flex;
   width: 100%;
   height: fit-content;
 }
