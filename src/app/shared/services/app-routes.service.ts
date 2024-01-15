@@ -13,7 +13,8 @@ export class AppRoutesService {
     friendsCardPage: 'friends_card_page',
     deliveryInfPage: 'delivery_inf_page',
     distributionPointsPage: 'distribution_points_page',
-    distributionAddressPage: "distribution_address_page"
+    distributionAddressPage: "distribution_address_page",
+    productPage: "product_page"
   }
 
   getRoutes() {

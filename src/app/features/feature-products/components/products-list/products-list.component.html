@@ -1,8 +1,37 @@
 <div class="product-list-wrapper">
-  <app-product-card
-    *ngFor="let product of productsArray"
-    [productName]="product.title"
-    [productImage]="product.images[0]"
-    [productPrice]="product.price"
-  />
+  <div class="product-list-filters-box">
+    <div class="product-list-label">Каталог</div>
+    <div class="product-list-search-icons-box">
+      <div
+        class="product-list-search-icon"
+        (click)="click($event)"
+        (touchend)="touch($event)"
+      >
+        <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="m21.875 21.875-6.25-6.25m2.083-5.208a7.292 7.292 0 1 1-14.583 0 7.292 7.292 0 0 1 14.583 0Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div
+        class="product-list-filter-icon"
+        (click)="click($event)"
+        (touchend)="touch($event)"
+      >
+        <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.25 12.5a2.083 2.083 0 0 0 0-4.167m0 4.167a2.083 2.083 0 0 1 0-4.167m0 4.167v8.333m0-12.5V4.167M12.5 18.75a2.083 2.083 0 0 0 0-4.167m0 4.167a2.083 2.083 0 0 1 0-4.167m0 4.167v2.083m0-6.25V4.167m6.25 5.208a2.083 2.083 0 1 0 0-4.167m0 4.167a2.083 2.083 0 1 1 0-4.167m0 4.167v11.458m0-15.625V4.167"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-list-cards-wrapper">
+    <app-product-card
+      *ngFor="let product of productsArray"
+      [productName]="product.title"
+      [productImage]="product.image"
+      [productPrice]="product.price.toString()"
+    />
+  </div>
 </div>

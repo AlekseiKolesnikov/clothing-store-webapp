@@ -10,7 +10,6 @@ export abstract class BaseComponent {
   }
 
   touch(event: Event): void {
-
   }
 
   submit(event: Event) {

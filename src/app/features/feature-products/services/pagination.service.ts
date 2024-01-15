@@ -22,7 +22,6 @@ export class PaginationService {
     const clientHeight = event.target.scrollHeight
 
     if (height + topScroll === clientHeight) {
-      console.log("end")
       this.loaderStateSubject.next(true)
       setTimeout(() => {
         this.paginateProducts();

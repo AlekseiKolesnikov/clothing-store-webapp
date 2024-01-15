@@ -1,0 +1,51 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+@import "../../../../styles/squeeze-animation.pattern";
+
+.product-list-wrapper {
+  width: 100%;
+  height: fit-content;
+}
+
+.product-list-cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+  height: fit-content;
+}
+
+.product-list-filters-box {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 15px;
+}
+
+.product-list-search-icons-box {
+  @extend %space-between-row-center-flex;
+  width: 60px;
+  height: fit-content;
+}
+
+.product-list-label {
+  font: $heading-text;
+  color: $text-tg-color;
+}
+
+.product-list-search-icon {
+  @extend %squeeze-animation;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  color: $text-tg-color;
+}
+
+.product-list-filter-icon {
+  @extend %squeeze-animation;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  color: $text-tg-color;
+}

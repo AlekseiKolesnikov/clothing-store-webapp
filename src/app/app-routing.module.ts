@@ -13,6 +13,7 @@ import {
 import {
   DistributionAddressPageComponent
 } from "./features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
+import {ProductPageComponent} from "./features/feature-products/pages/product-page/product-page.component";
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'distribution_address_page',
     component: DistributionAddressPageComponent
+  },
+  {
+    path: 'product_page',
+    component: ProductPageComponent
   }
 ];
 

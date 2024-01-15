@@ -1,20 +1,77 @@
+.product-card-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .product-card-wrapper {
-  width: 46vw;
-  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .product-card-button:hover {
+    cursor: pointer;
+  }
+}
+.product-card-button:active {
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+.product-card-wrapper {
+  width: 100%;
+  height: fit-content;
   background: var(--tg-theme-bg-color);
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .product-card-image-box {
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: fit-content;
+  padding: 5px 0;
   background: white;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .product-card-image {
-  width: 50px;
-  height: 50px;
+  height: 100px;
+}
+
+.product-card-inf {
+  width: 100%;
+  padding: 7px 10px;
+}
+
+.product-card-price {
+  color: var(--tg-theme-text-color);
+  font: 400 18px/1.2 "Mulish", sans-serif;
+  font-weight: bolder;
+}
+
+.product-card-name {
+  color: var(--tg-theme-text-color);
+  font: 400 12px/1 "Mulish", sans-serif;
+}
+
+.product-card-button {
+  color: var(--tg-theme-text-color);
+  font: 400 12px/1 "Mulish", sans-serif;
+  background: var(--tg-theme-secondary-bg-color);
+  width: 95%;
+  height: 30px;
+  margin-bottom: 5px;
+  border-radius: 25px;
 }
 
 /*# sourceMappingURL=product-card.component.css.map */

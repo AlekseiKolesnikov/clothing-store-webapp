@@ -8,7 +8,8 @@ import {BehaviorSubject, from, mergeMap, Subscription} from "rxjs";
 export class ProductsStoreService {
   private readonly productArray: IProduct[] =  new Array<IProduct>()
   private readonly productsSubject: BehaviorSubject<IProduct[]>
-  private productsApi$: Subscription
+  private menProductsApi$: Subscription
+  private womenProductsApi$: Subscription
   constructor(
     private readonly productApiService: ProductApiService
   ) {
@@ -20,8 +21,14 @@ export class ProductsStoreService {
   }
 
   subscribe(): void {
-    this.productsApi$ = this.productApiService.getProducts().pipe(
-      mergeMap((item) => from(item))
+    this.menProductsApi$ = this.productApiService.getMenProducts().pipe(
+      mergeMap(data => from(data))
+    ).subscribe(itemList => {
+      this.productArray.push(itemList)
+      this.productsSubject.next(this.productArray)
+    })
+    this.womenProductsApi$ = this.productApiService.getWomanProducts().pipe(
+      mergeMap(data => from(data))
     ).subscribe(itemList => {
       this.productArray.push(itemList)
       this.productsSubject.next(this.productArray)
@@ -29,6 +36,6 @@ export class ProductsStoreService {
   }
 
   unsubscribe(): void {
-    this.productsApi$.unsubscribe()
+    this.menProductsApi$.unsubscribe()
   }
 }

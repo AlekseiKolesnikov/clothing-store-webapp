@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ProductPageComponent} from "../features/feature-products/pages/product-page/product-page.component";
 import {ProductsListComponent} from "../features/feature-products/components/products-list/products-list.component";
 import {ProductCardComponent} from "../features/feature-products/components/product-card/product-card.component";
+import {SharedModule} from "./shared.module";
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import {ProductCardComponent} from "../features/feature-products/components/prod
   exports: [
     ProductsListComponent
   ],
-  imports: [
-    CommonModule
-  ]
+    imports: [
+        CommonModule,
+        SharedModule
+    ]
 })
 export class ProductModule {
 }

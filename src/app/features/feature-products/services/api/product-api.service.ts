@@ -3,35 +3,33 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 export interface IProduct {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  images: string[];
-  creationAt: string;
-  updatedAt: string;
-  category: {
-    id: number;
-    name: string;
-    image: string;
-    creationAt: string;
-    updatedAt: string;
+  id: number,
+  title: string,
+  price: number,
+  description: string,
+  category: string,
+  image: string,
+  rating: {
+    rate: number,
+    count: number
   }
 }
-
 @Injectable({
   providedIn: 'root'
 })
 export class ProductApiService {
-  protected offsetParam = 0
-  protected limitParam = 16
-  protected productsApiUrl = `https://api.escuelajs.co/api/v1/products/?offset=${this.offsetParam}&limit=${this.limitParam}&categoryId=1`
+  private readonly menProductsApiUrl = "https://fakestoreapi.com/products/category/men's%20clothing"
+  private readonly womanProductsApiUrl = "https://fakestoreapi.com/products/category/women's%20clothing"
   constructor(
     private readonly http: HttpClient
-  ) {}
+  ) {
+  }
 
-  getProducts(): Observable<IProduct[]> {
-    this.offsetParam += this.limitParam
-    return this.http.get<IProduct[]>(this.productsApiUrl)
+  getWomanProducts():Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(this.womanProductsApiUrl)
+  }
+
+  getMenProducts(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(this.menProductsApiUrl)
   }
 }
