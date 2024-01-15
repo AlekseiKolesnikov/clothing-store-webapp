@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {PaginationService} from "../../features/feature-products/services/pagination.service";
 
 @Component({
@@ -7,7 +7,7 @@ import {PaginationService} from "../../features/feature-products/services/pagina
   styleUrls: ['./main-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnDestroy {
   protected isLoaderVisible: boolean
   constructor(
     private readonly paginationService: PaginationService
@@ -19,5 +19,9 @@ export class MainPageComponent {
       this.isLoaderVisible = result
     })
     this.paginationService.onWindowScroll(event)
+  }
+
+  ngOnDestroy(): void {
+    this.paginationService.unsubscribe()
   }
 }

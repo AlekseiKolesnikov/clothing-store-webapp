@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ProductsStoreService} from "../../services/api/products-store.service";
 import {IProduct} from "../../services/api/product-api.service";
 import {BaseComponent} from "../../../../shared/models/base-component.model";
+import {combineLatestAll, concatAll, from, mergeAll, mergeMap, tap} from "rxjs";
 
 @Component({
   selector: 'app-products-list',
@@ -10,7 +11,8 @@ import {BaseComponent} from "../../../../shared/models/base-component.model";
   encapsulation: ViewEncapsulation.None
 })
 export class ProductsListComponent extends BaseComponent implements OnInit, OnDestroy {
-  protected productsArray: IProduct[]
+  protected productsArray: IProduct[] = []
+
   constructor(
     private readonly productStoreService: ProductsStoreService
   ) {
@@ -18,11 +20,11 @@ export class ProductsListComponent extends BaseComponent implements OnInit, OnDe
   }
 
   ngOnInit() {
-    this.productStoreService.subscribe()
-    this.productStoreService.getProductsArray().subscribe(data => {
-      console.log(data);
-      this.productsArray = data
-    })
+    this.productStoreService.fetchData()
+    this.productStoreService.getProductsArray()
+      .subscribe(data => {
+        this.productsArray.push(...data)
+      })
   }
 
   ngOnDestroy() {
