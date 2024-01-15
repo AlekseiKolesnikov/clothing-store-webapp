@@ -45,7 +45,7 @@ const routes: Routes = [
     component: DeliveryInfPageComponent
   },
   {
-    path: 'distribution_points_page',
+    path: 'distribution_city_page',
     component: DistributionPointsPageComponent
   },
   {

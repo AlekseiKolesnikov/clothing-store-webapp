@@ -1,7 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {LocalStorageService} from "../../../local-storage.service";
-import {AppRoutesService} from "../../../shared/services/app-routes.service";
 import {POINTS_CARD_KEY} from "../../../shared/data/local-storage-keys";
+import {MAIN_PAGE} from "../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-points-card-page',
@@ -11,12 +11,9 @@ import {POINTS_CARD_KEY} from "../../../shared/data/local-storage-keys";
 })
 export class PointsCardPageComponent {
   protected readonly pointsAmount = this.localStorageService.getItem(POINTS_CARD_KEY)
-  protected mainPageRoute: string
-
   constructor(
-    private appRoutesService: AppRoutesService,
     protected readonly localStorageService: LocalStorageService
-  ) {
-    this.mainPageRoute = this.appRoutesService.getRoutes().mainPage
-  }
+  ) {}
+
+  protected readonly MAIN_PAGE = MAIN_PAGE;
 }

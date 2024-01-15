@@ -2,32 +2,28 @@ import {Injectable} from "@angular/core";
 import {NavigationEnd, Router} from "@angular/router";
 import {Location} from "@angular/common";
 import {filter} from "rxjs";
-import {AppRoutesService} from "../../services/app-routes.service";
+import {MAIN_PAGE} from "../../data/app-routes";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TelegramBackButtonModel {
   protected currentRoute: string;
-  protected mainPageRoute: string
-
   constructor(
     private router: Router,
-    private location: Location,
-    private appRoutesService: AppRoutesService
+    private location: Location
   ) {
     // @ts-ignore
     Telegram.WebApp.BackButton.onClick(() => {
       this.location.back()
     })
-    this.mainPageRoute = this.appRoutesService.getRoutes().mainPage
   }
 
   useDirection() {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(event => {
         this.currentRoute = (event as NavigationEnd).url;
-        if (this.currentRoute === `/${this.mainPageRoute}`) {
+        if (this.currentRoute === `/${MAIN_PAGE}`) {
           // @ts-ignore
           Telegram.WebApp.BackButton.hide();
         } else {

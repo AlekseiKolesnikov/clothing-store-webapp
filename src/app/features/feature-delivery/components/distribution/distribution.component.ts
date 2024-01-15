@@ -1,5 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {AppRoutesService} from "../../../../shared/services/app-routes.service";
+import {DISTRIBUTION_ADDRESS_PAGE, DISTRIBUTION_CITY_PAGE} from "../../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-distribution',
@@ -13,11 +13,6 @@ export class DistributionComponent {
   @Input() addressIsEmpty: boolean
   @Input() cityIsEmpty: boolean
 
-  protected distributionCityPage: string = this.appRoutesService.getRoutes().distributionPointsPage
-  protected distributionAddressPage: string = this.appRoutesService.getRoutes().distributionAddressPage
-
-  constructor(
-    private appRoutesService: AppRoutesService
-  ) {
-  }
+  protected readonly DISTRIBUTION_CITY_PAGE = DISTRIBUTION_CITY_PAGE;
+  protected readonly DISTRIBUTION_ADDRESS_PAGE = DISTRIBUTION_ADDRESS_PAGE;
 }

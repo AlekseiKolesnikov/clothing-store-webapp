@@ -57,6 +57,7 @@
   color: var(--tg-theme-text-color);
   font: 400 18px/1.2 "Mulish", sans-serif;
   font-weight: bolder;
+  margin-bottom: 3px;
 }
 
 .product-card-name {

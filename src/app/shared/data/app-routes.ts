@@ -1,0 +1,10 @@
+export const MAIN_PAGE = "main_page";
+export const PROFILE_PAGE = "profile_page";
+export const SEARCH_BAR_PAGE = "search_bar_page";
+export const ORDER_CARD_PAGE = "order_card_page";
+export const POINTS_CARD_PAGE = "points_card_page";
+export const FRIENDS_CARD_PAGE = "friends_card_page";
+export const DELIVERY_INF_PAGE = "delivery_inf_page";
+export const DISTRIBUTION_CITY_PAGE = "distribution_city_page";
+export const DISTRIBUTION_ADDRESS_PAGE = "distribution_address_page";
+export const PRODUCT_PAGE = "product_page";

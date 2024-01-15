@@ -2,7 +2,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {Router} from "@angular/router";
 import {NavigateFeedbackModel} from "../../../../shared/models/telegram-ui/navigate-feedback-model";
-import {AppRoutesService} from "../../../../shared/services/app-routes.service";
+import {FRIENDS_CARD_PAGE} from "../../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-friends-card',
@@ -11,21 +11,17 @@ import {AppRoutesService} from "../../../../shared/services/app-routes.service";
   encapsulation: ViewEncapsulation.None
 })
 export class FriendsCardComponent extends BaseComponent {
-  protected friendsCardPageRoute: string
-
   constructor(
     private readonly router: Router,
-    private appRoutesService: AppRoutesService,
     private readonly hapticFeedback: NavigateFeedbackModel
   ) {
     super();
-    this.friendsCardPageRoute = this.appRoutesService.getRoutes().friendsCardPage
   }
 
   override click(event: Event) {
     super.click(event);
-    this.hapticFeedback.feedbackNavigate(this.friendsCardPageRoute)
-    this.router.navigate([this.friendsCardPageRoute])
+    this.hapticFeedback.feedbackNavigate(FRIENDS_CARD_PAGE)
+    this.router.navigate([FRIENDS_CARD_PAGE])
   }
 
   override touch(event: Event) {
