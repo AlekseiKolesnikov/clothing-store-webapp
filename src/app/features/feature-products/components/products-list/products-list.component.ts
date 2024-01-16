@@ -18,10 +18,9 @@ export class ProductsListComponent extends BaseComponent implements OnInit, OnDe
   }
 
   ngOnInit() {
-    this.productStoreService.subscribe()
+    this.productStoreService.fetchData()
     this.productStoreService.getProductsArray().subscribe(data => {
-      console.log(data);
-      this.productsArray = data
+      this.productsArray.push(...data)
     })
   }
 

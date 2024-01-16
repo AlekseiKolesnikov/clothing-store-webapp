@@ -21,7 +21,6 @@ export class FriendsCardComponent extends BaseComponent {
   override click(event: Event) {
     super.click(event);
     this.hapticFeedback.feedbackNavigate(FRIENDS_CARD_PAGE)
-    this.router.navigate([FRIENDS_CARD_PAGE])
   }
 
   override touch(event: Event) {
