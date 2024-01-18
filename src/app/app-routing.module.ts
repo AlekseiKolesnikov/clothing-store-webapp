@@ -14,6 +14,7 @@ import {
   DistributionAddressPageComponent
 } from "./features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
 import {ProductPageComponent} from "./features/feature-products/pages/product-page/product-page.component";
+import {SizeTablePageComponent} from "./features/feature-products/pages/size-table-page/size-table-page.component";
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'product_page',
     component: ProductPageComponent
+  },
+  {
+    path: 'size_table_page',
+    component: SizeTablePageComponent
   }
 ];
 

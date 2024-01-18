@@ -1,0 +1,63 @@
+.folded-inf-box-unfolded {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.folded-inf-box-title-box-unfolded, .folded-inf-box-title-box-folded {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.folded-inf-box-wrapper {
+  width: 100vw;
+  height: fit-content;
+  padding: 3%;
+  color: var(--tg-theme-text-color);
+}
+
+.folded-inf-box-folded {
+  width: 100%;
+  height: fit-content;
+  padding: 3% 0;
+}
+
+.folded-inf-box-title-box-folded {
+  width: 100%;
+  height: fit-content;
+}
+
+.folded-inf-box-title-folded {
+  font: 400 20px/1 "Mulish", sans-serif;
+}
+
+.folded-inf-box-title-arrow-folded,
+.folded-inf-box-title-arrow-unfolded {
+  width: 22px;
+  height: 22px;
+}
+
+.folded-inf-box-unfolded {
+  width: 100%;
+  height: fit-content;
+  padding: 3% 0;
+}
+
+.folded-inf-box-title-box-unfolded {
+  width: 100%;
+  height: fit-content;
+}
+
+.folded-inf-box-title-unfolded {
+  font: 900 20px/1 "Mulish", sans-serif;
+}
+
+.folded-inf-box-text-unfolded {
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  padding-top: 3%;
+}
+
+/*# sourceMappingURL=folded-inf-box.component.css.map */

@@ -1,0 +1,34 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
+
+.size-table-page-wrapper {
+  @extend %start-top-flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.size-table-page-table-box {
+  width: fit-content;
+  height: fit-content;
+  padding: $wrapper-padding;
+}
+
+.size-table-page-label {
+  font: $heading-text;
+  padding-bottom: 15px;
+  color: $text-tg-color;
+}
+
+.size-table-page-table {
+  font: $subscript-text;
+  color: $text-tg-color;
+  border-spacing: 8px;
+}
+
+th, td {
+  text-align: start;
+  width: max-content;
+}
+
+
+

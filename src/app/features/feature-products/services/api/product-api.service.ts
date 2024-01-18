@@ -24,8 +24,10 @@ export class ProductApiService {
     private readonly http: HttpClient
   ) {
   }
-
-  getWomanProducts():Observable<IProduct[]> {
+  getProductById(productId: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`https://fakestoreapi.com/products/${productId}`)
+  }
+  getWomanProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.womanProductsApiUrl)
   }
 

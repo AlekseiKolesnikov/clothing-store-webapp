@@ -5,7 +5,7 @@
 .product-card-wrapper {
   @extend %space-between-column-center-flex;
   width: 100%;
-  height: fit-content;
+  height: 200px;
   background: $tg-background;
   border-radius: $border-radius-smaller;
 }

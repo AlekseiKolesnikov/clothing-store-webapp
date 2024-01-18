@@ -1,8 +1,7 @@
-.size-icon-box {
+.size-icon-text, .size-icon-box {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 @media (hover:hover) and (pointer: fine) {
@@ -52,7 +51,7 @@
 .size-icon-text {
   color: var(--tg-theme-text-color);
   display: inline-block;
-  height: 40px;
+  height: fit-content;
   width: fit-content;
   font: 400 16px/1.2 "Mulish", sans-serif;
   white-space: pre;

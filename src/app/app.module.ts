@@ -9,7 +9,6 @@ import {MainPageModule} from "./modules/main-page.module";
 import {ActionCardsModule} from "./modules/action-cards.module";
 import {HeaderModule} from "./modules/header.module";
 import {SearchBarModule} from "./modules/search-bar.module";
-import {ArticlesModule} from "./modules/articles.module";
 import {ProfileModule} from "./modules/profile.module";
 import {DeliveryModule} from "./modules/delivery.module";
 import {HttpClientModule} from "@angular/common/http";
@@ -29,7 +28,6 @@ import {ProductModule} from "./modules/product.module.ts.module";
       SharedModule,
       MainPageModule,
       ActionCardsModule,
-      ArticlesModule,
       HeaderModule,
       SearchBarModule,
       ProfileModule,

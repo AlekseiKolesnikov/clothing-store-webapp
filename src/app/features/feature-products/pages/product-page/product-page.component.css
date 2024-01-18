@@ -1,3 +1,237 @@
+.product-page-image-label-box, .product-page-image-rating-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 
+.product-page-image-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.product-page-image-inf-box, .product-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.size-options-icons-box, .product-page-product-sizes-inf-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-page-image-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.product-page-articles-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.product-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background: var(--tg-theme-secondary-bg-color);
+  padding-bottom: 40px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+.product-page-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.product-page-image-inf-box {
+  padding: 3%;
+  background: white;
+  gap: 7px;
+  width: 100vw;
+  height: fit-content;
+}
+
+.product-page-image-box {
+  padding: 4px 0;
+  height: fit-content;
+  width: 100vw;
+}
+
+.product-page-image {
+  height: 220px;
+}
+
+.product-page-image-rating-box {
+  width: 100%;
+  height: fit-content;
+}
+
+.product-page-image-rating {
+  width: 38px;
+  height: fit-content;
+  background: var(--tg-theme-bg-color);
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.product-page-image-rating-star-box {
+  width: 12px;
+  height: 12px;
+}
+
+.product-page-image-rating-number {
+  width: fit-content;
+  height: fit-content;
+  font: 400 12px/1 "Mulish", sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.product-page-image-label-box {
+  width: 100%;
+  height: fit-content;
+}
+
+.product-page-image-label {
+  width: fit-content;
+  height: fit-content;
+  font: 900 30px/1 "Mulish", sans-serif;
+  color: black;
+  line-height: 1.2em;
+}
+
+.product-page-product-inf-wrapper {
+  width: 100vw;
+  height: fit-content;
+  background: white;
+  border-radius: 0 0 30px 30px;
+}
+
+.product-page-product-inf-box {
+  width: 100%;
+  height: fit-content;
+  border-radius: 20px;
+  background: var(--tg-theme-bg-color);
+}
+
+.product-page-product-price-box {
+  width: 100%;
+  height: fit-content;
+  padding: 10px 3%;
+}
+
+.product-page-product-price-border {
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: rgba(166, 166, 166, 0.26);
+  padding: 10px 0 15px;
+}
+
+.product-page-product-price {
+  width: fit-content;
+  height: fit-content;
+  font: 900 30px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+}
+
+.product-page-product-sizes-box {
+  width: 100%;
+  height: fit-content;
+  padding: 0 0 10px;
+  z-index: 0;
+}
+
+.product-page-product-sizes-inf-box {
+  width: 100%;
+  height: fit-content;
+  padding: 5px 3% 10px;
+}
+
+.product-page-product-size-label-box {
+  font: 900 20px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+}
+
+.product-page-product-size-table-box a {
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  color: var(--tg-theme-accent-text-color);
+  cursor: pointer;
+}
+
+.size-options-icons-box {
+  gap: 2%;
+  padding: 0 3%;
+  position: relative;
+  width: 100vw;
+  scroll-padding-left: 6%;
+  height: 60px;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  z-index: 1;
+}
+
+.size-options-icons-box::-webkit-scrollbar {
+  display: none;
+}
+
+.product-page-product-description-box {
+  width: 100%;
+  height: fit-content;
+  padding: 0 3%;
+}
+
+.product-page-product-description-border {
+  width: 100%;
+  height: fit-content;
+  border-top: 1px solid;
+  padding: 10px 0;
+  border-color: rgba(166, 166, 166, 0.26);
+}
+
+.product-page-product-description-label {
+  font: 900 20px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+}
+
+.product-page-product-description-text {
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  padding: 10px 0;
+}
+
+.product-page-articles-box {
+  width: 100vw;
+  height: fit-content;
+  margin-top: 20px;
+  background: var(--tg-theme-bg-color);
+  border-radius: 20px;
+  padding: 5px 0 22px;
+}
+
+.product-page-articles-label {
+  width: fit-content;
+  height: fit-content;
+  font: 900 20px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  padding: 3%;
+}
+
+.app-folded-inf-box {
+  width: 100vw;
+  height: fit-content;
+  background: var(--tg-theme-bg-color);
+  margin-top: 20px;
+  border-radius: 20px;
+}
 
 /*# sourceMappingURL=product-page.component.css.map */

@@ -1,18 +1,15 @@
 import {Injectable} from "@angular/core";
 import {IProduct, ProductApiService} from "./product-api.service";
-import {BehaviorSubject, from, mergeMap, Subscription, zip} from "rxjs";
+import {BehaviorSubject, from, mergeMap, zip} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsStoreService {
-  private readonly productsSubject: BehaviorSubject<IProduct[]>
-  private menProductsApi$: Subscription
-  private womenProductsApi$: Subscription
+  private readonly productsSubject: BehaviorSubject<IProduct[]> = new BehaviorSubject<IProduct[]>([])
   constructor(
     private readonly productApiService: ProductApiService
   ) {
-    this.productsSubject = new BehaviorSubject<IProduct[]>([])
   }
 
   getProductsArray() {
@@ -28,10 +25,5 @@ export class ProductsStoreService {
     ).subscribe(itemList => {
       this.productsSubject.next(itemList)
     })
-  }
-
-  unsubscribe(): void {
-    this.menProductsApi$.unsubscribe()
-    this.womenProductsApi$.unsubscribe()
   }
 }

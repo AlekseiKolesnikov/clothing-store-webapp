@@ -8,3 +8,4 @@ export const DELIVERY_INF_PAGE = "delivery_inf_page";
 export const DISTRIBUTION_CITY_PAGE = "distribution_city_page";
 export const DISTRIBUTION_ADDRESS_PAGE = "distribution_address_page";
 export const PRODUCT_PAGE = "product_page";
+export const SIZE_TABLE_PAGE = "size_table_page";

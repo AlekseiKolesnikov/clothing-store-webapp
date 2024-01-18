@@ -31,7 +31,7 @@
 }
 .product-card-wrapper {
   width: 100%;
-  height: fit-content;
+  height: 200px;
   background: var(--tg-theme-bg-color);
   border-radius: 20px;
 }

@@ -29,6 +29,7 @@
   <div class="product-list-cards-wrapper">
     <app-product-card
       *ngFor="let product of productsArray"
+      [productID]="product.id"
       [productName]="product.title"
       [productImage]="product.image"
       [productPrice]="product.price.toString()"
