@@ -13,11 +13,11 @@
     class="delivery-data-component-cities-list-box"
   >
     <div
-      (click)="onClick(item)"
+      (click)="onClick(item.value, item.id)"
       *ngFor="let item of dataArray | searchFilter: inputText"
       class="delivery-data-component-city-box"
     >
-      <div class="delivery-data-component-city-name">{{item}}</div>
+      <div class="delivery-data-component-city-name">{{item.value}}</div>
     </div>
   </div>
 </div>

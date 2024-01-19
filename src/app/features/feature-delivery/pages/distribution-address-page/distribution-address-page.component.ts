@@ -2,6 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {AddressesHandlerService} from "../../services/addresses-handler.service";
 import {Subscription} from "rxjs";
+import {ISearchData} from "../../services/cities-handler.service";
 
 @Component({
   selector: 'app-distribution-address-page',
@@ -10,7 +11,7 @@ import {Subscription} from "rxjs";
 })
 export class DistributionAddressPageComponent extends BaseComponent implements OnDestroy {
   protected address: string = ''
-  protected addressesArray: string[] = []
+  protected addressesArray: ISearchData[] = []
   private readonly addressesHandler$: Subscription
 
   constructor(

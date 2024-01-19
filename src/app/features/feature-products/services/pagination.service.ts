@@ -7,7 +7,7 @@ import {asyncScheduler, BehaviorSubject, delay, Observable, subscribeOn, Subscri
 })
 export class PaginationService {
   private readonly loaderStateSubject = new BehaviorSubject(false)
-  private storeSubscription: Subscription
+  protected storeSubscription$: Subscription
   private isLoading = false
   constructor(
     private readonly productStoreService: ProductsStoreService
@@ -15,7 +15,7 @@ export class PaginationService {
   }
 
   getLoaderState(): Observable<boolean> {
-    this.storeSubscription = this.productStoreService.getProductsArray()
+    this.storeSubscription$ = this.productStoreService.getProductsArray()
       .pipe(
         delay(500),
         subscribeOn(asyncScheduler)
@@ -42,7 +42,9 @@ export class PaginationService {
   }
 
   unsubscribe() {
-    this.storeSubscription.unsubscribe()
+    if (this.storeSubscription$) {
+      this.storeSubscription$.unsubscribe()
+    }
   }
 
 

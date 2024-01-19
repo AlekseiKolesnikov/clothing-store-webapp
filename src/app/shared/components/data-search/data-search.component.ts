@@ -1,18 +1,19 @@
 import {Component, Input, OnDestroy, ViewEncapsulation} from '@angular/core';
-import {BaseComponent} from "../../../../shared/models/base-component.model";
+import {BaseComponent} from "../../models/base-component.model";
 import {Location} from "@angular/common";
-import {ManageDeliveryDataSearchService} from "../../services/manage-delivery-data-search.service";
+import {ManageDeliveryDataSearchService} from "../../../features/feature-delivery/services/manage-delivery-data-search.service";
+import {ISearchData} from "../../../features/feature-delivery/services/cities-handler.service";
 
 
 @Component({
-  selector: 'app-delivery-data-search',
-  templateUrl: './delivery-data-search.component.html',
-  styleUrls: ['./delivery-data-search.component.scss'],
+  selector: 'app-data-search',
+  templateUrl: './data-search.component.html',
+  styleUrls: ['./data-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DeliveryDataSearchComponent extends BaseComponent implements OnDestroy {
+export class DataSearchComponent extends BaseComponent implements OnDestroy {
   @Input() ngModelField: string
-  @Input() dataArray: string[]
+  @Input() dataArray: ISearchData[]
   @Input() searchOption: string
   @Input() inputLabel: string
   protected inputText: string = ''
@@ -29,9 +30,8 @@ export class DeliveryDataSearchComponent extends BaseComponent implements OnDest
     this.manageDeliveryDataSearch.setDeliveryDataSubject(this.searchOption)
   }
 
-  onClick(pickedItem: string) {
-    this.manageDeliveryDataSearch.storeDeliveryData(this.searchOption, pickedItem)
-    this.location.back()
+  onClick(pickedItem: string, itemId: number) {
+    this.manageDeliveryDataSearch.storeDeliveryData(this.searchOption, pickedItem, this.location, itemId)
   }
 
   ngOnDestroy() {

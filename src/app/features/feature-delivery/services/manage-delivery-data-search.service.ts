@@ -4,6 +4,9 @@ import {AddressesHandlerService} from "./addresses-handler.service";
 import {DeliveryDataService} from "./delivery-data.service";
 import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../shared/data/local-storage-keys";
 import {LocalStorageService} from "../../../local-storage.service";
+import {Location} from "@angular/common";
+import {Router} from "@angular/router";
+import {PRODUCT_PAGE} from "../../../shared/data/app-routes";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +16,8 @@ export class ManageDeliveryDataSearchService {
     private readonly citiesHandlerService: CitiesHandlerService,
     private readonly addressesHandlerService: AddressesHandlerService,
     private readonly deliveryDataService: DeliveryDataService,
-    private readonly localStorageService: LocalStorageService
+    private readonly localStorageService: LocalStorageService,
+    private readonly router: Router
   ) { }
 
   setDeliveryDataSubject(dataOption: string) {
@@ -25,13 +29,23 @@ export class ManageDeliveryDataSearchService {
     }
   }
 
-  storeDeliveryData(dataOption: string, pickedItem: string) {
+  storeDeliveryData(dataOption: string, pickedItem: string, location: Location, itemId: number) {
     if (dataOption === "cities") {
       this.deliveryDataService.setCity(pickedItem)
       this.localStorageService.setItem(DELIVERY_CITY_KEY, pickedItem)
-    } else {
+      location.back()
+    }
+    if (dataOption === "address") {
       this.deliveryDataService.setAddress(pickedItem)
       this.localStorageService.setItem(DELIVERY_ADDRESS_KEY, pickedItem)
+      location.back()
+    }
+    if (dataOption === "product") {
+      this.router.navigate([PRODUCT_PAGE], {
+        queryParams: {
+          id: itemId.toString()
+        }
+      })
     }
   }
 

@@ -7,6 +7,7 @@ import {BehaviorSubject, from, mergeMap, zip} from "rxjs";
 })
 export class ProductsStoreService {
   private readonly productsSubject: BehaviorSubject<IProduct[]> = new BehaviorSubject<IProduct[]>([])
+  private readonly productsArray: Array<IProduct> = new Array<IProduct>()
   constructor(
     private readonly productApiService: ProductApiService
   ) {
@@ -23,7 +24,8 @@ export class ProductsStoreService {
     ).pipe(
       mergeMap(data => from(data))
     ).subscribe(itemList => {
-      this.productsSubject.next(itemList)
+      this.productsArray.push(...itemList)
+      this.productsSubject.next(this.productsArray)
     })
   }
 }

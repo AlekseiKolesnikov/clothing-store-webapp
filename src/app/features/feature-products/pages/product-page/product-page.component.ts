@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {Subscription} from "rxjs";
+import {from, map, mergeMap, Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {ISize, SizeOptionStateService} from "../../services/size-option-state.service";
-import {ProductApiService} from "../../services/api/product-api.service";
 import {SIZE_TABLE_PAGE} from "../../../../shared/data/app-routes";
 import {IProductInf, ProductPageInfService} from "../../services/product-page-inf.service";
+import {ProductsStoreService} from "../../services/api/products-store.service";
 
 @Component({
   selector: 'app-product-page',
@@ -22,7 +22,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   protected productTitle: string
   protected productDescription: string
   protected productRating: number
-  protected productID: number
+  protected productID: string
   protected sizeIconData: Array<ISize>
   protected productPageInfData: Array<IProductInf>
   protected productStoreService$: Subscription
@@ -32,22 +32,23 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly productApiService: ProductApiService,
+    private readonly productStoreService: ProductsStoreService,
     private readonly sizeOptionStateService: SizeOptionStateService,
     private readonly productPageInfService: ProductPageInfService
-  ) {
-    this.route.queryParams.subscribe(params => this.productID = params['id'])
-  }
+  ) {}
 
   ngOnInit() {
-    this.productStoreService$ = this.productApiService.getProductById(this.productID.toString()).subscribe(
-      value => {
-        this.productImage = value.image
-        this.productPrice = value.price.toString()
-        this.productTitle = value.title
-        this.productDescription = value.description
-        this.productRating = value.rating.rate
-      })
+    this.route.queryParams.subscribe(params => this.productID = params['id'])
+    this.productStoreService$ = this.productStoreService.getProductsArray().pipe(
+      map(data => data.filter(value => value.id === parseInt(this.productID))),
+      mergeMap(data => from(data)),
+    ).subscribe(value => {
+      this.productImage = value.image
+      this.productPrice = value.price.toString()
+      this.productTitle = value.title
+      this.productDescription = value.description
+      this.productRating = value.rating.rate
+    })
     this.sizeIconData$ = this.sizeOptionStateService.getState().subscribe(data => {
       this.sizeIconData = data
     })

@@ -4,6 +4,7 @@ import {
   SearchBarWidgetComponent
 } from "../features/feature-search-bar/components/search-bar-widget/search-bar-widget.component";
 import {SearchBarPageComponent} from "../features/feature-search-bar/pages/search-bar-page.component";
+import {DeliveryModule} from "./delivery.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {SearchBarPageComponent} from "../features/feature-search-bar/pages/searc
     SearchBarWidgetComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DeliveryModule
   ]
 })
 export class SearchBarModule { }

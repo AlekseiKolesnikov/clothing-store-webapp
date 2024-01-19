@@ -1,5 +1,5 @@
 import {Component, OnDestroy, ViewEncapsulation} from '@angular/core';
-import {CitiesHandlerService} from "../../services/cities-handler.service";
+import {CitiesHandlerService, ISearchData} from "../../services/cities-handler.service";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -10,7 +10,7 @@ import {Subscription} from "rxjs";
 })
 export class DistributionPointsPageComponent implements OnDestroy {
   protected cityName: string = ''
-  protected citiesArray: string[] = []
+  protected citiesArray: ISearchData[] = []
   private readonly citiesHandler$: Subscription
 
   constructor(

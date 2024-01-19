@@ -1,55 +1,40 @@
-.delivery-data-component-loader-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.delivery-data-component-city-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.delivery-data-component-searchbar-box {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-}
+@import "../../../styles/variables";
+@import "../../../styles/flex.patterns";
 
 .delivery-data-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: var(--tg-theme-bg-color);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $tg-background;
 }
 
 .delivery-data-component-searchbar-box {
+  @extend %space-between-column-start-flex;
   position: sticky;
   top: 0;
   width: 100%;
   height: fit-content;
-  background: var(--tg-theme-secondary-bg-color);
+  background: $secondary-tg-background;
   padding: 5px 10px;
 }
 
 .delivery-data-component-searchbar-label {
   width: fit-content;
   height: fit-content;
-  font: 400 12px/1 "Mulish", sans-serif;
-  color: var(--tg-theme-hint-color);
+  font: $subscript-text;
+  color: $hint-tg-color;
 }
 
 .delivery-data-component-searchbar-input {
   width: 100%;
   height: 40px;
-  background: var(--tg-theme-secondary-bg-color);
-  font: 400 16px/1.2 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  background: $secondary-tg-background;
+  font: $main-text;
+  color: $text-tg-color;
 }
 
 .delivery-data-component-loader-box {
+  @extend %center-flex;
   width: 100%;
   height: calc(100svh - 40px);
 }
@@ -75,12 +60,13 @@
 }
 
 .delivery-data-component-city-box {
+  @extend %start-row-center-flex;
   width: 100%;
   height: fit-content;
   padding: 20px 10px 8px;
-  font: 400 16px/1.2 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
-  border-bottom: 0.01px solid rgba(166, 166, 166, 0.26);
+  font: $main-text;
+  color: $text-tg-color;
+  border-bottom: $thin-border $border-light-grey-color;
   background-clip: padding-box;
   cursor: pointer;
 }
@@ -89,5 +75,3 @@
   width: fit-content;
   height: fit-content;
 }
-
-/*# sourceMappingURL=delivery-data-search.component.css.map */

@@ -4,7 +4,7 @@
     <div class="product-list-search-icons-box">
       <div
         class="product-list-search-icon"
-        (click)="click($event)"
+        (click)="click($event); onClick('search')"
         (touchend)="touch($event)"
       >
         <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +14,7 @@
       </div>
       <div
         class="product-list-filter-icon"
-        (click)="click($event)"
+        (click)="click($event); onClick('filter')"
         (touchend)="touch($event)"
       >
         <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
