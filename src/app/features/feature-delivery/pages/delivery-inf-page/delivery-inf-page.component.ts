@@ -1,5 +1,8 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
+import {
+  MAIN_BUTTON_POST_EVENT_LISTENER,
+  TelegramMainButtonModel
+} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
 import {from, mergeMap, Subscription, tap} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
@@ -56,7 +59,7 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
     window.addEventListener(
       "message",
       (event) => {
-        if (event.data === "setData") {
+        if (event.data === MAIN_BUTTON_POST_EVENT_LISTENER) {
           this.dataLocalStoreService.storeData()
         }
       }

@@ -6,7 +6,10 @@ import {
 } from "../../services/products-filter.service";
 import {FilterOptionService} from "../../services/filter-option.service";
 import {Subscription, tap} from "rxjs";
-import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
+import {
+  MAIN_BUTTON_POST_EVENT_LISTENER,
+  TelegramMainButtonModel
+} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {Router} from "@angular/router";
 import {FILTERED_PRODUCTS_PAGE} from "../../../../shared/data/app-routes";
@@ -50,7 +53,7 @@ export class ProductFilterPageComponent extends BaseComponent implements OnInit,
     window.addEventListener(
       "message",
       (event) => {
-        if (event.data === "setData") {
+        if (event.data === MAIN_BUTTON_POST_EVENT_LISTENER) {
           this.productFilterService.setProductRateOptionFilter(this.filterRateOption)
           this.router.navigate([FILTERED_PRODUCTS_PAGE])
         }

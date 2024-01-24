@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {AddressesApiService} from "./api/addresses-api.service";
-import {BehaviorSubject, catchError, map, Observable, retry, Subscription, throwError} from "rxjs";
-import {HttpErrorResponse} from "@angular/common/http";
+import {BehaviorSubject, map, Observable, retry, Subscription} from "rxjs";
 import {ISearchData} from "../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
@@ -23,16 +22,6 @@ export class AddressesHandlerService {
     private readonly addressesApiService: AddressesApiService
   ) { }
 
-  errorHandler(error: HttpErrorResponse) {
-    if (error.status === 0) {
-      console.error('An error occurred:', error.error);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
-    }
-    return throwError(() => new Error('Something bad happened; please try again later.'));
-  }
-
   setAddressesSubject(): void {
     this.addressesSubject.next(this.addressesArray)
   }
@@ -42,7 +31,6 @@ export class AddressesHandlerService {
     if (this.addressesArray.length === 0) {
       this.addressesService$ = this.addressesApiService.getAddress().pipe(
         retry(3),
-        catchError(this.errorHandler),
         map(data => data.data.map((item, index) => ({ value: item.street, id: index })))
       ).subscribe(value => {
         const itemValue = value.map(item => item.value)

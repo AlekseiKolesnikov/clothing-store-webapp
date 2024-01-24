@@ -26,6 +26,7 @@ export class FilteredProductListPageComponent implements OnInit, OnDestroy {
   private filterPriceTo: number
   private filterRateOption: number
   private filterSexOption: { male: boolean, female: boolean }
+
   constructor(
     private readonly paginationService: PaginationService,
     private readonly productsFilterService: ProductsFilterService,
@@ -34,35 +35,42 @@ export class FilteredProductListPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.getFilterProductParams()
+    this.productsFilterService$ = this.productStoreService.getProductsArray()
+      .pipe(
+        map(data => data.filter(value => (
+          (value.price >= this.filterPriceFrom && value.price <= this.filterPriceTo) &&
+          (this.filterSexOption.male ? value.category === MALE_CLOTHING_INPUT_TYPE : (
+            this.filterSexOption.female ? value.category === FEMALE_CLOTHING_INPUT_TYPE : value
+          ))
+        )))
+      )
+      .subscribe(data => {
+        switch (this.filterRateOption) {
+          case 0:
+            data.sort((a, b) => b.rating.rate - a.rating.rate)
+            break;
+          case 1:
+            data.sort((a, b) => a.price - b.price)
+            break;
+          case 2:
+            data.sort((a, b) => b.price - a.price)
+            break;
+          case null:
+            this.productsArray = data
+            break;
+        }
+        this.productsArray = data
+      })
+  }
+
+  getFilterProductParams() {
     this.productsFilterService$ = this.productsFilterService.getFilterParams().subscribe(value => {
       this.filterPriceFrom = value.filterPriceFrom
       this.filterPriceTo = value.filterPriceTo
       this.filterRateOption = value.filterRateOption
       this.filterSexOption = value.filterSexOption
     })
-    this.productsFilterService$ = this.productStoreService.getProductsArray()
-      .pipe(
-        map(data => data.filter(value => (
-          (value.price >= this.filterPriceFrom && value.price <= this.filterPriceTo) &&
-          (this.filterSexOption.male ? value.category = MALE_CLOTHING_INPUT_TYPE : (
-            this.filterSexOption.female ? value.category = FEMALE_CLOTHING_INPUT_TYPE : value
-          ))
-        )))
-      )
-      .subscribe(data => {
-        if (this.filterRateOption === 0) {
-          data.sort((a, b) => b.rating.rate - a.rating.rate)
-        }
-        if (this.filterRateOption === 1) {
-          data.sort((a, b) => a.price - b.price)
-        }
-        if (this.filterRateOption === 2) {
-          data.sort((a, b) => b.price - a.price)
-        } else {
-          this.productsArray = data
-        }
-        this.productsArray = data
-      })
   }
 
   onScroll(event: any) {

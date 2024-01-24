@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {UsCitiesApiService} from "./api/us-cities-api.service";
-import {BehaviorSubject, catchError, map, Observable, retry, Subscription, throwError} from "rxjs";
-import {HttpErrorResponse} from "@angular/common/http";
+import {BehaviorSubject, map, Observable, retry, Subscription} from "rxjs";
 import {ISearchData} from "../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
@@ -28,16 +27,6 @@ export class CitiesHandlerService {
   ) {
   }
 
-  errorHandler(error: HttpErrorResponse) {
-    if (error.status === 0) {
-      console.error('An error occurred:', error.error);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
-    }
-    return throwError(() => new Error('Something bad happened; please try again later.'));
-  }
-
   setCitiesSubject(): void {
     this.usCitiesSubject.next(this.citiesArray)
   }
@@ -47,7 +36,6 @@ export class CitiesHandlerService {
     if (this.citiesArray.length === 0) {
       this.usCitiesService$ = this.usCitiesService.getCity().pipe(
         retry(3),
-        catchError(this.errorHandler),
         map(data => data.data.map((item, index) => ({ value: item, id: index })))
       ).subscribe(value => {
         this.citiesArray = value
