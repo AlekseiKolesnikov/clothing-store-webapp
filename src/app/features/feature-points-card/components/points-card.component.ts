@@ -2,8 +2,8 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../shared/models/base-component.model";
 import {LocalStorageService} from "../../../local-storage.service";
 import {NavigateFeedbackModel} from "../../../shared/models/telegram-ui/navigate-feedback-model";
-import {AppRoutesService} from "../../../shared/services/app-routes.service";
 import {POINTS_CARD_KEY} from "../../../shared/data/local-storage-keys";
+import {POINTS_CARD_PAGE} from "../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-points-card',
@@ -13,20 +13,16 @@ import {POINTS_CARD_KEY} from "../../../shared/data/local-storage-keys";
 })
 export class PointsCardComponent extends BaseComponent {
   protected readonly pointsAmount = this.localStorageService.getItem(POINTS_CARD_KEY)
-  protected pointsPageRoute: string
-
   constructor(
-    private readonly appRoutesService: AppRoutesService,
     private readonly localStorageService: LocalStorageService,
     private readonly hapticFeedback: NavigateFeedbackModel
   ) {
     super();
-    this.pointsPageRoute = this.appRoutesService.getRoutes().pointsCardPage
   }
 
   override click(event: Event) {
     super.click(event);
-    this.hapticFeedback.feedbackNavigate(this.pointsPageRoute)
+    this.hapticFeedback.feedbackNavigate(POINTS_CARD_PAGE)
   }
 
   override touch(event: Event) {

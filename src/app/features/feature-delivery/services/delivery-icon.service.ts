@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
-import {IDeliveryOptions} from "./delivery-option-state.service";
 import {LocalStorageService} from "../../../local-storage.service";
 import {DELIVERY_OPTION} from "../../../shared/data/local-storage-keys";
+import {IDeliveryOptions} from "../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,12 @@
+<div
+  class="size-icon-frame"
+  [class]="isSelected ? 'color-frame' : 'empty-frame'"
+  (click)="onClick(elementIndex)"
+  (touchend)="touch($event)"
+>
+  <div class="size-icon-box">
+    <div class="size-icon-text">
+      {{ text }}
+    </div>
+  </div>
+</div>

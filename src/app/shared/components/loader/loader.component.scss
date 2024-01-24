@@ -1,0 +1,36 @@
+@import "../../../styles/variables";
+@import "../../../styles/flex.patterns";
+
+.loader-box {
+  @extend %center-flex;
+  width: 60px;
+  height: 25px;
+  border-radius: $border-radius;
+  background: $tg-background;
+}
+
+.loader {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: $text-tg-color;
+  box-shadow: 14px 0 $text-tg-color, -14px 0 $text-tg-color;
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: $hint-tg-color;
+    box-shadow: 14px 0 $text-tg-color, -14px 0 $text-tg-color;
+  }
+  50% {
+    background-color: $text-tg-color;
+    box-shadow: 14px 0 $hint-tg-color, -14px 0 $hint-tg-color;
+  }
+  100% {
+    background-color: #FFF2;
+    box-shadow: 14px 0 $text-tg-color, -14px 0 $hint-tg-color;
+  }
+}
+

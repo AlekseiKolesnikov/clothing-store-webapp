@@ -1,0 +1,50 @@
+@import "../../../styles/flex.patterns";
+@import "../../../styles/variables";
+
+.checkbox-container {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 7px;
+  font: $subscript-bigger-bold-text;
+  color: $text-tg-color;
+  border-radius: 20px;
+  background: $secondary-tg-background;
+
+  label {
+    @extend %space-between-row-center-flex;
+    gap: 3px;
+    span {
+      height: 20px
+    }
+  }
+}
+
+.check-input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.check-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.check-box svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: $secondary-tg-background;
+}
+
+.check-input:checked ~ .check-box svg {
+  fill: transparent;
+}
+
+.check-box-label {
+  line-height: 19px;
+  user-select: none;
+}

@@ -1,8 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {NavigateFeedbackModel} from "../../../../shared/models/telegram-ui/navigate-feedback-model";
-import {AppRoutesService} from "../../../../shared/services/app-routes.service";
-import {OrderPageService} from "../../services/order-page.service";
+import {ORDER_CARD_PAGE} from "../../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-order-card',
@@ -11,21 +10,15 @@ import {OrderPageService} from "../../services/order-page.service";
   encapsulation: ViewEncapsulation.None
 })
 export class OrderCardComponent extends BaseComponent {
-  protected readonly fullArrowIcon = this.orderPageDataService.getData().fullArrowIcon
-  protected orderPageRoute: string
-
   constructor(
-    private appRoutesService: AppRoutesService,
-    private readonly feedbackNavigate: NavigateFeedbackModel,
-    private readonly orderPageDataService: OrderPageService
+    private readonly feedbackNavigate: NavigateFeedbackModel
   ) {
     super();
-    this.orderPageRoute = this.appRoutesService.getRoutes().orderCardPage
   }
 
   override click(event: Event) {
     super.click(event);
-    this.feedbackNavigate.feedbackNavigate(this.orderPageRoute)
+    this.feedbackNavigate.feedbackNavigate(ORDER_CARD_PAGE)
   }
 
   override touch(event: Event) {

@@ -5,12 +5,13 @@ import {Injectable} from "@angular/core";
 })
 export abstract class BaseComponent {
   click(event: Event): void {
-    event.preventDefault()
-    event.stopPropagation()
+    if (event) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
   }
 
   touch(event: Event): void {
-
   }
 
   submit(event: Event) {

@@ -1,0 +1,35 @@
+.size-table-page-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.size-table-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.size-table-page-table-box {
+  width: fit-content;
+  height: fit-content;
+  padding: 3%;
+}
+
+.size-table-page-label {
+  font: 900 26px/1 "Mulish", sans-serif;
+  padding-bottom: 15px;
+  color: var(--tg-theme-text-color);
+}
+
+.size-table-page-table {
+  font: 400 12px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  border-spacing: 8px;
+}
+
+th, td {
+  text-align: start;
+  width: max-content;
+}
+
+/*# sourceMappingURL=size-table-page.component.css.map */

@@ -1,0 +1,41 @@
+@import "../../../../styles/squeeze-animation.pattern";
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
+
+.filter-icon-frame {
+  @extend %squeeze-animation;
+  width: fit-content;
+  height: fit-content;
+  border-radius: $border-radius-smaller;
+  padding: 1px;
+}
+
+.color-frame {
+  background: $text-tg-color;
+}
+
+.empty-frame {
+  background: none;
+}
+
+.filter-icon-box {
+  @extend %center-flex;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 7px;
+  border-radius: $border-radius-smaller;
+  background: $secondary-tg-background;
+  border: $tg-background 3px solid;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.filter-icon-text {
+  @extend %center-flex;
+  color: $text-tg-color;
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  font: $subscript-bigger-bold-text;
+  white-space: pre;
+}

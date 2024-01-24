@@ -1,0 +1,53 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
+
+.folded-inf-box-wrapper {
+  width: 100vw;
+  height: fit-content;
+  padding: $wrapper-padding;
+  color: $text-tg-color;
+}
+
+.folded-inf-box-folded {
+  width: 100%;
+  height: fit-content;
+  padding: $wrapper-padding 0;
+}
+
+.folded-inf-box-title-box-folded {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.folded-inf-box-title-folded {
+  font: $subheading-text-slime;
+}
+
+.folded-inf-box-title-arrow-folded,
+.folded-inf-box-title-arrow-unfolded {
+  width: 22px;
+  height: 22px;
+}
+
+.folded-inf-box-unfolded {
+  @extend %space-between-column-center-flex;
+  width: 100%;
+  height: fit-content;
+  padding: $wrapper-padding 0;
+}
+
+.folded-inf-box-title-box-unfolded {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.folded-inf-box-title-unfolded {
+  font: $subheading-text;
+}
+
+.folded-inf-box-text-unfolded {
+  font: $main-text;
+  padding-top: $wrapper-padding;
+}

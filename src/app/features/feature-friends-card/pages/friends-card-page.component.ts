@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {FriendEmoji, FriendsEmojiService} from "../services/friends-emoji.service";
-import {FriendsStatisticsData, FriendsStatisticsService} from "../services/friends-statistics.service";
+import {FriendsEmojiService} from "../services/friends-emoji.service";
+import {FriendsStatisticsService} from "../services/friends-statistics.service";
+import {FriendEmoji, FriendsStatisticsData} from "../../../shared/interfaces/friends-data-interfaces";
 
 @Component({
   selector: 'app-friends-card-page',

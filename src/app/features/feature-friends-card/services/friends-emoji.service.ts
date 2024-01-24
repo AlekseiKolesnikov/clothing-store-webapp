@@ -1,12 +1,5 @@
 import {Injectable} from "@angular/core";
-
-export interface FriendEmoji {
-  image: string;
-  name: string;
-  backgroundColor: string;
-  width: string;
-  className: string;
-}
+import {FriendEmoji} from "../../../shared/interfaces/friends-data-interfaces";
 
 @Injectable({
   providedIn: 'root'

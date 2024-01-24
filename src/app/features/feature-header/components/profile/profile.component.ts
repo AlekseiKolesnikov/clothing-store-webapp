@@ -1,9 +1,8 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {Router} from "@angular/router";
-import {LocalStorageService} from "../../../../local-storage.service";
-import {AppRoutesService} from "../../../../shared/services/app-routes.service";
 import {ProfileDataService} from "../../services/profile-data.service";
+import {PROFILE_PAGE} from "../../../../shared/data/app-routes";
 
 @Component({
   selector: 'app-profile',
@@ -13,21 +12,16 @@ import {ProfileDataService} from "../../services/profile-data.service";
 })
 export class ProfileComponent extends BaseComponent {
   protected readonly profileData = this.profileDataService.getData()
-  protected profilePageRoute: string
-
   constructor(
     private router: Router,
-    private appRoutesService: AppRoutesService,
-    private readonly profileDataService: ProfileDataService,
-    protected readonly localStorageService: LocalStorageService
+    private readonly profileDataService: ProfileDataService
   ) {
     super();
-    this.profilePageRoute = this.appRoutesService.getRoutes().profilePage
   }
 
   override click(event: Event) {
     super.click(event);
-    this.router.navigate([this.profilePageRoute])
+    this.router.navigate([PROFILE_PAGE])
   }
 
   override touch(event: Event) {

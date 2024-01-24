@@ -1,0 +1,41 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/squeeze-animation.pattern";
+@import "../../../../styles/variables";
+
+.size-icon-frame {
+  @extend %squeeze-animation;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.color-frame {
+  background: $button-tg-color;
+}
+
+.empty-frame {
+  background: none;
+}
+
+.size-icon-box {
+  @extend %center-flex;
+  height: 50px;
+  width: 50px;
+  padding: 5px 7px;
+  border-radius: 9px;
+  background: $secondary-tg-background;
+  border: $tg-background 3px solid;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.size-icon-text {
+  @extend %center-flex;
+  color: $text-tg-color;
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  font: $main-text;
+  white-space: pre;
+}

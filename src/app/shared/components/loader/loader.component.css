@@ -1,0 +1,39 @@
+.loader-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-box {
+  width: 60px;
+  height: 25px;
+  border-radius: 25px;
+  background: var(--tg-theme-bg-color);
+}
+
+.loader {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--tg-theme-text-color);
+  box-shadow: 14px 0 var(--tg-theme-text-color), -14px 0 var(--tg-theme-text-color);
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: var(--tg-theme-hint-color);
+    box-shadow: 14px 0 var(--tg-theme-text-color), -14px 0 var(--tg-theme-text-color);
+  }
+  50% {
+    background-color: var(--tg-theme-text-color);
+    box-shadow: 14px 0 var(--tg-theme-hint-color), -14px 0 var(--tg-theme-hint-color);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1333333333);
+    box-shadow: 14px 0 var(--tg-theme-text-color), -14px 0 var(--tg-theme-hint-color);
+  }
+}
+
+/*# sourceMappingURL=loader.component.css.map */

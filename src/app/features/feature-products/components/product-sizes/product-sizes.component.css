@@ -1,0 +1,60 @@
+.size-icon-text, .size-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .size-icon-frame:hover {
+    cursor: pointer;
+  }
+}
+.size-icon-frame:active {
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+.size-icon-frame {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.color-frame {
+  background: var(--tg-theme-button-color);
+}
+
+.empty-frame {
+  background: none;
+}
+
+.size-icon-box {
+  height: 50px;
+  width: 50px;
+  padding: 5px 7px;
+  border-radius: 9px;
+  background: var(--tg-theme-secondary-bg-color);
+  border: var(--tg-theme-bg-color) 3px solid;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.size-icon-text {
+  color: var(--tg-theme-text-color);
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  white-space: pre;
+}
+
+/*# sourceMappingURL=product-sizes.component.css.map */
