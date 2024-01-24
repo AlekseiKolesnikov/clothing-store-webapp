@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {SIZE_OPTION} from "../../../shared/data/local-storage-keys";
 import {LocalStorageService} from "../../../local-storage.service";
-import {ISize} from "./size-option-state.service";
+import {ISize} from "../../../shared/interfaces/product-interfaces";
 
 @Injectable({
   providedIn: 'root'

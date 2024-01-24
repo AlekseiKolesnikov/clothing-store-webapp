@@ -1,10 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-
-export interface IUSCities {
-  data: string[]
-}
+import {IUSCities} from "../../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
   providedIn: 'root'

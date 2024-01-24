@@ -1,11 +1,8 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject} from "rxjs";
 import {SizeIconService} from "./size-icon.service";
+import {ISize} from "../../../shared/interfaces/product-interfaces";
 
-export interface ISize {
-  text: string,
-  isSelected: boolean
-}
 @Injectable({
   providedIn: 'root'
 })

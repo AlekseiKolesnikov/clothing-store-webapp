@@ -2,11 +2,8 @@ import {Injectable} from "@angular/core";
 import {UsCitiesApiService} from "./api/us-cities-api.service";
 import {BehaviorSubject, catchError, map, Observable, retry, Subscription, throwError} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
+import {ISearchData} from "../../../shared/interfaces/delivery-interfaces";
 
-export interface ISearchData {
-  value: string,
-  id: number
-}
 @Injectable({
   providedIn: 'root'
 })

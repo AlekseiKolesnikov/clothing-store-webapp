@@ -1,0 +1,13 @@
+@import "../../../../styles/variables";
+
+.filtered-product-list-page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding: 0 $wrapper-padding $wrapper-bottom-padding;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.filtered-product-list-page-wrapper::-webkit-scrollbar {
+  display: none;
+}

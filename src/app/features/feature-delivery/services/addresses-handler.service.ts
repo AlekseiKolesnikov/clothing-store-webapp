@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {AddressesApiService} from "./api/addresses-api.service";
 import {BehaviorSubject, catchError, map, Observable, retry, Subscription, throwError} from "rxjs";
-import {ISearchData} from "./cities-handler.service";
 import {HttpErrorResponse} from "@angular/common/http";
+import {ISearchData} from "../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
   providedIn: 'root'

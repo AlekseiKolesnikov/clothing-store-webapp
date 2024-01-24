@@ -9,3 +9,5 @@ export const DISTRIBUTION_CITY_PAGE = "distribution_city_page";
 export const DISTRIBUTION_ADDRESS_PAGE = "distribution_address_page";
 export const PRODUCT_PAGE = "product_page";
 export const SIZE_TABLE_PAGE = "size_table_page";
+export const PRODUCT_FILTER_PAGE = "product_filter_page";
+export const FILTERED_PRODUCTS_PAGE = "filtered_products_page";

@@ -1,11 +1,12 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
-import {DeliveryOptionStateService, IDeliveryOptions} from "../../services/delivery-option-state.service";
+import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
 import {from, mergeMap, Subscription, tap} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
 import {DataLocalStoreService} from "../../services/data-local-store.service";
 import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
 import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../../shared/data/local-storage-keys";
+import {IDeliveryOptions} from "../../../../shared/interfaces/delivery-interfaces";
 
 @Component({
   selector: 'app-delivery-inf-page',

@@ -2,8 +2,7 @@ import {Component, Input, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../models/base-component.model";
 import {Location} from "@angular/common";
 import {ManageDeliveryDataSearchService} from "../../../features/feature-delivery/services/manage-delivery-data-search.service";
-import {ISearchData} from "../../../features/feature-delivery/services/cities-handler.service";
-
+import {ISearchData} from "../../interfaces/delivery-interfaces";
 
 @Component({
   selector: 'app-data-search',

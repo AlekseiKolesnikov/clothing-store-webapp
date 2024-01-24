@@ -2,13 +2,7 @@ import {Injectable} from "@angular/core";
 import {BehaviorSubject} from "rxjs";
 import {LocalStorageService} from "../../../local-storage.service";
 import {PERSONAL_FULL_NAME_KEY, PERSONAL_PHONE_NUMBER_KEY} from "../../../shared/data/local-storage-keys";
-
-interface IDeliveryData {
-  fullName: string,
-  phoneNumber: string,
-  city: string,
-  address: string
-}
+import {IDeliveryData} from "../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
   providedIn: 'root'

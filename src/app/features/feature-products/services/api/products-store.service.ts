@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
-import {IProduct, ProductApiService} from "./product-api.service";
+import {ProductApiService} from "./product-api.service";
 import {BehaviorSubject, from, mergeMap, zip} from "rxjs";
+import {IProduct} from "../../../../shared/interfaces/product-interfaces";
 
 @Injectable({
   providedIn: 'root'

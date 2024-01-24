@@ -1,10 +1,11 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {from, map, mergeMap, Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {ISize, SizeOptionStateService} from "../../services/size-option-state.service";
+import {SizeOptionStateService} from "../../services/size-option-state.service";
 import {SIZE_TABLE_PAGE} from "../../../../shared/data/app-routes";
 import {IProductInf, ProductPageInfService} from "../../services/product-page-inf.service";
 import {ProductsStoreService} from "../../services/api/products-store.service";
+import {ISize} from "../../../../shared/interfaces/product-interfaces";
 
 @Component({
   selector: 'app-product-page',

@@ -2,7 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {AddressesHandlerService} from "../../services/addresses-handler.service";
 import {Subscription} from "rxjs";
-import {ISearchData} from "../../services/cities-handler.service";
+import {ISearchData} from "../../../../shared/interfaces/delivery-interfaces";
 
 @Component({
   selector: 'app-distribution-address-page',

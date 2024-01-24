@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ProductsStoreService} from "../../feature-products/services/api/products-store.service";
 import {map, Subscription} from "rxjs";
-import {ISearchData} from "../../feature-delivery/services/cities-handler.service";
+import {ISearchData} from "../../../shared/interfaces/delivery-interfaces";
 
 @Component({
   selector: 'app-search-bar-widget-page',

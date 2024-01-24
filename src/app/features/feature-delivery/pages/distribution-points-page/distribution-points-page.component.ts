@@ -1,6 +1,7 @@
 import {Component, OnDestroy, ViewEncapsulation} from '@angular/core';
-import {CitiesHandlerService, ISearchData} from "../../services/cities-handler.service";
+import {CitiesHandlerService} from "../../services/cities-handler.service";
 import {Subscription} from "rxjs";
+import {ISearchData} from "../../../../shared/interfaces/delivery-interfaces";
 
 @Component({
   selector: 'app-distribution-points-page',

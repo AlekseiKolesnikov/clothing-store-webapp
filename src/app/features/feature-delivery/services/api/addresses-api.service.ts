@@ -1,26 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-
-interface IApiData {
-  status: string,
-  code: number,
-  total: number,
-  data: IAddress[]
-}
-
-export interface IAddress {
-  id: number,
-  street: string,
-  streetName: string,
-  buildingNumber: string,
-  city: string,
-  zipcode: string,
-  country: string,
-  county_code: string,
-  latitude: number,
-  longitude: number,
-}
+import {IApiData} from "../../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
   providedIn: 'root'

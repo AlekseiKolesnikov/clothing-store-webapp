@@ -8,11 +8,23 @@ import {ProductSizesComponent} from "../features/feature-products/components/pro
 import {RouterLink} from "@angular/router";
 import {SizeTablePageComponent} from "../features/feature-products/pages/size-table-page/size-table-page.component";
 import {FoldedInfBoxComponent} from "../features/feature-products/components/folded-inf-box/folded-inf-box.component";
+import {
+  ProductFilterPageComponent
+} from "../features/feature-products-filter/page/product-filter-page/product-filter-page.component";
+import {
+  FilteredProductListPageComponent
+} from "../features/feature-products-filter/page/filtered-product-list-page/filtered-product-list-page.component";
+import {
+  FilterOptionComponent
+} from "../features/feature-products-filter/components /filter-option/filter-option.component";
 
 @NgModule({
   declarations: [
     ProductPageComponent,
     ProductsListComponent,
+    ProductFilterPageComponent,
+    FilteredProductListPageComponent,
+    FilterOptionComponent,
     ProductCardComponent,
     ProductSizesComponent,
     SizeTablePageComponent,

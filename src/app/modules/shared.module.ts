@@ -6,6 +6,7 @@ import {CopyTextDirective} from "../shared/directives /copy-text.directive";
 import {LoaderComponent} from "../shared/components/loader/loader.component";
 import {ArticlesComponent} from "../core/components/articles/articles.component";
 import {ArticleCardComponent} from "../features/feature-article-card/components/article-card/article-card.component";
+import {CheckboxComponent} from "../shared/components/checkbox/checkbox.component";
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import {ArticleCardComponent} from "../features/feature-article-card/components/
     TruncatePipe,
     CopyTextDirective,
     LoaderComponent,
+    CheckboxComponent,
     ArticlesComponent,
     ArticleCardComponent
   ],
@@ -21,7 +23,8 @@ import {ArticleCardComponent} from "../features/feature-article-card/components/
     TruncatePipe,
     CopyTextDirective,
     LoaderComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    CheckboxComponent
   ],
   imports: [
     CommonModule

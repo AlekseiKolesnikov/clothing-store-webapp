@@ -1,14 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {DeliveryIconService} from "./delivery-icon.service";
-
-export interface IDeliveryOptions {
-  icon: string,
-  iconName: string
-  text: string,
-  option: number,
-  isSelected: boolean
-}
+import {IDeliveryOptions} from "../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
   providedIn: 'root'

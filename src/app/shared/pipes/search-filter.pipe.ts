@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {ISearchData} from "../../features/feature-delivery/services/cities-handler.service";
+import {ISearchData} from "../interfaces/delivery-interfaces";
 
 @Pipe({
   name: 'searchFilter'

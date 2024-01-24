@@ -1,0 +1,153 @@
+.product-filter-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.product-filter-page-filter-sex, .product-filter-page-filter-options-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.product-filter-page-filter-price-inputs, .product-filter-page-filter-label-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-filter-page-filter-sex-box, .product-filter-page-filter-price-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@media (hover:hover) and (pointer: fine) {
+  .app-checkbox:hover {
+    cursor: pointer;
+  }
+}
+.app-checkbox:active {
+  animation: squeeze 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes squeeze {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.97, 0.97);
+  }
+}
+.product-filter-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  gap: 1.5%;
+  padding: 0 3% 40px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: var(--tg-theme-bg-color);
+}
+
+.product-filter-page-filter-label-box {
+  height: fit-content;
+  width: 100%;
+  padding: 3% 0;
+}
+
+.product-filter-page-filter-label {
+  width: fit-content;
+  height: fit-content;
+  font: 900 20px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  padding-bottom: 2px;
+}
+
+.product-filter-page-filter-back-button {
+  width: 20px;
+  height: 20px;
+  color: var(--tg-theme-text-color);
+  cursor: pointer;
+}
+
+.product-filter-page-filter-price-box {
+  width: 100%;
+  height: fit-content;
+}
+
+.product-filter-page-filter-price-label {
+  height: fit-content;
+  width: fit-content;
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+  padding-bottom: 10px;
+}
+
+.product-filter-page-filter-price-inputs {
+  width: 100%;
+  height: fit-content;
+}
+
+.product-filter-page-filter-price-input {
+  width: fit-content;
+  height: fit-content;
+}
+.product-filter-page-filter-price-input input {
+  width: 45vw;
+  height: 50px;
+  background: var(--tg-theme-secondary-bg-color);
+  padding: 10px 10px 2px;
+  color: var(--tg-theme-hint-color);
+  font: 400 16px/1.2 "Mulish", sans-serif;
+  border-radius: 10px;
+  line-height: 50px;
+}
+.product-filter-page-filter-price-input label {
+  position: absolute;
+  color: var(--tg-theme-hint-color);
+  font: 400 12px/1 "Mulish", sans-serif;
+  transform-origin: 0 0;
+  padding: 1% 10px;
+}
+
+.product-filter-page-filter-options-box {
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+  padding: 3% 0;
+  border-bottom: 0.01px solid;
+  border-color: rgba(166, 166, 166, 0.42);
+}
+
+.product-filter-page-filter-sex-box {
+  width: 100%;
+  height: fit-content;
+  gap: 10px;
+}
+
+.product-filter-page-filter-sex-label {
+  height: fit-content;
+  width: fit-content;
+  font: 600 16px/1 "Mulish", sans-serif;
+  color: var(--tg-theme-text-color);
+}
+
+.product-filter-page-filter-sex {
+  height: fit-content;
+  width: 100%;
+  gap: 7px;
+}
+
+.app-checkbox {
+  width: fit-content;
+  height: fit-content;
+  background: var(--tg-theme-secondary-bg-color);
+  border-radius: 25px;
+}
+
+/*# sourceMappingURL=product-filter-page.component.css.map */

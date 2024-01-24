@@ -22,9 +22,7 @@
   height: 100vh;
   width: 100vw;
   gap: 1.5%;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-bottom: 40px;
+  padding: 0 3% 40px;
   overflow-y: scroll;
   overflow-x: hidden;
   z-index: 0;
