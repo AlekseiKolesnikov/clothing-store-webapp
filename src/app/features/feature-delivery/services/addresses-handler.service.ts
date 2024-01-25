@@ -35,7 +35,7 @@ export class AddressesHandlerService {
       ).subscribe(value => {
         const itemValue = value.map(item => item.value)
         if (itemValue === null || itemValue === undefined) {
-          throw new Error('Данные не были получены. Пожалуйста перезагрузите страницу.')
+          throw new Error('Data was not received. Please reload the page.')
         } else {
           this.addressesArray = value
         }
