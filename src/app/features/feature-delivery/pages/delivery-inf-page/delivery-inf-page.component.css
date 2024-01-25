@@ -12,16 +12,16 @@
   flex-direction: column;
 }
 
-.personal-data-fields-box, .delivery-options-data-box, .delivery-options-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .delivery-options-icons-box {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.personal-data-fields-box, .delivery-options-data-box, .delivery-options-box {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
