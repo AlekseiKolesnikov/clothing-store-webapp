@@ -1,7 +1,7 @@
 <div class="product-filter-page-wrapper">
   <div class="product-filter-page-filter-label-box">
     <div class="product-filter-page-filter-label">
-      <p>Фильтры</p>
+      <p>Filters</p>
     </div>
     <div
       class="product-filter-page-filter-back-button"
@@ -15,10 +15,10 @@
   </div>
 
   <div class="product-filter-page-filter-price-box">
-    <div class="product-filter-page-filter-price-label">Цена, $</div>
+    <div class="product-filter-page-filter-price-label">Price, $</div>
     <div class="product-filter-page-filter-price-inputs">
       <div class="product-filter-page-filter-price-input">
-        <label for="price-from">От</label>
+        <label for="price-from">From</label>
         <input
           (input)="onSubmit($event, FROM_PRICE_INPUT_OPTION)"
           [value]="filterPriceFrom"
@@ -29,7 +29,7 @@
         >
       </div>
       <div class="product-filter-page-filter-price-input">
-        <label for="price-to">До</label>
+        <label for="price-to">To</label>
         <input
           (input)="onSubmit($event, TO_PRICE_INPUT_OPTION)"
           [value]="filterPriceTo"
@@ -59,14 +59,14 @@
         (buttonClick)="click($event)"
         [inputValue]="MALE_CLOTHING_INPUT_TYPE"
         class="app-checkbox"
-        inputText="Мужская одежда"
+        inputText="Men's clothing"
       />
       <app-checkbox
         (touchend)="touch($event)"
         (buttonClick)="click($event)"
         class="app-checkbox"
         [inputValue]="FEMALE_CLOTHING_INPUT_TYPE"
-        inputText="Женская одежда"
+        inputText="Women's clothing"
       />
     </div>
   </div>

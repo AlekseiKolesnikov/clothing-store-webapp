@@ -35,7 +35,7 @@
 }
 
 .delivery-options-icons-box {
-  @extend %space-between-row-center-flex;
+  @extend %start-row-center-flex;
   gap: 3%;
   padding: 0 3%;
   z-index: $middle-z-index;

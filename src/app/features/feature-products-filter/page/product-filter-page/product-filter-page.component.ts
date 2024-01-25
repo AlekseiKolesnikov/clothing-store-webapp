@@ -49,7 +49,7 @@ export class ProductFilterPageComponent extends BaseComponent implements OnInit,
     ).subscribe(value => {
       this.filterOptionsArray = value
     })
-    this.telegramMainButtonModel.showMainButton('Применить фильтр')
+    this.telegramMainButtonModel.showMainButton('Apply a filter')
     window.addEventListener(
       "message",
       (event) => {

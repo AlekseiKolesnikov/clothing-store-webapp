@@ -1,8 +1,8 @@
 <div class="personal-delivery-inf-box __profile-blocks">
-  <h2>Данные доставки</h2>
+  <h2>Delivery details</h2>
   <div class="delivery-inf-text-box __common_size">
-    <p>Чтобы не вводить каждый раз после заказа.</p>
-    <p>Но если нужно будет заказать какой-то заказ в другое место — не проблема.</p>
+    <p>So as not to enter it every time after the order.</p>
+    <p>But if you need to order to another place, it's not a problem.</p>
   </div>
 
   <div class="delivery-inf-data-box">
@@ -10,14 +10,14 @@
       <div
         class="__delivery-inf-field"
       >
-        <div class="delivery-inf-label">ФИО получателя</div>
+        <div class="delivery-inf-label">Recipient's full name</div>
         <div class="delivery-inf-data">{{fullName | truncate: 25}}</div>
       </div>
 
       <div
         class="__delivery-inf-field"
       >
-        <div class="delivery-inf-label">Телефон</div>
+        <div class="delivery-inf-label">Phone number</div>
         <div class="delivery-inf-data">{{phoneNumber | truncate: 25}}</div>
       </div>
 
@@ -25,14 +25,14 @@
         <div
           class="__delivery-inf-field"
         >
-          <div class="delivery-inf-label">Город</div>
+          <div class="delivery-inf-label">City</div>
           <div class="delivery-inf-data">{{city | truncate: 25}}</div>
         </div>
 
         <div
           class="__delivery-inf-field"
         >
-          <div class="delivery-inf-label">Адресс</div>
+          <div class="delivery-inf-label">Address</div>
           <div class="delivery-inf-data">{{address | truncate: 25}}</div>
         </div>
       </ng-container>
@@ -49,7 +49,7 @@
     <button
       (click)="onClick()"
       class="delivery-inf-button"
-    >Редактировать
+    >Edit
     </button>
   </div>
 </div>

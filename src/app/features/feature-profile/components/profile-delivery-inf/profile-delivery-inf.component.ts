@@ -26,7 +26,7 @@ export class ProfileDeliveryInfComponent {
   protected fullName: string
   protected phoneNumber: string
   protected deliveryData$: Subscription
-  private readonly defaultInputValue: string = "Не указан"
+  private readonly defaultInputValue: string = "Not specified"
 
   constructor(
     private router: Router,

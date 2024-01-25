@@ -3,9 +3,9 @@ import {from, map, mergeMap, Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {SizeOptionStateService} from "../../services/size-option-state.service";
 import {SIZE_TABLE_PAGE} from "../../../../shared/data/app-routes";
-import {IProductInf, ProductPageInfService} from "../../services/product-page-inf.service";
+import {ProductPageInfService} from "../../services/product-page-inf.service";
 import {ProductsStoreService} from "../../services/api/products-store.service";
-import {ISize} from "../../../../shared/interfaces/product-interfaces";
+import {IProductInf, ISize} from "../../../../shared/interfaces/product-interfaces";
 
 @Component({
   selector: 'app-product-page',

@@ -6,9 +6,9 @@ import {ISize} from "../../../shared/interfaces/product-interfaces";
 })
 export class FilterOptionsDataService {
   private readonly filterOptionsData = [
-    {text: "По популярности", isSelected: false},
-    {text: "Сначала дешевые", isSelected: false},
-    {text: "Сначала дорогие", isSelected: false}
+    {text: "By popularity", isSelected: false},
+    {text: "Cheap first", isSelected: false},
+    {text: "Expensive first", isSelected: false}
   ]
   private readonly selectedFilterOption: number[] = [0]
 
