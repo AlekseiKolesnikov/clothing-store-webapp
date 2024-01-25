@@ -54,7 +54,7 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.telegramMainButton.showMainButton("Сохранить")
+    this.telegramMainButton.showMainButton("Save")
     this.dataLocalStoreService.subscribe()
     window.addEventListener(
       "message",
