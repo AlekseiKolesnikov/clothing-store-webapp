@@ -1,8 +1,5 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {
-  MAIN_BUTTON_POST_EVENT_LISTENER,
-  TelegramMainButtonModel
-} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
+import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {DeliveryOptionStateService} from "../../services/delivery-option-state.service";
 import {from, mergeMap, Subscription, tap} from "rxjs";
 import {DeliveryDataService} from "../../services/delivery-data.service";
@@ -10,7 +7,7 @@ import {DataLocalStoreService} from "../../services/data-local-store.service";
 import {LocalStorageDataCheckService} from "../../services/local-storage-data-check.service";
 import {DELIVERY_ADDRESS_KEY, DELIVERY_CITY_KEY} from "../../../../shared/data/local-storage-keys";
 import {IDeliveryOptions} from "../../../../shared/interfaces/delivery-interfaces";
-
+export const MAIN_BUTTON_DELIVERY_POST_EVENT_LISTENER = "setData"
 @Component({
   selector: 'app-delivery-inf-page',
   templateUrl: './delivery-inf-page.component.html',
@@ -54,12 +51,12 @@ export class DeliveryInfPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.telegramMainButton.showMainButton("Save")
+    this.telegramMainButton.showMainButton("Save", MAIN_BUTTON_DELIVERY_POST_EVENT_LISTENER)
     this.dataLocalStoreService.subscribe()
     window.addEventListener(
       "message",
       (event) => {
-        if (event.data === MAIN_BUTTON_POST_EVENT_LISTENER) {
+        if (event.data === MAIN_BUTTON_DELIVERY_POST_EVENT_LISTENER) {
           this.dataLocalStoreService.storeData()
         }
       }
