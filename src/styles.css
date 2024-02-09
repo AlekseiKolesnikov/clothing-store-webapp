@@ -15,7 +15,7 @@ body {
   line-height: 1;
   font-size: 16px;
   display: block;
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;

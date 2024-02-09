@@ -1,73 +1,76 @@
-<div class="product-filter-page-wrapper">
-  <div class="product-filter-page-filter-label-box">
-    <div class="product-filter-page-filter-label">
-      <p>Filters</p>
-    </div>
-    <div
-      class="product-filter-page-filter-back-button"
-      (click)="goBackButton()"
-    >
-      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 5 5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round"></path>
-      </svg>
-    </div>
-  </div>
-
-  <div class="product-filter-page-filter-price-box">
-    <div class="product-filter-page-filter-price-label">Price, $</div>
-    <div class="product-filter-page-filter-price-inputs">
-      <div class="product-filter-page-filter-price-input">
-        <label for="price-from">From</label>
-        <input
-          (input)="onSubmit($event, FROM_PRICE_INPUT_OPTION)"
-          [value]="filterPriceFrom"
-          type="text"
-          placeholder="0"
-          id="price-from"
-          maxlength="4"
-        >
+<div class="center-flex-product-filter-page-wrapper">
+  <div class="product-filter-page-wrapper">
+    <div class="product-filter-page-filter-label-box">
+      <div class="product-filter-page-filter-label">
+        <p>Filters</p>
       </div>
-      <div class="product-filter-page-filter-price-input">
-        <label for="price-to">To</label>
-        <input
-          (input)="onSubmit($event, TO_PRICE_INPUT_OPTION)"
-          [value]="filterPriceTo"
-          type="text"
-          placeholder="110"
-          id="price-to"
-          maxlength="4"
-        >
+      <div
+        (click)="goBackButton()"
+        class="product-filter-page-filter-back-button"
+      >
+        <svg fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 5 5 15M5 5l10 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5"></path>
+        </svg>
       </div>
     </div>
-  </div>
 
-  <div class="product-filter-page-filter-options-box">
-    <app-filter-option
-      *ngFor="let filter of filterOptionsArray; index as i"
-      [text]="filter.text"
-      [isSelected]="filter.isSelected"
-      [elementIndex]="i"
-    />
-  </div>
+    <div class="product-filter-page-filter-price-box">
+      <div class="product-filter-page-filter-price-label">Price, $</div>
+      <div class="product-filter-page-filter-price-inputs">
+        <div class="product-filter-page-filter-price-input">
+          <label for="price-from">From</label>
+          <input
+            (input)="onSubmit($event, FROM_PRICE_INPUT_OPTION)"
+            [value]="filterPriceFrom"
+            id="price-from"
+            maxlength="4"
+            placeholder="0"
+            type="text"
+          >
+        </div>
+        <div class="product-filter-page-filter-price-input">
+          <label for="price-to">To</label>
+          <input
+            (input)="onSubmit($event, TO_PRICE_INPUT_OPTION)"
+            [value]="filterPriceTo"
+            id="price-to"
+            maxlength="4"
+            placeholder="110"
+            type="text"
+          >
+        </div>
+      </div>
+    </div>
 
-  <div class="product-filter-page-filter-sex-box">
-    <div class="product-filter-page-filter-sex-label">Пол</div>
-    <div class="product-filter-page-filter-sex">
-      <app-checkbox
-        (touchend)="touch($event)"
-        (buttonClick)="click($event)"
-        [inputValue]="MALE_CLOTHING_INPUT_TYPE"
-        class="app-checkbox"
-        inputText="Men's clothing"
+    <div class="product-filter-page-filter-options-box">
+      <app-filter-option
+        *ngFor="let filter of filterOptionsArray; index as i"
+        [elementIndex]="i"
+        [isSelected]="filter.isSelected"
+        [text]="filter.text"
       />
-      <app-checkbox
-        (touchend)="touch($event)"
-        (buttonClick)="click($event)"
-        class="app-checkbox"
-        [inputValue]="FEMALE_CLOTHING_INPUT_TYPE"
-        inputText="Women's clothing"
-      />
+    </div>
+
+    <div class="product-filter-page-filter-sex-box">
+      <div class="product-filter-page-filter-sex-label">Пол</div>
+      <div class="product-filter-page-filter-sex">
+        <app-checkbox
+          (buttonClick)="click($event)"
+          (touchend)="touch($event)"
+          [inputValue]="MALE_CLOTHING_INPUT_TYPE"
+          class="app-checkbox"
+          inputText="Men's clothing"
+        />
+        <app-checkbox
+          (buttonClick)="click($event)"
+          (touchend)="touch($event)"
+          [inputValue]="FEMALE_CLOTHING_INPUT_TYPE"
+          class="app-checkbox"
+          inputText="Women's clothing"
+        />
+      </div>
     </div>
   </div>
 </div>
+

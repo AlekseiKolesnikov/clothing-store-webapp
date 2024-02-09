@@ -1,13 +1,16 @@
-<div
-  class="filtered-product-list-page-wrapper"
-  (scroll)="onScroll($event)"
->
-  <app-products-list
-    class="products-list-component"
-    [productsArray]="productsArray"
-  />
-  <app-loader
-    *ngIf="isLoaderVisible"
-    class="app-loader"
-  />
+<div class="center-flex-filtered-product-list-page-wrapper">
+  <div
+    class="filtered-product-list-page-wrapper"
+    (scroll)="onScroll($event)"
+  >
+    <app-products-list
+      class="products-list-component"
+      [productsArray]="productsArray"
+    />
+    <app-loader
+      *ngIf="isLoaderVisible"
+      class="app-loader"
+    />
+  </div>
 </div>
+

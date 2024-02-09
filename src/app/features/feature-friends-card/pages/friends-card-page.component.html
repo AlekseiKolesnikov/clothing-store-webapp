@@ -1,63 +1,65 @@
-<div class="friends-card-page-wrapper">
-  <div class="friends-card-page-friends-inf-box __friends-card-page-common-style">
-    <div class="friends-card-page-friends-emoji-box">
-      <app-friends-page-emoji
-        *ngFor="let item of emojisArray"
-        [backgroundColor]="item.backgroundColor"
-        [class]="item.className"
-        [emojiAlt]="item.name"
-        [emoji]="item.image"
-        [width]="item.width"
-        class="__emoji_common_styles"
-      />
+<div class="center-flex-friends-card-page-wrapper">
+  <div class="friends-card-page-wrapper">
+    <div class="friends-card-page-friends-inf-box __friends-card-page-common-style">
+      <div class="friends-card-page-friends-emoji-box">
+        <app-friends-page-emoji
+          *ngFor="let item of emojisArray"
+          [backgroundColor]="item.backgroundColor"
+          [class]="item.className"
+          [emojiAlt]="item.name"
+          [emoji]="item.image"
+          [width]="item.width"
+          class="__emoji_common_styles"
+        />
+      </div>
+      <div class="friends-card-page-friends-text-box">
+        <h1>
+          Invite friends! We give <span class="__gradient_span">500 dollars</span> each!
+        </h1>
+        <p class="inf-box-first-text">
+          Get <span class="__gradient_span">500 points</span> for each invitation from your referral link.
+          Your friend will also get <span class="__gradient_span">500 points.</span>
+        </p>
+        <br>
+        <p class="inf-box-second-text">
+          <span class="__gradient_span">1 point</span><span class="bold-span"> = 1 dollar.</span><br>
+          Points can be used to pay for up to 100% of purchases.
+        </p>
+      </div>
+      <div class="inf-box-second-third-box">
+        <p class="inf-box-third-text-1">
+          Points are awarded after the order of the user who clicked on the referral link has been sent to Russia.
+        </p>
+        <br>
+        <p class="inf-box-third-text-2">
+          The promotion is valid until November 1st. After November 1, you will receive <span class="__gradient_span">+250 points</span>
+          for an invited friend, and nothing will be credited to the friend.
+        </p>
+      </div>
     </div>
-    <div class="friends-card-page-friends-text-box">
-      <h1>
-        Invite friends! We give <span class="__gradient_span">500 dollars</span> each!
-      </h1>
-      <p class="inf-box-first-text">
-        Get <span class="__gradient_span">500 points</span> for each invitation from your referral link.
-        Your friend will also get <span class="__gradient_span">500 points.</span>
-      </p>
-      <br>
-      <p class="inf-box-second-text">
-        <span class="__gradient_span">1 point</span><span class="bold-span"> = 1 dollar.</span><br>
-        Points can be used to pay for up to 100% of purchases.
-      </p>
-    </div>
-    <div class="inf-box-second-third-box">
-      <p class="inf-box-third-text-1">
-        Points are awarded after the order of the user who clicked on the referral link has been sent to Russia.
-      </p>
-      <br>
-      <p class="inf-box-third-text-2">
-        The promotion is valid until November 1st. After November 1, you will receive <span class="__gradient_span">+250 points</span>
-        for an invited friend, and nothing will be credited to the friend.
-      </p>
-    </div>
-  </div>
-  <div class="friends-card-page-invite-inf-box __friends-card-page-common-style">
-    <div class="friends-card-page-invite-inf-box-block">
-      <h3>Your link to the invitation</h3>
-      <p class="friends-card-page-link">https://t.me/sneakerheadru</p>
-    </div>
-    <div class="friends-card-page-button-box">
-      <button
-        class="friends-card-page-button"
-        copyClipboard="https://t.me/sneakerheadru"
-        (click)="copyClick()"
-      >Copy <span *ngIf="checkMarkState">✅</span></button>
-    </div>
-    <div class="friends-card-page-table-box">
-      <app-friends-card-page-table
-        *ngFor="let item of friendsStatisticsData"
-        [text]="item.text"
-        [amount]="item.amount"
-        class="friends-card-page-table"
-      />
-    </div>
-    <div class="friends-card-page-history-box">
-      <p>So far, you don't have a history of scoring points.</p>
+    <div class="friends-card-page-invite-inf-box __friends-card-page-common-style">
+      <div class="friends-card-page-invite-inf-box-block">
+        <h3>Your link to the invitation</h3>
+        <p class="friends-card-page-link">https://t.me/sneakerheadru</p>
+      </div>
+      <div class="friends-card-page-button-box">
+        <button
+          (click)="copyClick()"
+          class="friends-card-page-button"
+          copyClipboard="https://t.me/sneakerheadru"
+        >Copy <span *ngIf="checkMarkState">✅</span></button>
+      </div>
+      <div class="friends-card-page-table-box">
+        <app-friends-card-page-table
+          *ngFor="let item of friendsStatisticsData"
+          [amount]="item.amount"
+          [text]="item.text"
+          class="friends-card-page-table"
+        />
+      </div>
+      <div class="friends-card-page-history-box">
+        <p>So far, you don't have a history of scoring points.</p>
+      </div>
     </div>
   </div>
 </div>

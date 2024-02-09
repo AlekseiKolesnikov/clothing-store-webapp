@@ -30,7 +30,7 @@
 }
 
 .color-frame {
-  background: var(--tg-theme-button-color);
+  background: rgb(0, 124, 255);
 }
 
 .empty-frame {
@@ -42,14 +42,14 @@
   width: 50px;
   padding: 5px 7px;
   border-radius: 9px;
-  background: var(--tg-theme-secondary-bg-color);
-  border: var(--tg-theme-bg-color) 3px solid;
+  background: #333332;
+  border: #050505 3px solid;
   gap: 7px;
   cursor: pointer;
 }
 
 .size-icon-text {
-  color: var(--tg-theme-text-color);
+  color: #fff;
   display: inline-block;
   height: fit-content;
   width: fit-content;

@@ -1,61 +1,64 @@
-<div class="product-page-wrapper">
-  <div class="product-page-image-inf-box">
-    <div class="product-page-image-box">
-      <img class="product-page-image" src="{{productImage}}" alt="{{productTitle}}">
-    </div>
-    <div class="product-page-image-rating-box">
-      <div class="product-page-image-rating">
-        <div class="product-page-image-rating-star-box">
-          <img src="assets/images/ui-icons/star-icon.svg" alt="star-icon">
-        </div>
-        <div class="product-page-image-rating-number">{{ productRating }}</div>
+<div class="center-flex-product-page-wrapper">
+  <div class="product-page-wrapper">
+    <div class="product-page-image-inf-box">
+      <div class="product-page-image-box">
+        <img alt="{{productTitle}}" class="product-page-image" src="{{productImage}}">
       </div>
-    </div>
-    <div class="product-page-image-label-box">
-      <div class="product-page-image-label">{{ productTitle }}</div>
-    </div>
-  </div>
-  <div class="product-page-product-inf-wrapper">
-    <div class="product-page-product-inf-box">
-      <div class="product-page-product-price-box">
-        <div class="product-page-product-price-border">
-          <div class="product-page-product-price">{{ productPrice | currency }}</div>
+      <div class="product-page-image-rating-box">
+        <div class="product-page-image-rating">
+          <div class="product-page-image-rating-star-box">
+            <img alt="star-icon" src="assets/images/ui-icons/star-icon.svg">
+          </div>
+          <div class="product-page-image-rating-number">{{ productRating }}</div>
         </div>
       </div>
-      <div class="product-page-product-sizes-box">
-        <div class="product-page-product-sizes-inf-box">
-          <div class="product-page-product-size-label-box">Size</div>
-          <div class="product-page-product-size-table-box">
-            <a routerLink="/{{SIZE_TABLE_PAGE}}">Size table</a>
+      <div class="product-page-image-label-box">
+        <div class="product-page-image-label">{{ productTitle }}</div>
+      </div>
+    </div>
+    <div class="product-page-product-inf-wrapper">
+      <div class="product-page-product-inf-box">
+        <div class="product-page-product-price-box">
+          <div class="product-page-product-price-border">
+            <div class="product-page-product-price">{{ productPrice | currency }}</div>
           </div>
         </div>
-        <div class="size-options-icons-box">
-          <app-product-sizes
-            *ngFor="let item of sizeIconData; index as i"
-            [elementIndex]="i"
-            [text]="item.text"
-            [isSelected]="item.isSelected"
-          />
+        <div class="product-page-product-sizes-box">
+          <div class="product-page-product-sizes-inf-box">
+            <div class="product-page-product-size-label-box">Size</div>
+            <div class="product-page-product-size-table-box">
+              <a routerLink="/{{SIZE_TABLE_PAGE}}">Size table</a>
+            </div>
+          </div>
+          <div class="size-options-icons-box">
+            <app-product-sizes
+              *ngFor="let item of sizeIconData; index as i"
+              [elementIndex]="i"
+              [isSelected]="item.isSelected"
+              [text]="item.text"
+            />
+          </div>
         </div>
-      </div>
-      <div class="product-page-product-description-box">
-        <div class="product-page-product-description-border">
-          <div class="product-page-product-description-label">Description</div>
-          <p class="product-page-product-description-text">{{ productDescription }}</p>
+        <div class="product-page-product-description-box">
+          <div class="product-page-product-description-border">
+            <div class="product-page-product-description-label">Description</div>
+            <p class="product-page-product-description-text">{{ productDescription }}</p>
+          </div>
         </div>
       </div>
     </div>
+    <div class="product-page-articles-box">
+      <div class="product-page-articles-label">Useful information</div>
+      <app-articles class="articles-component"/>
+    </div>
+    <app-folded-inf-box
+      *ngFor="let item of productPageInfData; index as i"
+      [index]="i"
+      [isFolded]="item.isFolded"
+      [text]="item.text"
+      [title]="item.title"
+      class="app-folded-inf-box"
+    />
   </div>
-  <div class="product-page-articles-box">
-    <div class="product-page-articles-label">Useful information</div>
-    <app-articles class="articles-component"/>
-  </div>
-  <app-folded-inf-box
-    *ngFor="let item of productPageInfData; index as i"
-    class="app-folded-inf-box"
-    [title]="item.title"
-    [text]="item.text"
-    [isFolded]="item.isFolded"
-    [index]="i"
-  />
 </div>
+

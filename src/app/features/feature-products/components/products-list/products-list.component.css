@@ -51,21 +51,21 @@
 
 .product-list-label {
   font: 900 26px/1 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
 }
 
 .product-list-search-icon {
   cursor: pointer;
   width: 25px;
   height: 25px;
-  color: var(--tg-theme-text-color);
+  color: #fff;
 }
 
 .product-list-filter-icon {
   cursor: pointer;
   width: 25px;
   height: 25px;
-  color: var(--tg-theme-text-color);
+  color: #fff;
 }
 
 /*# sourceMappingURL=products-list.component.css.map */

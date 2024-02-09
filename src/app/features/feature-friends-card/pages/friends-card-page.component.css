@@ -1,4 +1,4 @@
-.friends-card-page-friends-emoji-box {
+.friends-card-page-friends-emoji-box, .center-flex-friends-card-page-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,13 +18,19 @@
   justify-content: space-between;
 }
 
+.center-flex-friends-card-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
 .friends-card-page-wrapper {
   width: 100%;
   height: 100%;
-  background: var(--tg-theme-secondary-bg-color);
+  max-width: 500px;
+  background: #333332;
   overflow-y: scroll;
   overflow-x: hidden;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   font: 400 16px/1.2 "Mulish", sans-serif;
 }
 
@@ -48,7 +54,7 @@
 .__friends-card-page-common-style {
   width: 100%;
   padding: 0 4%;
-  background: var(--tg-theme-bg-color);
+  background: #050505;
   text-align: left;
 }
 
@@ -74,7 +80,7 @@
   font: 400 16px/1.2 "Mulish", sans-serif;
   padding: 4%;
   border-radius: 25px;
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   margin-bottom: 4%;
 }
 
@@ -97,7 +103,7 @@
   margin-bottom: 4%;
 }
 .friends-card-page-invite-inf-box .friends-card-page-invite-inf-box-block .friends-card-page-link {
-  background: var(--tg-theme-accent-text-color);
+  background: rgb(0, 124, 255);
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(0, 0, 0, 0);
   background-clip: text;
@@ -112,18 +118,18 @@
 .friends-card-page-invite-inf-box .friends-card-page-button {
   width: 100%;
   height: 100%;
-  background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-accent-text-color);
+  background: #050505;
+  color: rgb(0, 124, 255);
   font: 400 16px/1.2 "Mulish", sans-serif;
   border-radius: 1em;
-  border: var(--tg-theme-hint-color) solid 1px;
+  border: #7a7676 solid 1px;
 }
 
 .friends-card-page-history-box {
   width: 100%;
   height: fit-content;
   font-size: 12px;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
 }
 
 .friends-card-page-table-box {
@@ -131,7 +137,7 @@
   height: fit-content;
   padding: 5%;
   font: 400 16px/1.2 "Mulish", sans-serif;
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   border-radius: 25px;
   margin-bottom: 2%;
   gap: 10px;

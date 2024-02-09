@@ -1,57 +1,59 @@
-<div class="wrapper delivery-inf-page-wrapper">
-  <div class="delivery-inf-page-label">
-    <p>Delivery data</p>
-  </div>
-  <div class="delivery-options-box">
-    <div class="delivery-options-label">
-      <p>Delivery options</p>
+<div class="wrapper-center-flex">
+  <div class="wrapper delivery-inf-page-wrapper">
+    <div class="delivery-inf-page-label">
+      <p>Delivery data</p>
     </div>
-    <div
-      class="delivery-options-icons-box"
-    >
-      <app-delivery-icons
-        *ngFor="let item of deliveryIconData; index as i"
-        [icon]="item.icon"
-        [iconName]="item.iconName"
-        [text]="item.text"
-        [elementIndex]="i"
-        [isSelected]="item.isSelected"
-        class="delivery-options-icon"
+    <div class="delivery-options-box">
+      <div class="delivery-options-label">
+        <p>Delivery options</p>
+      </div>
+      <div
+        class="delivery-options-icons-box"
+      >
+        <app-delivery-icons
+          *ngFor="let item of deliveryIconData; index as i"
+          [icon]="item.icon"
+          [iconName]="item.iconName"
+          [text]="item.text"
+          [elementIndex]="i"
+          [isSelected]="item.isSelected"
+          class="delivery-options-icon"
+        />
+      </div>
+      <div class="delivery-options-data-box">
+        <app-pickup-store
+          *ngIf="buttonOption === 0"
+          class="app-pickup-store"
+        />
+        <app-distribution
+          *ngIf="buttonOption === 1"
+          [address]="address"
+          [cityName]="city"
+          [cityIsEmpty]="cityFieldIsEmpty()"
+          [addressIsEmpty]="addressFieldIsEmpty()"
+          class="app-distribution"
+        />
+      </div>
+    </div>
+    <div class="personal-data-fields-box">
+      <div class="delivery-options-label">
+        <p>Recipient's personal data</p>
+      </div>
+      <app-personal-data-field
+        class="app-personal-full-name"
+        idName="name"
+        inputType="text"
+        title="Full name"
+        [maxLength]="100"
+      />
+      <app-personal-data-field
+        class="app-personal-phone-number"
+        idName="phone"
+        inputType="tel"
+        title="Phone number"
+        [maxLength]="14"
       />
     </div>
-    <div class="delivery-options-data-box">
-      <app-pickup-store
-        *ngIf="buttonOption === 0"
-        class="app-pickup-store"
-      />
-      <app-distribution
-        *ngIf="buttonOption === 1"
-        [address]="address"
-        [cityName]="city"
-        [cityIsEmpty]="cityFieldIsEmpty()"
-        [addressIsEmpty]="addressFieldIsEmpty()"
-        class="app-distribution"
-      />
-    </div>
   </div>
-  <div class="personal-data-fields-box">
-    <div class="delivery-options-label">
-      <p>Recipient's personal data</p>
-    </div>
-    <app-personal-data-field
-      class="app-personal-full-name"
-      idName="name"
-      inputType="text"
-      title="Full name"
-      [maxLength]="100"
-    />
-    <app-personal-data-field
-      class="app-personal-phone-number"
-      idName="phone"
-      inputType="tel"
-      title="Phone number"
-      [maxLength]="14"
-    />
-  </div>
-
 </div>
+

@@ -1,28 +1,31 @@
-<div class="points-card-page-wrapper">
-  <div class="points-card-page-points-inf-box">
-    <div class="points-card-page-gradient-box">
-      <div class="points-card-page-points-box">
-        <div class="points-card-page-points">
-          <p>{{pointsAmount}}</p>
+<div class="center-flex-points-card-page-wrapper">
+  <div class="points-card-page-wrapper">
+    <div class="points-card-page-points-inf-box">
+      <div class="points-card-page-gradient-box">
+        <div class="points-card-page-points-box">
+          <div class="points-card-page-points">
+            <p>{{ pointsAmount }}</p>
+          </div>
+          <div class="points-card-page-points-text">
+            <p>points</p>
+          </div>
         </div>
-        <div class="points-card-page-points-text">
-          <p>points</p>
+        <div class="points-card-page-currency">$</div>
+      </div>
+      <div class="points-card-page-info-box">
+        <div class="points-card-page-info-box-description">
+          Then you will receive <span>+50 points</span> for each completed order.
+          Details <a routerLink="/{{MAIN_PAGE}}">in the profile</a>.
+        </div>
+        <div class="points-card-page-info-box-calculation">
+          When placing an order, you can spend the accumulated points. 1 point = 1 $.
         </div>
       </div>
-      <div class="points-card-page-currency">$</div>
     </div>
-    <div class="points-card-page-info-box">
-      <div class="points-card-page-info-box-description">
-        Then you will receive <span>+50 points</span> for each completed order.
-        Details <a routerLink="/{{MAIN_PAGE}}">in the profile</a>.
-      </div>
-      <div class="points-card-page-info-box-calculation">
-        When placing an order, you can spend the accumulated points. 1 point = 1 $.
-      </div>
+    <div class="points-card-page-points-history-box">
+      <p class="points-card-page-points-history-label">Score history</p>
+      <div class="points-card-page-points-history">So far, you don't have a history of scoring points.</div>
     </div>
-  </div>
-  <div class="points-card-page-points-history-box">
-    <p class="points-card-page-points-history-label">Score history</p>
-    <div class="points-card-page-points-history">So far, you don't have a history of scoring points.</div>
   </div>
 </div>
+

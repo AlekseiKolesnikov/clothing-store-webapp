@@ -4,7 +4,7 @@
 .personal-delivery-inf-box {
   @extend %start-column-center-flex;
   gap: 14px;
-
+  width: 100%;
   h2 {
     font: $heading-text;
     margin-bottom: 2%;

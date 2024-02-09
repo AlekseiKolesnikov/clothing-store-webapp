@@ -28,20 +28,20 @@
   height: fit-content;
   font-family: "Mulish", sans-serif;
   font-weight: 400;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
 }
 
 .delivery-input-data {
   width: fit-content;
   height: fit-content;
   font: 400 16px/1.2 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
 }
 
 .delivery-input-arrow {
   width: 20px;
   height: 20px;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
 }
 
 /*# sourceMappingURL=delivery-input.component.css.map */
