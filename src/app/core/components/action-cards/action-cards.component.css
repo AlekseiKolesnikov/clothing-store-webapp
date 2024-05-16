@@ -57,7 +57,7 @@
 .order-card-component {
   width: 48%;
   height: 100%;
-  background: var(--tg-theme-button-color);
+  background: rgb(0, 124, 255);
 }
 
 .friends-card-component {

@@ -6,7 +6,11 @@ import {ISearchData} from "../../../../shared/interfaces/delivery-interfaces";
 @Component({
   selector: 'app-distribution-points-page',
   templateUrl: './distribution-points-page.component.html',
-  styleUrls: ['./distribution-points-page.component.scss'],
+  styleUrls: [
+    './distribution-points-page.component.scss',
+    './../../../../core/page/main-page.component.scss',
+    './../distribution-address-page/distribution-address-page.component.scss'
+  ],
   encapsulation: ViewEncapsulation.None
 })
 export class DistributionPointsPageComponent implements OnDestroy {

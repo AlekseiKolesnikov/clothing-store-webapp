@@ -21,6 +21,7 @@
 
 .personal-delivery-inf-box {
   gap: 14px;
+  width: 100%;
 }
 .personal-delivery-inf-box h2 {
   font: 900 26px/1 "Mulish", sans-serif;
@@ -37,7 +38,7 @@
 }
 .__delivery-inf-field .delivery-inf-data {
   width: fit-content;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
 }
 
 .delivery-inf-text-box {
@@ -59,11 +60,11 @@
 .delivery-inf-button {
   width: 100%;
   height: 100%;
-  background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-button-text-color);
+  background: #050505;
+  color: #fff;
   font: 400 16px/1.2 "Mulish", sans-serif;
   border-radius: 1em;
-  border: var(--tg-theme-hint-color) solid 1px;
+  border: #7a7676 solid 1px;
   cursor: pointer;
 }
 

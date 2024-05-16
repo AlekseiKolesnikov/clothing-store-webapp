@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {BaseComponent} from "../../../../shared/models/base-component.model";
-import {Router} from "@angular/router";
 import {NavigateFeedbackModel} from "../../../../shared/models/telegram-ui/navigate-feedback-model";
 import {FRIENDS_CARD_PAGE} from "../../../../shared/data/app-routes";
 
@@ -12,7 +11,6 @@ import {FRIENDS_CARD_PAGE} from "../../../../shared/data/app-routes";
 })
 export class FriendsCardComponent extends BaseComponent {
   constructor(
-    private readonly router: Router,
     private readonly hapticFeedback: NavigateFeedbackModel
   ) {
     super();

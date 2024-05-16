@@ -1,9 +1,16 @@
 @import "../../../styles/variables";
 @import "../../../styles/flex.patterns";
 
-.points-card-page-wrapper {
-  width: 100vw;
+.center-flex-points-card-page-wrapper {
+  @extend %center-flex;
   height: 100vh;
+  width: 100vw;
+}
+
+.points-card-page-wrapper {
+  width: 100%;
+  height: 100vh;
+  max-width: $max-width;
   background: $tg-background;
   font: $main-text;
   color: $text-tg-color;

@@ -1,7 +1,8 @@
 .app-delivery-data-search {
-  width: 100vw;
+  width: 100%;
+  max-width: 500px;
   height: 100vh;
-  background: var(--tg-theme-bg-color);
+  background: #050505;
 }
 
 /*# sourceMappingURL=distribution-address-page.component.css.map */

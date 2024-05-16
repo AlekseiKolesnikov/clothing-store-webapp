@@ -18,7 +18,7 @@
   line-height: 32px;
 }
 .personal-status-box h2 span {
-  color: var(--tg-theme-accent-text-color);
+  color: rgb(0, 124, 255);
 }
 
 .points-description span {
@@ -28,7 +28,7 @@
 }
 
 .status-rules {
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   padding: 4%;
   border-radius: 1.5em;
 }

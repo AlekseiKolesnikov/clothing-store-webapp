@@ -38,7 +38,7 @@
   align-items: start;
   background: none;
   font-family: "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   gap: 4%;
 }
 
@@ -72,8 +72,8 @@
   width: fit-content;
   font: 400 10px "Mulish", sans-serif;
   padding: 1% 3%;
-  color: var(--tg-theme-bg-color);
-  background: var(--tg-theme-text-color);
+  color: #050505;
+  background: #fff;
   border-radius: 0.5em;
 }
 

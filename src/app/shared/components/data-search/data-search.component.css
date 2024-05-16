@@ -22,7 +22,8 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background: var(--tg-theme-bg-color);
+  max-width: 500px;
+  background: #050505;
 }
 
 .delivery-data-component-searchbar-box {
@@ -30,7 +31,7 @@
   top: 0;
   width: 100%;
   height: fit-content;
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   padding: 5px 10px;
 }
 
@@ -38,15 +39,15 @@
   width: fit-content;
   height: fit-content;
   font: 400 12px/1 "Mulish", sans-serif;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
 }
 
 .delivery-data-component-searchbar-input {
   width: 100%;
   height: 40px;
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   font: 400 16px/1.2 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
 }
 
 .delivery-data-component-loader-box {
@@ -79,7 +80,7 @@
   height: fit-content;
   padding: 20px 10px 8px;
   font: 400 16px/1.2 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   border-bottom: 0.01px solid rgba(166, 166, 166, 0.26);
   background-clip: padding-box;
   cursor: pointer;

@@ -2,10 +2,11 @@
 @import "../../../styles/flex.patterns";
 
 .delivery-data-wrapper {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: $tg-background;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: $max-width;
+  background: $tg-background;
 }
 
 .delivery-data-component-searchbar-box {

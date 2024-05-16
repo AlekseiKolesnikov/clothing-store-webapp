@@ -1,3 +1,9 @@
+.center-flex-product-filter-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .product-filter-page-wrapper {
   display: flex;
   align-items: center;
@@ -44,14 +50,20 @@
     transform: scale(0.97, 0.97);
   }
 }
-.product-filter-page-wrapper {
+.center-flex-product-filter-page-wrapper {
   height: 100vh;
   width: 100vw;
+}
+
+.product-filter-page-wrapper {
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
   gap: 1.5%;
   padding: 0 3% 40px;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: var(--tg-theme-bg-color);
+  background: #050505;
 }
 
 .product-filter-page-filter-label-box {
@@ -64,14 +76,14 @@
   width: fit-content;
   height: fit-content;
   font: 900 20px/1 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   padding-bottom: 2px;
 }
 
 .product-filter-page-filter-back-button {
   width: 20px;
   height: 20px;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   cursor: pointer;
 }
 
@@ -84,7 +96,7 @@
   height: fit-content;
   width: fit-content;
   font: 400 16px/1.2 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   padding-bottom: 10px;
 }
 
@@ -98,21 +110,21 @@
   height: fit-content;
 }
 .product-filter-page-filter-price-input input {
-  width: 45vw;
+  width: 10rem;
   height: 50px;
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   padding: 10px 10px 2px;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
   font: 400 16px/1.2 "Mulish", sans-serif;
   border-radius: 10px;
   line-height: 50px;
 }
 .product-filter-page-filter-price-input label {
   position: absolute;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
   font: 400 12px/1 "Mulish", sans-serif;
   transform-origin: 0 0;
-  padding: 1% 10px;
+  padding: 5px 10px;
 }
 
 .product-filter-page-filter-options-box {
@@ -134,7 +146,7 @@
   height: fit-content;
   width: fit-content;
   font: 600 16px/1 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
 }
 
 .product-filter-page-filter-sex {
@@ -146,7 +158,7 @@
 .app-checkbox {
   width: fit-content;
   height: fit-content;
-  background: var(--tg-theme-secondary-bg-color);
+  background: #333332;
   border-radius: 25px;
 }
 

@@ -18,7 +18,7 @@
 .table-row-amount {
   width: fit-content;
   height: fit-content;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
 }
 
 /*# sourceMappingURL=friends-card-page-table.component.css.map */

@@ -31,3 +31,8 @@ export interface ISize {
   isSelected: boolean
 }
 
+export interface IProductInf {
+  title: string
+  text: string
+  isFolded: boolean
+}

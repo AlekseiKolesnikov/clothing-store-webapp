@@ -1,12 +1,24 @@
+.center-flex-size-table-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .size-table-page-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-.size-table-page-wrapper {
+.center-flex-size-table-page-wrapper {
   height: 100vh;
   width: 100vw;
+}
+
+.size-table-page-wrapper {
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
 }
 
 .size-table-page-table-box {
@@ -18,12 +30,12 @@
 .size-table-page-label {
   font: 900 26px/1 "Mulish", sans-serif;
   padding-bottom: 15px;
-  color: var(--tg-theme-text-color);
+  color: #fff;
 }
 
 .size-table-page-table {
   font: 400 12px/1 "Mulish", sans-serif;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   border-spacing: 8px;
 }
 

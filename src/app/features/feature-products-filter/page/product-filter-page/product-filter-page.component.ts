@@ -6,16 +6,13 @@ import {
 } from "../../services/products-filter.service";
 import {FilterOptionService} from "../../services/filter-option.service";
 import {Subscription, tap} from "rxjs";
-import {
-  MAIN_BUTTON_POST_EVENT_LISTENER,
-  TelegramMainButtonModel
-} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
+import {TelegramMainButtonModel} from "../../../../shared/models/telegram-ui/telegram-main-button.model";
 import {BaseComponent} from "../../../../shared/models/base-component.model";
 import {Router} from "@angular/router";
 import {FILTERED_PRODUCTS_PAGE} from "../../../../shared/data/app-routes";
 import {Location} from "@angular/common";
 import {IFilterOption} from "../../../../shared/interfaces/product-interfaces";
-
+export const MAIN_BUTTON_PRODUCT_POST_EVENT_LISTENER = "setData"
 export const MALE_CLOTHING_INPUT_TYPE = "men's clothing"
 export const FEMALE_CLOTHING_INPUT_TYPE = "women's clothing"
 @Component({
@@ -49,11 +46,11 @@ export class ProductFilterPageComponent extends BaseComponent implements OnInit,
     ).subscribe(value => {
       this.filterOptionsArray = value
     })
-    this.telegramMainButtonModel.showMainButton('Применить фильтр')
+    this.telegramMainButtonModel.showMainButton('Apply a filter', MAIN_BUTTON_PRODUCT_POST_EVENT_LISTENER)
     window.addEventListener(
       "message",
       (event) => {
-        if (event.data === MAIN_BUTTON_POST_EVENT_LISTENER) {
+        if (event.data === MAIN_BUTTON_PRODUCT_POST_EVENT_LISTENER) {
           this.productFilterService.setProductRateOptionFilter(this.filterRateOption)
           this.router.navigate([FILTERED_PRODUCTS_PAGE])
         }

@@ -2,10 +2,17 @@
 @import "../../../../styles/flex.patterns";
 @import "../../../../styles/squeeze-animation.pattern";
 
+.center-flex-product-filter-page-wrapper {
+  @extend %center-flex;
+  height: 100vh;
+  width: 100vw;
+}
+
 .product-filter-page-wrapper {
   @extend %center-column-top-flex;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: $max-width;
   gap: $main-gap;
   padding: 0 $wrapper-padding $wrapper-bottom-padding;
   overflow-y: scroll;
@@ -59,7 +66,7 @@
   width: fit-content;
   height: fit-content;
   input {
-    width: 45vw;
+    width: 10rem;
     height: 50px;
     background: $secondary-tg-background;
     padding: 10px 10px 2px;
@@ -73,7 +80,7 @@
     color: $hint-tg-color;
     font: $subscript-text;
     transform-origin: 0 0;
-    padding: 1% 10px;
+    padding: 5px 10px;
   }
 }
 

@@ -7,7 +7,10 @@ import {ISearchData} from "../../../../shared/interfaces/delivery-interfaces";
 @Component({
   selector: 'app-distribution-address-page',
   templateUrl: './distribution-address-page.component.html',
-  styleUrls: ['./distribution-address-page.component.scss']
+  styleUrls: [
+    './distribution-address-page.component.scss',
+    './../../../../core/page/main-page.component.scss'
+  ]
 })
 export class DistributionAddressPageComponent extends BaseComponent implements OnDestroy {
   protected address: string = ''

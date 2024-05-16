@@ -1,14 +1,15 @@
 import {Injectable} from "@angular/core";
-export const MAIN_BUTTON_POST_EVENT_LISTENER = "setData"
 @Injectable({
   providedIn: 'root'
 })
 export class TelegramMainButtonModel {
+  private mainButtonPostEventMessage: string
   private readonly setDataLocalStorage = () => {
-    postMessage(MAIN_BUTTON_POST_EVENT_LISTENER, "*")
+    postMessage(this.mainButtonPostEventMessage, "*")
   }
 
-  showMainButton(text: string) {
+  showMainButton(text: string, mainButtonPostEventMessage: string) {
+    this.mainButtonPostEventMessage = mainButtonPostEventMessage
     // @ts-ignore
     Telegram.WebApp.MainButton.setText(text)
     // @ts-ignore

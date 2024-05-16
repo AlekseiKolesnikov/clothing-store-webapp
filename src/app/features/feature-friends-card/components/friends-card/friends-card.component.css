@@ -16,7 +16,7 @@
   font-family: "Mulish", sans-serif;
   width: 100%;
   height: 100%;
-  background: var(--tg-theme-bg-color);
+  background: #050505;
   border-radius: 25px;
   padding: 10%;
 }
@@ -24,7 +24,7 @@
 .friends-card-header {
   width: 100%;
   height: fit-content;
-  color: var(--tg-theme-text-color);
+  color: #fff;
   font: 900 20px/1 "Mulish", sans-serif;
 }
 .friends-card-header .friends-card-header-label {
@@ -39,7 +39,7 @@
 .friends-card-footer {
   width: 100%;
   height: fit-content;
-  color: var(--tg-theme-hint-color);
+  color: #7a7676;
   font-weight: 600;
   line-height: 1.2;
 }
