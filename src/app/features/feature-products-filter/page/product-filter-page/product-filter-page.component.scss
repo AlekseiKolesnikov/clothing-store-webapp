@@ -1,0 +1,117 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/squeeze-animation.pattern";
+
+.product-filter-page-wrapper {
+  @extend %center-column-top-flex;
+  height: 100vh;
+  width: 100vw;
+  gap: $main-gap;
+  padding: 0 $wrapper-padding $wrapper-bottom-padding;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: $tg-background;
+}
+
+.product-filter-page-filter-label-box {
+  @extend %space-between-row-center-flex;
+  height: fit-content;
+  width: 100%;
+  padding: $wrapper-padding 0;
+}
+
+.product-filter-page-filter-label {
+  width: fit-content;
+  height: fit-content;
+  font: $subheading-text;
+  color: $text-tg-color;
+  padding-bottom: 2px;
+}
+
+.product-filter-page-filter-back-button {
+  width: 20px;
+  height: 20px;
+  color: $text-tg-color;
+  cursor: pointer;
+}
+
+.product-filter-page-filter-price-box {
+  @extend %space-between-column-start-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.product-filter-page-filter-price-label {
+  height: fit-content;
+  width: fit-content;
+  font: $main-text;
+  color: $text-tg-color;
+  padding-bottom: 10px;
+}
+
+.product-filter-page-filter-price-inputs {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.product-filter-page-filter-price-input {
+  width: fit-content;
+  height: fit-content;
+  input {
+    width: 45vw;
+    height: 50px;
+    background: $secondary-tg-background;
+    padding: 10px 10px 2px;
+    color: $hint-tg-color;
+    font: $main-text;
+    border-radius: 10px;
+    line-height: 50px;
+  }
+  label {
+    position: absolute;
+    color: $hint-tg-color;
+    font: $subscript-text;
+    transform-origin: 0 0;
+    padding: 1% 10px;
+  }
+}
+
+.product-filter-page-filter-options-box {
+  @extend %start-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+  padding: $wrapper-padding 0;
+  border-bottom: $thin-border;
+  border-color: $border-grey-color;
+}
+
+.product-filter-page-filter-sex-box {
+  @extend %space-between-column-start-flex;
+  width: 100%;
+  height: fit-content;
+  gap: 10px;
+}
+
+.product-filter-page-filter-sex-label {
+  height: fit-content;
+  width: fit-content;
+  font: $main-bold-text;
+  color: $text-tg-color;
+}
+
+.product-filter-page-filter-sex {
+  @extend %start-row-center-flex;
+  height: fit-content;
+  width: 100%;
+  gap: 7px;
+}
+
+.app-checkbox {
+  @extend %squeeze-animation;
+  width: fit-content;
+  height: fit-content;
+  background: $secondary-tg-background;
+  border-radius: 25px;
+}

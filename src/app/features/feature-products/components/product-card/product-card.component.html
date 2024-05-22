@@ -1,0 +1,14 @@
+<div class="product-card-wrapper">
+  <div class="product-card-image-box">
+    <img class="product-card-image" src="{{productImage.toString()}}" alt="{{productName}}">
+  </div>
+  <div class="product-card-inf">
+    <div class="product-card-price">{{productPrice | currency}}</div>
+    <div class="product-card-name">{{productName | truncate: 16}}</div>
+  </div>
+  <button
+    class="product-card-button"
+    (click)="click($event)"
+    (touchend)="touch($event)"
+  >Buy</button>
+</div>

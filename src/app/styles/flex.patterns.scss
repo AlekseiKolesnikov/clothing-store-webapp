@@ -16,6 +16,12 @@
   justify-content: center;
 }
 
+%start-top-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 %center-column-top-flex {
   display: flex;
   align-items: center;

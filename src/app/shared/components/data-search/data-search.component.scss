@@ -1,0 +1,77 @@
+@import "../../../styles/variables";
+@import "../../../styles/flex.patterns";
+
+.delivery-data-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $tg-background;
+}
+
+.delivery-data-component-searchbar-box {
+  @extend %space-between-column-start-flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  background: $secondary-tg-background;
+  padding: 5px 10px;
+}
+
+.delivery-data-component-searchbar-label {
+  width: fit-content;
+  height: fit-content;
+  font: $subscript-text;
+  color: $hint-tg-color;
+}
+
+.delivery-data-component-searchbar-input {
+  width: 100%;
+  height: 40px;
+  background: $secondary-tg-background;
+  font: $main-text;
+  color: $text-tg-color;
+}
+
+.delivery-data-component-loader-box {
+  @extend %center-flex;
+  width: 100%;
+  height: calc(100svh - 40px);
+}
+
+.app-loader-circle {
+  width: 32px;
+  height: 32px;
+}
+
+.delivery-data-component-cities-list-box {
+  position: relative;
+  width: 100%;
+  height: calc(100svh - 40px);
+  padding-bottom: 25px;
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.delivery-data-component-cities-list-box::-webkit-scrollbar {
+  display: none;
+}
+
+.delivery-data-component-city-box {
+  @extend %start-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  padding: 20px 10px 8px;
+  font: $main-text;
+  color: $text-tg-color;
+  border-bottom: $thin-border $border-light-grey-color;
+  background-clip: padding-box;
+  cursor: pointer;
+}
+
+.delivery-data-component-city-name {
+  width: fit-content;
+  height: fit-content;
+}

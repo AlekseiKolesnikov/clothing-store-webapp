@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"search-bar-page.component.css"}
+{"version":3,"sourceRoot":"","sources":["search-bar-page.component.scss","../../../styles/variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA,YCHc","file":"search-bar-page.component.css"}

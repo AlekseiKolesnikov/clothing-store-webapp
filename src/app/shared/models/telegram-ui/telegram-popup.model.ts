@@ -9,7 +9,7 @@ export class TelegramPopupModel {
   showPopup(text: string) {
     // @ts-ignore
     Telegram.WebApp.showPopup({
-      title: "Ошибка",
+      title: "Error",
       message: text,
       buttons: [{
         type: "ok"

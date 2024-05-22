@@ -13,6 +13,14 @@ import {
 import {
   DistributionAddressPageComponent
 } from "./features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
+import {ProductPageComponent} from "./features/feature-products/pages/product-page/product-page.component";
+import {SizeTablePageComponent} from "./features/feature-products/pages/size-table-page/size-table-page.component";
+import {
+  ProductFilterPageComponent
+} from "./features/feature-products-filter/page/product-filter-page/product-filter-page.component";
+import {
+  FilteredProductListPageComponent
+} from "./features/feature-products-filter/page/filtered-product-list-page/filtered-product-list-page.component";
 
 const routes: Routes = [
   {
@@ -44,12 +52,28 @@ const routes: Routes = [
     component: DeliveryInfPageComponent
   },
   {
-    path: 'distribution_points_page',
+    path: 'distribution_city_page',
     component: DistributionPointsPageComponent
   },
   {
     path: 'distribution_address_page',
     component: DistributionAddressPageComponent
+  },
+  {
+    path: 'product_page',
+    component: ProductPageComponent
+  },
+  {
+    path: 'size_table_page',
+    component: SizeTablePageComponent
+  },
+  {
+    path: 'product_filter_page',
+    component: ProductFilterPageComponent
+  },
+  {
+    path: 'filtered_products_page',
+    component: FilteredProductListPageComponent
   }
 ];
 

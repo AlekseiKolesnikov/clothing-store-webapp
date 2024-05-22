@@ -1,0 +1,52 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+@import "../../../../styles/squeeze-animation.pattern";
+
+.product-card-wrapper {
+  @extend %space-between-column-center-flex;
+  width: 100%;
+  height: 200px;
+  background: $tg-background;
+  border-radius: $border-radius-smaller;
+}
+
+.product-card-image-box {
+  @extend %center-flex;
+  width: 100%;
+  height: fit-content;
+  padding: 5px 0;
+  background: white;
+  border-radius: $border-radius-smaller;
+}
+
+.product-card-image {
+  height: 100px;
+}
+
+.product-card-inf {
+  width: 100%;
+  padding: 7px 10px;
+}
+
+.product-card-price {
+  color: $text-tg-color;
+  font: $main-text-bigger;
+  font-weight: bolder;
+  margin-bottom: 3px;
+}
+
+.product-card-name {
+  color: $text-tg-color;
+  font: $subscript-text;
+}
+
+.product-card-button {
+  @extend %squeeze-animation;
+  color: $text-tg-color;
+  font: $subscript-text;
+  background: $secondary-tg-background;
+  width: 95%;
+  height: 30px;
+  margin-bottom: 5px;
+  border-radius: $border-radius;
+}

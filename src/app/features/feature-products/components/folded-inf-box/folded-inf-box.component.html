@@ -1,0 +1,39 @@
+<div class="folded-inf-box-wrapper">
+  <div
+    class="folded-inf-box-folded"
+    *ngIf="isFolded else unfolded"
+  >
+    <div
+      class="folded-inf-box-title-box-folded"
+      (click)="click($event)"
+      (touchend)="touch($event)"
+    >
+      <div class="folded-inf-box-title-folded">{{title}}</div>
+      <div class="folded-inf-box-title-arrow-folded">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-chevron-down">
+          <path d="M6 9l6 6l6 -6"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #unfolded>
+    <div class="folded-inf-box-unfolded">
+      <div
+        class="folded-inf-box-title-box-unfolded"
+        (click)="click($event)"
+        (touchend)="touch($event)"
+      >
+        <div class="folded-inf-box-title-unfolded">{{title}}</div>
+        <div class="folded-inf-box-title-arrow-unfolded">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-chevron-up">
+            <path d="M6 15l6 -6l6 6"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="folded-inf-box-text-unfolded">{{text}}</div>
+    </div>
+  </ng-template>
+</div>

@@ -16,8 +16,8 @@ import {
   DistributionAddressPageComponent
 } from "../features/feature-delivery/pages/distribution-address-page/distribution-address-page.component";
 import {
-  DeliveryDataSearchComponent
-} from "../features/feature-delivery/components/delivery-data-search/delivery-data-search.component";
+  DataSearchComponent
+} from "../shared/components/data-search/data-search.component";
 import {SharedModule} from "./shared.module";
 import {
   PersonalDataFieldComponent
@@ -34,11 +34,12 @@ import {
     DistributionPointsPageComponent,
     SearchFilterPipe,
     DistributionAddressPageComponent,
-    DeliveryDataSearchComponent,
+    DataSearchComponent,
     PersonalDataFieldComponent
   ],
   exports: [
-    PickupStoreComponent
+    PickupStoreComponent,
+    DataSearchComponent
   ],
     imports: [
         CommonModule,

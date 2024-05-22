@@ -1,9 +1,5 @@
 import {Injectable} from "@angular/core";
-
-export interface FriendsStatisticsData {
-  text: string,
-  amount: number
-}
+import {FriendsStatisticsData} from "../../../shared/interfaces/friends-data-interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +7,19 @@ export interface FriendsStatisticsData {
 export class FriendsStatisticsService {
   private readonly friendsStatisticsData: FriendsStatisticsData[] = [
     {
-      text: "Переходов по ссылке",
+      text: "Referral link traffic",
       amount: 0
     },
     {
-      text: "Сделали заказ",
+      text: "Completed orders",
       amount: 0
     },
     {
-      text: "Отправили в РФ",
+      text: "Send to Russian",
       amount: 0
     },
     {
-      text: "Всего баллов заработанно",
+      text: "Total points earned",
       amount: 0
     }
   ]

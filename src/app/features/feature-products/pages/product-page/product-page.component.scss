@@ -1,0 +1,209 @@
+@import "../../../../styles/flex.patterns";
+@import "../../../../styles/variables";
+
+.product-page-wrapper {
+  @extend %center-column-top-flex;
+  height: 100vh;
+  width: 100vw;
+  background: $secondary-tg-background;
+  padding-bottom: $wrapper-bottom-padding;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: $wrapper-z-index;
+}
+
+.product-page-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.product-page-image-inf-box {
+  @extend %center-column-top-flex;
+  padding: $wrapper-padding;
+  background: white;
+  gap: 7px;
+  width: 100vw;
+  height: fit-content;
+}
+
+.product-page-image-box {
+  @extend %start-center-flex;
+  padding: 4px 0;
+  height: fit-content;
+  width: 100vw;
+}
+
+.product-page-image {
+  height: 220px;
+}
+
+.product-page-image-rating-box {
+  @extend %center-flex-star;
+  width: 100%;
+  height: fit-content;
+}
+
+.product-page-image-rating {
+  @extend %space-between-row-top-flex;
+  width: 38px;
+  height: fit-content;
+  background: $tg-background;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.product-page-image-rating-star-box {
+  width: 12px;
+  height: 12px;
+}
+
+.product-page-image-rating-number {
+  width: fit-content;
+  height: fit-content;
+  font: $subscript-text;
+  font-weight: bold;
+  color: white;
+}
+
+.product-page-image-label-box {
+  @extend %center-flex-star;
+  width: 100%;
+  height: fit-content;
+}
+
+.product-page-image-label {
+  width: fit-content;
+  height: fit-content;
+  font: $super-heading-text;
+  color: black;
+  line-height: 1.2em;
+}
+
+.product-page-product-inf-wrapper {
+  width: 100vw;
+  height: fit-content;
+  background: white;
+  border-radius: 0 0 30px 30px;
+}
+
+.product-page-product-inf-box {
+  width: 100%;
+  height: fit-content;
+  border-radius: $border-radius-smaller;
+  background: $tg-background;
+}
+
+.product-page-product-price-box {
+  width: 100%;
+  height: fit-content;
+  padding: $product-page-padding $wrapper-padding;
+}
+
+.product-page-product-price-border {
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: $border-light-grey-color;
+  padding: $product-page-padding 0 15px;
+}
+
+.product-page-product-price {
+  width: fit-content;
+  height: fit-content;
+  font: $super-heading-text;
+  color: $text-tg-color;
+}
+
+.product-page-product-sizes-box {
+  width: 100%;
+  height: fit-content;
+  padding: 0 0 10px;
+  z-index: $wrapper-z-index;
+}
+
+.product-page-product-sizes-inf-box {
+  @extend %space-between-row-center-flex;
+  width: 100%;
+  height: fit-content;
+  padding: 5px $wrapper-padding 10px;
+}
+
+.product-page-product-size-label-box {
+  font: $subheading-text;
+  color: $text-tg-color;
+}
+
+.product-page-product-size-table-box {
+  a {
+    font: $main-text;
+    color: $accent-text-color;
+    cursor: pointer;
+  }
+}
+
+.size-options-icons-box {
+  @extend %space-between-row-center-flex;
+  gap: 2%;
+  padding: 0 3%;
+  position: relative;
+  width: 100vw;
+  scroll-padding-left: 6%;
+  height: 60px;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  z-index: $middle-z-index;
+}
+
+.size-options-icons-box::-webkit-scrollbar {
+  display: none;
+}
+
+.product-page-product-description-box {
+  width: 100%;
+  height: fit-content;
+  padding: 0 $wrapper-padding;
+}
+
+.product-page-product-description-border {
+  width: 100%;
+  height: fit-content;
+  border-top: 1px solid;
+  padding: 10px 0;
+  border-color: $border-light-grey-color;
+}
+
+.product-page-product-description-label {
+  font: $subheading-text;
+  color: $text-tg-color;
+}
+
+.product-page-product-description-text {
+  font: $main-text;
+  color: $text-tg-color;
+  padding: 10px 0;
+}
+
+.product-page-articles-box {
+  @extend %space-between-column-start-flex;
+  width: 100vw;
+  height: fit-content;
+  margin-top: 20px;
+  background: $tg-background;
+  border-radius: $border-radius-smaller;
+  padding: 5px 0 22px;
+}
+
+.product-page-articles-label {
+  width: fit-content;
+  height: fit-content;
+  font: $subheading-text;
+  color: $text-tg-color;
+  padding: $wrapper-padding;
+}
+
+.app-folded-inf-box {
+  width: 100vw;
+  height: fit-content;
+  background: $tg-background;
+  margin-top: 20px;
+  border-radius: $border-radius-smaller;
+}

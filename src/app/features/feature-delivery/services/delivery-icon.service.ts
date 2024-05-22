@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
-import {IDeliveryOptions} from "./delivery-option-state.service";
 import {LocalStorageService} from "../../../local-storage.service";
 import {DELIVERY_OPTION} from "../../../shared/data/local-storage-keys";
+import {IDeliveryOptions} from "../../../shared/interfaces/delivery-interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +14,14 @@ export class DeliveryIconService {
     {
       icon: "assets/images/delivery-icons/store.svg",
       iconName: "store icon",
-      text: "Забрать\nиз магазина",
+      text: "Pick up at\nthe store",
       isSelected: false,
       option: 0
     },
     {
       icon: "assets/images/delivery-icons/carton-box.svg",
       iconName: "location icon",
-      text: "Самовывоз\nиз ПВЗ",
+      text: "Delivery\nhome",
       isSelected: false,
       option: 1
     }

@@ -1,0 +1,13 @@
+.filtered-product-list-page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding: 0 3% 40px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.filtered-product-list-page-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=filtered-product-list-page.component.css.map */
