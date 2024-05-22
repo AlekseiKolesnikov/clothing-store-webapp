@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../../styles/flex.patterns.scss","search-bar-page.component.scss","../../../styles/variables.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;ACAF;EACE;EACA,WCkCU;EDjCV;EACA,YCLc;;;ADQhB;EAEE;EACA","file":"search-bar-page.component.css"}
+{"version":3,"sourceRoot":"","sources":["search-bar-page.component.scss","../../../styles/variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA,YCHc","file":"search-bar-page.component.css"}

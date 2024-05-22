@@ -30,7 +30,7 @@
 }
 
 .color-frame {
-  background: #fff;
+  background: var(--tg-theme-text-color);
 }
 
 .empty-frame {
@@ -42,14 +42,14 @@
   width: fit-content;
   padding: 5px 7px;
   border-radius: 20px;
-  background: #333332;
-  border: #050505 3px solid;
+  background: var(--tg-theme-secondary-bg-color);
+  border: var(--tg-theme-bg-color) 3px solid;
   gap: 7px;
   cursor: pointer;
 }
 
 .filter-icon-text {
-  color: #fff;
+  color: var(--tg-theme-text-color);
   display: inline-block;
   height: fit-content;
   width: fit-content;

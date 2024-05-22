@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../../../styles/flex.patterns.scss","filtered-product-list-page.component.scss","../../../../styles/variables.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;ACAF;EAEE;EACA;;;AAGF;EACE;EACA;EACA,WC2BU;ED1BV;EACA;EACA;;;AAGF;EACE","file":"filtered-product-list-page.component.css"}
+{"version":3,"sourceRoot":"","sources":["filtered-product-list-page.component.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE","file":"filtered-product-list-page.component.css"}

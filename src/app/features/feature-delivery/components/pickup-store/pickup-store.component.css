@@ -21,7 +21,7 @@
 .store-location-wrapper {
   width: 295px;
   height: 125px;
-  background: #333332;
+  background: var(--tg-theme-secondary-bg-color);
   border-radius: 25px;
   padding: 12px 8px;
 }
@@ -49,12 +49,12 @@
 .store-location-hours {
   font: 400 12px/1 "Mulish", sans-serif;
   line-height: 1.5;
-  color: #7a7676;
+  color: var(--tg-theme-hint-color);
 }
 
 .store-location-link-button {
   vertical-align: top;
-  background: rgb(0, 124, 255);
+  background: var(--tg-theme-button-color);
   color: white;
   border-radius: 25px;
   padding: 5px 6px 6px;

@@ -1,13 +1,13 @@
 //----TELEGRAM-COLORS------------------------------------------------------
-$secondary-tg-background: #333332;
-$tg-background: #050505;
-$text-tg-color: #fff;
-$hint-tg-color: #7a7676;
+$secondary-tg-background: var(--tg-theme-secondary-bg-color);
+$tg-background: var(--tg-theme-bg-color);
+$text-tg-color: var(--tg-theme-text-color);
+$hint-tg-color: var(--tg-theme-hint-color);
 $linn-tg-color: var(--tg-theme-link-color);
-$button-tg-color: rgb(0, 124, 255);
-$button-text-tg-color: #fff;
+$button-tg-color: var(--tg-theme-button-color);
+$button-text-tg-color: var(--tg-theme-button-text-color);
 $header-bg-color: var(--tg-theme-header-bg-color);
-$accent-text-color: rgb(0, 124, 255);
+$accent-text-color: var(--tg-theme-accent-text-color);
 $section-bg-color: var(--tg-theme-section-bg-color);
 $section-header-text-color: var(--tg-theme-section-header-text-color);
 $subtitle-text-color: var(--tg-theme-subtitle-text-color);
@@ -37,7 +37,6 @@ $bottom-margin-friends: 4%;
 $border-radius: 25px;
 $border-radius-smaller: 20px;
 $thin-border: 0.01px solid;
-$max-width: 500px;
 
 //--------FONT--------------------------------------------------
 $super-heading-text: 900 30px/1 'Mulish', sans-serif;

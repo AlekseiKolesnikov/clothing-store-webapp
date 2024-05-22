@@ -1,21 +1,10 @@
 @import "../../../../styles/flex.patterns";
 @import "../../../../styles/variables";
 
-.profile-wrapper-center-flex {
-  @extend %center-flex;
-  height: 100vh;
-  width: 100vw;
-}
-
-.common-width {
-  width: 100%;
-}
-
 .profile-wrapper {
   @extend %center-column-top-flex;
   height: 100vh;
-  max-width: $max-width;
-  width: 100%;
+  width: 100vw;
   font: $main-text;
   color: $text-tg-color;
   gap: 2%;

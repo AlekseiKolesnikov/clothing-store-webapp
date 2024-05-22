@@ -18,7 +18,7 @@
 .channel-icon {
   height: 38px;
   width: fit-content;
-  background-color: #050505;
+  background-color: var(--tg-theme-bg-color);
   padding: 2% 5% 2% 1%;
   gap: 1%;
 }
@@ -34,13 +34,13 @@
 .channel-name {
   font: 600 16px/1 "Mulish", sans-serif;
   line-height: 12px;
-  color: #fff;
+  color: var(--tg-theme-text-color);
 }
 
 .channel-description {
   font-weight: 500;
   font-size: 9px;
-  color: #7a7676;
+  color: var(--tg-theme-hint-color);
 }
 
 /*# sourceMappingURL=channel.component.css.map */

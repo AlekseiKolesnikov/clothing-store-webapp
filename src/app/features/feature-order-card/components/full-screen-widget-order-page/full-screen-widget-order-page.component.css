@@ -33,7 +33,7 @@
   width: 100%;
   height: fit-content;
   border-radius: 25px;
-  background: #050505;
+  background: var(--tg-theme-bg-color);
 }
 
 .order-page-full-screen-widget-box {
@@ -46,7 +46,7 @@
   height: fit-content;
   text-align: start;
   font: 900 20px/1 "Mulish", sans-serif;
-  color: #fff;
+  color: var(--tg-theme-text-color);
   padding: 5px 0 8px 0;
 }
 .order-page-full-screen-widget-text p {
@@ -55,7 +55,7 @@
 .order-page-full-screen-widget-text svg {
   width: 22px;
   height: 22px;
-  color: #fff;
+  color: var(--tg-theme-text-color);
 }
 
 /*# sourceMappingURL=full-screen-widget-order-page.component.css.map */

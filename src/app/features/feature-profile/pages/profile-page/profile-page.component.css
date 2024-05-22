@@ -1,9 +1,3 @@
-.profile-wrapper-center-flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .profile-wrapper {
   display: flex;
   align-items: center;
@@ -11,21 +5,11 @@
   flex-direction: column;
 }
 
-.profile-wrapper-center-flex {
-  height: 100vh;
-  width: 100vw;
-}
-
-.common-width {
-  width: 100%;
-}
-
 .profile-wrapper {
   height: 100vh;
-  max-width: 500px;
-  width: 100%;
+  width: 100vw;
   font: 400 16px/1.2 "Mulish", sans-serif;
-  color: #fff;
+  color: var(--tg-theme-text-color);
   gap: 2%;
   overflow-y: scroll;
 }
@@ -37,7 +21,7 @@
 .__profile-blocks {
   height: fit-content;
   width: 100%;
-  background: #050505;
+  background: var(--tg-theme-bg-color);
   border-radius: 1.5em;
   padding: 3%;
 }

@@ -1,39 +1,38 @@
-<div class="center-flex-order-widget-page-wrapper">
   <div class="order-widget-page-wrapper">
-    <div class="order-widget-page-box">
-      <div class="order-widget-page-text">
-        How do you want to order?
-      </div>
-      <div class="order-widget-page-order-catalog-box">
-        <app-square-widget-order-page
-          [arrow]="orderPageData.shortArrowIcon"
-          [boxColor]="orderPageData.pinkColor"
-          [iconLink]="orderPageData.blackTelegramIcon"
-          iconLinkText="Telegram icon"
-          text="Order via chat"
-        />
-        <app-square-widget-order-page
-          [arrow]="orderPageData.shortArrowIcon"
-          [boxColor]="orderPageData.yellowColor"
-          [iconLink]="orderPageData.sneakerIcon"
-          iconLinkText="The sneaker icon"
-          text="Select from the catalog"
-        />
-      </div>
-      <div class="order-widget-page-order-calculate-box">
-        <app-full-screen-widget-order-page
-          [arrow]="orderPageData.shortArrowIcon"
-          [iconLink]="orderPageData.supportMessageIcon"
-          iconLinkText="Heart Icon"
-          text="Consult with a consultant"
-        />
-        <app-full-screen-widget-order-page
-          [arrow]="orderPageData.shortArrowIcon"
-          [iconLink]="orderPageData.calculatorIcon"
-          iconLinkText="Hieroglyphic icon"
-          text="Calculate the cost of an item from Sneaker Shop"
-        />
-      </div>
+  <div class="order-widget-page-box">
+    <div class="order-widget-page-text">
+      How do you want to order?
+    </div>
+    <div class="order-widget-page-order-catalog-box">
+      <app-square-widget-order-page
+        [arrow]="orderPageData.shortArrowIcon"
+        [boxColor]="orderPageData.pinkColor"
+        [iconLink]="orderPageData.blackTelegramIcon"
+        iconLinkText="Telegram icon"
+        text="Order via chat"
+      />
+      <app-square-widget-order-page
+        [arrow]="orderPageData.shortArrowIcon"
+        [boxColor]="orderPageData.yellowColor"
+        [iconLink]="orderPageData.sneakerIcon"
+        iconLinkText="The sneaker icon"
+        text="Select from the catalog"
+      />
+    </div>
+    <div class="order-widget-page-order-calculate-box">
+      <app-full-screen-widget-order-page
+        [arrow]="orderPageData.shortArrowIcon"
+        [iconLink]="orderPageData.supportMessageIcon"
+        iconLinkText="Heart Icon"
+        text="Consult with a consultant"
+      />
+      <app-full-screen-widget-order-page
+        [arrow]="orderPageData.shortArrowIcon"
+        [iconLink]="orderPageData.calculatorIcon"
+        iconLinkText="Hieroglyphic icon"
+        text="Calculate the cost of an item from Sneaker Shop"
+      />
     </div>
   </div>
 </div>
+

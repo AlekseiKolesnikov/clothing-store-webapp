@@ -13,7 +13,7 @@
 }
 
 .distribution-address-input, .distribution-city-input {
-  border-bottom: 0.01px solid #7a7676;
+  border-bottom: 0.01px solid var(--tg-theme-hint-color);
   padding-bottom: 8px;
 }
 

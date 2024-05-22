@@ -34,7 +34,7 @@
 .order-card-icon-arrow {
   width: 32px;
   height: 32px;
-  color: rgb(0, 124, 255);
+  color: var(--tg-theme-button-color);
 }
 
 /*# sourceMappingURL=order-card.component.css.map */

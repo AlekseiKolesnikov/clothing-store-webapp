@@ -10,9 +10,9 @@
   height: fit-content;
   padding: 5px 7px;
   font: 600 14px/1 "Mulish", sans-serif;
-  color: #fff;
+  color: var(--tg-theme-text-color);
   border-radius: 20px;
-  background: #333332;
+  background: var(--tg-theme-secondary-bg-color);
 }
 .checkbox-container label {
   gap: 3px;
@@ -39,7 +39,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  fill: #333332;
+  fill: var(--tg-theme-secondary-bg-color);
 }
 
 .check-input:checked ~ .check-box svg {

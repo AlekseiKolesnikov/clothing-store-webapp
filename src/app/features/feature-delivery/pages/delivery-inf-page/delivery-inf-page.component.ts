@@ -11,10 +11,7 @@ export const MAIN_BUTTON_DELIVERY_POST_EVENT_LISTENER = "setData"
 @Component({
   selector: 'app-delivery-inf-page',
   templateUrl: './delivery-inf-page.component.html',
-  styleUrls: [
-    './delivery-inf-page.component.scss',
-    './../../../../core/page/main-page.component.scss'
-  ],
+  styleUrls: ['./delivery-inf-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class DeliveryInfPageComponent implements OnInit, OnDestroy {

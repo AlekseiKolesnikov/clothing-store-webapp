@@ -1,16 +1,8 @@
 @import "../../../../styles/variables";
-@import "../../../../styles/flex.patterns";
-
-.center-flex-filtered-product-list-page-wrapper {
-  @extend %center-flex;
-  height: 100vh;
-  width: 100vw;
-}
 
 .filtered-product-list-page-wrapper {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  max-width: $max-width;
   padding: 0 $wrapper-padding $wrapper-bottom-padding;
   overflow-x: hidden;
   overflow-y: scroll;

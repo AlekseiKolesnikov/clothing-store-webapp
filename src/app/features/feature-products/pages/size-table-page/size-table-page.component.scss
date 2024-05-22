@@ -1,17 +1,10 @@
 @import "../../../../styles/variables";
 @import "../../../../styles/flex.patterns";
 
-.center-flex-size-table-page-wrapper {
-  @extend %center-flex;
-  height: 100vh;
-  width: 100vw;
-}
-
 .size-table-page-wrapper {
   @extend %start-top-flex;
   height: 100vh;
-  width: 100%;
-  max-width: $max-width;
+  width: 100vw;
 }
 
 .size-table-page-table-box {

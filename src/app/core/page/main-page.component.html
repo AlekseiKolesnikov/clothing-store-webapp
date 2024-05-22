@@ -1,20 +1,18 @@
-<div class="wrapper-center-flex">
-  <div
-    class="wrapper"
-    (scroll)="onScroll($event)"
-  >
-    <app-header class="header-component"/>
-    <app-search-bar class="search-bar-component"/>
-    <app-articles class="articles-component"/>
-    <app-order-balance-widgets class="order-balance-component"/>
-    <app-products-list
-      class="products-list-component"
-      [productsArray]="productsArray"
-    />
-    <app-loader
-      *ngIf="isLoaderVisible"
-      class="app-loader"
-    />
-  </div>
+<div
+  class="wrapper"
+  (scroll)="onScroll($event)"
+>
+  <app-header class="header-component"/>
+  <app-search-bar class="search-bar-component"/>
+  <app-articles class="articles-component"/>
+  <app-order-balance-widgets class="order-balance-component"/>
+  <app-products-list
+    class="products-list-component"
+    [productsArray]="productsArray"
+  />
+  <app-loader
+    *ngIf="isLoaderVisible"
+    class="app-loader"
+  />
 </div>
 

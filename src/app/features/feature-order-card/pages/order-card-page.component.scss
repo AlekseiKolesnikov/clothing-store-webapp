@@ -1,17 +1,10 @@
 @import "../../../styles/flex.patterns";
 @import "../../../styles/variables";
 
-.center-flex-order-widget-page-wrapper {
-  @extend %center-flex;
-  height: 100vh;
-  width: 100vw;
-}
-
 .order-widget-page-wrapper {
   @extend %center-column-top-flex;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  max-width: $max-width;
   background: $secondary-tg-background;
   overflow-y: scroll;
   overflow-x: hidden;

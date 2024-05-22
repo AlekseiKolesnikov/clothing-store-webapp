@@ -8,31 +8,31 @@
   width: 60px;
   height: 25px;
   border-radius: 25px;
-  background: #050505;
+  background: var(--tg-theme-bg-color);
 }
 
 .loader {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 14px 0 #fff, -14px 0 #fff;
+  background-color: var(--tg-theme-text-color);
+  box-shadow: 14px 0 var(--tg-theme-text-color), -14px 0 var(--tg-theme-text-color);
   position: relative;
   animation: flash 0.5s ease-out infinite alternate;
 }
 
 @keyframes flash {
   0% {
-    background-color: #7a7676;
-    box-shadow: 14px 0 #fff, -14px 0 #fff;
+    background-color: var(--tg-theme-hint-color);
+    box-shadow: 14px 0 var(--tg-theme-text-color), -14px 0 var(--tg-theme-text-color);
   }
   50% {
-    background-color: #fff;
-    box-shadow: 14px 0 #7a7676, -14px 0 #7a7676;
+    background-color: var(--tg-theme-text-color);
+    box-shadow: 14px 0 var(--tg-theme-hint-color), -14px 0 var(--tg-theme-hint-color);
   }
   100% {
     background-color: rgba(255, 255, 255, 0.1333333333);
-    box-shadow: 14px 0 #fff, -14px 0 #7a7676;
+    box-shadow: 14px 0 var(--tg-theme-text-color), -14px 0 var(--tg-theme-hint-color);
   }
 }
 

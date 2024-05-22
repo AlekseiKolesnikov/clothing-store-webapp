@@ -37,9 +37,10 @@
 .delivery-options-icons-box {
   @extend %start-row-center-flex;
   gap: 3%;
+  padding: 0 3%;
   z-index: $middle-z-index;
   position: relative;
-  width: 100%;
+  width: 100vw;
   scroll-padding-left: 6%;
   height: 56px;
   scroll-snap-type: x mandatory;

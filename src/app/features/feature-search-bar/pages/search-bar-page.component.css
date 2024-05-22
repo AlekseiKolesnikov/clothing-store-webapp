@@ -1,19 +1,7 @@
-.search-bar-page-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .app-delivery-data-search {
-  width: 100%;
-  max-width: 500px;
-  height: 100vh;
-  background: #050505;
-}
-
-.search-bar-page-wrapper {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  background: var(--tg-theme-bg-color);
 }
 
 /*# sourceMappingURL=search-bar-page.component.css.map */

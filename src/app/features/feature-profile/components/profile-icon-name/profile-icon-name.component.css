@@ -21,7 +21,7 @@
   width: 90px;
   height: 90px;
   font-size: 46px;
-  background: #050505;
+  background: var(--tg-theme-bg-color);
   border-radius: 100em;
 }
 
@@ -29,7 +29,7 @@
   width: fit-content;
   height: fit-content;
   font: 900 26px/1 "Mulish", sans-serif;
-  color: #fff;
+  color: var(--tg-theme-text-color);
   margin-top: 4%;
 }
 
